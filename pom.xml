@@ -9,7 +9,7 @@
     <packaging>jdocbook</packaging>
     <name>PressGang Wiki</name>
     <description>The documentation for generating a book using the GitHub wiki.</description>
-    <url>https://github.com/pressgang/pressgang-tools/wiki/GuideREADME</url>
+    <url>https://github.com/gemoc/gemoc-studio/wiki/GuideREADME</url>
     <inceptionYear>2013</inceptionYear>
 
     <organization>
@@ -32,9 +32,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git://github.com/pressgang/pressgang-tools.wiki.git</connection>
-        <developerConnection>scm:git@github.com:pressgang/pressgang-tools.wiki.git</developerConnection>
-        <url>https://github.com/pressgang/pressgang-tools/wiki/_access</url>
+        <connection>scm:git://github.com/gemoc/gemoc-studio.wiki.git</connection>
+        <developerConnection>scm:git@github.com:gemoc/gemoc-studio.wiki.git</developerConnection>
+        <url>https://github.com/gemoc/gemoc-studio/wiki/_access</url>
     </scm>
 
     <developers>
