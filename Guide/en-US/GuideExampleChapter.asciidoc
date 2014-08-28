@@ -1,0 +1,18 @@
+== Example Chapter
+
+=== Introduction
+
+Intro ((description)) for Adam.
+
+[[figure-gs-screenshot-of-openshift]]
+.Screenshot of the Openshift.
+image::images/jenkins.png[Screenshot of the jenkins]
+(((OpenShift)))
+(((OpenShift,Jenkins)))
+
+'''
+
+Some more text.
+
+Text on first line +
+Text on second line.

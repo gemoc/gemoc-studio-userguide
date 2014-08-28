@@ -1,0 +1,3 @@
+Welcome to the PressGang wiki! 
+
+For an example of the 'Holy Grail' of documentation see the link:wiki/GuideREADME[Guide README] page.

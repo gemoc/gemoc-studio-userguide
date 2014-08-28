@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jboss.pressgang</groupId>
+    <artifactId>pressgang-tools-guide</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jdocbook</packaging>
+    <name>PressGang Wiki</name>
+    <description>The documentation for generating a book using the GitHub wiki.</description>
+    <url>https://github.com/pressgang/pressgang-tools/wiki/GuideREADME</url>
+    <inceptionYear>2013</inceptionYear>
+
+    <organization>
+        <name>JBoss by Red Hat</name>
+        <url>http://www.jboss.org</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://repository.jboss.org/licenses/apache-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <!-- Distribution URLs -->
+        <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
+        <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
+    </properties>
+
+    <scm>
+        <connection>scm:git://github.com/pressgang/pressgang-tools.wiki.git</connection>
+        <developerConnection>scm:git@github.com:pressgang/pressgang-tools.wiki.git</developerConnection>
+        <url>https://github.com/pressgang/pressgang-tools/wiki/_access</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Kurt Stam</name>
+            <id>kstam</id>
+            <email>kstam@jboss.com</email>
+            <organization>JBoss, a division of Red Hat</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>jboss</id>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss</id>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>jboss-releases-repository</id>
+            <name>JBoss Releases Repository</name>
+            <url>${jboss.releases.repo.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>jboss-snapshots-repository</id>
+            <name>JBoss Snapshots Repository</name>
+            <url>${jboss.snapshots.repo.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>0.1.1</version>
+                <executions>
+                    <execution>
+                        <id>output-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceDirectory>Guide/en-US</sourceDirectory>
+                    <outputDirectory>target/docbook/en-US</outputDirectory>
+                    <backend>docbook</backend>
+                    <!-- doctype not honored until plugin version 0.1.2 -->
+                    <!-- until then, set the doctype in the document -->
+                    <doctype>book</doctype>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jboss.maven.plugins</groupId>
+                <artifactId>maven-jdocbook-plugin</artifactId>
+                <version>2.3.8</version>
+                <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jboss.pressgang</groupId>
+                        <artifactId>pressgang-xslt-ns</artifactId>
+                        <version>3.0.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jboss.pressgang</groupId>
+                        <artifactId>pressgang-jdocbook-style</artifactId>
+                        <type>jdocbook-style</type>
+                        <version>3.0.0</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <!-- add custom fonts to the fonts directory -->
+                    <fontsDirectory>${basedir}/fonts</fontsDirectory>
+                    <!-- the source document is produced by the asciidoctor-maven-plugin -->
+                    <sourceDocumentName>Guide.xml</sourceDocumentName>
+                    <sourceDirectory>target/docbook</sourceDirectory>
+                    <imageResource>
+                        <directory>.</directory>
+                        <includes>
+                            <include>images/*</include>
+                        </includes>
+                    </imageResource>
+                    <formats>
+                        <format>
+                            <formatName>html</formatName>
+                            <stylesheetResource>classpath:/xslt/org/jboss/pressgang/xhtml.xsl</stylesheetResource>
+                            <finalName>index.html</finalName>
+                        </format>
+                        <format>
+                            <formatName>html_single</formatName>
+                            <stylesheetResource>classpath:/xslt/org/jboss/pressgang/xhtml-single.xsl</stylesheetResource>
+                            <finalName>index.html</finalName>
+                        </format>
+                        <format>
+                            <formatName>pdf</formatName>
+                            <stylesheetResource>classpath:/xslt/org/jboss/pressgang/pdf.xsl</stylesheetResource>
+                            <finalName>${project.artifactId}.pdf</finalName>
+                        </format>
+                    </formats>
+                    <options>
+                        <autoDetectFonts>true</autoDetectFonts>
+                        <xincludeSupported>true</xincludeSupported>
+                        <xmlTransformerType>saxon</xmlTransformerType>
+                        <!-- needed for uri-resolvers; can be ommitted if using 'current' uri 
+                            scheme -->
+                        <!-- could also locate the docbook dependency and inspect its version... -->
+                        <!--docbookVersion>1.72.0</docbookVersion -->
+                        <docbookVersion>1.76.1</docbookVersion>
+                        <transformerParameters>
+                            <!-- AsciiDoc processing instructions not processed until version 3.0.1 of pressgang-tools -->
+                            <asciidoc.mode>1</asciidoc.mode>
+                            <!--
+                            <javax.xml.parsers.DocumentBuilderFactory>org.apache.xerces.jaxp.DocumentBuilderFactoryImpl</javax.xml.parsers.DocumentBuilderFactory> 
+                            <javax.xml.parsers.SAXParserFactory>org.apache.xerces.jaxp.SAXParserFactoryImpl</javax.xml.parsers.SAXParserFactory> 
+                            -->
+                        </transformerParameters>
+                    </options>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
