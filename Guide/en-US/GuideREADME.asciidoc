@@ -1,4 +1,4 @@
-Test Didier
+
 This PressGang wiki is the source of the PressGang Guide document. Or, as we like to call it...
 
 == The _Holy Grail_ of Documentation
