@@ -54,17 +54,8 @@ The bibliography lists some useful external documents. For a more complete list,
 - [[[globalizing-modeling-languages]]] http://hal.inria.fr/hal-00994551[Globalizing Modeling Languages] (Benoit Combemale, Julien Deantoni, Benoit Baudry, Robert France, Jean-Marc Jézéquel, Jeff Gray), In Computer, IEEE, 2014.
 
 [glossary]
-== Example Glossary
+== Glossary
 
-Glossaries are optional. Glossaries entries are an example of a style
-of AsciiDoc labeled lists.
-
-[glossary]
-A glossary term::
-The corresponding (indented) definition.
-
-A second glossary term::
-The corresponding (indented) definition.
 AS:: 
 Abstract Syntax.
 
