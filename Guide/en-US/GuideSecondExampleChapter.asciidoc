@@ -2,7 +2,7 @@
 
 === Introduction
 
-Intro blah blah
+Intro blah blah blah
 
 [[figure-gs-another-screenshot-of-openshift]]
 .Another Screenshot of the Openshift.
