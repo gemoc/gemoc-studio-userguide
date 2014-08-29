@@ -1,18 +1,28 @@
 == Gemoc Modeling workbench
 
-=== Introduction
+=== Modeling workbench overview
 
-Intro ((description)) for Modeling workbench.
+The GEMOC Modeling Workbench, intended to be used by domain designers: it allows creating and executing models conformant to executable DSMLs.
 
-[[figure-gs-screenshot-of-openshift3]]
-.Screenshot of the Openshift.
-image::images/jenkins.png[Screenshot of the jenkins]
-(((OpenShift)))
-(((OpenShift,Jenkins)))
+[[figure-glw-screenshot-of-modeling_workbench]]
+.Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation).
+image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation)]
+(((TFSM)))
+(((TFSM,Modeling workbench)))
 
 '''
 
-Some more text.
 
-Text on first line +
-Text on second line.
+=== Editing model
+
+=== Running model
+
+Description of the Gemoc launch configuration in Run and Debug mode.
+
+=== Engine view
+
+=== Logical step view
+
+=== Event manager view
+
+=== Animation view

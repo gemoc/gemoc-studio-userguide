@@ -1,7 +1,7 @@
 .Contents
 - link:Guide[Guide Master]
-- link:GuideExampleChapter[Example Chapter]
-- link:GuideSecondExampleChapter[Second Example Chapter]
+- link:GuideLanguageWorkbenchChapter[Language Workbench Chapter]
+- link:GuideModelingWorkbenchChapter[Modeling Workbench Chapter]
 
 .Related
 - link:GuideREADME[README]

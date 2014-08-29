@@ -1,9 +1,0 @@
-== Second Example Chapter
-
-=== Introduction
-
-Intro blah blah blah
-
-[[figure-gs-another-screenshot-of-openshift]]
-.Another Screenshot of the Openshift.
-image::images/jenkins.png[Screenshot of the jenkins]

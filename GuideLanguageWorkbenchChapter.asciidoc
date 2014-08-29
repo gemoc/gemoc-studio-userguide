@@ -1,18 +1,30 @@
 == Gemoc Language workbench
 
-=== Introduction
+=== Language Workbench overview
 
-Intro ((description)) for Language workbench.
+The GEMOC Language Workbench, intended to be used by ((language designer))s:  it allows building and composing new executable DSMLs.
 
-[[figure-gs-screenshot-of-openshift2]]
-.Screenshot of the Openshift.
-image::images/jenkins.png[Screenshot of the jenkins]
-(((OpenShift)))
-(((OpenShift,Jenkins)))
+
+[[figure-glw-screenshot-of-language_workbench]]
+.Screenshot of GEMOC Studio Language Workbench on the TFSM (Timed Finite State Machine) example.
+image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of GEMOC Studio Language Workbench on the TFSM (Timed Finite State Machine) example]
+(((TFSM)))
+(((TFSM,Language workbench)))
 
 '''
 
-Some more text.
+=== Gemoc Language project
 
-Text on first line +
-Text on second line.
+
+=== Defining domain concept
+
+
+Defining abstract syntax (AS).
+
+===  Defining concrete syntax
+
+===  Defining concrete syntax
+
+=== Process support view
+
+

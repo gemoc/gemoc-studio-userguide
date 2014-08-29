@@ -1,14 +1,38 @@
     <authorgroup>
 
     <author>
-    <honorific>Dr</honorific>
-    <firstname>Kurt</firstname>
-    <surname>Stam</surname>
+    <firstname>Francois</firstname>
+    <surname>Tanguy</surname>
     <othername role='mi'>T</othername>
     <affiliation>
-      <shortaffil>Red Hat</shortaffil>
+      <shortaffil>Inria</shortaffil>
       <jobtitle>Integration Magician</jobtitle>
-      <orgname>JBoss</orgname>
+      <orgname>Inria</orgname>
+
+    </affiliation>
+    </author>
+
+	<author>
+    <firstname>Didier</firstname>
+    <surname>Vojtisek</surname>
+    <othername role='mi'>T</othername>
+    <affiliation>
+      <shortaffil>Inria</shortaffil>
+      <jobtitle>Integration Magician</jobtitle>
+      <orgname>Inria</orgname>
+
+    </affiliation>
+    </author>
+
+	<author>
+	<honorific>Dr</honorific>
+    <firstname>Benoit</firstname>
+    <surname>Combemale</surname>
+    <othername role='mi'>T</othername>
+    <affiliation>
+      <shortaffil>Inria</shortaffil>
+      <jobtitle>Project Leader</jobtitle>
+      <orgname>Inria</orgname>
 
     </affiliation>
     </author>
@@ -16,7 +40,7 @@
      </authorgroup>
 
      <copyright>
-     <year>2012-2013</year>
+     <year>2013-2016</year>
      </copyright>
 
      <revhistory>
