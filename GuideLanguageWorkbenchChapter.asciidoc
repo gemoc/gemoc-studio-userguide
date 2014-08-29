@@ -17,7 +17,7 @@ image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of GEMOC S
 
 In the menu go to: File> New> Projects...> Gemoc Language project
 
-This project will be the aggregator of the other Eclipse projects that will constitute the components of an xDSML.
+This project will be the aggregator of the other Eclipse projects that will constitute the components of a Language Unit of the xDSML.
 
 It mainly defines a project.xdsml file that references these other components.
 
@@ -26,18 +26,42 @@ The xDSML file isn't supposed to be edited manually. The pop up menu on the proj
 
 From these information, the project will generate additional code that will be used by the execution engine when the language will be deployed and used by the <<chapter-gemoc-modeling-workbench>>.   
 
-=== Defining domain concept
+=== Defining Abstract Syntax (or domain concepts)
+
+Defining the abstract syntax (AS) in the Language Workbench is done thanks to an EMF Ecore project.
+
+All ecore editors can be used to edit the concepts in the ecore file.
+
+TODO new project wizard (via popup, via process)
+TODO select existing project
+TODO Ecore editor
 
 
-Defining abstract syntax (AS).
 
-===  Defining concrete syntax
+===  Defining RunTime Data
 
-===  Defining concrete syntax
+=== Defining Domain-Specific Actions (DSAs)
 
-=== 
+=== Defining Domain-Specific Constraints
+
+=== Defining a concrete syntax
+The xDSML can support different concrete syntaxes. Most EMF based editors should work however Gemoc provides additional support for some editors.
+Editors explictly supported are: EMF tree editor, xText editor, Sirius editor.
+
+==== Defining a concrete syntax with xText
+
+==== Defining a concrete syntax with ((Sirius))
+
+=== Defing Model of Concurrency (MoC)
+
+=== Defining Domain Specific Events (DSE)
+
+=== Defining an animation view
+The animation layer is an extension on top of a graphical editor defined with ((Sirius)).
+
+TODO Debug layer, Animation layer
 
 [[section-process-support-view]]
 === Process support view
 
-
+TODO present process view
