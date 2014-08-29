@@ -1,6 +1,5 @@
 = Gemoc Studio Guide
-Francois Tanguy
-Didier Vojtisek
+Francois Tanguy <francois.tanguy@inria.fr>, Didier Vojtisek <didier.vojtisek@inria.fr>
 :doctype: book
 :toc:
 :numbered:
