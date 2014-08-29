@@ -1,3 +1,4 @@
+[[chapter-gemoc-modeling-workbench]]
 == Gemoc Modeling workbench
 
 === Modeling workbench overview

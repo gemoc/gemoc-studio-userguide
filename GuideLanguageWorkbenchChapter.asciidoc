@@ -15,6 +15,16 @@ image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of GEMOC S
 
 === Gemoc Language project
 
+In the menu go to: File> New> Projects...> Gemoc Language project
+
+This project will be the aggregator of the other Eclipse projects that will constitute the components of an xDSML.
+
+It mainly defines a project.xdsml file that references these other components.
+
+The xDSML file isn't supposed to be edited manually. The pop up menu on the project (available on right click) or the <<section-process-support-view>> provides a set of wizard to fill this file.   
+
+
+From these information, the project will generate additional code that will be used by the execution engine when the language will be deployed and used by the <<chapter-gemoc-modeling-workbench>>.   
 
 === Defining domain concept
 
@@ -25,6 +35,9 @@ Defining abstract syntax (AS).
 
 ===  Defining concrete syntax
 
+=== 
+
+[[section-process-support-view]]
 === Process support view
 
 
