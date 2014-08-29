@@ -5,10 +5,12 @@ Didier Vojtisek
 :toc:
 :numbered:
 
+////////////////////////////////////////////////////////////////
 [dedication]
 == Dedication
 
 TBD
+////////////////////////////////////////////////////////////////
 
 [preface]
 == Preface
@@ -23,9 +25,7 @@ Each of these usage has it own set of tools that are referenced as *Gemoc Langua
 
 include::GuideLanguageWorkbenchChapter.asciidoc[]
 
-////////////////////////////////////////////////////////////////
 include::GuideModelingWorkbenchChapter.asciidoc[]
-////////////////////////////////////////////////////////////////
 
 include::GuideExampleChapter.asciidoc[]
 
@@ -33,6 +33,7 @@ include::GuideSecondExampleChapter.asciidoc[]
 
 :numbered!:
 
+////////////////////////////////////////////////////////////////
 [appendix]
 == Example Appendix
 
@@ -41,6 +42,7 @@ One or more optional appendixes go here at section level 1.
 === Appendix Sub-section
 
 Sub-section body.
+////////////////////////////////////////////////////////////////
 
 include::GuideBibliography.asciidoc[]
 
