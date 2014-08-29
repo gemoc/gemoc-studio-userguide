@@ -1,5 +1,6 @@
-= PressGang Tools Guide
-Author Name
+= Gemoc Studio Guide
+François Tanguy
+Didier Vojtisek
 :doctype: book
 :toc:
 :numbered:
@@ -12,7 +13,15 @@ TBD
 [preface]
 == Preface
 
-TBD
+The Gemoc Studio offers 2 main usages: 
+* Building and composing new executable DSML. This mode is intended to be used by language designers (aka domain experts).
+* Creating and executing models conformant to executable DSMLs. This mode is intended to be used by domain designers.
+
+Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
+
+include::GuideLanguageWorkbenchChapter.asciidoc[]
+
+include::GuideModelingWorkbenchChapter.asciidoc[]
 
 include::GuideExampleChapter.asciidoc[]
 
@@ -30,19 +39,19 @@ One or more optional appendixes go here at section level 1.
 Sub-section body.
 
 [bibliography]
-== Example Bibliography
+== Bibliography
 
-The bibliography list is a style of AsciiDoc bulleted list.
+The bibliography lists some useful external documents. For a more complete list, please refer to the publications section on http://gemoc.org site.
 
+////////////////////////////////////////////////////////////////
 [bibliography]
 .Books
-- [[[walsh-muellner]]] Norman Walsh & Leonard Muellner.
-'DocBook - The Definitive Guide'. O'Reilly & Associates. 1999.
-ISBN 1-56592-580-7.
+- [[[globalizing-modeling-languages]]] http://hal.inria.fr/hal-00994551[Globalizing Modeling Languages] (Benoit Combemale, Julien Deantoni, Benoit Baudry, Robert France, Jean-Marc Jézéquel, Jeff Gray), In Computer, IEEE, 2014.
+////////////////////////////////////////////////////////////////
 
 [bibliography]
 .Articles
-- [[[abc2003]]] Gall Anonim. 'An article', Whatever. 2003.
+- [[[globalizing-modeling-languages]]] http://hal.inria.fr/hal-00994551[Globalizing Modeling Languages] (Benoit Combemale, Julien Deantoni, Benoit Baudry, Robert France, Jean-Marc Jézéquel, Jeff Gray), In Computer, IEEE, 2014.
 
 [glossary]
 == Example Glossary
@@ -56,6 +65,74 @@ The corresponding (indented) definition.
 
 A second glossary term::
 The corresponding (indented) definition.
+AS:: 
+Abstract Syntax.
+
+API:: 
+Application Programming Interface.
+
+Behavioral Semantics:: 
+see Execution semantics.
+
+CCSL:: 
+Clock-Constraint Specification Language.
+
+Domain Engineer:: 
+user of the Modeling Workbench.
+
+DSA:: 
+Domain-Specific Action.
+
+DSE:: 
+Domain-Specific Event.
+
+DSML:: 
+Domain-Specific (Modeling) Language.
+
+Dynamic Semantics:: 
+see Execution semantics.
+
+Eclipse Plugin:: an Eclipse plugin is a Java project with associated metadata that can be bundled and deployed as a contribution to an Eclipse-based IDE.
+
+ED:: 
+Execution Data.
+
+Execution Semantics:: 
+Defines when and how elements of a language will produce a model behavior.
+
+GEMOC Studio:: 
+Eclipse-based studio integrating both a language workbench and the corresponding modeling workbenches
+
+Language Workbench:: 
+a language workbench offers the facilities for designing and implementing modeling languages.
+
+Language Designer:: 
+a language designer is the user of the language workbench.
+
+MoCC:: 
+Model of Concurrency and Communication
+
+Model:: 
+model which contributes to the convent of a View
+
+Modeling Workbench:: 
+a modeling workbench offers all the required facilities for editing and animating domain specific models according to a given modeling language.
+
+MSA:: 
+Model-Specific Action.
+
+MSE:: 
+Model-Specific Event.
+
+RTD:: 
+RunTime Data.
+
+Static semantics:: 
+Constraints on a model that cannot be expressed in the metamodel.  For example, static semantics can be expressed as OCL invariants.
+
+xDSML:: 
+Executable Domain-Specific Modeling Language.
+
 
 [colophon]
 == Example Colophon
