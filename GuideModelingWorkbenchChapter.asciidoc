@@ -1,10 +1,10 @@
-== Gemoc Language workbench
+== Gemoc Modeling workbench
 
 === Introduction
 
-Intro ((description)) for Language workbench.
+Intro ((description)) for Modeling workbench.
 
-[[figure-gs-screenshot-of-openshift2]]
+[[figure-gs-screenshot-of-openshift3]]
 .Screenshot of the Openshift.
 image::images/jenkins.png[Screenshot of the jenkins]
 (((OpenShift)))

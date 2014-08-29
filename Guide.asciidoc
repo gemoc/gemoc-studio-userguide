@@ -1,5 +1,5 @@
 = Gemoc Studio Guide
-François Tanguy
+Francois Tanguy
 Didier Vojtisek
 :doctype: book
 :toc:
@@ -21,7 +21,9 @@ Each of these usage has it own set of tools that are referenced as *Gemoc Langua
 
 include::GuideLanguageWorkbenchChapter.asciidoc[]
 
+////////////////////////////////////////////////////////////////
 include::GuideModelingWorkbenchChapter.asciidoc[]
+////////////////////////////////////////////////////////////////
 
 include::GuideExampleChapter.asciidoc[]
 
@@ -46,12 +48,12 @@ The bibliography lists some useful external documents. For a more complete list,
 ////////////////////////////////////////////////////////////////
 [bibliography]
 .Books
-- [[[globalizing-modeling-languages]]] http://hal.inria.fr/hal-00994551[Globalizing Modeling Languages] (Benoit Combemale, Julien Deantoni, Benoit Baudry, Robert France, Jean-Marc Jézéquel, Jeff Gray), In Computer, IEEE, 2014.
+- [[[globalizing-modeling-languages]]] http://hal.inria.fr/hal-00994551[Globalizing Modeling Languages] (Benoit Combemale, Julien Deantoni, Benoit Baudry, Robert France, Jean-Marc Jezequel, Jeff Gray), In Computer, IEEE, 2014.
 ////////////////////////////////////////////////////////////////
 
 [bibliography]
 .Articles
-- [[[globalizing-modeling-languages]]] http://hal.inria.fr/hal-00994551[Globalizing Modeling Languages] (Benoit Combemale, Julien Deantoni, Benoit Baudry, Robert France, Jean-Marc Jézéquel, Jeff Gray), In Computer, IEEE, 2014.
+- [[[globalizing-modeling-languages]]] http://hal.inria.fr/hal-00994551[Globalizing Modeling Languages] (Benoit Combemale, Julien Deantoni, Benoit Baudry, Robert France, Jean-Marc Jezequel, Jeff Gray), In Computer, IEEE, 2014.
 
 [glossary]
 == Glossary
