@@ -1,3 +1,14 @@
 Welcome to the GEMOC Studio Documentation wiki! 
 
-Editing wiki pages will trigger a job in the CI that will build the documentation and publish link:http://gemoc.github.io/gemoc-studio/[here].
+Editing wiki pages will trigger a job in the CI that will build the documentation and publish it link:https://github.com/gemoc/gemoc-studio/tree/gh-pages[here] and visible link:http://gemoc.github.io/gemoc-studio/[there].
+
+
+Instructions to build the documentation if the CI is down:
+. clone the maser branch from https://github.com/gemoc/gemoc-studio.wiki.git in let's say folder wiki.
+. open Eclipse and import the project located in the wiki folder.
+. run the pom.xml with maven.
+. clone the gh-pages branch from repository https://github.com/gemoc/gemoc-studio.git in let's folder documentation.
+. copy folder wiki/target/docbook/publish/en-US into folder documentation.
+. dans le repository documentation execute:
+git commit -am "Updated site" 
+git push
