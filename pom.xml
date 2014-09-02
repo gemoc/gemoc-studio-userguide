@@ -7,23 +7,9 @@
     <artifactId>pressgang-tools-guide</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jdocbook</packaging>
-    <name>PressGang Wiki</name>
+    <name>GEMOC Studio Guide</name>
     <description>The documentation for generating a book using the GitHub wiki.</description>
     <url>https://github.com/gemoc/gemoc-studio/wiki/GuideREADME</url>
-    <inceptionYear>2013</inceptionYear>
-
-    <organization>
-        <name>JBoss by Red Hat</name>
-        <url>http://www.jboss.org</url>
-    </organization>
-
-    <licenses>
-        <license>
-            <name>Apache License Version 2.0</name>
-            <url>http://repository.jboss.org/licenses/apache-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
 
     <properties>
         <!-- Distribution URLs -->
@@ -36,18 +22,6 @@
         <developerConnection>scm:git@github.com:gemoc/gemoc-studio.wiki.git</developerConnection>
         <url>https://github.com/gemoc/gemoc-studio/wiki/_access</url>
     </scm>
-
-    <developers>
-        <developer>
-            <name>Kurt Stam</name>
-            <id>kstam</id>
-            <email>kstam@jboss.com</email>
-            <organization>JBoss, a division of Red Hat</organization>
-            <roles>
-                <role>Developer</role>
-            </roles>
-        </developer>
-    </developers>
 
     <repositories>
         <repository>
@@ -83,7 +57,7 @@
                 <version>0.1.1</version>
                 <executions>
                     <execution>
-                        <id>output-html</id>
+                        <id>output-docbook</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>process-asciidoc</goal>
@@ -91,8 +65,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceDirectory>.</sourceDirectory>
-                    <outputDirectory>target/docbook/en-US</outputDirectory>
+                    <sourceDirectory>${basedir}</sourceDirectory>
+                    <outputDirectory>${basedir}/target/docbook/en-US</outputDirectory>
                     <backend>docbook</backend>
                     <!-- doctype not honored until plugin version 0.1.2 -->
                     <!-- until then, set the doctype in the document -->
@@ -110,39 +84,49 @@
                         <artifactId>pressgang-xslt-ns</artifactId>
                         <version>3.0.0</version>
                     </dependency>
-                    <dependency>
-                        <groupId>org.jboss.pressgang</groupId>
-                        <artifactId>pressgang-jdocbook-style</artifactId>
-                        <type>jdocbook-style</type>
-                        <version>3.0.0</version>
-                    </dependency>
+<!-- Do NOT use this dependency because style sheets have been forked and adapted. -->
+<!--                     <dependency> -->
+<!--                         <groupId>org.jboss.pressgang</groupId> -->
+<!--                         <artifactId>pressgang-jdocbook-style</artifactId> -->
+<!--                         <type>jdocbook-style</type> -->
+<!--                         <version>3.0.0</version> -->
+<!--                     </dependency> -->
                 </dependencies>
                 <configuration>
-                    <!-- add custom fonts to the fonts directory -->
-                    <fontsDirectory>${basedir}/fonts</fontsDirectory>
-                    <!-- the source document is produced by the asciidoctor-maven-plugin -->
+                    <sourceDirectory>${basedir}/target/docbook</sourceDirectory>
                     <sourceDocumentName>Guide.xml</sourceDocumentName>
-                    <sourceDirectory>target/docbook</sourceDirectory>
+
+                    <!-- All necessary image resources for documentation content -->
                     <imageResource>
-                        <directory>.</directory>
+                        <directory>${basedir}</directory>
                         <includes>
                             <include>images/*</include>
                         </includes>
                     </imageResource>
+
+					<!-- All necessary resources for styling -->
+                    <cssResource>
+                        <directory>${basedir}/style</directory>
+                        <includes>
+                            <include>css/*</include>
+                            <include>images/**</include>
+                        </includes>
+                    </cssResource>
+                    
                     <formats>
                         <format>
                             <formatName>html</formatName>
-                            <stylesheetResource>classpath:/xslt/org/jboss/pressgang/xhtml.xsl</stylesheetResource>
+                            <stylesheetResource>file:xslt/xhtml.xsl</stylesheetResource>
                             <finalName>index.html</finalName>
                         </format>
                         <format>
                             <formatName>html_single</formatName>
-                            <stylesheetResource>classpath:/xslt/org/jboss/pressgang/xhtml-single.xsl</stylesheetResource>
+                            <stylesheetResource>file:xslt/xhtml-single.xsl</stylesheetResource>
                             <finalName>index.html</finalName>
                         </format>
                         <format>
                             <formatName>pdf</formatName>
-                            <stylesheetResource>classpath:/xslt/org/jboss/pressgang/pdf.xsl</stylesheetResource>
+                            <stylesheetResource>file:xslt/pdf.xsl</stylesheetResource>
                             <finalName>${project.artifactId}.pdf</finalName>
                         </format>
                     </formats>
@@ -150,18 +134,9 @@
                         <autoDetectFonts>true</autoDetectFonts>
                         <xincludeSupported>true</xincludeSupported>
                         <xmlTransformerType>saxon</xmlTransformerType>
-                        <!-- needed for uri-resolvers; can be ommitted if using 'current' uri 
-                            scheme -->
-                        <!-- could also locate the docbook dependency and inspect its version... -->
-                        <!--docbookVersion>1.72.0</docbookVersion -->
-                        <docbookVersion>1.76.1</docbookVersion>
                         <transformerParameters>
                             <!-- AsciiDoc processing instructions not processed until version 3.0.1 of pressgang-tools -->
                             <asciidoc.mode>1</asciidoc.mode>
-                            <!--
-                            <javax.xml.parsers.DocumentBuilderFactory>org.apache.xerces.jaxp.DocumentBuilderFactoryImpl</javax.xml.parsers.DocumentBuilderFactory> 
-                            <javax.xml.parsers.SAXParserFactory>org.apache.xerces.jaxp.SAXParserFactoryImpl</javax.xml.parsers.SAXParserFactory> 
-                            -->
                         </transformerParameters>
                     </options>
                 </configuration>
