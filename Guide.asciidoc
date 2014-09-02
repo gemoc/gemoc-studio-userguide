@@ -11,8 +11,8 @@ Francois Tanguy <francois.tanguy@inria.fr>, Didier Vojtisek <didier.vojtisek@inr
 TBD
 ////////////////////////////////////////////////////////////////
 
-[preface]
-== Preface
+[introduction]
+== Introduction
 
 The Gemoc Studio offers 2 main usages: 
 
