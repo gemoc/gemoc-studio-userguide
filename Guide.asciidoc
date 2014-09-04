@@ -12,7 +12,7 @@ TBD
 ////////////////////////////////////////////////////////////////
 
 [preface]
-== Preface
+== Introduction
 
 The GEMOC Studio offers 2 main usages: 
 
