@@ -4,18 +4,32 @@
 
 The Gemoc launch configuration offers both a Run and a Debug mode.
 
+===== General options
+- Model to execute : this is the model that will be run
+- xDSML : this field allows to select among the valid variants of the executable language that are available for the model (Ie. the combinaison of DSA, DSE and MoCC that can be used on the given domain model)
+- ((Decider)) : this field allows to select the solver strategy used by the engine when several ((Logical Step))s can be triggered. Possible choice are : 
+** Solver proposition : the solver internal stategy will be used to selecton Logical Step
+** Random : will randomly select one of the available Logical Step (warning: execution cannot be reproduced when using this Decider)
+
+More Deciders will be developped (for example for playing predefined scenario).
+
 ===== Run mode
 In run mode, it offers the faster way to run the model.
-It cannot be paused. However you can stop it.
-It offers a limited set of views
-	- deactivate views
-		- logical steps
-		- event manager
-		- timeline
+It cannot be paused. However, you can stop it.
+It offers a limited set of views:
+- the Engine view allows to stop a running model.
+
+If more feed back are required, please use one tof the front end back end available for the xDSML. 
+
 ===== Debug mode
 In debug mode, the engine offers more control on the execution.
-It allows to pause, add break point,
+It allows to pause, add break point, and run in a step by step mode.
 
+If offers several views.
+
+logical steps
+		- event manager
+		- timeline
 
 	- activate layer debug
 	- activate layer animation
