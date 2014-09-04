@@ -38,7 +38,7 @@ It reuses the Eclipse Debug perspective and some of its views and add some Gemoc
 - the <<modeling-workbench-executing-model-debug-view-section,Debug View>>. This view presents an interface for Step by Step execution at the Logical Step level or even at the DSA level.
 - the <<modeling-workbench-executing-model-variable-view-section,Variable View>>. This view presents the ((Runtime Data)) as a (EMF based) tree.
 
-When running a simulation in Debug mode, it is configured to activate automatically the Debug layer and the animation layer in the Animation view.
+When running a simulation in Debug mode, it is configured to activate automatically the Debug layer and the Animation layer in the Animation view.
 
 ===== Backends and frontends
 Back ends and front ends offer additionnal view that can respectivly display informations from the running model or provide event input to the running model.
@@ -60,6 +60,9 @@ These backends and front ends usually open dedicated views. These views are alwa
 
 [[modeling-workbench-executing-model-animation-view-section]]
 ==== Animation View
+
+- Debug Layer
+- Animation Layer
 
 [[modeling-workbench-executing-model-debug-view-section]]
 ==== Debug View
