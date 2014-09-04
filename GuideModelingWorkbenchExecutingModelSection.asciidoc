@@ -11,7 +11,7 @@ The Gemoc launch configuration offers both a Run and a Debug mode.
 ** Solver proposition : the solver internal stategy will be used to selecton Logical Step
 ** Random : will randomly select one of the available Logical Step (warning: execution cannot be reproduced when using this Decider)
 ** Ask user : (available only in Debug mode), this option will use the <<modeling-workbench-executing-model-logical-step-view-section,Logical Step View>> or the <<modeling-workbench-executing-model-timeline-view-section,Timeline View>> to present the available Logical Steps and pause if there are more than one Logical Step. The user will then need to click on one of the Logical Step to continue.
-** Ask user (Step by step) : (available only in Debug mode), this option is similar to the previous one. However, it will pause on every Logical Step, even if there is only one Logical Step that can be triggered.
+** Ask user (Step by step) : (available only in Debug mode), this option is similar to the previous one. However, it will pause on every Logical Step, even if there is only one Logical Step that can be triggered. This is more or less equivalent as putting a breakpoint on every MSE of the language.
 
 More Deciders will be developped (for example for playing predefined scenario).
 
@@ -20,8 +20,8 @@ In run mode, it offers the faster way to run the model.
 It cannot be paused. However, you can stop it.
 It offers a limited set of views :
 
-- the <<modeling-workbench-executing-model-engine-view-section,((Engine View))>> allows to stop a running model.
-- the <<modeling-workbench-executing-model-timeline-view-section,((Timeline View))>> is displayed at the end of the execution in order to control the resulting execution trace.
+- the <<modeling-workbench-executing-model-engine-view-section,((Engine)) View>> allows to stop a running model.
+- the <<modeling-workbench-executing-model-timeline-view-section,((Timeline)) View>> is displayed at the end of the execution in order to control the resulting execution trace.
 
 If more feed back are required, please use one of the front end or back end available for the xDSML. 
 
@@ -29,15 +29,16 @@ If more feed back are required, please use one of the front end or back end avai
 In debug mode, the engine offers more control on the execution.
 It allows to pause, add break point, and run in a step by step mode.
 
-If offers several views.
+It reuses the Eclipse Debug perspective and some of its views and add some Gemoc specific views.
 
-logical steps
-		 event manager
-		 timeline
+- the <<modeling-workbench-executing-model-engine-view-section,((Engine)) View>> allows to stop a running model.
+- the <<modeling-workbench-executing-model-timeline-view-section,((Timeline)) View>> is displayed during all the simulation.
+- the <<modeling-workbench-executing-model-event-manager-view-section,((Event Manager)) View>> is displayed during all the simulation.
+- the <<modeling-workbench-executing-model-animation-view-section,((Event Manager)) View>> is displayed during all the simulation. It can display both an animation layer and a debug layer.
+- the <<modeling-workbench-executing-model-debug-view-section,Debug View>>. This view presents an interface for Step by Step execution at the Logical Step level or even at the DSA level.
+- the <<modeling-workbench-executing-model-variable-view-section,Variable View>>. This view presents the ((Runtime Data)) as a (EMF based) tree.
 
-	 activate layer debug
-	 activate layer animation
-	 show EMF tree in variables view
+When running a simulation in Debug mode, it is configured to activate automatically the Debug layer and the animation layer in the Animation view.
 
 ===== Backends and frontends
 Back ends and front ends offer additionnal view that can respectivly display informations from the running model or provide event input to the running model.
@@ -54,7 +55,21 @@ These backends and front ends usually open dedicated views. These views are alwa
 [[modeling-workbench-executing-model-timeline-view-section]]
 ==== Timeline View
 
-
+[[modeling-workbench-executing-model-event-manager-view-section]]
 ==== Event Manager View
 
+[[modeling-workbench-executing-model-animation-view-section]]
 ==== Animation View
+
+[[modeling-workbench-executing-model-debug-view-section]]
+==== Debug View
+This view is part of the Debug perspective.
+It presents an interface for Step by Step execution at the Logical Step level or even at the DSA level.
+When an execution is paused, this view presents the current Logical Step.
+
+When paused on a ((Logical Step)), the Step over command allows to go to the next Logical Step. The Step Into command allows to run separatly each of the internal DSA calls associated to the Logical Step.
+
+[[modeling-workbench-executing-model-variable-view-section]]
+==== Variable View
+This view is available on the Debug perspective.
+When an execution is paused, this view presents the current ((Runtime Data)) as an EMF based tree.
