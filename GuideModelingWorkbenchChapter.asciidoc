@@ -7,7 +7,7 @@ The GEMOC Modeling Workbench, intended to be used by domain designers: it allows
 
 [[figure-glw-screenshot-of-modeling_workbench]]
 .Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation).
-image::images/gemoc_modeling_workbench_TFSM_screenshot.png[Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation)]
+image::images/gemoc_modeling_workbench_TFSM_animation_screenshot.png[Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation)]
 (((TFSM)))
 (((TFSM,Modeling workbench)))
 
