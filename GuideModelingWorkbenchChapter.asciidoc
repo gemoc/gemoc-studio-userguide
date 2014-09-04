@@ -20,10 +20,10 @@ image::images/gemoc_modeling_workbench_TFSM_screenshot.png[Screenshot of GEMOC S
 
 Description of the Gemoc launch configuration in Run and Debug mode.
 
-=== Engine view
+==== Engine view
 
-=== Logical step view
+==== Logical step view
 
-=== Event manager view
+==== Event manager view
 
-=== Animation view
+==== Animation view
