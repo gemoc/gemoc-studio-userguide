@@ -10,6 +10,7 @@ The Gemoc launch configuration offers both a Run and a Debug mode.
 - ((Decider)) : this field allows to select the solver strategy used by the engine when several ((Logical Step))s can be triggered. Possible choice are : 
 ** Solver proposition : the solver internal stategy will be used to selecton Logical Step
 ** Random : will randomly select one of the available Logical Step (warning: execution cannot be reproduced when using this Decider)
+** Ask user : (available only in Debug mode), this option will use the <<modeling-workbench-executing-model-logical-step-view-section,Logical Step View>> or the <<modeling-workbench-executing-model-timeline-view-section,Timeline View>> to present the available Logical Steps and pause. The user will then need to click on one of the Logical Step to continue.
 
 More Deciders will be developped (for example for playing predefined scenario).
 
@@ -40,10 +41,15 @@ Back ends and front ends offer additionnal view that can respectivly display inf
 
 These backends and front ends usually open dedicated views. These views are always opened in all modes (Run or Debug).
 
-==== Engine view
+==== Engine View
 
-==== Logical step view
+[[modeling-workbench-executing-model-logical-step-view-section]]
+==== Logical Step View
 
-==== Event manager view
+[[modeling-workbench-executing-model-timeline-view-section]]
+==== Timeline View
 
-==== Animation view
+
+==== Event Manager View
+
+==== Animation View
