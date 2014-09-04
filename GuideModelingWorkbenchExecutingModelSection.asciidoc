@@ -1,1 +1,13 @@
+[[modeling-workbench-executing-model-section]]
 === Executing model
+==== Launch configuration
+
+Description of the Gemoc launch configuration in Run and Debug mode.
+
+==== Engine view
+
+==== Logical step view
+
+==== Event manager view
+
+==== Animation view
