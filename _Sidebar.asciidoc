@@ -2,8 +2,8 @@
 - link:Guide[Guide Master]
 - link:GuideLanguageWorkbenchChapter[Language Workbench Chapter]
 - link:GuideModelingWorkbenchChapter[Modeling Workbench Chapter]
-** link:GuideModelingWorkbenchEditingModelSection[Editing Model Section]
-** link:GuideModelingWorkbenchExecutingModelSection[Executing Model Section]
+- link:GuideModelingWorkbenchEditingModelSection[Editing Model Section]
+- link:GuideModelingWorkbenchExecutingModelSection[Executing Model Section]
 - link:GuideBibliography.asciidoc[Bibliography]
 - link:GuideGlossary.asciidoc[Glossary]
 
