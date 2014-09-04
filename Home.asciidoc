@@ -10,6 +10,6 @@ Instructions to build the documentation if the CI is down:
 3. run the pom.xml with maven.
 4. clone the gh-pages branch from repository https://github.com/gemoc/gemoc-studio.git in let's folder documentation.
 5. copy folder wiki/target/docbook/publish/en-US into folder documentation.
-6. dans le repository documentation execute:
+6. in the repository documentation execute:
 git commit -am "Updated site" 
 git push
