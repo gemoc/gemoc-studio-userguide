@@ -13,8 +13,6 @@ image::images/gemoc_modeling_workbench_TFSM_screenshot.png[Screenshot of GEMOC S
 
 '''
 
-
-=== Editing model
-
+include::GuideModelingWorkbenchEditingModelSection.asciidoc[]
 
 include::GuideModelingWorkbenchExecutingModelSection.asciidoc[]
