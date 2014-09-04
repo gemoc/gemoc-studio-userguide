@@ -19,8 +19,8 @@ More Deciders will be developped (for example for playing predefined scenario).
 In run mode, it offers the faster way to run the model.
 It cannot be paused. However, you can stop it.
 It offers a limited set of views:
-- the <<modeling-workbench-executing-model-engine-view-section,((Engine View))>> allows to stop a running model.
-- the <<modeling-workbench-executing-model-timeline-view-section,((Timeline view))>> is displayed at the end of the execution in order to control the resulting execution trace.
+* the <<modeling-workbench-executing-model-engine-view-section,((Engine View))>> allows to stop a running model.
+* the <<modeling-workbench-executing-model-timeline-view-section,((Timeline view))>> is displayed at the end of the execution in order to control the resulting execution trace.
 
 If more feed back are required, please use one of the front end or back end available for the xDSML. 
 
