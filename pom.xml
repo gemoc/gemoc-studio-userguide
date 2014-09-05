@@ -129,6 +129,12 @@
                             <stylesheetResource>file:xslt/pdf.xsl</stylesheetResource>
                             <finalName>${project.artifactId}.pdf</finalName>
                         </format>
+                        <format>
+                            <formatName>eclipse</formatName>
+                            <!-- classpath:/xslt/org/jboss/seam/eclipse.xsl -->
+                            <stylesheetResource>file:xslt/eclipse.xsl</stylesheetResource>
+                            <finalName>index.html</finalName>
+                        </format>
                     </formats>
                     <options>
                         <autoDetectFonts>true</autoDetectFonts>
