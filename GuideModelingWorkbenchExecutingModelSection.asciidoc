@@ -48,12 +48,15 @@ These backends and front ends usually open dedicated views. These views are alwa
 
 [[modeling-workbench-executing-model-engine-view-section]]
 ==== Engine View
+image:images/workbench/modeling/engine_view.png[Engine View]
 
 [[modeling-workbench-executing-model-logical-step-view-section]]
 ==== Logical Step View
+image:images/workbench/modeling/logical_steps.png[Logical Steps]
 
 [[modeling-workbench-executing-model-timeline-view-section]]
 ==== Timeline View
+image:images/workbench/modeling/timeline.png[Timeline]
 
 [[modeling-workbench-executing-model-event-manager-view-section]]
 ==== Event Manager View
