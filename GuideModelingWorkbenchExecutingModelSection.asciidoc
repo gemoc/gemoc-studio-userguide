@@ -57,7 +57,15 @@ The engine view displays a list of execution engine and their statuses:
 image:images/workbench/modeling/engine_view.png[Engine View]
 
 [[modeling-workbench-executing-model-logical-step-view-section]]
-==== Logical Step View
+
+==== Logical Steps View
+The logical steps view displays the list of possible future execution. This list is provided by the solver. This view is organized around a tree. For each logical step, its underlying events can be seen and possibly for each event the associated operation is visible. 
+
+[NOTE]
+====
+This view displays nothing when execution runs in "run mode", per say this view is only of use when running in "debug mode".
+====
+
 image:images/workbench/modeling/logical_steps.png[Logical Steps]
 
 [[modeling-workbench-executing-model-timeline-view-section]]
