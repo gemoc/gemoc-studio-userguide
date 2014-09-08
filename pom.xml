@@ -100,7 +100,7 @@
                     <imageResource>
                         <directory>${basedir}</directory>
                         <includes>
-                            <include>images/*</include>
+                            <include>images/**</include>
                         </includes>
                     </imageResource>
 
