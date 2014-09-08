@@ -85,10 +85,10 @@ The possible future logical steps are shown under the condition that the model i
 
 image:images/workbench/modeling/timeline.png[Timeline]
 
-In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the green logical steps. It does two things:
+In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the blue logical steps. It does two things:
 
 . it resets the solver's state to the selected execution step,
-.. and it resets the model's state to the selected execution step.
+. and it resets the model's state to the selected execution step.
 
 [[modeling-workbench-executing-model-event-manager-view-section]]
 ==== Event Manager View
