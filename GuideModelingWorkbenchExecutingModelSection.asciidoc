@@ -49,9 +49,11 @@ These backends and front ends usually open dedicated views. These views are alwa
 [[modeling-workbench-executing-model-engine-view-section]]
 ==== Engine View
 The engine view displays a list of execution engine and their statuses:
+
 * its number of execution steps, 
 * its current running status,
 * and its logical steps deciding strategy.
+
 image:images/workbench/modeling/engine_view.png[Engine View]
 
 [[modeling-workbench-executing-model-logical-step-view-section]]
