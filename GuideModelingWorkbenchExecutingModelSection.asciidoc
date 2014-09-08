@@ -70,6 +70,13 @@ image:images/workbench/modeling/logical_steps.png[Logical Steps]
 
 [[modeling-workbench-executing-model-timeline-view-section]]
 ==== Timeline View
+
+This view displays:
+
+* the different logical steps proposed by the solver in the past in blue color,
+* the selected logical steps at each execution step in green color,
+* and the possible future logical steps in yellow color.
+
 image:images/workbench/modeling/timeline.png[Timeline]
 
 [[modeling-workbench-executing-model-event-manager-view-section]]
