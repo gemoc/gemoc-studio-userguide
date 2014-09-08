@@ -71,13 +71,24 @@ image:images/workbench/modeling/logical_steps.png[Logical Steps]
 [[modeling-workbench-executing-model-timeline-view-section]]
 ==== Timeline View
 
-This view displays:
+This view represents the line of the model's execution. It displays:
 
 * the different logical steps proposed by the solver in the past in blue color,
 * the selected logical steps at each execution step in green color,
-* and the possible future logical steps in yellow color.
+* and the possible future logical steps in yellow color,
+* the model specific events for each logical step.
+
+[NOTE]
+====
+The possible future logical steps are shown under the condition that the model is executing.
+====
 
 image:images/workbench/modeling/timeline.png[Timeline]
+
+In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the green logical steps. It does two things:
+
+. it resets the solver's state to the selected execution step,
+.. and it resets the model's state to the selected execution step.
 
 [[modeling-workbench-executing-model-event-manager-view-section]]
 ==== Event Manager View
