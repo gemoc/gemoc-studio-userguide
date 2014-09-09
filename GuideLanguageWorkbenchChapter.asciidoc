@@ -61,7 +61,7 @@ From eclipse menu:
 [TIP]
 There are several other ways to create valid EMF projects. Amung them we can consider: _File > New > Projects... > EMF Project_, _File > New > Projects... > Empty EMF Project_,  _File > New > Projects... > xText Project_ ... However, this isn't in the scope of this document to detail them or explain how to correctly configure them for being used by Gemoc.
 
-Then associate the EMF project to the xDSML. The association is done either with right l 
+Then associate the EMF project to the xDSML. The association is done either with right click on the xDSML project, _Gemoc Language_ > _create Domain Model project_ > Select existing EMF project; or via the Gemo Guideline view.
 
 
 [[section-define-AS-project-method-3]]
