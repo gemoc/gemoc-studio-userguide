@@ -39,6 +39,7 @@ The EMF project can be created manually and then associated to the xDSML or dire
 ==== Method 1 : Creation via xDSML popup
 
 To create the EMF project:
+
 * right click on the xDSML project
 * navigate in the _Gemoc Language_ entry.
 * click on _create Domain Model project_
@@ -53,6 +54,7 @@ In future version of the studio, this method may disapear and be replaced by <<s
 ==== Method 2 : Manual creation and association to the xDSML
 
 From eclipse menu:
+
 * _File > New > Projects... > Ecore Modeling Project_
 * in the Ecore diagram, define the concepts for your language as a class diagram.
 
