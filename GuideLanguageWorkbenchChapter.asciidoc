@@ -105,7 +105,7 @@ Editors explictly supported are: EMF tree editor, xText editor, Sirius editor.
 
 ==== Defining a concrete syntax with ((Sirius))
 
-=== Defing Model of Concurrency (MoC)
+=== Defining a Model of Concurrency (MoC)
 
 === Defining Domain Specific Events (DSE)
 
