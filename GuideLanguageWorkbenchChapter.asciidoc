@@ -12,7 +12,7 @@ image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of GEMOC S
 (((TFSM,Language workbench)))
 
 '''
-
+[[section-gemoc-language-project]]
 === Gemoc Language project
 
 In the menu go to: File> New> Projects...> Gemoc Language project
@@ -26,11 +26,46 @@ The xDSML file isn't supposed to be edited manually. The pop up menu on the proj
 
 From these information, the project will generate additional code that will be used by the execution engine when the language will be deployed and used by the <<chapter-gemoc-modeling-workbench>>.   
 
+[[section-define-AS-project]]
 === Defining Abstract Syntax (or domain concepts)
 
-Defining the abstract syntax (AS) in the Language Workbench is done thanks to an EMF Ecore project.
+Defining the abstract syntax (AS) in the Language Workbench is done thanks to an EMF Ecore project that will be associated to the xDSML definition.
 
 All ecore editors can be used to edit the concepts in the ecore file.
+
+The EMF project can be created manually and then associated to the xDSML or directly created for the specific use of a given xDSML.
+
+[[section-define-AS-project-method-1]]
+==== Method 1 : Creation via xDSML popup
+
+To create the EMF project:
+* right click on the xDSML project
+* navigate in the _Gemoc Language_ entry.
+* click on _create Domain Model project_
+
+This will open a wizard asking either to create a new EMF project or select an existing one (usefull for <<section-define-AS-project-method-2, method 2>>).
+Creating a new EMF project will ask for some 
+
+[NOTE]
+In future version of the studio, this method may disapear and be replaced by <<section-define-AS-project-method-3, method 3>>.
+
+[[section-define-AS-project-method-2]]
+==== Method 2 : Manual creation and association to the xDSML
+
+From eclipse menu:
+* _File > New > Projects... > Ecore Modeling Project_
+* in the Ecore diagram, define the concepts for your language as a class diagram.
+
+[TIP]
+There are several other ways to create valid EMF projects. Amung them we can consider: _File > New > Projects... > EMF Project_, _File > New > Projects... > Empty EMF Project_,  _File > New > Projects... > xText Project_ ... However, this isn't in the scope of this document to detail them or explain how to correctly configure them for being used by Gemoc.
+
+Then associate the EMF project to the xDSML. The association is done either with right l 
+
+
+[[section-define-AS-project-method-3]]
+==== Method 3 : Creation or selection via Gemoc Guideline view
+
+The Gemoc Guideline view offers an integrated vision of the most important steps of the xDSML creation process. When selecting the _Define Domain Model_ task, a button allows to launch the wizards of <<section-define-AS-project-method-1, method 1>>.
 
 TODO new project wizard (via popup, via process)
 TODO select existing project
