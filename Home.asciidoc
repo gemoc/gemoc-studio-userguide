@@ -5,7 +5,7 @@ Editing wiki pages will trigger a job in the CI that will build the documentatio
 
 Instructions to build the documentation if the CI is down:
 
-1. clone the maser branch from https://github.com/gemoc/gemoc-studio.wiki.git in let's say folder wiki.
+1. clone the master branch from https://github.com/gemoc/gemoc-studio.wiki.git in let's say folder wiki.
 2. open Eclipse and import the project located in the wiki folder.
 3. run the pom.xml with maven.
 4. clone the gh-pages branch from repository https://github.com/gemoc/gemoc-studio.git in let's folder documentation.
