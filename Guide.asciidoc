@@ -23,7 +23,7 @@ The GEMOC Studio offers 2 main usages:
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
 ////////////////////////////////////////////////////////////////
-Inclusion of the chapters, please opent the corresponding files
+Inclusion of the chapters, please open the corresponding files
 ////////////////////////////////////////////////////////////////
 
 include::GuideLanguageWorkbenchChapter.asciidoc[]
