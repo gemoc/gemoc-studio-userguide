@@ -3,7 +3,7 @@ Welcome to the GEMOC Studio Documentation wiki!
 
 This wiki offers a convinient way to quickly *_edit_* the GEMOC documentation.
 
-If you are looking for the online version of GEMOC documentation please go on this page : http://gemoc.github.io/gemoc-studio/[http://gemoc.github.io/gemoc-studio/]
+*If you are looking for the online version of GEMOC documentation please go on this page: http://gemoc.github.io/gemoc-studio/[http://gemoc.github.io/gemoc-studio/]*
 
 === How it works
 There are two ways to contribute to the GEMOC documentation.
