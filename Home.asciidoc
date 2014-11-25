@@ -26,7 +26,8 @@ We hope the online editor from github will soon provide the image upload functio
 
 1. clone the master branch from https://github.com/gemoc/gemoc-studio.wiki.git in let's say folder wiki.
 2. open Eclipse and import the project located in the wiki folder.
-3. run the pom.xml with maven.
+3. edit the asciidoc (for better productivity use http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/)
+4. run the pom.xml with maven.
 ----
 mvn install
 ----
