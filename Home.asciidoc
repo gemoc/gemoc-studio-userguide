@@ -24,7 +24,7 @@ This is also the way to manually build the documentation if the CI is down.
 
 That is the best way today to add images to the repository and upload them to the wiki.
 
-In this mode, you retreive the file locally and can work offline. You can also edit the asciidoc files with an advanced editor, like the ones proposed in http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/, we've successfully used http://brackets.io/[brackets] that offer a good preview and syntax highlighter.
+In this mode, you retreive the file locally and can work offline.
 
 1. clone the master branch from https://github.com/gemoc/gemoc-studio.wiki.git in let's say folder wiki.
 2. open Eclipse and import the project located in the wiki folder.
