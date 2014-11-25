@@ -1,7 +1,15 @@
+
 Will be soon available...
 
 NOTE: Hold your breath...
 
 TIP: Updated from git commit...
 
-Le link:html/GuideTutorialAutomata.pdf[tutoriel en PDF]
+== Process Overview
+
+[[GEMOC-process-overview]]
+.Overview of the GEMOC process
+image::images/xDSML-definition-process-overview.png[Overview of the GEMOC process]
+(((GEMOC,process,overview)))
+
+

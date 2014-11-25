@@ -31,6 +31,8 @@ include::GuideLanguageWorkbenchChapter.asciidoc[]
 
 include::GuideModelingWorkbenchChapter.asciidoc[]
 
+include::GuideTutorialAutomata.asciidoc[]
+
 :numbered!:
 
 ////////////////////////////////////////////////////////////////
