@@ -12,9 +12,9 @@ There are two ways to contribute to the GEMOC documentation.
 This is the easiest way to edit and and have a rough idea of the documentation content.
 *_However it is not possible to upload images._*
 
-Editing wiki pages will trigger a job in the CI that will build the documentation and publish it link:https://github.com/gemoc/gemoc-studio/tree/gh-pages[here] and is visible link:http://gemoc.github.io/gemoc-studio/[there].
+Editing wiki pages will trigger a job in the CI that will build the documentation and publish it as github pages link:https://github.com/gemoc/gemoc-studio/tree/gh-pages[here] and the result is visible link:http://gemoc.github.io/gemoc-studio/[there].
 
-*Important* : the github wiki rendering may not create the correct navigation links, the wiki must be considered as a preview. Please remember that the real documentation is there :
+*Important* : currently the github wiki rendering may not create the correct navigation links (for example the includes) , the wiki must be considered as a preview. Please remember that the real documentation is there :
 http://gemoc.github.io/gemoc-studio/
 
 ==== Edit locally on your machine
