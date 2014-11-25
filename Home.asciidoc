@@ -12,6 +12,8 @@ There are two ways to contribute to the GEMOC documentation.
 This is the easiest way to edit and and have a rough idea of the documentation content.
 *_However it is not possible to upload images._*
 
+We hope the online editor from github will soon provide the image upload function like in the markdown editor.
+
 Editing wiki pages will trigger a job in the CI that will build the documentation and publish it as github pages link:https://github.com/gemoc/gemoc-studio/tree/gh-pages[here] and the result is visible link:http://gemoc.github.io/gemoc-studio/[there].
 
 *Important* : currently the github wiki rendering may not create the correct navigation links (for example the includes) , _the wiki must be considered as a preview_. Please remember that the real documentation is there :
@@ -22,7 +24,7 @@ This is also the way to manually build the documentation if the CI is down.
 
 That is the best way today to add images to the repository and upload them to the wiki.
 
-We hope the online editor from github will soon provide the image upload function like in the markdown editor.
+In this mode, you retreive the file locally and can work offline. You can also edit the asciidoc files with an advanced editor, like the ones proposed in http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/, we've successfully used http://brackets.io/[brackets] that offer a good preview and syntax highlighter.
 
 1. clone the master branch from https://github.com/gemoc/gemoc-studio.wiki.git in let's say folder wiki.
 2. open Eclipse and import the project located in the wiki folder.
