@@ -1,16 +1,28 @@
+
 Welcome to the GEMOC Studio Documentation wiki! 
 
 This wiki offers a convinient way to quickly *_edit_* the GEMOC documentation.
 
 If you are looking for the online version of GEMOC documentation please go on this page : http://gemoc.github.io/gemoc-studio/[http://gemoc.github.io/gemoc-studio/]
 
+=== How it works
+There are two ways to contribute to the GEMOC documentation.
 
-Editing wiki pages will trigger a job in the CI that will build the documentation and publish it link:https://github.com/gemoc/gemoc-studio/tree/gh-pages[here] and the visible link:http://gemoc.github.io/gemoc-studio/[there].
+==== Edit online using the github editor
+This is the easiest way to edit and and have a rough idea of the documentation content.
+*_However it is not possible to upload images._*
 
-*Important* : the githug wiki rendering may not create the correct navigation links. Please remember that the real documentation is there :
+Editing wiki pages will trigger a job in the CI that will build the documentation and publish it link:https://github.com/gemoc/gemoc-studio/tree/gh-pages[here] and is visible link:http://gemoc.github.io/gemoc-studio/[there].
+
+*Important* : the github wiki rendering may not create the correct navigation links, the wiki must be considered as a preview. Please remember that the real documentation is there :
 http://gemoc.github.io/gemoc-studio/
 
-Instructions to build the documentation if the CI is down:
+==== Edit locally on your machine
+This is also the way to manually build the documentation if the CI is down.
+
+That is the best way today to add images to the repository and upload them to the wiki.
+
+We hope the online editor from github will soon provide the image upload function like in the markdown editor.
 
 1. clone the master branch from https://github.com/gemoc/gemoc-studio.wiki.git in let's say folder wiki.
 2. open Eclipse and import the project located in the wiki folder.
