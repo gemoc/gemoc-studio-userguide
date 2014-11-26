@@ -14,7 +14,6 @@ TBD
 [preface]
 == Introduction
 
-
 The GEMOC Studio offers 2 main usages:
 
 * Building and composing new executable DSML. This mode is intended to be used by language designers (aka domain experts).
