@@ -3,7 +3,7 @@ all: html
 
 html: GuideTutorialAutomata.html
 
-GuideTutorialAutomata.html: t-images t-icons asciidoc.conf t-tools/plantuml.jar
+GuideTutorialAutomata.html: t-images images/icons asciidoc.conf t-tools/plantuml.jar
 
 %.html: %.asciidoc
 	(cd t-images && make)

@@ -269,7 +269,7 @@ image::t-images/automate-ccomm.png[Automata which C commentary]
 
 == Creating an xDSML Project
 
-[icon="t-icons/IconeGemocStudio_48x48x32.png"]
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
 NOTE: TODO: Put the GEMOC Logo for paragraphs which describe GEMOC Studio commands.
 
 [GEMOC]
