@@ -288,7 +288,7 @@ dependency if it is not present:
 dependencies, then __Add...__, the type in "k3" and select the right
 plugin).
 
-TODO: Vérifier si ce n'est pas fait lors de la création du projet K3
+TODO: Verifier si ce n'est pas fait lors de la creation du projet K3
 par le Wizard.
 
 
@@ -718,8 +718,8 @@ Workbench :
   org.gemoc.gemoc_modeling_workbench.ui,
   org.gemoc.gemoc_language_workbench.extensions.k3
 * Make sure a .qvto has been generated in the your DSE Project /qvto-gen/modeling.
-* TODO: Supprimer les import sur les aspects non utilisés
-* Dans project.xdsml, vérifier que le QVT-o référencé est celui du
+* TODO: Supprimer les import sur les aspects non utilises
+* Dans project.xdsml, verifier que le QVT-o reference est celui du
 dossier qvto-gen/modeling du projet DSE.
 * TODO
 
@@ -1085,7 +1085,7 @@ end-user is interested in, etc.
 DSE.   We must explain in the mapping DSE/MoCC that at this moment, each DSE
 generates on MOCCEvent.
 * rename xDSML.model to xDSML.as?
-* Expliquer les automates en partant des exemples, pour éviter la
+* Expliquer les automates en partant des exemples, pour eviter la
  redondance avec l'explication du MM et plus logique dans l'optique de
  du system engineer.
 * Process: ensure a better conformance of the text with the process
@@ -1107,7 +1107,7 @@ class AutomataAspect { }, one for the ED, one the EF?
 
 Forme du tutoriel :
 
-* Comment définir l'équivalent de --atribute tabsize=4 dans le
+* Comment definir l'equivalent de --atribute tabsize=4 dans le
 .asciidoc directement ?
 
 
