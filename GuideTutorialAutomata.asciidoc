@@ -1107,6 +1107,7 @@ class AutomataAspect { }, one for the ED, one the EF?
 
 Forme du tutoriel :
 
+* Définir un nouveau type de block GEMOC avec le Logo GEMOC.
 * Comment definir l'equivalent de --atribute tabsize=4 dans le
 .asciidoc directement ?
 
