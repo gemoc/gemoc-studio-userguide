@@ -4,6 +4,7 @@
 - link:GuideModelingWorkbenchChapter[Modeling Workbench Chapter]
 - link:GuideModelingWorkbenchEditingModelSection[Editing Model Section]
 - link:GuideModelingWorkbenchExecutingModelSection[Executing Model Section]
+- link:GuideTutorialAutomata.asciidoc[Turorial]
 - link:GuideBibliography.asciidoc[Bibliography]
 - link:GuideGlossary.asciidoc[Glossary]
 
