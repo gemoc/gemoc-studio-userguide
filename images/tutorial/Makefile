@@ -12,7 +12,7 @@ GENERES =	\
 	# ${PDFFILES}	\
 
 ifndef TOOLSDIR
-TOOLSDIR = ../t-tools
+TOOLSDIR = ../../tools
 endif
 
 all: ${GENERES}

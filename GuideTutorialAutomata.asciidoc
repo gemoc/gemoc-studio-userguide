@@ -77,7 +77,7 @@ requirements are fulfilled.
 
 [[GEMOC-process-overview]]
 .Overview of the GEMOC process
-image::t-images/xDSML-definition-process-overview.png[Overview of the GEMOC process]
+image::images/tutorial/xDSML-definition-process-overview.png[Overview of the GEMOC process]
 (((GEMOC,process,overview)))
 
 NOTE: For clarity, the iteration to choose the next increment is not
@@ -144,7 +144,7 @@ domain (and could be considered as a kind of compound activity).
 
 [[GEMOC-process]]
 .Recommended GEMOC Process
-image::t-images/xDSML-definition-process-general.png[Recommended GEMOC Process]
+image::images/tutorial/xDSML-definition-process-general.png[Recommended GEMOC Process]
 (((GEMOC,process)))
 
 WARNING: This process is the recommanded one, and the one used in this
@@ -207,7 +207,7 @@ An arrow without input state points to the initial state.
 
 [[automata-aSbaS]]
 .Automata which reads a*ba*
-image::t-images/automate-aSbaS.png[Automata which reads a*ba*]
+image::images/tutorial/automate-aSbaS.png[Automata which reads a*ba*]
 
 TODO: When.
 An automaton is deterministic is there is no two transitions labelled
@@ -239,7 +239,7 @@ Here are some examples of automata.
 
 [[automata-abcdS]]
 .Automata which reads (ABCD)*
-image::t-images/automate-abcd-star.png[Automata which reads (ABCD)*]
+image::images/tutorial/automate-abcd-star.png[Automata which reads (ABCD)*]
 
 Examples of accepted words: (empty word), ABCD,
 ABCDABCD, etc.
@@ -253,7 +253,7 @@ TODO: Give some scenarios.
 
 [[automata-mots]]
 .Automata which reads words
-image::t-images/automate-mots.png[Automata which reads words]
+image::images/tutorial/automate-mots.png[Automata which reads words]
 
 The only accepted words are: IL, ILE, ILES, ILS, ILOT, ILOTS
 
@@ -264,7 +264,7 @@ TODO: Several transitions with the same symbol.
 
 [[automata-ccomm]]
 .Automata which reads C commentary
-image::t-images/automate-ccomm.png[Automata which C commentary]
+image::images/tutorial/automate-ccomm.png[Automata which C commentary]
 
 
 == Creating an xDSML Project
@@ -321,7 +321,7 @@ editor or with the tree editor.
 
 [[fig/automata/class diagram]]
 .Automata Metamodel
-image::t-images/automata-as.png[Automata Metamodel]
+image::images/tutorial/automata-as.png[Automata Metamodel]
 
 An Automaton is a composed of States (at least one), Transitions and
 Symbols.  A Transition must have a source and a target, both of type
