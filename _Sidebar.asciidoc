@@ -10,4 +10,4 @@
 
 .Related
 - link:GuideREADME[README]
-- link:Home[README]
+- link:Home[Home]
