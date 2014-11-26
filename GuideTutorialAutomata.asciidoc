@@ -235,7 +235,7 @@ is rejected.
 
 Here are some examples of automata.
 
-1. Simple Automata 
+. Simple Automata
 
 [[automata-abcdS]]
 .Automata which reads (ABCD)*
@@ -249,7 +249,7 @@ Examples of rejected words: ABC, ABCDA, D, etc.
 
 TODO: Give some scenarios.
 
-2. Dictionary Automata
+.. Dictionary Automata
 
 [[automata-mots]]
 .Automata which reads words
@@ -258,7 +258,7 @@ image::t-images/automate-mots.png[Automata which reads words]
 The only accepted words are: IL, ILE, ILES, ILS, ILOT, ILOTS
 
 
-3. Nondeterministic automata
+... Nondeterministic automata
 
 TODO: Several transitions with the same symbol.
 
@@ -272,8 +272,7 @@ image::t-images/automate-ccomm.png[Automata which C commentary]
 [icon="images/icons/IconeGemocStudio_48x48x32.png"]
 NOTE: TODO: Put the GEMOC Logo for paragraphs which describe GEMOC Studio commands.
 
-[GEMOC]
-======================================================================
+==========================
 First, start by creating a new xDSML project (__New > Project > GEMOC
 Project / new xDSML Project__), with your desired name (for instance
 "com.example.automata").  In the created project, we can open the
@@ -281,7 +280,7 @@ project.xdsml file. The xDSML view summarizes all the important
 resources used in an xDSML project (which are part of and managed by
 other projects).  This view is a kind of dashboard or control center to
 have quick access to any important resource of the project.
-======================================================================
+==========================
 
 NOTE: In the MANIFEST.MF (in folder META-INF), add the following
 dependency if it is not present:
@@ -306,8 +305,7 @@ other models and xDSML (AS, DSE, EF and ED).
 
 === Define the Abstract Syntax (AS)
 
-[GEMOC]
-======================================================================
+==========================
 To define the AS we can either select an existing project (Browse
 button) or create a new one.  To create a new one, we click on "EMF
 project" on the xDSML view of project.xdsml.
@@ -315,7 +313,7 @@ Let us call it "org.example.automata.model".
 Let us call our package "automata". We will use the default ns URI and ns
 Prefix. We may then edit the Ecore MetaModel either with the graphical
 editor or with the tree editor.
-======================================================================
+==========================
 
 
 
@@ -334,8 +332,7 @@ States know their outgoing and incoming Transitions.  Automatas,
 States, Transitions and Symbols all have a name (factorized in the
 NamedElement metaclass).
 
-[GEMOC]
-======================================================================
+==========================
 Once the Ecore MetaModel is done, we can come back to the xDSML view.
 The "EMF project" and the  "Genmodel URI" have been updated. 
 
@@ -349,7 +346,7 @@ the Genmodel (right-click on root element). The packages "automata",
 "automata.impl" and "automata.util" as well as the plug-ins
 "com.example.automata.model.edit" and
 "com.example.automata.model.editor" are generated.
-======================================================================
+==========================
 
 === Define concrete syntaxes (CS)
 
@@ -386,8 +383,7 @@ TODO: Other DSE may be of interrest, for example firing a transition,
 rejecting a symbol, etc which would be output events (the previous
 ones being input events).
 
-[GEMOC]
-======================================================================
+==========================
 At this moment, DSE are defined in an ECL (Event Constraint Language) file.
 In the xDSML view, click on __ECL Project__ to create a DSE Project.
 Let us name it "com.example.automata.dse" (it is the proposed name).
@@ -407,11 +403,10 @@ Automata".
 
 TODO: Could it be automatically initialized (from the Root container
 model element)?
-======================================================================
+==========================
 
 
-[GEMOC]
-======================================================================
+==========================
 For now, we will complete the ECL file with the following elements:
 
 * **Metamodel import:** (already initialized) Domain-Specific Events
@@ -438,7 +433,7 @@ package automata
 		def: mocc_occur : Event = self.occur()
 endpackage
 ----
-======================================================================
+==========================
 
 TODO: Can we define DSE without mapping them to DSA?
 
@@ -470,8 +465,7 @@ DSA includes the definition of Execution Data (ED) and Execution
 Functions (EF).  They are both implemented in Kermeta 3 in K3 Aspect
 project whose lastname is, by convention, 'k3dsa'.
 
-[GEMOC]
-======================================================================
+==========================
 Click on __K3 project__ in the xDSML view (Behavioral definition / DSA
 definition).  The wizard to create of new Kermeta 3 project is
 launched with the name of the project initialized (k3dsa is the last
@@ -486,7 +480,7 @@ We can now finish the wizard.
 Clicking again on _K3 project_ will now allow to choose and open
 automata.xtend.  It has been initialized with a template that can be
 discarded.
-======================================================================
+==========================
 
 We can now complete the Kermeta 3 file (automata.xtend) with the
 definition of ED and EF.
@@ -505,8 +499,7 @@ State.  When in the error state, the automate rejects every symbols.
 
 
 
-[GEMOC]
-======================================================================
+==========================
 To add the reference 'currentState', we define it in an Aspect on the
 Automata class as follow.
 ----
@@ -515,7 +508,7 @@ class AutomataAspect {
 	public State currentState;
 }
 ----
-======================================================================
+==========================
 
 WARNING: If you plan to use the Graphical animation, then comment the
 code above and add this reference to the Ecore Metamodel directly.
@@ -552,8 +545,7 @@ outgoing transitions of this state that accept the s symbol.
 
 
 
-[GEMOC]
-======================================================================
+==========================
 Complete the file 'automata.xtend' with the following code:
 ----
 @Aspect(className=Automata)
@@ -631,7 +623,7 @@ TODO: Add a test to validate the DSA part !
 * ask the EF as if they were called by the MoCC
 * check the results (current state, accepted or rejected)
 
-======================================================================
+==========================
 
 
 === Model of Concurrency and Communication (MoCC)
@@ -734,8 +726,7 @@ dossier qvto-gen/modeling du projet DSE.
 
 ==== Testing and debugging the xDSML
 
-[GEMOC]
-================================================================================
+==========================
 Launch the Modeling Workbench. Create a new general project, for
 instance "com.example.automata.instances". In this project, create a
 new Automate instance (New > Other... > Automata Model)
@@ -746,7 +737,7 @@ As... > Run Configurations". Create a new "Gemoc eXecutable Model"
 configuration. Model to execute:
 "/com.example.automata.instances/ABCD.automata", xDSML: "automata".
 Change the "Decider" to "Step by step user decider".
-================================================================================
+==========================
 
 WARNING: In "Animator" place any valid .aird. This issue should be solved in the next iteration of the Studio.
 In the panel "Common", select "Shared file" and put the project path there: "/com.example.automata.instances". Give a name to the configuration like "Automata ABCD".
