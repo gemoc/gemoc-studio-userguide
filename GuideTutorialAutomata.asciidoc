@@ -230,26 +230,54 @@ A work is accepted if all its symbols have been accepted and the last
 current state of the automaton is an accept state.  Otherwise the work
 is rejected.
 
+=== Scenarios
+
+The scenarios related to automata shared the same structure as they
+all consist in checking whether a work is accepted or rejected by an
+automaton. It thus consists in feeding the automaton with letters
+(symbols) of the work (from the first to the last one) and then to
+indicate that the end of the work has been reached.
+
+If we consider the word `aba`, the input scenario is :
+
+1. Feed symbol `a'
+1. Feed symbol `b'
+1. Feed symbol `a'
+1. Terminate
+
+The automaton will then answers. The response can be 'accepted' or
+'refused'
+
+
 === Examples of models
 
+We give here some examples of automaton with the language they model
+and some examples of accepted and rejected words.
 
-Here are some examples of automata.
+Deterministic automata::  We first consider some simple example of
+automata for which there is only one outgoing transition for a
+state.
 
-. Simple Automata
+
 
 [[automata-abcdS]]
 .Automata which reads (ABCD)*
 image::images/tutorial/automate-abcd-star.png[Automata which reads (ABCD)*]
 
-Examples of accepted words: (empty word), ABCD,
+* Examples of accepted words: (empty word), ABCD,
 ABCDABCD, etc.
+* Examples of rejected words: ABC, ABCDA, D, etc.
 
-Examples of rejected words: ABC, ABCDA, D, etc.
+
+TODO: Other examples :
+
+- only one state
+- several states and only one final state
+- several outgoings transition for one state
+- several final states.
 
 
-TODO: Give some scenarios.
-
-.. Dictionary Automata
+Dictionary Automata:
 
 [[automata-mots]]
 .Automata which reads words
@@ -258,13 +286,22 @@ image::images/tutorial/automate-mots.png[Automata which reads words]
 The only accepted words are: IL, ILE, ILES, ILS, ILOT, ILOTS
 
 
-... Nondeterministic automata
+Nondeterministic automata::
 
 TODO: Several transitions with the same symbol.
+
+TODO: A transition with no associated symbol (automatic transition?)
 
 [[automata-ccomm]]
 .Automata which reads C commentary
 image::images/tutorial/automate-ccomm.png[Automata which C commentary]
+
+
+Pushdown automata::
+
+For example to check that open and close symbols are well suited.
+
+
 
 
 == Creating an xDSML Project
