@@ -51,6 +51,8 @@
 
     <build>
         <plugins>
+        
+            <!-- Generate a docbook xml file from the asciidoc files -->
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -73,6 +75,38 @@
                     <doctype>book</doctype>
                 </configuration>
             </plugin>
+            <!-- generate the images from plantUMl -->
+            <!-- <plugin>
+		      <groupId>com.github.jeluard</groupId>
+		      <artifactId>plantuml-maven-plugin</artifactId>
+		      <version>7941</version>
+		      <executions>
+                    <execution>
+                        <id>output-plantuml</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+              </executions>
+		      <configuration>
+		       <outputDirectory>${basedir}/target/plantuml</outputDirectory>
+		        <sourceFiles>
+		          <directory>${basedir}</directory>
+		          <includes>
+		            <include>t-images/*.plantuml</include>
+		          </includes>
+		        </sourceFiles>
+		      </configuration>
+		      <dependencies>
+		        <dependency>
+		          <groupId>net.sourceforge.plantuml</groupId>
+		          <artifactId>plantuml</artifactId>
+		          <version>7976</version>
+		        </dependency>
+		      </dependencies>
+		    </plugin>  -->
+            <!-- Process the docbook files to produce the html, the eclipse help and the pdf -->
             <plugin>
                 <groupId>org.jboss.maven.plugins</groupId>
                 <artifactId>maven-jdocbook-plugin</artifactId>
@@ -101,6 +135,7 @@
                         <directory>${basedir}</directory>
                         <includes>
                             <include>images/**</include>
+                            <include>target/plantuml/**</include>
                         </includes>
                     </imageResource>
 

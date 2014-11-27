@@ -7,6 +7,7 @@ GEMOC Team
 :Author Initials: XC
 :website: http:__gemoc.org
 
+
 // name="../../../..//home/svn/SVN/gemoc/trunk/deliverables/WP1/D1.2.1/icons/IconeGemocStudio_48x48x32"
 
 WARNING: This tutorial is a work in progress and is not yet finished.
@@ -240,10 +241,10 @@ indicate that the end of the work has been reached.
 
 If we consider the word `aba`, the input scenario is :
 
-1. Feed symbol `a'
-1. Feed symbol `b'
-1. Feed symbol `a'
-1. Terminate
+. Feed symbol `a'
+. Feed symbol `b'
+. Feed symbol `a'
+. Terminate
 
 The automaton will then answers. The response can be 'accepted' or
 'refused'
@@ -476,7 +477,7 @@ TODO: Can we define DSE without mapping them to DSA?
 
 
 [WARNING]
-======================================================================
+==========================
 The signature of the Execution Functions needs to be present in the
 MetaModel. Therefore, we need to modify the Ecore MetaModel and add
 the three following operations:
@@ -487,7 +488,7 @@ the three following operations:
 
 To represent methods with Void as return type in EMF, do not complete
 the field "EType" of the EOperations.
-======================================================================
+==========================
 
 TIP: If the AS is changed (automata.ecore), we have to do "Reload..."
 on the genmodel, generate again the Model, Edit and Editor, and
@@ -1144,7 +1145,7 @@ class AutomataAspect { }, one for the ED, one the EF?
 
 Forme du tutoriel :
 
-* Définir un nouveau type de block GEMOC avec le Logo GEMOC.
+* Definir un nouveau type de block GEMOC avec le Logo GEMOC.
 * Comment definir l'equivalent de --atribute tabsize=4 dans le
 .asciidoc directement ?
 

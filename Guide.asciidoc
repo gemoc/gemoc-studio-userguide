@@ -30,9 +30,13 @@ include::GuideLanguageWorkbenchChapter.asciidoc[]
 
 include::GuideModelingWorkbenchChapter.asciidoc[]
 
-////////////////////////////////////////////////////////////////
+// Push titles down one level.
+:leveloffset: 1
+
 include::GuideTutorialAutomata.asciidoc[]
-////////////////////////////////////////////////////////////////
+
+// Return to normal title levels.
+:leveloffset: 0
 
 :numbered!:
 
