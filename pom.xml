@@ -108,6 +108,36 @@
 		        </dependency>
 		      </dependencies>
 		    </plugin>  -->
+
+
+			<!-- workaround  maven-jdocbook-plugin which doesn't allows to copy the community images at the right place-->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/prestaging/images</outputDirectory>
+							<resources>
+								<resource>
+									<directory>style/images</directory>
+									<filtering>false</filtering>
+								</resource>
+								<resource>
+									<directory>images</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		    
             <!-- Process the docbook files to produce the html, the eclipse help and the pdf -->
              <plugin>
                 <groupId>org.jboss.maven.plugins</groupId>
@@ -134,11 +164,12 @@
  
                     <!-- All necessary image resources for documentation content -->
                      <imageResource>
-                        <directory>${basedir}</directory>
-                        <includes>
-                            <include>images/**</include>
-                            <include>target/plantuml/**</include>
-                        </includes>
+                      
+                        <directory>${basedir}/target/prestaging</directory>
+<!--                         <includes> -->
+<!--                             <include>images/**</include> -->
+<!--                             <include>style/images/community/**</include> doesn't work, copy at the wrong place -->
+<!--                         </includes> -->
                     </imageResource>
  
 					<!-- All necessary resources for styling -->
