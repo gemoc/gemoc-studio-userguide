@@ -3,10 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jboss.pressgang</groupId>
-    <artifactId>pressgang-tools-guide</artifactId>
+    <groupId>org.gemoc.documentation</groupId>
+    <artifactId>gemoc-studio-guide</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jdocbook</packaging>
+    <packaging>jdocbook</packaging> 
+   
     <name>GEMOC Studio Guide</name>
     <description>The documentation for generating a book using the GitHub wiki.</description>
     <url>https://github.com/gemoc/gemoc-studio/wiki/GuideREADME</url>
@@ -68,6 +69,7 @@
                 </executions>
                 <configuration>
                     <sourceDirectory>${basedir}</sourceDirectory>
+                    <imagesDir>.</imagesDir> <!-- AsciiDoc 1.5.0 presuppose that images are in a subfolder "images", but the files already have this info in the source files  -->
                     <outputDirectory>${basedir}/target/docbook/en-US</outputDirectory>
                     <backend>docbook</backend>
                     <!-- doctype not honored until plugin version 0.1.2 -->
@@ -107,7 +109,7 @@
 		      </dependencies>
 		    </plugin>  -->
             <!-- Process the docbook files to produce the html, the eclipse help and the pdf -->
-            <plugin>
+             <plugin>
                 <groupId>org.jboss.maven.plugins</groupId>
                 <artifactId>maven-jdocbook-plugin</artifactId>
                 <version>2.3.8</version>
@@ -117,7 +119,7 @@
                         <groupId>org.jboss.pressgang</groupId>
                         <artifactId>pressgang-xslt-ns</artifactId>
                         <version>3.0.0</version>
-                    </dependency>
+                    </dependency>  
 <!-- Do NOT use this dependency because style sheets have been forked and adapted. -->
 <!--                     <dependency> -->
 <!--                         <groupId>org.jboss.pressgang</groupId> -->
@@ -125,22 +127,22 @@
 <!--                         <type>jdocbook-style</type> -->
 <!--                         <version>3.0.0</version> -->
 <!--                     </dependency> -->
-                </dependencies>
+                 </dependencies>
                 <configuration>
                     <sourceDirectory>${basedir}/target/docbook</sourceDirectory>
                     <sourceDocumentName>Guide.xml</sourceDocumentName>
-
+ 
                     <!-- All necessary image resources for documentation content -->
-                    <imageResource>
+                     <imageResource>
                         <directory>${basedir}</directory>
                         <includes>
                             <include>images/**</include>
                             <include>target/plantuml/**</include>
                         </includes>
                     </imageResource>
-
+ 
 					<!-- All necessary resources for styling -->
-                    <cssResource>
+                     <cssResource>
                         <directory>${basedir}/style</directory>
                         <includes>
                             <include>css/*</include>
@@ -166,8 +168,8 @@
                         </format>
                         <format>
                             <formatName>eclipse</formatName>
-                            <!-- classpath:/xslt/org/jboss/seam/eclipse.xsl -->
-                            <stylesheetResource>file:xslt/eclipse.xsl</stylesheetResource>
+                             <!-- classpath:/xslt/org/jboss/seam/eclipse.xsl -->
+                             <stylesheetResource>file:xslt/eclipse.xsl</stylesheetResource>
                             <finalName>index.html</finalName>
                         </format>
                     </formats>
@@ -176,12 +178,12 @@
                         <xincludeSupported>true</xincludeSupported>
                         <xmlTransformerType>saxon</xmlTransformerType>
                         <transformerParameters>
-                            <!-- AsciiDoc processing instructions not processed until version 3.0.1 of pressgang-tools -->
+                             <!-- AsciiDoc processing instructions not processed until version 3.0.1 of pressgang-tools -->
                             <asciidoc.mode>1</asciidoc.mode>
                         </transformerParameters>
                     </options>
                 </configuration>
-            </plugin>
+            </plugin> 
         </plugins>
     </build>
 
