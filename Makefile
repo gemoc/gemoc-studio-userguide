@@ -1,9 +1,15 @@
 all: html
 	#(cd fig && make) &&
 
-html: GuideTutorialAutomata.html
+html: GuideTutorialAutomata-generated.html
 
-GuideTutorialAutomata.html: images/tutorial images/icons asciidoc.conf tools/plantuml.jar
+GuideTutorialAutomata-generated.asciidoc: GuideTutorialAutomata.asciidoc
+	cat $<	\
+	    | sed -e '/^ifeval/d'	\
+	    | sed -e '/^endif/d'	\
+	    > $@
+
+GuideTutorialAutomata-generated.html: images/tutorial images/icons asciidoc.conf tools/plantuml.jar
 
 %.html: %.asciidoc
 	(cd images/tutorial && make)
