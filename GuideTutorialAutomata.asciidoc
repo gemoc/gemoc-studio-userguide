@@ -23,7 +23,6 @@ It still contains TODO and must be polished.
 
 == Introduction
 
-
 The purpose of this tutorial is to explain on a simple example how to
 define an xDSML (eXecutable Domain Specific Modeling Language).  It is
 structured as follows.  First, we recall the
@@ -207,7 +206,8 @@ An automaton is composed of a finite set of states, transitions and
 symbols. An automaton must have exactly one initial state (and thus at
 least one state).  One transition connects a source state to a target
 state and is labelled by a symbol.
-On the <<automata-aSbaS,example>>, states are represented by circles, doubled-circled
+On the <<automata-aSbaS,example>>, states are represented by circles,
+doubled-circled
 states are accepting states (or final states).
 A transition is depicted as an arrow from the input state to the
 output state.
@@ -217,10 +217,6 @@ An arrow without input state points to the initial state.
 .Automata which reads a*ba*
 image::images/tutorial/automate-aSbaS.png[Automata which reads a*ba*]
 
-TODO: When.
-An automaton is deterministic is there is no two transitions labelled
-with the same symbol with the same source state. Else it is called
-nondeterministic automaton.
 
 === Informal behavior
 
@@ -238,6 +234,12 @@ A work is accepted if all its symbols have been accepted and the last
 current state of the automaton is an accept state.  Otherwise the work
 is rejected.
 
+An automaton is nondeterministic if it contains a transition with no
+symbol (it may be fired as soon as its source state is the current
+state) or if it contains two transitions with the same source state
+and the same symbol.  An automaton is either deterministic or
+nondeterministic.
+
 === Scenarios
 
 The scenarios related to automata shared the same structure as they
@@ -253,8 +255,8 @@ If we consider the word `aba`, the input scenario is :
 . Feed symbol `a'
 . Terminate
 
-The automaton will then answers. The response can be 'accepted' or
-'refused'
+The automaton will then answer. The response can be 'accepted' or
+'refused'.
 
 
 === Examples of models
@@ -277,7 +279,7 @@ ABCDABCD, etc.
 * Examples of rejected words: ABC, ABCDA, D, etc.
 
 
-TODO: Other examples :
+TODO: Other examples:
 
 - only one state
 - several states and only one final state
@@ -292,6 +294,8 @@ Dictionary Automata:
 image::images/tutorial/automate-mots.png[Automata which reads words]
 
 The only accepted words are: IL, ILE, ILES, ILS, ILOT, ILOTS
+
+TODO: To be translated in English.
 
 
 Nondeterministic automata::
@@ -315,8 +319,7 @@ For example to check that open and close symbols are well suited.
 == Creating an xDSML Project
 
 [icon="images/icons/IconeGemocStudio_48x48x32.png"]
-NOTE: TODO: Put the GEMOC Logo for paragraphs which describe GEMOC Studio commands.
-
+[NOTE]
 ==========================
 First, start by creating a new xDSML project (__New > Project > GEMOC
 Project / new xDSML Project__), with your desired name (for instance
@@ -333,8 +336,7 @@ dependency if it is not present:
 dependencies, then __Add...__, the type in "k3" and select the right
 plugin).
 
-TODO: Verifier si ce n'est pas fait lors de la creation du projet K3
-par le Wizard.
+TODO: Is it still required?
 
 
 [[sec-increment1]]
@@ -350,6 +352,8 @@ other models and xDSML (AS, DSE, EF and ED).
 
 === Define the Abstract Syntax (AS)
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 To define the AS we can either select an existing project (Browse
 button) or create a new one.  To create a new one, we click on "EMF
@@ -377,6 +381,8 @@ States know their outgoing and incoming Transitions.  Automatas,
 States, Transitions and Symbols all have a name (factorized in the
 NamedElement metaclass).
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 Once the Ecore MetaModel is done, we can come back to the xDSML view.
 The "EMF project" and the  "Genmodel URI" have been updated. 
@@ -407,7 +413,7 @@ WARNING: Therefore, a graphical Concrete Syntax is required in order to use the
 graphical animator later on during simulations.
 
 
-=== Defining DSE
+=== Identifying DSE
 
 Domain Specific Events are part of the interface of the language and
 allow communication with the system engineer and the other models of
@@ -424,10 +430,12 @@ work to test
 ** Terminating the automata : occurs when the user has given all the
 symbols of the word.  It is used to indicate the end on the word.
 
-TODO: Other DSE may be of interrest, for example firing a transition,
-rejecting a symbol, etc which would be output events (the previous
+TODO: Other DSE may be of interest, for example firing a transition,
+rejecting a symbol, etc. which would be output events (the previous
 ones being input events).
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 At this moment, DSE are defined in an ECL (Event Constraint Language) file.
 In the xDSML view, click on __ECL Project__ to create a DSE Project.
@@ -451,6 +459,8 @@ model element)?
 ==========================
 
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 For now, we will complete the ECL file with the following elements:
 
@@ -510,6 +520,8 @@ DSA includes the definition of Execution Data (ED) and Execution
 Functions (EF).  They are both implemented in Kermeta 3 in K3 Aspect
 project whose lastname is, by convention, 'k3dsa'.
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 Click on __K3 project__ in the xDSML view (Behavioral definition / DSA
 definition).  The wizard to create of new Kermeta 3 project is
@@ -544,6 +556,8 @@ State.  When in the error state, the automate rejects every symbols.
 
 
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 To add the reference 'currentState', we define it in an Aspect on the
 Automata class as follow.
@@ -590,6 +604,8 @@ outgoing transitions of this state that accept the s symbol.
 
 
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 Complete the file 'automata.xtend' with the following code:
 ----
@@ -661,6 +677,10 @@ class TransitionAspect {
 }
 ----
 
+==========================
+
+
+==== Testing DSA
 
 TODO: Add a test to validate the DSA part !
 
@@ -668,7 +688,6 @@ TODO: Add a test to validate the DSA part !
 * ask the EF as if they were called by the MoCC
 * check the results (current state, accepted or rejected)
 
-==========================
 
 
 === Model of Concurrency and Communication (MoCC)
@@ -711,19 +730,27 @@ StateRelationBasedLibrary automataLib{
 
 TODO: state-based relations?
 
-Afterwards, we need to import this library into the ECL file in order to be able to instantiate it using the MoccEvents we have defined as mapped to our Domain-Specific Events. In order to do that, we need to add at the top of the ECL file:
+Afterwards, we need to import this library into the ECL file in order
+to be able to instantiate it using the MoccEvents we have defined as
+mapped to our Domain-Specific Events. In order to do that, we need to
+add at the top of the ECL file:
 ----
 ECLimport "platform:/resource/com.example.automata.mocc.lib/mocc/automata.moccml"
 ----
 
-We will also probably need the standard libraries of relations and expressions in order to instantiate the MoCC. Therefore, we should also add the following imports:
+We will also probably need the standard libraries of relations and
+expressions in order to instantiate the MoCC. Therefore, we should
+also add the following imports:
 ----
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
 ----
 
-Now we need to specify how to instantiate the MoCC in the ECL file. This is done by using MoCCML relations and expressions on MoccEvents.
-First, we want to make sure that we do the initialization of the Automata before anything else. Therefore, we will use the relation "FirstAndOnlyOnce" defined in our custom MoCC library.
+Now we need to specify how to instantiate the MoCC in the ECL file.
+This is done by using MoCCML relations and expressions on MoccEvents.
+First, we want to make sure that we do the initialization of the
+Automata before anything else. Therefore, we will use the relation
+"FirstAndOnlyOnce" defined in our custom MoCC library.
 ----
 context Automata
 	inv InitBeforeAnythingElse:
@@ -746,6 +773,9 @@ inv ExclusivityOfSymbolsAndTerminate:
 ----
 
 As soon as you save the ECL file, a .qvto file should be generated in the folders qvto-gen/language and qvto-gen/modeling. Make sure that your xDSML project references the .qvto file that is available in qvto-gen/modeling.
+
+==== Testing the MoCC
+
 
 
 === Using the Modeling Workbench
@@ -771,6 +801,8 @@ dossier qvto-gen/modeling du projet DSE.
 
 ==== Testing and debugging the xDSML
 
+[icon="images/icons/IconeGemocStudio_48x48x32.png"]
+[NOTE]
 ==========================
 Launch the Modeling Workbench. Create a new general project, for
 instance "com.example.automata.instances". In this project, create a
