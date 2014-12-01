@@ -318,8 +318,8 @@ For example to check that open and close symbols are well suited.
 
 == Creating an xDSML Project
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 First, start by creating a new xDSML project (__New > Project > GEMOC
 Project / new xDSML Project__), with your desired name (for instance
@@ -352,8 +352,8 @@ other models and xDSML (AS, DSE, EF and ED).
 
 === Define the Abstract Syntax (AS)
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 To define the AS we can either select an existing project (Browse
 button) or create a new one.  To create a new one, we click on "EMF
@@ -381,8 +381,8 @@ States know their outgoing and incoming Transitions.  Automatas,
 States, Transitions and Symbols all have a name (factorized in the
 NamedElement metaclass).
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 Once the Ecore MetaModel is done, we can come back to the xDSML view.
 The "EMF project" and the  "Genmodel URI" have been updated. 
@@ -434,8 +434,8 @@ TODO: Other DSE may be of interest, for example firing a transition,
 rejecting a symbol, etc. which would be output events (the previous
 ones being input events).
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 At this moment, DSE are defined in an ECL (Event Constraint Language) file.
 In the xDSML view, click on __ECL Project__ to create a DSE Project.
@@ -459,8 +459,8 @@ model element)?
 ==========================
 
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 For now, we will complete the ECL file with the following elements:
 
@@ -520,8 +520,8 @@ DSA includes the definition of Execution Data (ED) and Execution
 Functions (EF).  They are both implemented in Kermeta 3 in K3 Aspect
 project whose lastname is, by convention, 'k3dsa'.
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 Click on __K3 project__ in the xDSML view (Behavioral definition / DSA
 definition).  The wizard to create of new Kermeta 3 project is
@@ -556,8 +556,8 @@ State.  When in the error state, the automate rejects every symbols.
 
 
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 To add the reference 'currentState', we define it in an Aspect on the
 Automata class as follow.
@@ -604,8 +604,8 @@ outgoing transitions of this state that accept the s symbol.
 
 
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 Complete the file 'automata.xtend' with the following code:
 ----
@@ -801,8 +801,8 @@ dossier qvto-gen/modeling du projet DSE.
 
 ==== Testing and debugging the xDSML
 
-[icon="images/icons/IconeGemocStudio_48x48x32.png"]
-[NOTE]
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
 ==========================
 Launch the Modeling Workbench. Create a new general project, for
 instance "com.example.automata.instances". In this project, create a
@@ -1156,6 +1156,8 @@ end-user is interested in, etc.
 
 == TODO
 
+* Definition of AS should be part of this tutorial (correct NOTE: at the
+beginning).
 * Pourquoi automataDSE ? (DSE/ECL part)
 * Define concrete Syntax with Sirius.  Sould it be done in the second Eclipse?
 * rename mocc_* to dse_* to reflect the fact that we would like them to be
