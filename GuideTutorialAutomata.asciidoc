@@ -502,7 +502,7 @@ endpackage
 ----
 ==========================
 
-TODO: Can we define DSE without mapping them to DSA?
+TODO: Write DSE without mapping them to DSA.
 
 
 [WARNING]
@@ -557,15 +557,18 @@ definition of ED and EF.
 
 ==== Execution Data (ED)
 
-We identify one runtime information for Automata which store the
-current state of the automaton.  We call it 'currentState'. It is a
-reference in Automata of type State.  It contains either the current
-state of the automata or null is a symbol has been rejected.
+We identify two runtime information for Automata.  The first one
+stores the current state of the automaton. It is called
+'currentState', a reference to State.  Its value is either the one of
+the state of the automaton or the 'null' value.  The 'null' value
+indicates that a symbol has not been accepted by the automaton.
 
-TODO: Change the implementation to reflect this desgin choice.
+The second ED stores the status of the symbols being analysed,
+either accepted or rejected.  It is modelled as the 'accepted'
+boolean.
 
-TODO: Better, define a new class in DSA ErrorState which extends
-State.  When in the error state, the automate rejects every symbols.
+TODO: Define a new class in DSA ErrorState which extends
+State?  When in the error state, the automate rejects every symbols.
 
 
 
@@ -578,7 +581,8 @@ Automata class as follow.
 ----
 @Aspect(className=Automata)
 class AutomataAspect {
-	public State currentState;
+	public State currentState
+	public boolean accepted
 }
 ----
 ==========================
