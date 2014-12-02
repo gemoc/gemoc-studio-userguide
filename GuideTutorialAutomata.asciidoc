@@ -376,9 +376,10 @@ editor or with the tree editor.
 image::images/tutorial/automata-as.png[Automata Metamodel]
 
 An Automaton is a composed of States (at least one), Transitions and
-Symbols.  A Transition must have a source and a target, both of type
-State. A Transition is fired upon occurrence of one of its associated
-Symbol.
+Symbols.  An autamaton has an initial state (reference).  A state can
+be a final state (attribute).   A Transition must have a source and a
+target, both of type State. A Transition is fired upon occurrence of
+one of its associated Symbol.
 // For now, Transitions may have only one associated Symbol.
 For practical reasons, we also add EOpposite references whenever
 possible.
