@@ -330,13 +330,16 @@ other projects).  This view is a kind of dashboard or control center to
 have quick access to any important resource of the project.
 ==========================
 
+//////////
 NOTE: In the MANIFEST.MF (in folder META-INF), add the following
 dependency if it is not present:
 "org.gemoc.gemoc_language_workbench.extensions.k3" (click on
 dependencies, then __Add...__, the type in "k3" and select the right
 plugin).
 
-TODO: Is it still required?
+TODO: Is it still required?  It is automatically done when creating
+the k3dsa project.
+//////////
 
 
 [[sec-increment1]]
@@ -366,17 +369,20 @@ editor or with the tree editor.
 
 
 
-[[fig/automata/class diagram]]
+[[fig:automata:class diagram]]
 .Automata Metamodel
 image::images/tutorial/automata-as.png[Automata Metamodel]
 
 An Automaton is a composed of States (at least one), Transitions and
 Symbols.  A Transition must have a source and a target, both of type
 State. A Transition is fired upon occurrence of one of its associated
-Symbol.  For now, Transitions may have only one associated Symbol For
-practical reasons, we also add EOpposite references whenever possible.
+Symbol.
+// For now, Transitions may have only one associated Symbol.
+For practical reasons, we also add EOpposite references whenever
+possible.
 Therefore States, Transitions and Symbols know which Automata they
-belong to. Symbols know which Transition(s) they are referenced by.
+belong to.
+Symbols know which Transition(s) they are referenced by.
 States know their outgoing and incoming Transitions.  Automatas,
 States, Transitions and Symbols all have a name (factorized in the
 NamedElement metaclass).
