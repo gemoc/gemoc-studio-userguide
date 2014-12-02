@@ -576,8 +576,8 @@ State?  When in the error state, the automate rejects every symbols.
 // [NOTE]
 
 ==========================
-To add the reference 'currentState', we define it in an Aspect on the
-Automata class as follow.
+To add 'currentState' and 'accepted' execution data, we define them in
+an Aspect on the Automata class as follow.
 ----
 @Aspect(className=Automata)
 class AutomataAspect {
