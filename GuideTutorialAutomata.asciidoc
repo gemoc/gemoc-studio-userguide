@@ -331,7 +331,8 @@ other projects).  This view is a kind of dashboard or control center to
 have quick access to any important resource of the project.
 ==========================
 
-//////////
+//////////////////////////////////////////////////////////////////////
+
 NOTE: In the MANIFEST.MF (in folder META-INF), add the following
 dependency if it is not present:
 "org.gemoc.gemoc_language_workbench.extensions.k3" (click on
@@ -340,7 +341,8 @@ plugin).
 
 TODO: Is it still required?  It is automatically done when creating
 the k3dsa project.
-//////////
+
+//////////////////////////////////////////////////////////////////////
 
 
 [[sec-increment1]]
