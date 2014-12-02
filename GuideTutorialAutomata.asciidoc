@@ -435,16 +435,17 @@ For our Automata xDSML, we decide that there are 3 events
 which are of relevant interest to the environment (user through a GUI
 or another xDSML through language composition operators):
 
-** Initializing the automata : occurs only once at the start of the
-simulation
-** Injecting a symbol : occurs when the user gives a new symbol of the
-work to test
-** Terminating the automata : occurs when the user has given all the
-symbols of the word.  It is used to indicate the end on the word.
+Initializing the automata::
+	occurs only once at the start of the simulation
+Injecting a symbol::
+	occurs when the user gives a new symbol of the work to test
+Terminating the automata::
+	occurs when the user has given all the symbols of the word.  It is
+	used to indicate the end on the word.
 
-TODO: Other DSE may be of interest, for example firing a transition,
-rejecting a symbol, etc. which would be output events (the previous
-ones being input events).
+TIP: Other DSE may be of interest, for example firing a transition,
+rejecting a symbol, etc. They would be output events (the already
+identified ones being input events).
 
 // [icon="images/icons/IconeGemocStudio_48x48x32.png"]
 // [NOTE]
@@ -466,9 +467,6 @@ An error is indicated in the newly created project. To correct it,
 fill-in the "moc2as.properties" file by completing the property with
 the name of the root element. In our case, that is "rootElement =
 Automata".
-
-TODO: Could it be automatically initialized (from the Root container
-model element)?
 ==========================
 
 
@@ -1209,8 +1207,21 @@ Forme du tutoriel :
 .asciidoc directement ?
 
 
-WARNING: When the .ecore is changed.  The genmodel must be updated and
-the code generated again.
+To be improved:
+
+* DSE part: for the moment ECL has several purpose.  It is thus
+  confusing.  We must first focus on the definition of the DSE and not
+  on the various mappings.
+
+To be added:
+
+* Explain somewhere: When the .ecore is changed.  The genmodel must be
+  updated and the code generated again.
+
+Studio improvments:
+
+* Could the moc2as.properties file in DSE/ECL project be automatically
+  initialized (from the Root container model element)?
 
 // vim: set syntax=asciidoc tw=70 ts=4 sw=4:
 // vim: spell spelllang=en:
