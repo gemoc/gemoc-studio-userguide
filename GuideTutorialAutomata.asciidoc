@@ -373,7 +373,7 @@ editor or with the tree editor.
 
 
 
-[[fig:automata:class diagram]]
+[[fig/automata/class-diagram]]
 .Automata Metamodel
 image::images/tutorial/automata-as.png[Automata Metamodel]
 
@@ -529,8 +529,8 @@ It should work.
 === Defining Domain-Specific Actions (DSA)
 
 DSA includes the definition of Execution Data (ED) and Execution
-Functions (EF).  They are both implemented in Kermeta 3 in K3 Aspect
-project whose lastname is, by convention, 'k3dsa'.
+Functions (EF).  They are both implemented in Kermeta 3 in 'K3 Aspect
+project' whose lastname is, by convention, 'k3dsa'.
 
 // [icon="images/icons/IconeGemocStudio_48x48x32.png"]
 // [NOTE]
@@ -587,6 +587,7 @@ WARNING: If you plan to use the Graphical animation, then comment the
 code above and add this reference to the Ecore Metamodel directly.
 This is due to how the animator connects to the Abstract Syntax (for
 now).
+
 
 ==== Execution Functions (EFs)
 
@@ -1218,7 +1219,7 @@ To be added:
 * Explain somewhere: When the .ecore is changed.  The genmodel must be
   updated and the code generated again.
 
-Studio improvments:
+Studio improvements:
 
 * Could the moc2as.properties file in DSE/ECL project be automatically
   initialized (from the Root container model element)?
