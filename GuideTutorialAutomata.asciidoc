@@ -579,14 +579,14 @@ State?  When in the error state, the automate rejects every symbols.
 To add 'currentState' and 'accepted' execution data, we define them in
 an Aspect on the Automata class as follow.
 
-[java]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[source,java]
+----
 @Aspect(className=Automata)
 class AutomataAspect {
 	public State currentState
 	public boolean accepted
 }
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----
 
 ==========================
 
@@ -648,8 +648,10 @@ Transition.fire():: change the current state of the
 Here is the complete 'automata.xtend' file with the code of all
 execution functions (and execution data).
 
-[java]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[source,java]
+.automata.xtend
+----
 package automata
 
 import java.util.logging.Level
@@ -763,7 +765,7 @@ class TransitionAspect {
 	}
 
 }
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----
 
 
 ==== Testing DSA
@@ -775,8 +777,8 @@ First, we define a method that feeds an automaton with a word (each
 letter of the word is considered as a symbol).  It is defined in the
 AutomataExecution class.  Here is the xtend code.
 
-[java]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[source,java]
+----
 package automata
 
 import static extension automata.AutomataAspect.*
@@ -802,15 +804,15 @@ class AutomataExecution {
 	}
 
 }
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----
 
 
 Then, we can write a classical JUnit TestCase that assert for some
 words whether they are accepted or rejected by an automaton. Here is
 an example of such a test case.
 
-[java]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[source,java]
+----
 package automata;
 
 import org.junit.Test;
@@ -833,7 +835,7 @@ public class AutomataTest {
 	}
 
 }
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----
 
 
 === Model of Concurrency and Communication (MoCC)
