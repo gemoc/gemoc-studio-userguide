@@ -807,9 +807,10 @@ class AutomataExecution {
 ----
 
 
-Then, we can write a classical JUnit TestCase that assert for some
-words whether they are accepted or rejected by an automaton. Here is
-an example of such a test case.
+Then, we can write a classical JUnit TestCase that tests an automaton
+on some tests using the 'AutomataExecution.accepted(String word)'
+method.
+Here is an example of such a test case.
 
 [source,java]
 ----
