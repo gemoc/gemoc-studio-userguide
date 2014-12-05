@@ -980,6 +980,7 @@ it again to ensure modifications on the Ecore file are seen by ECL.
 
 ==== Testing the MoCC
 
+TODO: To be completed
 
 
 === Using the Modeling Workbench
