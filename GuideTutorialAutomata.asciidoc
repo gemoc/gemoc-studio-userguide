@@ -841,17 +841,50 @@ public class AutomataTest {
 
 === Model of Concurrency and Communication (MoCC)
 
-TODO: Give the rational.
+At the moment the MoCC is defined using MoCCML, a superset of CCSL.
+It is composed of two parts.  The first one is the reusable one,
+defined in a MoCCML project. It contains the declaration and
+definition of relations on clocks (MoCC events).  At the top level, a
+state machine can be used to specify the relations.  The second one
+explains how to use those relations according to the abstract syntax
+of the DSML.  Is part of the DSE/ECL project.
 
-There are two sides to the MoCC. First, you can create a new MoCCML
-project (right click on the xDSML project > GEMOC Language > Create
-MoC Project) and place a library of custom MoCCML relations and
-expressions there. Let us call this project
-"com.example.automata.mocc.lib". For instance, we choose to place in a
-library a relation which allows a MoccEvent to have an occurrence only
-once and before all the "other MoccEvents" (using two arguments: first
-the MoccEvent which must have an occurrence and then the collection of
-all the other MoccEvents).
+NOTE: We will use the term clock as a synonym of MoCC event, that is
+events that are managed by the MoCC.  The purpose is to avoid
+confusion with domain specific events (DSE).
+
+
+We have already identify DSE and we have defined them in the ECL file
+(DSE project).  Implicitly, these DSE events are mapped to
+corresponding clock at the MoCC level.  So, we have three clocks,
+initialize, occur and terminate.
+
+We want that the 'initialize' clock clicks only once and before all
+other clocks.  Then we can have any occurrences of the 'occur' clock
+and, eventually, one occurrence of the 'terminate' clock.
+
+TODO: It could be defined using a state machine : initialize, then
+occur *, then terminate.
+
+==== Reusable part of the MoCC: MoCCML
+
+Here, we want that 'initialize()' DSE occurs only once before any other
+event.  Thus we define a *relation* called 'FirstAndOnlyOnce' whose
+purpose is specify that a first clock will happen only once, before all
+the others clocks. Thus, it takes two arguments, the first clock, the collection
+of other clock.  Its prototype is as follows:
+
+[source,moccml]
+----
+RelationDeclaration FirstAndOnlyOnce(first : clock, other : clock)
+----
+
+Then, we have to provide the definition *(RelationDefinition*) which
+satisfies the this specification. The mocclib file hereafter provides
+both the declaration and the definition of this relation.
+
+[[automata.mocclib]]
+.automata.mocclib
 ----
 StateRelationBasedLibrary automataLib{ 
 	imports{
@@ -860,16 +893,16 @@ StateRelationBasedLibrary automataLib{
 	}
 	
 	RelationLibrary basicautomataRelations{
-		RelationDeclaration FirstAndOnlyOnce(mocc_firstEvent : clock, mocc_otherEvents : clock)
+		RelationDeclaration FirstAndOnlyOnce(first : clock, other : clock)
 		RelationDefinition FirstAndOnlyOnceImplem[FirstAndOnlyOnce]{
-			Expression firstTickOfFirstEvent = OneTickAndNoMore(OneTickAndNoMoreClock -> mocc_firstEvent)
-			Expression firstTickOfOtherEvents =	OneTickAndNoMore(OneTickAndNoMoreClock -> mocc_otherEvents)
+			Expression firstTickOfFirstEvent = OneTickAndNoMore(OneTickAndNoMoreClock -> first)
+			Expression firstTickOfOtherEvents = OneTickAndNoMore(OneTickAndNoMoreClock -> other)
 			Relation Precedes(
-				LeftClock -> mocc_firstEvent,
+				LeftClock -> first,
 				RightClock -> firstTickOfOtherEvents
 			)
 			Relation Coincides(
-				Clock1 -> mocc_firstEvent,
+				Clock1 -> first,
 				Clock2 -> firstTickOfFirstEvent
 			)
 		}
@@ -877,29 +910,43 @@ StateRelationBasedLibrary automataLib{
 }
 ----
 
-TODO: state-based relations?
 
-Afterwards, we need to import this library into the ECL file in order
-to be able to instantiate it using the MoccEvents we have defined as
-mapped to our Domain-Specific Events. In order to do that, we need to
-add at the top of the ECL file:
+==========================
+First, we create a new MoCCML project (right click on the xDSML
+project > GEMOC Language > Create MoC Project) --- this action is not
+yet available from the xDSML view --- and place a library of custom
+MoCCML relations and expressions there. Let us call this project
+"com.example.automata.mocc.lib".  We can now complete the
+<<automat.mocclib,automat.mocclib>> file.
+
+==========================
+
+
+
+==== Specific part of the MoCC
+
+Next, we can define the actual constraints on the clock of an Automata
+model.  It is described in the ECL file (SDE project) using AS
+concepts and the relations defined in the MoCCML project as well as
+the standard libraries relations.
+Thus, we start to import the lib and the ecore files (at top of the
+ECL file).
 ----
+import 'platform:/resource/com.example.automata.as/model/automata.ecore'
 ECLimport "platform:/resource/com.example.automata.mocc.lib/mocc/automata.moccml"
-----
-
-We will also probably need the standard libraries of relations and
-expressions in order to instantiate the MoCC. Therefore, we should
-also add the following imports:
-----
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
 ----
 
-Now we need to specify how to instantiate the MoCC in the ECL file.
-This is done by using MoCCML relations and expressions on MoccEvents.
-First, we want to make sure that we do the initialization of the
-Automata before anything else. Therefore, we will use the relation
-"FirstAndOnlyOnce" defined in our custom MoCC library.
+
+The main part of the ECL file specify how to instantiate clocks ('def'
+keyword and 'Expression' construction) and which constraints to put on
+them thanks to the 'Relation' concept.
+
+First, we want to make sure that we do the initialization
+('initialize' clock) of the Automata before anything else. Therefore,
+we will use the relation "FirstAndOnlyOnce" defined in our custom
+MoCCML library.
 ----
 context Automata
 	inv InitBeforeAnythingElse:
@@ -921,7 +968,15 @@ inv ExclusivityOfSymbolsAndTerminate:
 	Relation Exclusion(self.mocc_terminate, allSymbolOccurEvents)
 ----
 
-As soon as you save the ECL file, a .qvto file should be generated in the folders qvto-gen/language and qvto-gen/modeling. Make sure that your xDSML project references the .qvto file that is available in qvto-gen/modeling.
+As soon as you save the ECL file, a .qvto file should be generated in
+the folders qvto-gen/language and qvto-gen/modeling. Make sure that
+your xDSML project references the .qvto file that is available in
+qvto-gen/modeling.
+
+TIP: If the Ecore file describing the syntax is changed while the ECL
+file is opened, it may be required to close the ECL file and to open
+it again to ensure modifications on the Ecore file are seen by ECL.
+
 
 ==== Testing the MoCC
 
@@ -1360,6 +1415,10 @@ Studio improvements:
 
 * Could the moc2as.properties file in DSE/ECL project be automatically
   initialized (from the Root container model element)?
+
+MoCCML:
+
+* How to represent a collection of clocks in a RelationDeclaration rule?
 
 // vim: set syntax=asciidoc tw=70 ts=4 sw=4:
 // vim: spell spelllang=en:
