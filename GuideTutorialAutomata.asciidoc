@@ -37,6 +37,31 @@ on a concrete example, the definition of automata.  We describe the
 in <<sec-increment1, several increments>> to structure it and
 illustrate different aspects of the GEMOC studio.
 
+This tutorial will be illustrated with <<automata-domain,automata domain>>.
+Possibilities of the GEMOC approach and the GEMOC Studio are progressively
+demonstrated on this example through several increments:
+
+1. First implementation of the deterministic Automata xDSML with a
+focus on the DSA.
+
+2. Second implementation with a focus on the MoCC (to show that a
+balance must be found)
+
+3. Provide a graphical visualization.
+
+4. Consider non deterministic automata (evolution of the previous example)
+
+5. Extend with Pushdown Automata (demonstrate the feedback mechanism
+
+6. Integrate user defined code (connect the automata to a specific
+graphical interface).
+
+8. Other increments : 
+	- Composite DSE
+	- Composition operators
+	- Traces
+
+
 TODO: Describe the increments?
 
 TODO: Give the conventions on the tutorial, naming, etc.
@@ -193,6 +218,7 @@ Finally they can be used to define the increments in the development
 of the xDSML by defining the set of models and scenarios each
 increment must handle.
 
+[[automata-domain]]
 === Application Domain: Automata
 
 We consider the domain of **automata**.  An automaton may be used to
@@ -1047,8 +1073,8 @@ TODO: to be developed.
 
 == Increment 3: Graphical visualization
 
-* On the model
-* A tabular presentation with start and end time of activities
+* On the model (current states, the symbols already analyzed?)
+* A tabular presentation ?
 * A specific view as a Gantt
 
 TODO: to be developed.
@@ -1420,6 +1446,20 @@ Studio improvements:
 MoCCML:
 
 * How to represent a collection of clocks in a RelationDeclaration rule?
+
+
+Tutorial focus:
+
+* Illustration of the process
+* Demonstrative in term of GEMOC studio basic operations
+Tutorial maintenance:
+
+* Which version of GEMOC Studio to use?
+* What frequency for updating the tutorial?
+* How contribute to the tutorial after the first version?
+* Keep a single file or split the tutorial in several mini-tutorial?
+* Record a video? Once the tutorial has been validated !
+
 
 // vim: set syntax=asciidoc tw=70 ts=4 sw=4:
 // vim: spell spelllang=en:
