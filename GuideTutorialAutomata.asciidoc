@@ -1474,6 +1474,12 @@ Tutorial maintenance:
 * Keep a single file or split the tutorial in several mini-tutorial?
 * Record a video? Once the tutorial has been validated !
 
+Choices in the way of writing DSA/EF
+
+* Use logging?
+* Add a Contract class for preconditions?
+* ...
+
 
 // vim: set syntax=asciidoc tw=70 ts=4 sw=4:
 // vim: spell spelllang=en:
