@@ -8,12 +8,6 @@ endif::[]
 
 = GEMOC xDSML definition tutorial
 
-ifeval::[{docname}=='GuideTutorialAutomata']
-GEMOC Team
-:Author Initials: XC
-:website: http:__gemoc.org
-endif::[]
-
 
 // name="../../../..//home/svn/SVN/gemoc/trunk/deliverables/WP1/D1.2.1/icons/IconeGemocStudio_48x48x32"
 
