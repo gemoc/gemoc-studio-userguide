@@ -675,7 +675,7 @@ Here is the complete 'automata.xtend' file with the code of all
 execution functions (and execution data).
 
 
-[source,java]
+[source]
 .automata.xtend
 ----
 package automata
