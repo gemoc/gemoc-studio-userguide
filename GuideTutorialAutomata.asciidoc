@@ -32,39 +32,45 @@ the GEMOC xDSML>> and the <<sec-GEMOC-characteristics, main
 characteristics of a GEMOC process>>.
 Then, we present the <<sec-GEMOC-process, overall process>> that will be
 illustrated by this tutorial. The next sections illustrate the process
-on a concrete example, the definition of automata.  We describe the
-<<sec-requirements, application domain>>, and structure the development
-in <<sec-increment1, several increments>> to structure it and
+on a concrete example, the <<automata-domain,definition of automata>>.
+We describe the <<sec-requirements, application domain>>, and then
+we split the development in <<sec-increment1, several increments>> to
 illustrate different aspects of the GEMOC studio.
 
-This tutorial will be illustrated with <<automata-domain,automata domain>>.
-Possibilities of the GEMOC approach and the GEMOC Studio are progressively
-demonstrated on this example through several increments:
+1. <<sec-increment1,First implementation>> of the deterministic
+Automata xDSML with a focus on the DSA.
 
-1. First implementation of the deterministic Automata xDSML with a
-focus on the DSA.
+2. <<sec-increment2,Second implementation>> with a focus on the MoCC
+(to show that a balance must be found)
 
-2. Second implementation with a focus on the MoCC (to show that a
-balance must be found)
+3. <<sec-visualization,Graphical visualization>>.
 
-3. Provide a graphical visualization.
+4. <<sec-nondeterministic,Nondeterministic automata>> (evolution of the previous example)
 
-4. Consider non deterministic automata (evolution of the previous example)
+5. <<sec-pushdown,Pushdown Automata>> (demonstrate the feedback mechanism)
 
-5. Extend with Pushdown Automata (demonstrate the feedback mechanism
+6. <<sec-userCode,Integration of user defined code>> (connect the
+automata to a specific graphical interface).
 
-6. Integrate user defined code (connect the automata to a specific
-graphical interface).
-
-8. Other increments : 
+7. <<sec-otherIncrements,Other increments>>:
 	- Composite DSE
 	- Composition operators
 	- Traces
 
 
-TODO: Describe the increments?
+**Conventions used in this tutorial**
 
-TODO: Give the conventions on the tutorial, naming, etc.
+Normal text is used to explain the process and  give some rationals
+and the proposed solutions.
+
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
+
+==========================
+This kind of paragraph corresponds to manipulation to be performed of the GEMOC studio, either the Language Workbench or the Modeling Workbench.
+==========================
+
+
 
 
 [[sec-GEMOC-approach]]
@@ -1053,6 +1059,7 @@ In the panel "Common", select "Shared file" and put the project path there: "/co
 
 
 
+[[sec-increment2]]
 == Increment 2: new MoCC and DSA for Automata (MoCC focused version)
 
 In the previous version the MoCC is only responsible of ensuring that
@@ -1071,6 +1078,7 @@ a state is current or not a simulation step.  To be defined.
 TODO: to be developed.
 
 
+[[sec-visualization]]
 == Increment 3: Graphical visualization
 
 * On the model (current states, the symbols already analyzed?)
@@ -1080,6 +1088,7 @@ TODO: to be developed.
 TODO: to be developed.
 
 
+[[sec-nondeterministic]]
 == Increment 4: Consider nondeterministic automata.
 
 TODO: to be developed.
@@ -1091,6 +1100,7 @@ Principle: currentState become currentStates.  We maintain the set of
 all states that are accessible by the symbols already accepte by the
 automaton.
 
+[[sec-pushdown]]
 == Increment 5: Pushdown automaton
 
 TODO: The purpose of Pushdown Automaton is to illustrate the Feedback
@@ -1105,14 +1115,16 @@ tutorial when the proposed approach to handle feedbacks will have been
 integrated to the GEMOC studio.
 
 
+[[sec-userCode]]
 == Increment 6: Call of user actions
 
 NOTE: Will be added in a future version of this tutorial.
 
 
+[[sec-otherIncrements]]
 == Increment: TBD
 
-Other increments?
+TODO: Which other increments?
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1452,6 +1464,8 @@ Tutorial focus:
 
 * Illustration of the process
 * Demonstrative in term of GEMOC studio basic operations
+
+
 Tutorial maintenance:
 
 * Which version of GEMOC Studio to use?
