@@ -223,7 +223,7 @@ increment must handle.
 
 We consider the domain of **automata**.  An automaton may be used to
 specify a language defined on a set of symbols called alphabet.  The
-<<fig/automata-first, following example>> shows an automaton
+<<fig-automata-aSbaS, following example>> shows an automaton
 which recognizes the language __a*ba*__.
 
 === Description of automata
@@ -399,7 +399,7 @@ editor or with the tree editor.
 
 
 
-[[fig/automata-classDiagram]]
+[[fig-automata-classDiagram]]
 .Automata Metamodel
 image::images/tutorial/automata-as.png[Automata Abstract Syntax (Metamodel)]
 
