@@ -22,6 +22,9 @@ The GEMOC Studio offers 2 main usages:
 
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
+[NOTE]
+In order to run, Eclipse workbench needs to run with additional memory. Use the following setting to start Eclipse: -Xms1024m -Xmx1024m -XX:PermSize=512m -XX:MaxPermSize=512m
+
 ////////////////////////////////////////////////////////////////
 Inclusion of the chapters, please open the corresponding files
 ////////////////////////////////////////////////////////////////
