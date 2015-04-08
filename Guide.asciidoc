@@ -22,17 +22,20 @@ The GEMOC Studio offers 2 main usages:
 
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
+Items or roles relative to the Language Workbench are identified with the following icon : image:images/icons/IconeGemocLanguage.png[50,50]
+
+Items or roles relative to the Modeling Workbench are identified with the following icon : image:images/icons/IconeGemocModel.png[50,50]
+
 TODO include figure here
 
-=== Language Workbench overview
+=== Language Workbench overview image:images/icons/IconeGemocLanguage.png[30,30, role=right]
 
 The GEMOC Language Workbench allows building and composing new executable DSMLs.
 
-Items or roles relative to this workbench are identified with the following icon : image:images/icons/IconeGemocLanguage.png[50,50]
+
 
 To acheive that, it offers appropriate tools and guidance for the underlying activities wich are grouped in categories.
 
-TODO: add icon of the workbench
 
 .Build executable language
 The first main activity is to build an executable language. The language designer is assited by a dedicated Dashboard to guide him during his work.
@@ -72,9 +75,9 @@ TODO: add a  the list of composition activities here
 TODO: add snapshot of the dashboard
 
 
-=== Modeling workbench overview
+=== Modeling workbench overview image:images/icons/IconeGemocModel.png[30,30, role=right]
 
-Items or roles relative to this workbench are identified with the following icon : image:images/icons/IconeGemocModel.png[50,50]
+
 
 === General concerns and prerequisite
 
