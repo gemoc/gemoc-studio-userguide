@@ -25,7 +25,10 @@ Each of these usage has it own set of tools that are referenced as *Gemoc Langua
 TODO include figure here
 
 === Language Workbench overview
+
 The GEMOC Language Workbench allows building and composing new executable DSMLs.
+
+Items or roles relative to this workbench are identified with the following icon : image:images/icons/IconeGemocLanguage.png[50,50]
 
 To acheive that, it offers appropriate tools and guidance for the underlying activities wich are grouped in categories.
 
@@ -71,7 +74,7 @@ TODO: add snapshot of the dashboard
 
 === Modeling workbench overview
 
-TODO: add icon of the workbench
+Items or roles relative to this workbench are identified with the following icon : image:images/icons/IconeGemocModel.png[50,50]
 
 === General concerns and prerequisite
 
