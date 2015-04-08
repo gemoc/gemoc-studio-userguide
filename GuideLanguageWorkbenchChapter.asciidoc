@@ -109,7 +109,7 @@ If you want to create a graphical concrete syntax you can use Sirius. The http:/
 === Defining a Model of Concurrency (MoC)
 
 === Defining Domain Specific Events (DSE)
-
+nimporte quoi conflit
 === Defining an animation view
 The animation layer is an extension on top of a graphical editor defined with ((Sirius)).
 
