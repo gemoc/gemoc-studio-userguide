@@ -143,9 +143,13 @@ DSE <name>:
 end
 ----
 Where:
+
 * <resultName> is a local variable which will be affected with the value returned by the associated Execution Function;
+
 * Between the _feedback_ and _end_ keywords, a set of Feedback Rules are defined (including a default Feedback Rule, with the _default_ keyword). A Feedback Rule is composed of a filter and a consequence;
+
 * <filterN> are predicates, most likely using <resultName> which define whether or not this Feedback Rule must be applied;
+
 * <PathToMoccEventConsequenceN> is a navigation path to a MoccEvent which specifies which MoccEvent is allowed as a result of the data returned by the Execution Function.
 
 ==== Semantics of the Feedback Policy
