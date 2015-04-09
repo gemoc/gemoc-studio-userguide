@@ -108,6 +108,9 @@ The implicit context of a Domain-Specific Event is inferred from the context in 
 
 ==== Example
 ----
+import "platform:/plugin/org.gemoc.sample.fuml.model/model/fuml.ecore"
+import "platform:/plugin/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
+
 DSE ExecuteActivityNode:
 	upon mocc_executeNode
 	triggers ActivityNode.execute
@@ -123,6 +126,9 @@ In this context, the Feedback Specification specifies how domain data returned b
 ==== Creating a Feedback Policy
 A Feedback Policy can be associated to a DSE using the following syntax:
 ----
+import "platform:/plugin/org.gemoc.sample.fuml.model/model/fuml.ecore"
+import "platform:/plugin/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
+
 DSE <name>:
   upon <MoccEvent>
   triggers <Path-to-ExecutionFunction> returning <resultName>
