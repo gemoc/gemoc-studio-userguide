@@ -7,23 +7,24 @@ The *((GEMOC Language Workbench))* is intended to be used by the ((Language Desi
 [[figure-glw-screenshot-of-language_workbench]]
 .Screenshot of the GEMOC Language Workbench showing the design of a Timed Finite State Machine (TFSM) example.
 image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench]
-(((TFSM)))
-(((TFSM,Language workbench)))
+(((TFSM,Language Workbench)))
 
 '''
 [[section-gemoc-language-project]]
-=== Gemoc Language project
+=== xDSML Project
 
-In the menu go to: File> New> Projects...> Gemoc Language project
+==== Purpose
+The xDSML Project is the core project of languages created using the GEMOC Studio. It has two main purposes:
+* Referencing the different projects representing the various parts constituting an xDSML;
+* Guiding the ((Language Designer)) in the language creation process through the ((GEMOC Dashboard)) illustrating the workflow of creating an xDSML using the GEMOC Studio.
 
-This project will be the aggregator of the other Eclipse projects that will constitute the components of a Language Unit of the xDSML.
+==== How to create an xDSML Project
+In the main menu of the GEMOC Studio, go to: File > New > Project... > New GEMOC Language Project. This will create a new xDSML Project in your workspace.
 
-It mainly defines a project.xdsml file that references these other components.
+==== Editing an xDSML Project
+The main file constituting an xDSML Project is the _project.xdsml_. This file is not supposed to be edited manually although it is possible to. The pop-up menu of the project (available upon right click on the xDSML Project) or the <<section-process-support-view>> provide a set of wizards to edit this file.   
 
-The xDSML file isn't supposed to be edited manually. The pop up menu on the project (available on right click) or the <<section-process-support-view>> provides a set of wizard to fill this file.   
-
-
-From these information, the project will generate additional code that will be used by the execution engine when the language will be deployed and used by the <<chapter-gemoc-modeling-workbench>>.   
+From the information specified in this file, the project generates additional code that is used by the Execution Engine during the execution of models conforming to the xDSML (see <<chapter-gemoc-modeling-workbench>>).   
 
 [[section-define-AS-project]]
 === Defining Abstract Syntax (or domain concepts)
