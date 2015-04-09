@@ -121,7 +121,8 @@ TODO MoCCML + ECL
 The DSE can be defined using the *Gemoc Events Language* (GEL). Create a new file with extension ".GEL" in your DSE project.
 The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions (defined as methods in the DSA)
 
-[NOTE] For technical reasons, the Abstract Syntax (Ecore metamodel) must specify the signature of the Execution Functions.
+[NOTE]
+For technical reasons, the Abstract Syntax (Ecore metamodel) must specify the signature of the Execution Functions.
 
 Therefore, the first step to designing the DSE in GEL is importing the ECL file and the Ecore file of the xDSML. You can do using the "platform:/plugin" syntax.
 
