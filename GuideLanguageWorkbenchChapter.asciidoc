@@ -70,6 +70,8 @@ For now, Execution Functions are considered as *atomic, instantaneous and blocki
 [NOTE]
 For technical reasons, the Domain Model (Ecore metamodel) must specify the signature of the Execution Functions as EOperations.
 
+==== Testing the Domain-Specific Actions
+It is possible to test the DSA (in particular the Execution Functions) by simply writing a simple program with a _main_ function (using Java or Xtend/Kermeta3). Create or load a model conform to your Domain Model and call the Execution Functions in the right order to verify there are no runtime exceptions or domain issues.
 
 === Defining Domain-Specific Constraints
 TODO
