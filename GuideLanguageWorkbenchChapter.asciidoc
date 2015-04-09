@@ -98,7 +98,7 @@ The DSE define a mapping between MoccEvents from the MoCC and the Execution Func
 Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (GEL).
 
 ==== Editing the DSE Project
-The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the "import platform:/plugin/..." syntax at the beginning of the file.
+The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the _import platform:/resource/..._ syntax at the beginning of the file.
 
 Then a DSE is defined using the following syntax:
 ----
@@ -114,8 +114,8 @@ The implicit context of a Domain-Specific Event is inferred from the context in 
 
 ==== Example
 ----
-import "platform:/plugin/org.gemoc.sample.fuml.model/model/fuml.ecore"
-import "platform:/plugin/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
+import "platform:/resource/org.gemoc.sample.fuml.model/model/fuml.ecore"
+import "platform:/resource/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
 
 DSE ExecuteActivityNode:
 	upon mocc_executeNode
@@ -135,8 +135,8 @@ In this context, the Feedback Specification specifies how domain data returned b
 ==== Creating a Feedback Policy
 A Feedback Policy can be associated to a DSE using the following syntax:
 ----
-import "platform:/plugin/org.gemoc.sample.fuml.model/model/fuml.ecore"
-import "platform:/plugin/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
+import "platform:/resource/org.gemoc.sample.fuml.model/model/fuml.ecore"
+import "platform:/resource/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
 
 DSE <name>:
   upon <MoccEvent>
