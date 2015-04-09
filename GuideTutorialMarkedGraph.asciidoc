@@ -1,0 +1,205 @@
+ifeval::[{docname}=='GuideTutorialAutomata']
+:toc:
+:numbered:
+:tabsize=4:
+endif::[]
+
+
+
+= GEMOC xDSML definition tutorial with MarkedGraph
+
+This tutorial aims at demonstrating the power of the GEMOC studio to
+define an executable semantics and provide graphical animation for a
+DSML.   It relies of the
+http://en.wikipedia.org/wiki/Marked_graph[marked graph] language.
+
+== Starting defining an xDSML
+
+Marked Graph is a http://en.wikipedia.org/wiki/Petri_net[Petri net]
+in which every place has exactly one incoming arc and exactly one
+outgoing arc.  As a consequence, it a concurrent language (several
+transitions may be fired) and has no conflict.
+
+In this section, we first initialize the xDSML project for MarkedGraph
+with the provided Abstract Syntax (AS) and Concrete Syntax (CS).  The
+next subsections explains MarkedGraph and can be skipped by the
+reader who already know that language.
+
+
+=== Initializing the MarkedGraph xDSML project with the provided AS and CS
+
+First, start by creating a new xDSML project (__New > Project > GEMOC
+Project / new xDSML Project__), with your desired name (for instance
+"org.gemoc.example.markedgraph"). A file __project.xml__ is created.
+When opened, it provides the xDSML view which summarizes all the
+important resources used in an xDSML project (which are part of and
+managed by other projects).  This view is a kind of dashboard or
+control center to have quick access to any important resource of the
+project.
+
+TODO : Show the xDSML view?
+
+
+TODO : Click on the genmodel and select //generate all//
+
+
+TODO : Explain how to initialize the EMF, EMFmodel, Graphical
+Visualization, etc.
+
+
+=== Abstract Syntax
+
+[[MarkedGraph-AS]]
+.Abstract Syntax of MarkedGraph
+image::MarkedGraph/images/MarkedGraph-AS.png[Abstract Syntax of MarkedGraph]
+(((MarkedGraph Abstract Syntax)))
+
+=== Example of Marked Graph model (and Concrete Syntax)
+
+The one of Wikipedia?
+
+=== Execution Semantics Definition
+
+TODO: Describe the execution semantics.
+
+A transition can be fired if there is at least one token in every of
+each entry place.  When fired, one token is removed from each entry
+place and one token is added to each output place.
+
+Only one transition is fired at a time.
+
+One want to know the number of token in any place during the
+execution.  For example, it can be shown as a number inside the circle
+representing a place and the size of the circle can be XXX
+proportionel at the number of it contains.
+
+% XXX: Fireable transitions may be drawn in green.  
+
+
+
+== Defining the Execution Semantics of Marked Graph with the GEMOC Studio
+
+=== DSA
+
+First we define the DSA (Domain Specific Actions). It includes
+Execution Data (ED) and Execution Functions (EF) which describe
+evolution of the ED.
+
+==== Creating the DSA
+
+Click on __K3 project__ in the xDSML view (Behavioral definition / DSA
+definition).  The wizard to create of new Kermeta 3 project is
+launched with the name of the project initialized (k3dsa is the last
+name).
+
+Clicking again on _K3 project_ will now allow to choose and open
+markedgraph.xtend.  It has been initialized with a template that can
+be discarded.
+
+==== Code of the DSA
+
+Fill in the following code in the markedgraph.xtend resource:
+
+[source]
+----
+include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
+----
+
+==== Explanation of the DSA
+
+When executing a Marked Graph model, we want to know the number of
+token of a place.  This is an Execution Data as it is changed during
+the execution of the model.
+
+We want to add a new attribute called __tokenCount__ on the __Place__
+metaclass.
+
+
+==== ED
+
+Current marking
+
+==== EF
+
+Fire on a transition moves token form input place to output places.
+
+=== MoCC
+
+
+Right click on the __ECL project__ in the DSE definition part. Select
+the Ecore file __markedgraph.ecore__ and the root container model
+element: __markedgraph::MarkedGraph__. 
+The file __markedgraph.ecl__ is created in the
+org.gemoc.example.markedgraph.dse.
+
+[source]
+----
+include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
+----
+
+
+What should be explained?
+
+- The main principles (we can fire as much transition has the initial
+token count of a place, thus a delayed is introduce)
+- We want to ensure that one init is done before any fire (and only
+once)
+
+
+Provide a pointer to another tutorial (or a new part of this one)
+which explains how to capitalize pieces of MoCC in a library.
+
+Provide a pointer to a MoCCML version which uses constraint automata
+to define the MoCC.
+
+
+=== DSE
+
+TODO: In the first place or at the end?
+
+
+Firing a transition
+
+=== Visual Animation
+
+=== Questions/Remarks...
+
+Questions on the MoCC from summerSchool :
+
+- why delayedBy p.initialMarking and not delayedBy 1?
+	==> Because we can make as much read as there is initialMarking
+	token in the place.  Any write in that place, means that a new
+	read can be done.
+
+- is it still right if the initial marking is P2 = 1 (all other places
+is 0) ?
+	==> No. But in any case, this initialMarking will result in a
+	deadlock.
+
+- what if there is several places which are initially marked?
+	==> See read/write semantics
+
+- typo in the DelayFor expression on slide 93: two times
+outputTransition.fireCall
+
+
+Questions on the implementation :
+
+- A transition has no more that one input or output place.  Should be
+any number !
+
+Questions:
+
+- use execute for the EF on transition instead of fire and use fire
+(or trigger) for the DSE instead of fireCall.
+
+
+Questions de forme :
+
+- Utilisation des abbréviations (MoCC, DSA, EF, ED, AS, CS, etc.) :
+Prévoir un lexique sur le site ?
+- Éviter d'avoir trop de sections : par exemple, supprimer ED, EF.
+
+
+// vim: set syntax=asciidoc tw=70 ts=4 sw=4:
+// vim: spell spelllang=en:

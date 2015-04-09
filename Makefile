@@ -1,7 +1,16 @@
 all: html
 	#(cd fig && make) &&
 
-html: GuideTutorialAutomata-generated.html
+init:
+	(cd MarkedGraph; make generes)
+
+html: GuideTutorialAutomata-generated.html GuideTutorialMarkedGraph-generated.html
+
+GuideTutorialMarkedGraph-generated.asciidoc: GuideTutorialMarkedGraph.asciidoc init
+	cat $<	\
+	    | sed -e '/^ifeval/d'	\
+	    | sed -e '/^endif/d'	\
+	    > $@
 
 GuideTutorialAutomata-generated.asciidoc: GuideTutorialAutomata.asciidoc
 	cat $<	\
@@ -13,7 +22,7 @@ GuideTutorialAutomata-generated.html: images/tutorial images/icons asciidoc.conf
 
 %.html: %.asciidoc
 	(cd images/tutorial && make)
-	asciidoc -a data-uri -a icons --attribute tabsize=4 $<
+	asciidoctor -a data-uri -a icons --attribute tabsize=4 $<
 	# -a max-width=55em
 
 clean:
