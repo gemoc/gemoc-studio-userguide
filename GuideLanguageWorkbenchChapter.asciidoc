@@ -124,7 +124,7 @@ end
 ----
 
 ===== Semantics of the Domain-Specific Events
-TODO
+Upon an occurrence of the associated MoccEvent, an occurrence of the Domain-Specific Event is created and consumed by the GEMOC Execution Engine. Its consumption triggers the execution of the designated Execution Function.
 
 === Defining the Feedback Specification
 
