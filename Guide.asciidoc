@@ -89,6 +89,8 @@ Define the runtime environnement for the language::
             * Create the graphical representation with Sirius Animator
             * Plug your own add-ons 
 
+TODO add links to the corresponding sections in the main chapters
+
 TODO: add snapshot of the dashboard
 
 .Compose executable languages
