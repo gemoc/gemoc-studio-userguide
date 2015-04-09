@@ -4,6 +4,17 @@ Francois Tanguy <francois.tanguy@inria.fr>, Didier Vojtisek <didier.vojtisek@inr
 :toc:
 :numbered:
 
+ifdef::pdf[]
+:max-width: 450
+:half-width: 275
+:quarter-width: 137
+endif::[]
+ifndef::pdf[]
+:max-width: 1000
+:half-width: 500
+:quarter-width: 250
+endif::[]
+
 ////////////////////////////////////////////////////////////////
 [dedication]
 == Dedication
@@ -22,9 +33,19 @@ The GEMOC Studio offers 2 main usages:
 
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
-[[figure-workbenches_global-picture]]
-.Main activities offered by the GEMOC workbenches.
-image:images/intro/GemocWorkbenchesGlobalPicture.png[Main activities offered by the GEMOC workbenches]
+////////////////////////////////////////////////////////////////
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={max-width}]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={half-width}]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", scaledwidth="25%"]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png[bla, scale="1"]
+////////////////////////////////////////////////////////////////
+
+[[GemocWorkbenchesGlobalPicture]]
+image::images/intro/GemocWorkbenchesGlobalPicture.png[GemocWorkbenchesGlobalPicture, scaledwidth="25%", width={quarter-width}]
+
 
 In this document:
 
