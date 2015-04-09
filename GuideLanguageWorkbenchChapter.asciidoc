@@ -1,6 +1,6 @@
-== Gemoc Language workbench image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
+== GEMOC Language Workbench image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
 
-=== Language Workbench overview
+=== Overview
 
 The GEMOC Language Workbench, intended to be used by ((language designer))s:  it allows building and composing new executable DSMLs.
 
