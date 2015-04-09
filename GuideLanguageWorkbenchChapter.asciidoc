@@ -1,4 +1,4 @@
-== Gemoc Language workbench
+== Gemoc Language workbench image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
 
 === Language Workbench overview
 
