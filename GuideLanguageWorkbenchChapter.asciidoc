@@ -175,7 +175,7 @@ end
 
 
 === Defining a debug view
-The debug layer is an extension on top of a graphical editor defined with ((Sirius)) that represent runtime data and current instruction. See <<Defining a concrete syntax with ((Sirius))>> for more details about ((Sirius)). This section will cover the debug representation creation wizard and technical implementation details. Technical implementation details are only useful for advanced use case and troubleshooting.
+The debug layer is an extension on top of a graphical editor defined with ((Sirius)) that represent runtime data and current instruction. See <<Defining a concrete syntax with Sirius>> for more details about Sirius. This section will cover the debug representation creation wizard and technical implementation details. Technical implementation details are only useful for advanced use case and troubleshooting.
 
 ==== The debug representation wizard
 This wizard creates a layer to represent the current instruction and add commands to manage break points and launch a simulation in debug mode. This is a default implementation, it can be customized to represent runtime data for instance. The customization use the ((Sirius)) description definition, see the http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual] for more details.
