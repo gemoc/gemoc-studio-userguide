@@ -2,11 +2,10 @@
 
 === Overview
 
-The GEMOC Language Workbench, intended to be used by ((language designer))s:  it allows building and composing new executable DSMLs.
-
+The *((GEMOC Language Workbench))* is intended to be used by the ((Language Designer))s. It provides the tools to create and composte Executable Domain-Specific Modeling Languages (xDSMLs).
 
 [[figure-glw-screenshot-of-language_workbench]]
-.Screenshot of GEMOC Studio Language Workbench on the TFSM (Timed Finite State Machine) example.
+.Screenshot of the GEMOC Language Workbench showing the design of a Timed Finite State Machine (TFSM) example.
 image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of GEMOC Studio Language Workbench on the TFSM (Timed Finite State Machine) example]
 (((TFSM)))
 (((TFSM,Language workbench)))
