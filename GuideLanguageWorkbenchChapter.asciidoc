@@ -73,12 +73,7 @@ TODO new project wizard (via popup, via process)
 TODO select existing project
 TODO Ecore editor
 
-
-
-===  Defining RunTime Data
-
 === Defining Domain-Specific Actions (DSAs)
-
 In Gemoc, the DSAs are developped using Kermeta 3.
 
 [NOTE]
@@ -94,20 +89,54 @@ In the wizard you can select an existing templates to help create the aspects cl
 You can manually create a Kermeta 3 project in the main eclipse menu, and then associate it to an xDSML project.
 
 
+==== Defining the Execution Data
+The Execution Data consist in attributes and references weaved onto existing concepts (metaclasses) of the Abstract Syntax. They may also include new metaclasses.
+
+==== Defining the Execution Functions
+The Execution Functions define how the Execution Data evolve during the execution of the model. Execution Functions can be implemented by defining the body of a method.
+
+[NOTE]
+For now, Execution Functions are considered as *atomic, instantaneous and blocking*. This means that any long computation will block the rest of the simulation, and concurrent Execution Functions are not executed in concurrence yet.
+
+
+
 
 === Defining Domain-Specific Constraints
+TODO
 
-=== Defining a concrete syntax
-The xDSML can support different concrete syntaxes. Most EMF based editors should work however Gemoc provides additional support for some editors.
-Editors explictly supported are: EMF tree editor, xText editor, Sirius editor.
+=== Defining a Concrete Syntax
+An xDSML can support different concrete syntaxes. Most EMF-based editors should work, however GEMOC provides additional support for some editors.
+Editors explictly supported are: EMF tree editor, Xtext editor, Sirius editor.
 
-==== Defining a concrete syntax with xText
+==== Defining a Concrete Syntax with Xtext
+See http://www.eclipse.org/Xtext/[the Xtext website].
 
-==== Defining a concrete syntax with ((Sirius))
+==== Defining a Concrete Syntax with ((Sirius))
+If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
-=== Defining a Model of Concurrency (MoC)
+=== Defining a Model of Concurrency and Communication (MoCC)
+TODO MoCCML + ECL
 
-=== Defining Domain Specific Events (DSE)
+=== Defining the Domain-Specific Events (DSE)
+The DSE can be defined using the *Gemoc Events Language* (GEL). Create a new file with extension ".GEL" in your DSE project.
+The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions (defined as methods in the DSA)
+
+[NOTE] For technical reasons, the Abstract Syntax (Ecore metamodel) must specify the signature of the Execution Functions.
+
+Therefore, the first step to designing the DSE in GEL is importing the ECL file and the Ecore file of the xDSML. You can do using the "platform:/plugin" syntax.
+
+DSEs can be defined between the "DSE" and "end" keywords.
+After the 'upon' keyword, a MoccEvent from the ECL file can be referenced.
+After the 'triggers' keyword, a navigation path from the context of the MoccEvent to an EOperation can be defined to specify which Execution Function is triggered by the Domain-Specific Event being defined.
+
+A DSE (defined at the language level) results in corresponding Model-Specific Events (at the model-level) after a compilation phase. For every instance of the metaclass context of the MoccEvent referenced by the DSE, a corresponding Model-Specific Event is created. For instance if a DSE is created for Transitions and there are 3 Transitions in the model, there will be a corresponding Model-Specific Event for each Transition.
+
+=== Defining the Feedback Policies
+The Feedback Policies can be defined in GEL as well. A Feedback Policy is responsible for specifying the influence of a piece of data from the domain on the MoCC. A Feedback Policy can be defined as follows.
+First, give a name to the result of the Execution Function using the "returning" keyword. Then, between the "Feedback" and "end" keywords, the Feedback Rules can be defined as "[filter] => allow consequence".
+
+A Feedback Policy must be used when the MoCC needs runtime data from the domain without which it would otherwise realize an arbitrary decision. This is typically the case for any form of conditional-based control flow.
+
 
 === Defining an animation view
 The animation layer is an extension on top of a graphical editor defined with ((Sirius)).
