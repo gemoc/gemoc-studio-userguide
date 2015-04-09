@@ -156,8 +156,8 @@ DSE EvaluateGuard:
 	upon mocc_evaluateGuard
 	triggers ActivityEdge.evaluateGuard returning result
 	feedback:
-		[ result ] => allow ActivityEdge.mocc_doExecuteTarget
-		default => allow ActivityEdge.mocc_doNotExecuteTarget
+		[ result ] => allow ActivityEdge.mocc_mayExecuteTarget
+		default => allow ActivityEdge.mocc_mayNotExecuteTarget
 	end
 end
 ----
