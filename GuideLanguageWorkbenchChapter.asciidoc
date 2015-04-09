@@ -109,7 +109,7 @@ end
 ----
 After the _upon_ keyword, any MoccEvent from the MoCC2AS Mapping can be referenced. After the 'triggers' keyword, navigation path from the context of the MoccEvent to an EOperation can be defined to specify which Execution Function must be triggered by this Domain-Specific Event.
 
-[Note]
+[NOTE]
 The implicit context of a Domain-Specific Event is inferred from the context in which its associated MoccEvent is defined in the MoCC2AS Mapping. Therefore, the DSE will be usable for any instance in the model of the context of the DSE. For instance if a DSE is mapped to a MoccEvent defined in the context of the metaclass _Transition_, and there are 3 Transitions in the model being executed, this DSE will be usable for each of the 3 Transitions of the model.
 
 ==== Example
