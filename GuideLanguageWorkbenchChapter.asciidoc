@@ -89,7 +89,7 @@ TODO: MoccML + ECL
 The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions. They specify the coordination between what happens in the MoCC, depending on its constraints, and which operations must be called in the model (thus resulting in changes in the Execution Data).
 
 ==== Creating the DSE Project
-Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (((GEL))).
+Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (GEL).
 
 ==== Editing the DSE Project
 The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the "import platform:/plugin/..." syntax at the beginning of the file.
@@ -113,11 +113,41 @@ In the GEMOC approach, the MoCC is independent from the domain. However, most la
 In this context, the Feedback Specification specifies how domain data returned by an Execution Function must be interpreted to parameterize the MoCC. The Feedback Specification consists in a set of Feedback Policies which are associated to the Domain-Specific Events. Therefore, the Feedback Specification is also done using ((GEL)).
 
 ==== Creating a Feedback Policy
+A Feedback Policy can be associated to a DSE using the following syntax:
+----
+DSE <name>:
+  upon <MoccEvent>
+  triggers <Path-to-ExecutionFunction> returning <resultName>
+  feedback:
+    [<filter1>] => allow <PathToMoccEventConsequence1>
+    [<filter2>] => allow <PathToMoccEventConsequence2>
+    ...
+    default => allow <PathToMoccEventDefaultConsequence>
+  end
+end
+----
+Where:
+* <resultName> is a local variable which will be affected with the value returned by the associated Execution Function;
+* Between the _feedback_ and _end_ keywords, a set of Feedback Rules are defined (including a default Feedback Rule, with the _default_ keyword). A Feedback Rule is composed of a filter and a consequence;
+* <filterN> are predicates, most likely using <resultName> which define whether or not this Feedback Rule must be applied;
+* <PathToMoccEventConsequenceN> is a navigation path to a MoccEvent which specifies which MoccEvent is allowed as a result of the data returned by the Execution Function.
 
-The Feedback Policies can be defined in GEL as well. A Feedback Policy is responsible for specifying the influence of a piece of data from the domain on the MoCC. A Feedback Policy can be defined as follows.
-First, give a name to the result of the Execution Function using the "returning" keyword. Then, between the "Feedback" and "end" keywords, the Feedback Rules can be defined as "[filter] => allow consequence".
+==== Semantics of the Feedback Policy
+When the Execution Function associated to a DSE returns a result, it is passed through each filter of the Feedback Policy. If none of the filters is validated, then the default rule is applied. Else, the collection of rules for which the filter validated are applied. 
+For each rule to apply, the associated consequence is allowed to have occurrences in upcoming steps of execution.
 
-A Feedback Policy must be used when the MoCC needs runtime data from the domain without which it would otherwise realize an arbitrary decision. This is typically the case for any form of conditional-based control flow.
+==== Example
+----
+DSE EvaluateGuard:
+	upon mocc_evaluateGuard
+	triggers ActivityEdge.evaluateGuard returning result
+	feedback:
+		[ result ] => allow ActivityEdge.mocc_doExecuteTarget
+		default => allow ActivityEdge.mocc_doNotExecuteTarget
+	end
+end
+----
+
 
 
 === Defining an animation view
