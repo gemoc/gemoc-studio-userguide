@@ -15,7 +15,9 @@ image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEM
 
 ==== Purpose
 The xDSML Project is the core project of languages created using the GEMOC Studio. It has two main purposes:
+
 * Referencing the different projects representing the various parts constituting an xDSML;
+
 * Guiding the ((Language Designer)) in the language creation process through the ((GEMOC Dashboard)) illustrating the workflow of creating an xDSML using the GEMOC Studio.
 
 ==== Creating the xDSML Project
