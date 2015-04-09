@@ -95,19 +95,41 @@ TODO: add snapshot of the dashboard
 The second main activity is to define the composition between executable languages.
 The language integrator is also assisted by a dedicated dashboard that proposes the following activity groups:
 
-TODO: add a  the list of composition activities here
+Compose languages::
+    This activity can be decomposed in activities in two groups :
+        Create composition operators:::
+            * Create operators with BCOoL
+        Combine languages::
+            * Select a set of language to combine
+            * Apply composition operators to a set of languages.
+            * Customize composition
+
 
 TODO: add snapshot of the dashboard
 
 
 === Modeling workbench overview image:images/icons/IconeGemocModel_16.png[width=16, height=16, role=right]
 
+The GEMOC Modeling Workbench allows the use of available languages to create and execute models.
 
+Create Models::
+    * Use available editors to create domain models.
+Execute and debug models::
+    * Use execution engine
+    * Use step by step debugger
+    * Analyse time trace
+Animate models::
+    * Use animation views
 
 === General concerns and prerequisite
 
+
 [NOTE]
+.Note
+=====================================================================
 In order to run, Eclipse workbench work better with additional memory. Use the following setting to start Eclipse: -Xms1024m -Xmx1024m -XX:PermSize=512m -XX:MaxPermSize=512m
+=====================================================================
+
 
 ////////////////////////////////////////////////////////////////
 Inclusion of the chapters, please open the corresponding files
