@@ -18,87 +18,53 @@ The xDSML Project is the core project of languages created using the GEMOC Studi
 * Referencing the different projects representing the various parts constituting an xDSML;
 * Guiding the ((Language Designer)) in the language creation process through the ((GEMOC Dashboard)) illustrating the workflow of creating an xDSML using the GEMOC Studio.
 
-==== How to create an xDSML Project
-In the main menu of the GEMOC Studio, go to: File > New > Project... > New GEMOC Language Project. This will create a new xDSML Project in your workspace.
+==== Creating the xDSML Project
+In the GEMOC Studio, go to: _File > New > Project... > New GEMOC Language Project_. This will create a new xDSML Project in your workspace.
 
-==== Editing an xDSML Project
-The main file constituting an xDSML Project is the _project.xdsml_. This file is not supposed to be edited manually although it is possible to. The pop-up menu of the project (available upon right click on the xDSML Project) or the <<section-process-support-view>> provide a set of wizards to edit this file.   
+==== Editing the xDSML Project
+The main file constituting the xDSML Project is the _project.xdsml_. To edit this file, open it with the "XDSML Model Editor".
 
 From the information specified in this file, the project generates additional code that is used by the Execution Engine during the execution of models conforming to the xDSML (see <<chapter-gemoc-modeling-workbench>>).   
 
 [[section-define-AS-project]]
-=== Defining Abstract Syntax (or domain concepts)
+=== Domain Model Project
 
-Defining the abstract syntax (AS) in the Language Workbench is done thanks to an EMF Ecore project that will be associated to the xDSML definition.
+==== Purpose
+The Domain Model Project specifies the concepts of the domain at hand and the structural relations between the concepts.
 
-All ecore editors can be used to edit the concepts in the ecore file.
+==== Creating the Domain Model Project
+The GEMOC Studio relies on the Eclipse Modeling Framework for its Domain Model Projects. See http://eclipse.org/modeling/emf/[the EMF website] for more information on how to create an EMF project in Eclipse.
 
-The EMF project can be created manually and then associated to the xDSML or directly created for the specific use of a given xDSML.
+When your EMF Project is done, connect your xDSML Project to it by specifying in the _project.xdsml_ file the name of the EMF Project, the path to the genmodel of your Ecore metamodel and the name of the root element as _package::root_.
 
-[[section-define-AS-project-method-1]]
-==== Method 1 : Creation via xDSML popup
+==== Editing the Domain Model Project
+If you wish to modify your Domain Model, do not forget to reload the associated genmodel and regenerate the EMF model code (and edit/editor code if you use them).
 
-To create the EMF project:
+[[section-define-dsa-project]]
+=== Defining the Domain-Specific Actions (DSA) Project
 
-* right click on the xDSML project
-* navigate in the _Gemoc Language_ entry.
-* click on _create Domain Model project_
+==== Purpose
+The Domain-Specific Actions define the runtime state (*Execution Data*) of the model and the operations (*Execution Functions*) which modify the runtime state of the model.
 
-This will open a wizard asking either to create a new EMF project or select an existing one (usefull for <<section-define-AS-project-method-2, method 2>>).
-Creating a new EMF project will ask for some 
+==== Creating the DSA Project
+In the GEMOC Studio, the DSA are implemented using https://github.com/diverse-project/k3/wiki[Kermeta 3].
+To create a new DSA Project, in the main menu of the GEMOC Studio, go to: _File > New > Project... > K3 Project_. In the wizard, create it as a Plug-in with EMF using the template of your choice.
+Then, connect the xDSML Project to the DSA Project by referencing the DSA Project in the _project.xdsml_ file.
 
-[NOTE]
-In future version of the studio, this method may disapear and be replaced by <<section-define-AS-project-method-3, method 3>>.
+==== Editing the DSA Project
+Kermeta 3 is based on http://www.eclipse.org/xtend/index.html[xTend]. The Execution Data and Execution Functions are defined through aspects weaved onto the metaclasses of the Domain Model.
 
-[[section-define-AS-project-method-2]]
-==== Method 2 : Manual creation and association to the xDSML
+===== Defining the Execution Data
+The Execution Data consist in attributes and references added to existing concepts (metaclasses) of the Abstract Syntax. They may also include new metaclasses which define the type of these new attributes and references.
 
-From eclipse menu:
-
-* _File > New > Projects... > Ecore Modeling Project_
-* in the Ecore diagram, define the concepts for your language as a class diagram.
-
-[TIP]
-There are several other ways to create valid EMF projects. Amung them we can consider: _File > New > Projects... > EMF Project_, _File > New > Projects... > Empty EMF Project_,  _File > New > Projects... > xText Project_ ... However, this isn't in the scope of this document to detail them or explain how to correctly configure them for being used by Gemoc.
-
-Then associate the EMF project to the xDSML. The association is done either with right click on the xDSML project, _Gemoc Language_ > _create Domain Model project_ > _Select existing EMF project_; or via the Gemo Guideline view.
-
-
-[[section-define-AS-project-method-3]]
-==== Method 3 : Creation or selection via Gemoc Guideline view
-
-The Gemoc Guideline view offers an integrated vision of the most important steps of the xDSML creation process. When selecting the _Define Domain Model_ task, a button allows to launch the wizards of <<section-define-AS-project-method-1, method 1>>.
-
-TODO new project wizard (via popup, via process)
-TODO select existing project
-TODO Ecore editor
-
-=== Defining Domain-Specific Actions (DSAs)
-In Gemoc, the DSAs are developped using Kermeta 3.
-
-[NOTE]
-There may exist other ways to create DSAs, but these methods aren't in the scope of this document.
-
-* right click on the xDSML project
-* navigate in the _Gemoc Language_ entry.
-* click on _create DSA project_
-
-In the wizard you can select an existing templates to help create the aspects classes that will extend the classes of the Domain model.
-
-
-You can manually create a Kermeta 3 project in the main eclipse menu, and then associate it to an xDSML project.
-
-
-==== Defining the Execution Data
-The Execution Data consist in attributes and references weaved onto existing concepts (metaclasses) of the Abstract Syntax. They may also include new metaclasses.
-
-==== Defining the Execution Functions
+===== Defining the Execution Functions
 The Execution Functions define how the Execution Data evolve during the execution of the model. Execution Functions can be implemented by defining the body of a method.
 
 [NOTE]
 For now, Execution Functions are considered as *atomic, instantaneous and blocking*. This means that any long computation will block the rest of the simulation, and concurrent Execution Functions are not executed in concurrence yet.
 
-
+[NOTE]
+For technical reasons, the Domain Model (Ecore metamodel) must specify the signature of the Execution Functions as EOperations.
 
 
 === Defining Domain-Specific Constraints
@@ -121,8 +87,7 @@ TODO MoCCML + ECL
 The DSE can be defined using the *Gemoc Events Language* (GEL). Create a new file with extension ".GEL" in your DSE project.
 The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions (defined as methods in the DSA)
 
-[NOTE]
-For technical reasons, the Abstract Syntax (Ecore metamodel) must specify the signature of the Execution Functions.
+
 
 Therefore, the first step to designing the DSE in GEL is importing the ECL file and the Ecore file of the xDSML. You can do using the "platform:/plugin" syntax.
 
