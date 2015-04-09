@@ -28,7 +28,7 @@ Items or roles relative to the Modeling Workbench are identified with the follow
 
 TODO include figure here
 
-=== Language Workbench overview image:images/icons/IconeGemocLanguage.png[width=32, height=32, role=right]
+=== Language Workbench overview image:images/icons/IconeGemocLanguage_32.png[width=32, height=32, role=right]
 
 The GEMOC Language Workbench allows building and composing new executable DSMLs.
 
@@ -75,7 +75,7 @@ TODO: add a  the list of composition activities here
 TODO: add snapshot of the dashboard
 
 
-=== Modeling workbench overview image:images/icons/IconeGemocModel.png[width=32, height=32, role=right]
+=== Modeling workbench overview image:images/icons/IconeGemocModel_32.png[width=32, height=32, role=right]
 
 
 
