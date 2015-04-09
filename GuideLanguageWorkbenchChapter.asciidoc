@@ -89,7 +89,7 @@ TODO: MoccML + ECL
 The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions. They specify the coordination between what happens in the MoCC, depending on its constraints, and which operations must be called in the model (thus resulting in changes in the Execution Data).
 
 ==== Creating the DSE Project
-Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (GEL).
+Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (((GEL))).
 
 ==== Editing the DSE Project
 The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the "import platform:/plugin/..." syntax at the beginning of the file.
@@ -106,7 +106,14 @@ After the _upon_ keyword, any MoccEvent from the MoCC2AS Mapping can be referenc
 [Note]
 The implicit context of a Domain-Specific Event is inferred from the context in which its associated MoccEvent is defined in the MoCC2AS Mapping. Therefore, the DSE will be usable for any instance in the model of the context of the DSE. For instance if a DSE is mapped to a MoccEvent defined in the context of the metaclass _Transition_, and there are 3 Transitions in the model being executed, this DSE will be usable for each of the 3 Transitions of the model.
 
-=== Defining the Feedback Policies
+=== Defining the Feedback Specification
+
+==== Purpose
+In the GEMOC approach, the MoCC is independent from the domain. However, most languages need to be able to parameterize their control flow with their data flow. For instance, a conditional statement is a control flow construct which is conditioned by the result of its condition. Therefore, a form of communication between the MoCC and the DSA must be operated.
+In this context, the Feedback Specification specifies how domain data returned by an Execution Function must be interpreted to parameterize the MoCC. The Feedback Specification consists in a set of Feedback Policies which are associated to the Domain-Specific Events. Therefore, the Feedback Specification is also done using ((GEL)).
+
+==== Creating a Feedback Policy
+
 The Feedback Policies can be defined in GEL as well. A Feedback Policy is responsible for specifying the influence of a piece of data from the domain on the MoCC. A Feedback Policy can be defined as follows.
 First, give a name to the result of the Execution Function using the "returning" keyword. Then, between the "Feedback" and "end" keywords, the Feedback Rules can be defined as "[filter] => allow consequence".
 
