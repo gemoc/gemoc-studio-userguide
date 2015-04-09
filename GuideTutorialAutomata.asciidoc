@@ -6,7 +6,7 @@ endif::[]
 
 
 
-= GEMOC xDSML definition tutorial
+= GEMOC xDSML definition tutorial with Automaton DSML
 
 
 // name="../../../..//home/svn/SVN/gemoc/trunk/deliverables/WP1/D1.2.1/icons/IconeGemocStudio_48x48x32"
@@ -488,8 +488,8 @@ and make sure the "Root container model element" is
 "automata::Automata" and name the file "automataDSE". Ignore the error
 that is displayed.
 
-Right click on the DSE project and make sure that in "configure", the
-"DSE builder" functionality is active.
+Right click on the __ECL project__ in the DSE definition part and make
+sure that in "configure", the "DSE builder" functionality is active.
 
 An error is indicated in the newly created project. To correct it,
 fill-in the "moc2as.properties" file by completing the property with
@@ -1018,8 +1018,8 @@ TODO: To be completed
 A few workarounds are needed before you can launch the Modeling
 Workbench :
 
-* TODO: Dans le projet xDSML, initialiser le champ Code executor class name
-  with automata.xdsml.api.impl.AutomataCodeExecutor
+* TODO: In the xDSML project, initialize  the field "Code executor
+class name" with automata.xdsml.api.impl.AutomataCodeExecutor
 * In the DSA Project, MANIFEST.MF, runtime, export the non-Java package containing your .xtend DSAs
 * In the xDSML Project, plugin.xml, add the following attribute to the XDSML_Definition: modelLoader_class="org.gemoc.gemoc_modeling_workbench.core.DefaultModelLoader"
 * In the xDSML Project, MANIFEST.MF, add the following dependency:
