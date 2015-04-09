@@ -123,6 +123,9 @@ DSE ExecuteActivityNode:
 end
 ----
 
+===== Semantics of the Domain-Specific Events
+TODO
+
 === Defining the Feedback Specification
 
 ==== Purpose
