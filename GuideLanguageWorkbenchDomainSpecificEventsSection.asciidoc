@@ -16,7 +16,7 @@ DSE <name>:
   triggers <Path-to-ExecutionFunction>
 end
 ----
-Where
+Where:
 
 * <name> is the name of the Domain-Specific Event;
 * <MoccEvent> is any MoccEvent from the MoCC2AS Mapping. This will also automatically define the DSE in the same context as the MoccEvent referenced, thus defining the starting point of navigation expressions from this DSE;
