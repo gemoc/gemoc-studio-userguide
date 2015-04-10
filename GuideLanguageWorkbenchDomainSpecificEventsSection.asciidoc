@@ -1,0 +1,36 @@
+=== Defining the Domain-Specific Events (DSE)
+
+==== Purpose
+The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions. They specify the coordination between what happens in the MoCC, depending on its constraints, and which operations must be called in the model (thus resulting in changes in the Execution Data).
+
+==== Creating the DSE Project
+Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (GEL).
+
+==== Editing the DSE Project
+The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the _import platform:/resource/..._ syntax at the beginning of the file.
+
+Then a DSE is defined using the following syntax:
+----
+DSE <name>:
+  upon <MoccEvent>
+  triggers <Path-to-ExecutionFunction>
+end
+----
+After the _upon_ keyword, any MoccEvent from the MoCC2AS Mapping can be referenced. After the 'triggers' keyword, navigation path from the context of the MoccEvent to an EOperation can be defined to specify which Execution Function must be triggered by this Domain-Specific Event.
+
+[NOTE]
+The implicit context of a Domain-Specific Event is inferred from the context in which its associated MoccEvent is defined in the MoCC2AS Mapping. Therefore, the DSE will be usable for any instance in the model of the context of the DSE. For instance if a DSE is mapped to a MoccEvent defined in the context of the metaclass _Transition_, and there are 3 Transitions in the model being executed, this DSE will be usable for each of the 3 Transitions of the model.
+
+==== Example
+----
+import "platform:/resource/org.gemoc.sample.fuml.model/model/fuml.ecore"
+import "platform:/resource/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
+
+DSE ExecuteActivityNode:
+	upon mocc_executeNode
+	triggers ActivityNode.execute
+end
+----
+
+===== Semantics of the Domain-Specific Events
+Upon an occurrence of the associated MoccEvent, an occurrence of the Domain-Specific Event is created and consumed by the GEMOC Execution Engine. Its consumption triggers the execution of the designated Execution Function.

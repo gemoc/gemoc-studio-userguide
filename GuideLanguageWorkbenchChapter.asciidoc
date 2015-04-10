@@ -10,68 +10,13 @@ image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEM
 (((TFSM,Language Workbench)))
 
 '''
-[[section-gemoc-language-project]]
-=== xDSML Project
 
-==== Purpose
-The xDSML Project is the core project of languages created using the GEMOC Studio. It has two main purposes:
+include::GuideLanguageWorkbenchXDSMLProjectSection.asciidoc[]
 
-* Referencing the different projects representing the various parts constituting an xDSML;
+include::GuideLanguageWorkbenchDomainModelProjectSection.asciidoc[]
 
-* Guiding the ((Language Designer)) in the language creation process through the ((GEMOC Dashboard)) illustrating the workflow of creating an xDSML using the GEMOC Studio.
+include::GuideLanguageWorkbenchDomainSpecificActionsProjectSection.asciidoc[]
 
-==== Creating the xDSML Project
-In the GEMOC Studio, go to: _File > New > Project... > New GEMOC Language Project_. This will create a new xDSML Project in your workspace.
-
-==== Editing the xDSML Project
-The main file constituting the xDSML Project is the _project.xdsml_. To edit this file, open it with the "XDSML Model Editor".
-
-From the information specified in this file, the project generates additional code that is used by the Execution Engine during the execution of models conforming to the xDSML (see <<chapter-gemoc-modeling-workbench>>).   
-
-[[section-define-AS-project]]
-=== Domain Model Project
-
-==== Purpose
-The Domain Model Project specifies the concepts of the domain at hand and the structural relations between the concepts.
-
-==== Creating the Domain Model Project
-The GEMOC Studio relies on the Eclipse Modeling Framework for its Domain Model Projects. See http://eclipse.org/modeling/emf/[the EMF website] for more information on how to create an EMF project in Eclipse. The Domain Model is materialized as an Ecore metamodel.
-
-When your EMF Project is done, connect your xDSML Project to it by specifying in the _project.xdsml_ file the name of the EMF Project, the path to the genmodel of your Ecore metamodel and the name of the root element as _package::root_.
-
-TODO: Melange?
-
-==== Editing the Domain Model Project
-If you wish to modify your Domain Model, do not forget to reload the associated genmodel and regenerate the EMF model code (and edit/editor code if you use them).
-
-[[section-define-dsa-project]]
-=== Defining the Domain-Specific Actions (DSA) Project
-
-==== Purpose
-The Domain-Specific Actions define the runtime state (*Execution Data*) of the model and the operations (*Execution Functions*) which modify the runtime state of the model.
-
-==== Creating the DSA Project
-In the GEMOC Studio, the DSA are implemented using https://github.com/diverse-project/k3/wiki[Kermeta 3].
-To create a new DSA Project, in the main menu of the GEMOC Studio, go to: _File > New > Project... > K3 Project_. In the wizard, create it as a Plug-in with EMF using the template of your choice.
-Then, connect the xDSML Project to the DSA Project by referencing the DSA Project in the _project.xdsml_ file.
-
-==== Editing the DSA Project
-Kermeta 3 is based on http://www.eclipse.org/xtend/index.html[xTend]. The Execution Data and Execution Functions are defined through aspects weaved onto the metaclasses of the Domain Model.
-
-===== Defining the Execution Data
-The Execution Data consist in attributes and references added to existing concepts (metaclasses) of the Abstract Syntax. They may also include new metaclasses which define the type of these new attributes and references.
-
-===== Defining the Execution Functions
-The Execution Functions define how the Execution Data evolve during the execution of the model. Execution Functions can be implemented by defining the body of a method.
-
-[NOTE]
-For now, Execution Functions are considered as *atomic, instantaneous and blocking*. This means that any long computation will block the rest of the simulation, and concurrent Execution Functions are not executed in concurrence yet.
-
-[NOTE]
-For technical reasons, the Domain Model (Ecore metamodel) must specify the signature of the Execution Functions as EOperations.
-
-==== Testing the Domain-Specific Actions
-It is possible to test the DSA (in particular the Execution Functions) by simply writing a simple program with a _main_ function (using Java or Xtend/Kermeta3). Create or load a model conform to your Domain Model and call the Execution Functions in the right order to verify there are no runtime exceptions or domain issues.
 
 === Defining Domain-Specific Constraints
 TODO
@@ -86,45 +31,15 @@ See http://www.eclipse.org/Xtext/[the Xtext website].
 ==== Defining a Concrete Syntax with ((Sirius))
 If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
+
+
 === Defining a Model of Concurrency and Communication (MoCC)
 TODO: MoccML + ECL
 
-=== Defining the Domain-Specific Events (DSE)
 
-==== Purpose
-The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions. They specify the coordination between what happens in the MoCC, depending on its constraints, and which operations must be called in the model (thus resulting in changes in the Execution Data).
+include::GuideLanguageWorkbenchDomainSpecificEventsSection.asciidoc[]
 
-==== Creating the DSE Project
-Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (GEL).
-
-==== Editing the DSE Project
-The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the _import platform:/resource/..._ syntax at the beginning of the file.
-
-Then a DSE is defined using the following syntax:
-----
-DSE <name>:
-  upon <MoccEvent>
-  triggers <Path-to-ExecutionFunction>
-end
-----
-After the _upon_ keyword, any MoccEvent from the MoCC2AS Mapping can be referenced. After the 'triggers' keyword, navigation path from the context of the MoccEvent to an EOperation can be defined to specify which Execution Function must be triggered by this Domain-Specific Event.
-
-[NOTE]
-The implicit context of a Domain-Specific Event is inferred from the context in which its associated MoccEvent is defined in the MoCC2AS Mapping. Therefore, the DSE will be usable for any instance in the model of the context of the DSE. For instance if a DSE is mapped to a MoccEvent defined in the context of the metaclass _Transition_, and there are 3 Transitions in the model being executed, this DSE will be usable for each of the 3 Transitions of the model.
-
-==== Example
-----
-import "platform:/resource/org.gemoc.sample.fuml.model/model/fuml.ecore"
-import "platform:/resource/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
-
-DSE ExecuteActivityNode:
-	upon mocc_executeNode
-	triggers ActivityNode.execute
-end
-----
-
-===== Semantics of the Domain-Specific Events
-Upon an occurrence of the associated MoccEvent, an occurrence of the Domain-Specific Event is created and consumed by the GEMOC Execution Engine. Its consumption triggers the execution of the designated Execution Function.
+include::GuideLanguageWorkbenchDomainSpecificEventsSection.asciidoc[]
 
 === Defining the Feedback Specification
 
