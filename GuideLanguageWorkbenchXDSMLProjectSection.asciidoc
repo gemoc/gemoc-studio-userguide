@@ -1,0 +1,20 @@
+[[section-gemoc-language-project]]
+=== xDSML Project
+
+==== Purpose
+The xDSML Project is the core project of languages created using the GEMOC Studio. It has two main purposes:
+
+* Referencing the different projects implementing the various parts constituting an xDSML;
+
+* Guiding the ((Language Designer)) in the language creation process through the ((GEMOC Dashboard)) illustrating the workflow of creating an xDSML using the GEMOC Studio.
+
+
+
+==== Creating the xDSML Project
+In the GEMOC Studio, go to: _File > New > Project... > New GEMOC Language Project_. This will create a new xDSML Project in your workspace.
+
+==== Editing the xDSML Project
+The main file constituting the xDSML Project is the _project.xdsml_. To edit this file, open it with the _XDSML Model Editor_.
+
+From the information contained in this file, the project generates additional code that is used by the Execution Engine during the execution of models conforming to the xDSML (see <<chapter-gemoc-modeling-workbench>>).
+

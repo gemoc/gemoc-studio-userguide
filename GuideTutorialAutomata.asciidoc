@@ -6,7 +6,7 @@ endif::[]
 
 
 
-= GEMOC xDSML definition tutorial
+= GEMOC xDSML definition tutorial with Automaton DSML
 
 
 // name="../../../..//home/svn/SVN/gemoc/trunk/deliverables/WP1/D1.2.1/icons/IconeGemocStudio_48x48x32"
@@ -34,19 +34,21 @@ illustrate different aspects of the GEMOC studio.
 1. <<sec-increment1,First implementation>> of the deterministic
 Automata xDSML with a focus on the DSA.
 
-2. <<sec-increment2,Second implementation>> with a focus on the MoCC
+2. <<sec-increment2,Second implementation>> with the same MoCC defined using MoCCML and a state machine
+
+3. <<sec-increment3,Second implementation>> with a focus on the MoCC
 (to show that a balance must be found)
 
-3. <<sec-visualization,Graphical visualization>>.
+4. <<sec-visualization,Graphical visualization>>.
 
-4. <<sec-nondeterministic,Nondeterministic automata>> (evolution of the previous example)
+5. <<sec-nondeterministic,Nondeterministic automata>> (evolution of the previous example)
 
-5. <<sec-pushdown,Pushdown Automata>> (demonstrate the feedback mechanism)
+6. <<sec-pushdown,Pushdown Automata>> (demonstrate the feedback mechanism)
 
-6. <<sec-userCode,Integration of user defined code>> (connect the
+7. <<sec-userCode,Integration of user defined code>> (connect the
 automata to a specific graphical interface).
 
-7. <<sec-otherIncrements,Other increments>>:
+8. <<sec-otherIncrements,Other increments>>:
 	- Composite DSE
 	- Composition operators
 	- Traces
@@ -486,8 +488,8 @@ and make sure the "Root container model element" is
 "automata::Automata" and name the file "automataDSE". Ignore the error
 that is displayed.
 
-Right click on the DSE project and make sure that in "configure", the
-"DSE builder" functionality is active.
+Right click on the __ECL project__ in the DSE definition part and make
+sure that in "configure", the "DSE builder" functionality is active.
 
 An error is indicated in the newly created project. To correct it,
 fill-in the "moc2as.properties" file by completing the property with
@@ -1016,8 +1018,8 @@ TODO: To be completed
 A few workarounds are needed before you can launch the Modeling
 Workbench :
 
-* TODO: Dans le projet xDSML, initialiser le champ Code executor class name
-  with automata.xdsml.api.impl.AutomataCodeExecutor
+* TODO: In the xDSML project, initialize  the field "Code executor
+class name" with automata.xdsml.api.impl.AutomataCodeExecutor
 * In the DSA Project, MANIFEST.MF, runtime, export the non-Java package containing your .xtend DSAs
 * In the xDSML Project, plugin.xml, add the following attribute to the XDSML_Definition: modelLoader_class="org.gemoc.gemoc_modeling_workbench.core.DefaultModelLoader"
 * In the xDSML Project, MANIFEST.MF, add the following dependency:
@@ -1054,7 +1056,14 @@ In the panel "Common", select "Shared file" and put the project path there: "/co
 
 
 [[sec-increment2]]
-== Increment 2: new MoCC and DSA for Automata (MoCC focused version)
+== Increment 2: new MoCC and DSA for Automata (using State Machines of MoCCML)
+
+Same DSA
+
+Same MoCC but expressed with a state machine and not CCSL relations.
+
+[[sec-increment3]]
+== Increment 3: new MoCC and DSA for Automata (MoCC focused version)
 
 In the previous version the MoCC is only responsible of ensuring that
 DSE events (input symbols and end of word event) arrive one at a time.
@@ -1073,7 +1082,7 @@ TODO: to be developed.
 
 
 [[sec-visualization]]
-== Increment 3: Graphical visualization
+== Increment 4: Graphical visualization
 
 * On the model (current states, the symbols already analyzed?)
 * A tabular presentation ?
@@ -1083,7 +1092,7 @@ TODO: to be developed.
 
 
 [[sec-nondeterministic]]
-== Increment 4: Consider nondeterministic automata.
+== Increment 5: Consider nondeterministic automata.
 
 TODO: to be developed.
 
@@ -1095,7 +1104,7 @@ all states that are accessible by the symbols already accepte by the
 automaton.
 
 [[sec-pushdown]]
-== Increment 5: Pushdown automaton
+== Increment 6: Pushdown automaton
 
 TODO: The purpose of Pushdown Automaton is to illustrate the Feedback
     mechanism.
@@ -1110,7 +1119,7 @@ integrated to the GEMOC studio.
 
 
 [[sec-userCode]]
-== Increment 6: Call of user actions
+== Increment 7: Call of user actions
 
 NOTE: Will be added in a future version of this tutorial.
 

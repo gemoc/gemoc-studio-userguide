@@ -1,147 +1,51 @@
-== Gemoc Language workbench
+== GEMOC Language Workbench image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
 
-=== Language Workbench overview
+=== Overview
 
-The GEMOC Language Workbench, intended to be used by ((language designer))s:  it allows building and composing new executable DSMLs.
-
+The *((GEMOC Language Workbench))* is intended to be used by the ((Language Designer))s and the ((Language Integrator))s. It provides the tools to create and compose eXecutable Domain-Specific Modeling Languages (xDSMLs) using the GEMOC approach.
 
 [[figure-glw-screenshot-of-language_workbench]]
-.Screenshot of GEMOC Studio Language Workbench on the TFSM (Timed Finite State Machine) example.
-image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of GEMOC Studio Language Workbench on the TFSM (Timed Finite State Machine) example]
-(((TFSM)))
-(((TFSM,Language workbench)))
+.Screenshot of the GEMOC Language Workbench showing the design of a Timed Finite State Machine (TFSM) example.
+image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench]
+(((TFSM,Language Workbench)))
 
 '''
-[[section-gemoc-language-project]]
-=== Gemoc Language project
 
-In the menu go to: File> New> Projects...> Gemoc Language project
+include::GuideLanguageWorkbenchXDSMLProjectSection.asciidoc[]
 
-This project will be the aggregator of the other Eclipse projects that will constitute the components of a Language Unit of the xDSML.
+include::GuideLanguageWorkbenchDomainModelProjectSection.asciidoc[]
 
-It mainly defines a project.xdsml file that references these other components.
-
-The xDSML file isn't supposed to be edited manually. The pop up menu on the project (available on right click) or the <<section-process-support-view>> provides a set of wizard to fill this file.   
-
-
-From these information, the project will generate additional code that will be used by the execution engine when the language will be deployed and used by the <<chapter-gemoc-modeling-workbench>>.   
-
-[[section-define-AS-project]]
-=== Defining Abstract Syntax (or domain concepts)
-
-Defining the abstract syntax (AS) in the Language Workbench is done thanks to an EMF Ecore project that will be associated to the xDSML definition.
-
-All ecore editors can be used to edit the concepts in the ecore file.
-
-The EMF project can be created manually and then associated to the xDSML or directly created for the specific use of a given xDSML.
-
-[[section-define-AS-project-method-1]]
-==== Method 1 : Creation via xDSML popup
-
-To create the EMF project:
-
-* right click on the xDSML project
-* navigate in the _Gemoc Language_ entry.
-* click on _create Domain Model project_
-
-This will open a wizard asking either to create a new EMF project or select an existing one (usefull for <<section-define-AS-project-method-2, method 2>>).
-Creating a new EMF project will ask for some 
-
-[NOTE]
-In future version of the studio, this method may disapear and be replaced by <<section-define-AS-project-method-3, method 3>>.
-
-[[section-define-AS-project-method-2]]
-==== Method 2 : Manual creation and association to the xDSML
-
-From eclipse menu:
-
-* _File > New > Projects... > Ecore Modeling Project_
-* in the Ecore diagram, define the concepts for your language as a class diagram.
-
-[TIP]
-There are several other ways to create valid EMF projects. Amung them we can consider: _File > New > Projects... > EMF Project_, _File > New > Projects... > Empty EMF Project_,  _File > New > Projects... > xText Project_ ... However, this isn't in the scope of this document to detail them or explain how to correctly configure them for being used by Gemoc.
-
-Then associate the EMF project to the xDSML. The association is done either with right click on the xDSML project, _Gemoc Language_ > _create Domain Model project_ > _Select existing EMF project_; or via the Gemo Guideline view.
-
-
-[[section-define-AS-project-method-3]]
-==== Method 3 : Creation or selection via Gemoc Guideline view
-
-The Gemoc Guideline view offers an integrated vision of the most important steps of the xDSML creation process. When selecting the _Define Domain Model_ task, a button allows to launch the wizards of <<section-define-AS-project-method-1, method 1>>.
-
-TODO new project wizard (via popup, via process)
-TODO select existing project
-TODO Ecore editor
-
-=== Defining Domain-Specific Actions (DSAs)
-In Gemoc, the DSAs are developped using Kermeta 3.
-
-[NOTE]
-There may exist other ways to create DSAs, but these methods aren't in the scope of this document.
-
-* right click on the xDSML project
-* navigate in the _Gemoc Language_ entry.
-* click on _create DSA project_
-
-In the wizard you can select an existing templates to help create the aspects classes that will extend the classes of the Domain model.
-
-
-You can manually create a Kermeta 3 project in the main eclipse menu, and then associate it to an xDSML project.
-
-
-==== Defining the Execution Data
-The Execution Data consist in attributes and references weaved onto existing concepts (metaclasses) of the Abstract Syntax. They may also include new metaclasses.
-
-==== Defining the Execution Functions
-The Execution Functions define how the Execution Data evolve during the execution of the model. Execution Functions can be implemented by defining the body of a method.
-
-[NOTE]
-For now, Execution Functions are considered as *atomic, instantaneous and blocking*. This means that any long computation will block the rest of the simulation, and concurrent Execution Functions are not executed in concurrence yet.
-
-
+include::GuideLanguageWorkbenchDomainSpecificActionsProjectSection.asciidoc[]
 
 
 === Defining Domain-Specific Constraints
 TODO
 
+[[defining-a-concrete-syntax-section]]
 === Defining a Concrete Syntax
-An xDSML can support different concrete syntaxes. Most EMF-based editors should work, however GEMOC provides additional support for some editors.
-Editors explictly supported are: EMF tree editor, Xtext editor, Sirius editor.
+An xDSML can support different concrete syntaxes. Most EMF-based editors should work with GEMOC, however the GEMOC Studio provides additional support for some specific editors. Thus, we recommend using: an EMF arborescent editor, an Xtext editor, and/or a Sirius editor.
+Don't forget to link the xDSML Project to the concrete syntax project(s) you want to use by editing the _project.xdsml_ file.
 
+
+[[defining-a-concrete-syntax-with-xtext-section]]
 ==== Defining a Concrete Syntax with Xtext
 See http://www.eclipse.org/Xtext/[the Xtext website].
 
+
+[[defining-a-concrete-syntax-with-sirius-section]]
 ==== Defining a Concrete Syntax with ((Sirius))
 If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
+
 === Defining a Model of Concurrency and Communication (MoCC)
-TODO MoCCML + ECL
-
-=== Defining the Domain-Specific Events (DSE)
-The DSE can be defined using the *Gemoc Events Language* (GEL). Create a new file with extension ".GEL" in your DSE project.
-The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions (defined as methods in the DSA)
-
-[NOTE] For technical reasons, the Abstract Syntax (Ecore metamodel) must specify the signature of the Execution Functions.
-
-Therefore, the first step to designing the DSE in GEL is importing the ECL file and the Ecore file of the xDSML. You can do using the "platform:/plugin" syntax.
-
-DSEs can be defined between the "DSE" and "end" keywords.
-After the 'upon' keyword, a MoccEvent from the ECL file can be referenced.
-After the 'triggers' keyword, a navigation path from the context of the MoccEvent to an EOperation can be defined to specify which Execution Function is triggered by the Domain-Specific Event being defined.
-
-A DSE (defined at the language level) results in corresponding Model-Specific Events (at the model-level) after a compilation phase. For every instance of the metaclass context of the MoccEvent referenced by the DSE, a corresponding Model-Specific Event is created. For instance if a DSE is created for Transitions and there are 3 Transitions in the model, there will be a corresponding Model-Specific Event for each Transition.
-
-=== Defining the Feedback Policies
-The Feedback Policies can be defined in GEL as well. A Feedback Policy is responsible for specifying the influence of a piece of data from the domain on the MoCC. A Feedback Policy can be defined as follows.
-First, give a name to the result of the Execution Function using the "returning" keyword. Then, between the "Feedback" and "end" keywords, the Feedback Rules can be defined as "[filter] => allow consequence".
-
-A Feedback Policy must be used when the MoCC needs runtime data from the domain without which it would otherwise realize an arbitrary decision. This is typically the case for any form of conditional-based control flow.
+TODO: MoccML + ECL
 
 
-=== Defining an animation view
-The animation layer is an extension on top of a graphical editor defined with ((Sirius)).
+include::GuideLanguageWorkbenchDomainSpecificEventsSection.asciidoc[]
 
-TODO Debug layer, Animation layer
+include::GuideLanguageWorkbenchDefiningFeedbackSpecificationSection.asciidoc[]
+
+include::GuideLanguageWorkbenchDefiningDebugSection.asciidoc[]
 
 [[section-process-support-view]]
 === Process support view

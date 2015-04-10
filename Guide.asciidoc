@@ -4,6 +4,17 @@ Francois Tanguy <francois.tanguy@inria.fr>, Didier Vojtisek <didier.vojtisek@inr
 :toc:
 :numbered:
 
+ifdef::pdf[]
+:max-width: 450
+:half-width: 275
+:quarter-width: 137
+endif::[]
+ifndef::pdf[]
+:max-width: 1000
+:half-width: 500
+:quarter-width: 250
+endif::[]
+
 ////////////////////////////////////////////////////////////////
 [dedication]
 == Dedication
@@ -16,20 +27,40 @@ TBD
 
 The GEMOC Studio offers 2 main usages:
 
-* Building and composing new executable DSML. This mode is intended to be used by language designers (aka domain experts).
+* Building and composing new executable DSML. This mode is intended to be used by language designers and language integragtors (aka domain experts).
 
 * Creating and executing models conformant to executable DSMLs. This mode is intended to be used by domain designers.
 
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
-TODO include figure here
+////////////////////////////////////////////////////////////////
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={max-width}]
 
-=== Language Workbench overview
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={half-width}]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", scaledwidth="25%"]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png[bla, scale="1"]
+////////////////////////////////////////////////////////////////
+
+[[GemocWorkbenchesGlobalPicture]]
+image::images/intro/GemocWorkbenchesGlobalPicture.png[GemocWorkbenchesGlobalPicture, scaledwidth="25%", width={quarter-width}]
+
+
+In this document:
+
+ * items or roles relative to the Language Workbench are identified with the following icon : image:images/icons/IconeGemocLanguage_32.png[width=48, height=48]
+ * items or roles relative to the Modeling Workbench are identified with the following icon : image:images/icons/IconeGemocModel_32.png[width=48, height=48]
+
+
+=== Language Workbench overview image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
+
 The GEMOC Language Workbench allows building and composing new executable DSMLs.
+
+
 
 To acheive that, it offers appropriate tools and guidance for the underlying activities wich are grouped in categories.
 
-TODO: add icon of the workbench
 
 .Build executable language
 The first main activity is to build an executable language. The language designer is assited by a dedicated Dashboard to guide him during his work.
@@ -51,12 +82,14 @@ Make your language executable::
             * Create the Domain-Specific Actions with Kermeta and Melange
             * Create the Domain-Specific Events with ECL
             * Create a library of Model of Computation with MoccML
-Define the runtime environnement fot the language::
+Define the runtime environnement for the language::
         Model Debugger:::
             * Select your breakpointable elements
         Model dynamic representation (for debugging, animation, monitoring):::
             * Create the graphical representation with Sirius Animator
             * Plug your own add-ons 
+
+TODO add links to the corresponding sections in the main chapters
 
 TODO: add snapshot of the dashboard
 
@@ -64,19 +97,41 @@ TODO: add snapshot of the dashboard
 The second main activity is to define the composition between executable languages.
 The language integrator is also assisted by a dedicated dashboard that proposes the following activity groups:
 
-TODO: add a  the list of composition activities here
+Compose languages::
+    This activity can be decomposed in activities in two groups :
+        Create composition operators:::
+            * Create operators with BCOoL
+        Combine languages::
+            * Select a set of language to combine
+            * Apply composition operators to a set of languages.
+            * Customize composition
+
 
 TODO: add snapshot of the dashboard
 
 
-=== Modeling workbench overview
+=== Modeling workbench overview image:images/icons/IconeGemocModel_16.png[width=16, height=16, role=right]
 
-TODO: add icon of the workbench
+The GEMOC Modeling Workbench allows the use of available languages to create and execute models.
+
+Create Models::
+    * Use available editors to create domain models.
+Execute and debug models::
+    * Use execution engine
+    * Use step by step debugger
+    * Analyse time trace
+Animate models::
+    * Use animation views
 
 === General concerns and prerequisite
 
+
 [NOTE]
+.Note
+=====================================================================
 In order to run, Eclipse workbench work better with additional memory. Use the following setting to start Eclipse: -Xms1024m -Xmx1024m -XX:PermSize=512m -XX:MaxPermSize=512m
+=====================================================================
+
 
 ////////////////////////////////////////////////////////////////
 Inclusion of the chapters, please open the corresponding files
