@@ -1,19 +1,36 @@
-ifeval::[{docname}=='GuideTutorialAutomata']
+ifeval::[{docname}=='GuideTutoriaMarkedGraph']
 :toc:
+:toclevels: 4
 :numbered:
-:tabsize=4:
+:tabsize: 4
 endif::[]
 
 
 
 = GEMOC xDSML definition tutorial with MarkedGraph
 
+
+
+
+
+== Overview / What is expected at the end of this tutorial
+
 This tutorial aims at demonstrating the power of the GEMOC studio to
 define an executable semantics and provide graphical animation for a
 DSML.   It relies of the
 http://en.wikipedia.org/wiki/Marked_graph[marked graph] language.
 
-== Starting defining an xDSML
+
+Show an animated GIF or a video.
+
+NOTE: A screencast of this tutorial can be found here (five URL when
+it will be available)...
+
+
+== Install the projects defining the Marked Graph AS and CS
+
+
+=== Import the Marked Graph AS and CS
 
 Marked Graph is a http://en.wikipedia.org/wiki/Petri_net[Petri net]
 in which every place has exactly one incoming arc and exactly one
@@ -26,41 +43,69 @@ next subsections explains MarkedGraph and can be skipped by the
 reader who already know that language.
 
 
-=== Initializing the MarkedGraph xDSML project with the provided AS and CS
-
-First, start by creating a new xDSML project (__New > Project > GEMOC
-Project / new xDSML Project__), with your desired name (for instance
-"org.gemoc.example.markedgraph"). A file __project.xml__ is created.
-When opened, it provides the xDSML view which summarizes all the
-important resources used in an xDSML project (which are part of and
-managed by other projects).  This view is a kind of dashboard or
-control center to have quick access to any important resource of the
-project.
-
-TODO : Show the xDSML view?
-
-
-TODO : Click on the genmodel and select //generate all//
-
-
-TODO : Explain how to initialize the EMF, EMFmodel, Graphical
-Visualization, etc.
-
-
 === Abstract Syntax
+
+The Domain Model defines :
+
+- a __marked graph__ as a set of __places__ and __transitions__.
+- Each __Place__ has exactly one __input__ transition and one __output__
+transition and a token count.
+- A transition has several __input__ places and several __output__
+  places.
 
 [[MarkedGraph-AS]]
 .Abstract Syntax of MarkedGraph
 image::MarkedGraph/images/MarkedGraph-AS.png[Abstract Syntax of MarkedGraph]
 (((MarkedGraph Abstract Syntax)))
 
-=== Example of Marked Graph model (and Concrete Syntax)
+=== Concrete Syntax and Sample Model
 
 The one of Wikipedia?
+Another one ?
 
-=== Execution Semantics Definition
 
-TODO: Describe the execution semantics.
+== Set up an xDSML project
+
+=== Create an xDSML Project
+
+Create a new xDSML project (__New > Project > GEMOC
+Project / new xDSML Project__), with the desired name (for instance
+__org.gemoc.example.markedgraph__).
+
+TODO: Add a screenshot
+
+=== Open xDSML View 
+
+A file __project.xml__ has been created.  When opened, it provides the xDSML
+view which summarizes all the important resources used in an xDSML
+project (which are part of and managed by other projects).  This view
+is a kind of dashboard or control center to have quick access to any
+important resource of the project.
+
+TODO: Add a screenshot
+
+=== Select the AS
+
+TODO: Click on ... and select the ecore...
+
+TODO: Click on xxx to open the resource...
+
+TODO: Click on the genmodel and select __generate all__
+
+TODO: Add a screenshot
+
+=== Select the Graphical Editor XXX...
+
+TODO : Select desgin project.
+
+
+
+
+== Define the Execution Semantics
+
+// === Execution Semantics Overview
+
+TODO: Provide the execution semantics overview.
 
 A transition can be fired if there is at least one token in every of
 each entry place.  When fired, one token is removed from each entry
@@ -75,17 +120,27 @@ proportionel at the number of it contains.
 
 % XXX: Fireable transitions may be drawn in green.  
 
+=== Define DSA
+
+When executing a Marked Graph model, we want to know the number of
+token of each place (it is an ED).  When transition are fired (EF),
+tokens are moved from input places to outout places (XXX not really
+moved).
+
+The DSA of Marked Graph is composed of :
+
+* one ED called  __runtimeTokenCount__
+defined on __Place__ . It represents the number of token in a place when the
+model is executed.
+* one EF called initialize() defined
+on __MarkedGraph__. It initializes the runtime token count of each
+place with the initial token count.
+* one ED called __fire()__ on
+__Transition__. It to remove one token from each of its input places
+and add one token to all its output places.
 
 
-== Defining the Execution Semantics of Marked Graph with the GEMOC Studio
-
-=== DSA
-
-First we define the DSA (Domain Specific Actions). It includes
-Execution Data (ED) and Execution Functions (EF) which describe
-evolution of the ED.
-
-==== Creating the DSA
+==== Create the DSA Project
 
 Click on __K3 project__ in the xDSML view (Behavioral definition / DSA
 definition).  The wizard to create of new Kermeta 3 project is
@@ -96,7 +151,8 @@ Clicking again on _K3 project_ will now allow to choose and open
 markedgraph.xtend.  It has been initialized with a template that can
 be discarded.
 
-==== Code of the DSA
+==== Implement the DSA
+
 
 Fill in the following code in the markedgraph.xtend resource:
 
@@ -105,32 +161,33 @@ Fill in the following code in the markedgraph.xtend resource:
 include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 ----
 
-==== Explanation of the DSA
+==== Create the Extented Model with Melange
 
-When executing a Marked Graph model, we want to know the number of
-token of a place.  This is an Execution Data as it is changed during
-the execution of the model.
-
-We want to add a new attribute called __tokenCount__ on the __Place__
-metaclass.
+Note: This step should become transparent in a next version of the
+GEMOC Stutio.
 
 
-==== ED
 
-Current marking
+=== Define DSE
 
-==== EF
 
-Fire on a transition moves token form input place to output places.
-
-=== MoCC
-
+==== Create the DSE Project
 
 Right click on the __ECL project__ in the DSE definition part. Select
 the Ecore file __markedgraph.ecore__ and the root container model
-element: __markedgraph::MarkedGraph__. 
-The file __markedgraph.ecl__ is created in the
-org.gemoc.example.markedgraph.dse.
+element: __markedgraph::MarkedGraph__.  The file __markedgraph.ecl__
+is created in the org.gemoc.example.markedgraph.dse.
+
+
+==== Define the ECL part
+
+Here is the definition of the ECL.
+
+The first part...
+
+WARNING: Errors are present because the used Relations are not yet
+defined...
+
 
 [source]
 ----
@@ -153,16 +210,52 @@ Provide a pointer to a MoCCML version which uses constraint automata
 to define the MoCC.
 
 
-=== DSE
+=== Define MoCC
 
-TODO: In the first place or at the end?
+Give the implemntation of the Relation used in the DSE.
+
+MoCCLib... To be done...
+
+TODO: How to explain the defined relation?
 
 
-Firing a transition
 
-=== Visual Animation
+=== Define Animation Viewpoint
 
-=== Questions/Remarks...
+The purpose of the animation is to show the number of token in each
+places as well as the executable transitions. 
+
+As the animation is close to the graphical concrete syntax, we extend
+the existing diagram description.
+
+==== Extend the existing diagram description
+
+TODO: Explain...
+
+XXX: In Which eclipse?
+
+TODO: The aird has to be provided!
+
+Add a link to a tutorial for Sirius Animator.
+
+
+== Animate a Model
+
+=== Start a runtime Eclipse
+
+=== Import the project with a sample model
+
+=== Create a Launch Configuration
+
+=== Start the model
+
+=== Select a logical step
+
+=== What else?
+
+
+
+== Questions/Remarks...
 
 Questions on the MoCC from summerSchool :
 
@@ -199,6 +292,13 @@ Questions de forme :
 - Utilisation des abbréviations (MoCC, DSA, EF, ED, AS, CS, etc.) :
 Prévoir un lexique sur le site ?
 - Éviter d'avoir trop de sections : par exemple, supprimer ED, EF.
+
+
+TODO :
+
+- Donner des éléments pour la mise au point : FAQ ?
+- regarder le dash board de Mélanie
+- regarder les outils rédigés par Didier, Florent et Issa.
 
 
 // vim: set syntax=asciidoc tw=70 ts=4 sw=4:
