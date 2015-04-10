@@ -1,15 +1,13 @@
-=== Defining the Feedback Specification
+=== Defining the ((Feedback Specification))
 
 ==== Purpose
-In the GEMOC approach, the MoCC is independent from the domain. However, most languages need to be able to parameterize their control flow with their data flow. For instance, a conditional statement is a control flow construct which is conditioned by the result of its condition. Therefore, a form of communication between the MoCC and the DSA must be operated.
-In this context, the Feedback Specification specifies how domain data returned by an Execution Function must be interpreted to parameterize the MoCC. The Feedback Specification consists in a set of Feedback Policies which are associated to the Domain-Specific Events. Therefore, the Feedback Specification is also done using ((GEL)).
+Many languages need to be able to parameterize their control flow with their data flow. For instance, conditional statements like _if...then...else_ or _switch...case_ statements depend on the result of a boolean expression.
+Since the GEMOC approach at designing xDSMLs promotes the separation of the concurrency (MoCC from the domain-specific data (DSA), there needs to be a form of communication from the DSA to the MoCC. For instance, the MoCC of an xDSML with a conditional statement specifies that after evaluating the condition, either the 'then' or the 'else' branch will be taken (in exclusion from one another), while the DSA provide the Execution Function that evaluates the condition, returning a boolean value. Making the link between the 'true' value and the 'then' branch, and between the 'false' value and the 'else' branch is the role of the Feedback Specification.
+More formally, the Feedback Specification specifies how domain data returned by an Execution Function must be interpreted to parameterize the MoCC. The Feedback Specification consists in a set of Feedback Policies which are associated to the atomic Domain-Specific Events. Therefore, the Feedback Specification is also done using ((GEL)).
 
-==== Creating a Feedback Policy
-A Feedback Policy can be associated to a DSE using the following syntax:
+==== Creating a ((Feedback Policy))
+A Feedback Policy is associated to an atomic DSE by extending the syntax for defining the atomic DSE as follows:
 ----
-import "platform:/resource/org.gemoc.sample.fuml.model/model/fuml.ecore"
-import "platform:/resource/org.gemoc.sample.fuml.mocc/ECL/fuml.ecl"
-
 DSE <name>:
   upon <MoccEvent>
   triggers <Path-to-ExecutionFunction> returning <resultName>
@@ -25,24 +23,15 @@ Where:
 
 * <resultName> is a local variable which will be affected with the value returned by the associated Execution Function;
 
-* Between the _feedback_ and _end_ keywords, a set of Feedback Rules are defined (including a default Feedback Rule, with the _default_ keyword). A Feedback Rule is composed of a filter and a consequence;
+* Between the _feedback_ and _end_ keywords, a set of Feedback Rules are defined (including a default Feedback Rule, with the _default_ keyword). A Feedback Rule is composed of a filter (between squared brackets) and a consequence;
 
 * <filterN> are predicates, most likely using <resultName> which define whether or not this Feedback Rule must be applied;
 
-* <PathToMoccEventConsequenceN> is a navigation path to a MoccEvent which specifies which MoccEvent is allowed as a result of the data returned by the Execution Function.
+* <PathToMoccEventConsequenceN> is a navigation expression to a MoccEvent which specifies which MoccEvent is allowed as a result of the data returned by the Execution Function.
 
 ==== Semantics of the Feedback Policy
-When the Execution Function associated to a DSE returns a result, it is passed through each filter of the Feedback Policy. If none of the filters is validated, then the default rule is applied. Else, the collection of rules for which the filter validated are applied. 
-For each rule to apply, the associated consequence is allowed to have occurrences in upcoming steps of execution.
+When the Execution Function associated to a DSE returns a result, the filter of every Feedback Policy is evaluated. If none of the filters is validated, then the default rule is applied. Else, the collection of rules for which the filter validated are applied. 
+For each rule to apply, the associated consequence is allowed to have occurrences in upcoming steps of execution. This is done by the Execution Engine by filtering out some solutions provided by the MoCC interpreter and only allowing the ones complying with the Feedback Specification.
 
-==== Example
-----
-DSE EvaluateGuard:
-	upon mocc_evaluateGuard
-	triggers ActivityEdge.evaluateGuard returning result
-	feedback:
-		[ result ] => allow ActivityEdge.mocc_mayExecuteTarget
-		default => allow ActivityEdge.mocc_mayNotExecuteTarget
-	end
-end
-----
+[NOTE]
+Using the Feedback Specification implies the use of a certain design pattern in the MoCC. Make sure your MoCC is well-designed for using the Feedback Specification. Don't forget to check the tutorial concerning the Feedback Specification.
