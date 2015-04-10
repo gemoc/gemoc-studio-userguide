@@ -40,6 +40,7 @@ If you want to create a graphical concrete syntax you can use Sirius. The http:/
 === Defining a Model of Concurrency and Communication (MoCC)
 TODO: MoccML + ECL
 
+include::GuideECLMoCCML.asciidoc[]
 
 include::GuideLanguageWorkbenchDomainSpecificEventsSection.asciidoc[]
 
