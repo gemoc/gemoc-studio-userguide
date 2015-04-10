@@ -35,6 +35,7 @@ image::images/workbench/language/debug_representation_wizard/extend/3.png[Debug 
 It creates a default debug layer in an existing diagram representation. This should be used if you are also in charge of the language concrete syntax.
 
 In this case, you can only select a diagram description from the workspace.
+
 image::images/workbench/language/debug_representation_wizard/add/1.png[Debug representation wizard]
 
 image::images/workbench/language/debug_representation_wizard/add/2.png[Debug representation wizard]
