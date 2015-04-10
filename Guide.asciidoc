@@ -4,6 +4,17 @@ Francois Tanguy <francois.tanguy@inria.fr>, Didier Vojtisek <didier.vojtisek@inr
 :toc:
 :numbered:
 
+ifdef::pdf[]
+:max-width: 450
+:half-width: 275
+:quarter-width: 137
+endif::[]
+ifndef::pdf[]
+:max-width: 1000
+:half-width: 500
+:quarter-width: 250
+endif::[]
+
 ////////////////////////////////////////////////////////////////
 [dedication]
 == Dedication
@@ -22,9 +33,19 @@ The GEMOC Studio offers 2 main usages:
 
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
-[[figure-workbenches_global-picture]]
-.Main activities offered by the GEMOC workbenches.
-image:images/intro/GemocWorkbenchesGlobalPicture.png[Main activities offered by the GEMOC workbenches]
+////////////////////////////////////////////////////////////////
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={max-width}]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={half-width}]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", scaledwidth="25%"]
+
+image:images/intro/GemocWorkbenchesGlobalPicture.png[bla, scale="1"]
+////////////////////////////////////////////////////////////////
+
+[[GemocWorkbenchesGlobalPicture]]
+image::images/intro/GemocWorkbenchesGlobalPicture.png[GemocWorkbenchesGlobalPicture, scaledwidth="25%", width={quarter-width}]
+
 
 In this document:
 
@@ -68,25 +89,49 @@ Define the runtime environnement for the language::
             * Create the graphical representation with Sirius Animator
             * Plug your own add-ons 
 
+TODO add links to the corresponding sections in the main chapters
+
 TODO: add snapshot of the dashboard
 
 .Compose executable languages
 The second main activity is to define the composition between executable languages.
 The language integrator is also assisted by a dedicated dashboard that proposes the following activity groups:
 
-TODO: add a  the list of composition activities here
+Compose languages::
+    This activity can be decomposed in activities in two groups :
+        Create composition operators:::
+            * Create operators with BCOoL
+        Combine languages::
+            * Select a set of language to combine
+            * Apply composition operators to a set of languages.
+            * Customize composition
+
 
 TODO: add snapshot of the dashboard
 
 
 === Modeling workbench overview image:images/icons/IconeGemocModel_16.png[width=16, height=16, role=right]
 
+The GEMOC Modeling Workbench allows the use of available languages to create and execute models.
 
+Create Models::
+    * Use available editors to create domain models.
+Execute and debug models::
+    * Use execution engine
+    * Use step by step debugger
+    * Analyse time trace
+Animate models::
+    * Use animation views
 
 === General concerns and prerequisite
 
+
 [NOTE]
+.Note
+=====================================================================
 In order to run, Eclipse workbench work better with additional memory. Use the following setting to start Eclipse: -Xms1024m -Xmx1024m -XX:PermSize=512m -XX:MaxPermSize=512m
+=====================================================================
+
 
 ////////////////////////////////////////////////////////////////
 Inclusion of the chapters, please open the corresponding files

@@ -13,6 +13,12 @@ image::images/gemoc_modeling_workbench_TFSM_animation_screenshot.png[Screenshot 
 
 '''
 
-include::GuideModelingWorkbenchEditingModelSection.asciidoc[]
+[[section-editing-model]]
+=== Editing model
+As seen in Section <<section-defining-concrete-syntax>>, an xDSML can provide different concrete syntaxes. 
+
+include::GuideModelingWorkbenchEditingModelWithSiriusSection.asciidoc[]
+include::GuideModelingWorkbenchEditingModelEMFTreeEditorSection.asciidoc[]
+
 
 include::GuideModelingWorkbenchExecutingModelSection.asciidoc[]

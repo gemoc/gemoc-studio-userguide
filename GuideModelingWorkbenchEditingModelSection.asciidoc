@@ -1,2 +1,0 @@
-[[modeling-workbench-editing-model-section]]
-=== Editing model
