@@ -1,0 +1,43 @@
+=== Defining the Domain-Specific Events (DSE)
+
+==== Purpose
+The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions. They specify the coordination between what happens in the MoCC, depending on its constraints, and which operations must be called in the model (thus resulting in changes in the Execution Data).
+They are also exposed as the behavioral interface of the xDSML, based on which the Behavioral COmposition Operator Language (BCOoL) defines the composition of xDSMLs.
+
+==== Creating the DSE Project
+Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (GEL).
+
+==== Editing the DSE Project
+The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the _import platform:/resource/..._ syntax at the beginning of the file.
+
+===== Defining an Atomic Domain-Specific Event
+Atomic Domain-Specific Events realize a 1-to-1 mapping between the MoccEvents and the Execution Functions of the xDSML.
+An atomic DSE is defined using the following syntax:
+----
+DSE <name>:
+  upon <MoccEvent>
+  triggers <Path-to-ExecutionFunction>
+end
+----
+
+Where:
+
+* <name> is the name of the Domain-Specific Event;
+* <MoccEvent> is any MoccEvent from the MoCC2AS Mapping. This will also automatically define the DSE in the same context as the MoccEvent referenced, thus defining the starting point of navigation expressions from this DSE;
+* <Path-to-ExecutionFunction> is a navigation path from the context of this DSE to an Execution Function.
+
+[TIP]
+In case of difficulty, make use of the auto-completion feature.
+
+[NOTE]
+The implicit context of a Domain-Specific Event is inferred from the context in which its associated MoccEvent is defined in the MoCC2AS Mapping. Therefore, the DSE will be usable for any instance in the model of the context of the DSE. For instance if a DSE is mapped to a MoccEvent defined in the context of the metaclass _Transition_, and there are 3 Transitions in the model being executed, this DSE will be usable for each of the 3 Transitions of the model.
+
+
+===== Semantics of Atomic Domain-Specific Events
+Upon an occurrence of the associated MoccEvent, an occurrence of the Domain-Specific Event is created and consumed by the GEMOC Execution Engine. Its consumption triggers the execution of the designated Execution Function.
+
+===== Defining a Composite Domain-Specific Events
+TODO
+
+===== Semantics of Composite Domain-Specific Events
+TODO
