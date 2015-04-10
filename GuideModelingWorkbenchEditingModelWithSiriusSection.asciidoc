@@ -1,0 +1,3 @@
+[[modeling-workbench-editing-model-with-sirius-section]]
+=== Editing model with ((Sirius))
+After defining your editor with ((Sirius)) see 

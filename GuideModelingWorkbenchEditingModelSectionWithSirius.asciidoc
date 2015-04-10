@@ -1,3 +1,0 @@
-[[modeling-workbench-editing-model-with-sirius-section]]
-=== Editing model with ((Sitius))
-
