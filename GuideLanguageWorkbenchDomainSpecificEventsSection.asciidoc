@@ -2,6 +2,7 @@
 
 ==== Purpose
 The DSE define a mapping between MoccEvents from the MoCC and the Execution Functions. They specify the coordination between what happens in the MoCC, depending on its constraints, and which operations must be called in the model (thus resulting in changes in the Execution Data).
+They are also exposed as the behavioral interface of the xDSML, based on which the Behavioral COmposition Operator Language (BCOoL) defines the composition of xDSMLs.
 
 ==== Creating the DSE Project
 Create an empty Plug-in Project. In this project, create a new file with the ".GEL" extension. The DSE can be defined using the *Gemoc Events Language* (GEL).
