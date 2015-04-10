@@ -33,5 +33,5 @@ Where:
 When the Execution Function associated to a DSE returns a result, the filter of every Feedback Policy is evaluated. If none of the filters is validated, then the default rule is applied. Else, the collection of rules for which the filter validated are applied. 
 For each rule to apply, the associated consequence is allowed to have occurrences in upcoming steps of execution. This is done by the Execution Engine by filtering out some solutions provided by the MoCC interpreter and only allowing the ones complying with the Feedback Specification.
 
-[NOTE]
+[CAUTION]
 Using the Feedback Specification implies the use of a certain design pattern in the MoCC. Make sure your MoCC is well-designed for using the Feedback Specification. Don't forget to check the tutorial concerning the Feedback Specification.
