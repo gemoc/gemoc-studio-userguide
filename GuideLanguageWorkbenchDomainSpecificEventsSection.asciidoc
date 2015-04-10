@@ -9,13 +9,16 @@ Create an empty Plug-in Project. In this project, create a new file with the ".G
 ==== Editing the DSE Project
 The first step to designing the DSE in GEL consists in importing the MoCC2AS Mapping (ECL file) and the Domain Model (Ecore metamodel) of the xDSML. You can do so by using the _import platform:/resource/..._ syntax at the beginning of the file.
 
-Then a DSE is defined using the following syntax:
+===== Defining an Atomic Domain-Specific Event
+Atomic Domain-Specific Events realize a 1-to-1 mapping between the MoccEvents and the Execution Functions of the xDSML.
+An atomic DSE is defined using the following syntax:
 ----
 DSE <name>:
   upon <MoccEvent>
   triggers <Path-to-ExecutionFunction>
 end
 ----
+
 Where:
 
 * <name> is the name of the Domain-Specific Event;
@@ -26,5 +29,11 @@ Where:
 The implicit context of a Domain-Specific Event is inferred from the context in which its associated MoccEvent is defined in the MoCC2AS Mapping. Therefore, the DSE will be usable for any instance in the model of the context of the DSE. For instance if a DSE is mapped to a MoccEvent defined in the context of the metaclass _Transition_, and there are 3 Transitions in the model being executed, this DSE will be usable for each of the 3 Transitions of the model.
 
 
-===== Semantics of the Domain-Specific Events
+===== Semantics of Atomic Domain-Specific Events
 Upon an occurrence of the associated MoccEvent, an occurrence of the Domain-Specific Event is created and consumed by the GEMOC Execution Engine. Its consumption triggers the execution of the designated Execution Function.
+
+===== Defining a Composite Domain-Specific Events
+TODO
+
+===== Semantics of Composite Domain-Specific Events
+TODO
