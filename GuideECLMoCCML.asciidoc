@@ -1,0 +1,162 @@
+==== Introduction 
+In the GEMOC approach, the executability characterization for a given language is done through several steps that include: the description of the actions associated with the language concepts (i.e. the Executions Functions); the description of the data / attributes that capture the state of a model or its evolution (the Execution Data); the description of the underlying language model of concurrency (the MoCC constraints).
+
+A Model of Concurrency and Communication (MoCC) represents the concurrency, synchronizations and the possibly timed causalities in the behavioral semantics of a language. It must represent the acceptable schedules of the atomic actions of the language, which represent both computation and communication.
+
+In this part of the guide, we assume that achieving the first two points has already been done based on <<RelatedSection>>. In this part, we will mainly focus on the steps for the description and integration fo the model of concurrency in the language, once the EF and ED have been already taken into account and integrated to the language.
+ The execution engine of the GEMOC Studio is based on an event-based semantics, which means that events are used to activate the EF actions that can change the state of a model.
+
+To describe and integrate the model of concurrency, we must 1) have a description of the useful events allowing activation of the EF, 2) a mechanism to express the MoCC constraints that apply on these events.
+
+* 1) is realized using the *((ECL))* language whose description and use is provided below
+* 2) Is achieved through the *((MoCCML))* language whose description and use is described below
+
+==== The ECL approach to Identify DSE and constraints 
+===== Overview of ECL 
+
+TODO
+
+===== Creation of an ECL model GEMOC Studio 
+
+ECL models are created via files with the extension _.ecl. The xDSML environment enables the creation and / or opening of new ECL project that gives access to several functionalities such as (model transformation .qvto generator, etc) link to <<RelatedSection>>
+
+===== How to use ECL 
+
+In this section, we show an exemplified way to use ECL. The required steps to go from a given language to the integration of its concurrency model are presented.
+
+====== Import Language 
+
+As shown in Listing <<eclimport>>, an ECL file imports the extended language that contains the language metaclasses, the EF and ED. The ECL language defines the notion of *((import))* to import the extended metamodel (see import of dplExtended.ecore in Listing <<eclimport>>).
+The import is used to load all the concepts of language that are used to clarify: the EF activation events; static properties numeric or Boolean values, and constraints associated with concepts.
+
+[source,python]
+[[eclimport]]
+----
+import 'platform:/resource/org.gemoc.model.dpl.dplextended/model/dplExtended.ecore'
+----
+
+====== Define Event-Action Creation 
+
+The ECL model gives access to the concept of the language via the declaration of their package container. In the illustration below, the package container is 'dplextended'.  Every metaclass/ concept is declared as a 'context'. In a given context, we define the mapping between events and actions and the MoCC constraints of the context.
+The illustration shows the definition and mapping of events associated with the concept of 'Philosopher'. For the context 'Philosopher', the events are used to enable its actions ie eat() and think() actions.
+ECL syntax for declaring the mapping Event / Action is as follows: 
+
+* Define the type of the event: def: think: Event
+** When the event activate actions: the action associated to the event is accessed through the context via 'self.actionName()' (e.g. in Listing <<eclContextEventDeclaration>>'Philosopher' self.think() and self.eat())
+** When the event does not trigger an action i.e. used as internal control events : Its declaration does not mention any related action (e.g. getrightFork, getleftFork, putrightFork, putleftFork)
+* Finally, we can define local attributes to capture the value of static properties that can be for instance integers or booleans (e.g. def: eatcycleMax: Integer = self.eatCycles)
+The above steps specify the declaration of events and attributes that are used to control the actions for each language concept. We can focus on the description of the model of concurrency defined using MoCCML.
+
+[source,python]
+[[eclContextEventDeclaration]]
+----
+package dplextended
+	context Philosopher
+		def: think : Event = self.think()
+		def: getrightFork : Event = self
+		def: getleftFork : Event = self
+		def: eat : Event = self.eat()
+		def: putrightFork : Event = self
+		def: putleftFork : Event = self
+		def: thinkcycleMax : Integer = self.thinkCycles
+		def: eatcycleMax : Integer = self.eatCycles
+endpackage
+----
+
+The latter phase is done in two steps: the implementation of the execution control constraints with MoCCML; the use of these constraints in the context definition to specify how the events should be scheduled (determine their causalities).
+
+==== The MoCCML approach to define constraints 
+This section presents the MoCCML editor that supports the edition of MoCCs. To keep the deﬁned models formal and to provide a solver for the MoCC, an operational semantics and a solver based on this formal semantics were defined. For more information on the operational semantics the reader can refer to https://hal.inria.fr/hal-01060601v1[MoCCML Operational Semantics].
+
+===== Creating a MoCCML model in the GEMOC Studio 
+The MoCCML models are created via files with an _.moccml extension. They are also natively created from the dashboard xDSML, where you can create a MoCC project. The project defines an empty model _.moccml with just the name of the library to be created. For a graphical representation of the models, you have to right-click on the file (New Representation File) and run next until the creation of the _.aird representation. This procedure is described in the Sirius tutorial http://www.eclipse.org/sirius/doc/[Sirius documentation] and http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual] to create new diagrams starting from a model whose graphical editor was made from Sirius.
+
+===== Overview de MoCCML 
+MoCCML is a declarative meta-language specifying constraints between the events of a MoCC. At any moment during a run, an event that does not violate the constraints can occur. The constraints are grouped in libraries that specify MoCC speciﬁc constraints. The constraints are eventually instantiated to deﬁne the execution model of a speciﬁc model. The execution model is a symbolic representation of all the acceptable schedules for a particular model.
+MoCCML is based on the principle of defining constraints on events. There are two categories of constraint deﬁnitions: the Declarative Deﬁnitions and the Constraint Automata Deﬁnitions. Each constraint definition has an associated ConstraintDeclaration that defines the prototype of the constraint.
+
+===== Presentation of the MoCCML Editor 
+The concrete syntax of MoCCML is implemented as a combination of graphical and textual syntaxes to provide the most appropriate representation for each part of a MoCC model library. 
+The graphical syntax can be divided into two levels of representation: one for the definition of the MoCC libraries (the declaration and definition of the automata constraints); another for the implementation of the constraints in the form of automata. For instance: 
+
+* The first level of representation contains elements as illustrated in Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>. The represented model imports two CCSL libraries (kernel.ccslLib and CCSL.ccslLib). The imported libraries provide predefined types that are used to define formal parameters such as DiscreteClocks, Integers, etc. Each defined Relation Declaration is associated to a Automata constraint definition. The association is done through the ‘Set Declaration Relation’ link. 
+* The second level of graphical representation defines the graphical syntax for the modeling of the Automata constraints.
+* The overall MoCC models are serialized to a textual syntax, which means that the graphical models are transformed into their equivalent representation in a textual formal. *((Both representations (graphical or textual) can be used for edition of models))*.
+Moreover, we define the integration of an embedded textual editor in the graphical representation to focus on specific parts of the MoCC model that are better edited using a textual syntax (eg trigger, the guards and the actions on transitions). Embedded editors are called by double-clic, and are placed on specific graphical edition elements (Relation Declaration, Relation Definition, DeclarationBlock, Transition).
+
+===== Example-Driven use of MoCCML 
+
+NB: MoCCML has multiple pallets to instantiate a library. The pallets are located on the right branch of the editor. The creation of new library is preceded by an import of the native CCSL libraries (kernel.ccslLib, CCSL.ccslLib) which provide primitives for the description of events and variables that are handled by the constraints in the MoCC library. We use the third pallet in Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>to import such CCSL libraries.
+ 
+[[figure-glw-screenshot-of-moccmlLevelFirst]]
+.Screenshot of the First graphical level of Edition in MoCCML.
+image::images/eclmoccml/moccmlLevFirst.png[Screenshot of MoCCML First Level of Edition]
+
+====== Creating MoCC Libraries 
+As shown in Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>, creating new MoCC libraries can be done by using the first two pallets on the right (Library Edition, New Library & Required Feature). In these pallets, the element (Library New Library + New Relationship and Relationship) can be used for the instantiation of a new MoCC library. The two are distinguished by the fact that the last mentioned will create a new library of MOCC, while adding a default Relation Declaration. In Figure <<figure-glw-screenshot-of-moccmlLevelFirst>> we create a new Library called 'RendezVous_Relations'.
+
+====== Declaring the constrained events 
+In a MoCC library, we define constraints and their declarations. The declarations identify events and parameters to be considered in the implementation of the constraint. In the editor, the declaration is made using the two above mentioned pallets, and using the elements in the pallets i.e.: 'New Relationship Declaration' and 'New Relationship Declaration +'. The two differ in that the latter creates a Relation Declaration with a default formal parameter declaration. In the Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>, we create two relation declarations (ForkConstraintDecl and PhilosopherConstraintDecl). Listing <<philoDeclarationTextual>> also shows the equivalent textual code generated for the PhilosopherConstraintDecl.
+[source,python]
+[[philoDeclarationTextual]]
+----
+RelationDeclaration PhilosopherConstraintDcl(
+			pthink : clock,
+			grfork : clock,
+			glfork : clock,
+			peat : clock,
+			prfork : clock,
+			plfork : clock,
+			thinkCyc:int,
+			eatCyc:int
+		)
+----
+
+====== Defining the constraints 
+The implementation of constraints can be specified textually or graphically. Graphically, the first two pallets are used to create new definitions of constraints associated with their declarations. Constraint definitions is done using the menu items (New Automata Definition and New Automata Definition +). In Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>, the following constraints are specified: ForkConstraintDef, PhilosopherConstraintDef). At this stage, we toured the main notions that can be set on the first level of graphical description with MoCCML. 
+To navigate in the second level of graphical description (Constraint implementation), one should right-click on a specified constraint definition using (Open Diagram / New Diagram). Open Diagram will navigate to an existing diagram; New Diagram will create a new diagram to edit.
+The MoCCML Editor offers 3 different pallets for: editing the automata, defining the local variables and editing the transitons (ie adding Trigger, Guard, Actions). Figure <<figure-glw-screenshot-of-moccmlLevelSecond>> shows a simple example with two control states. An additional Layer displays the details of the transitions (Trigger, Guard, Action) as shown in Figure <<figure-glw-screenshot-of-moccmlLevelSecond>>, see yellow boxes.
+Besides, editing DeclarationBlock boxes and 'details in Transitions' can be done using embedded text editor by double-clicking on the related boxes. We can then edit the properties of transitions and local variables textually. 
+
+One can define the desired set of constraints on the concepts of language using the MoCCML editor. To see the text code corresponding to the serialization of the edited MoCC models, the user can open the _.moccml file. Editing can also be directly made from this file and all the changes will be reflected in the graphical editor.
+The use of constraints is shown in the next section.
+
+[[figure-glw-screenshot-of-moccmlLevelSecond]]
+.Screenshot of the Second graphical level of Edition in MoCCML (Constraint Implementation).
+image::images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Level of Edition]
+
+====== Using the constraints on the ECL 
+
+The MoCC constraints models can be used in the ECL file on concepts which they are attached. To declare the constraint on the events, we re-declare the context of the concept then define an invariant 'inv', see Listing <<eclContextConstraintUse>>. In this listing we also import the MoCCML library that was defined previously (i.e. rendez_vous.moccml)
+For instance, the invariant related to the context Philosopher (PhilosopherConstraintInv) uses the PhilosopherConstraintDef via its PhilosopherConstraintDcl declaration? It takes as input the set of control events and static variables used to calculate the causality between events.
+[source,python]
+[[eclContextConstraintUse]]
+----
+ECLimport "platform:/resource/org.gemoc.dpl.xdsml.mocc.model/mocc/rendez_vous.moccml"
+ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" 
+ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" 
+
+package dplextended
+	context Philosopher
+		def: think : Event = self.think()
+		def: getrightFork : Event = self
+		def: getleftFork : Event = self
+		def: eat : Event = self.eat()
+		def: putrightFork : Event = self
+		def: putleftFork : Event = self
+		def: thinkcycleMax : Integer = self.thinkCycles
+		def: eatcycleMax : Integer = self.eatCycles
+			
+	context Philosopher 
+	inv PhilosopherConstraintInv:
+		Relation PhilosopherConstraintDcl(
+                self.think,
+                self.getrightFork,
+                self.getleftFork,self.eat, 
+                self.putrightFork,
+                self.putleftFork,
+                self.thinkcycleMax, 
+                self.eatcycleMax
+                )
+endpackage
+----

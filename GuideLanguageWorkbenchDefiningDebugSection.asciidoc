@@ -1,3 +1,4 @@
+[[defining-a-debug-representation-section]]
 === Defining a debug representation
 The debug layer is an extension on top of a graphical editor defined with ((Sirius)) which represents runtime data and the current instruction. See <<defining-a-concrete-syntax-with-sirius-section>> for more details about ((Sirius)). This section covers the debug representation creation wizard and the technical implementation details. Technical implementation details are only useful for advanced use case and troubleshooting.
 

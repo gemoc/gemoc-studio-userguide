@@ -26,6 +26,9 @@ Where:
 * <MoccEvent> is any MoccEvent from the MoCC2AS Mapping. This will also automatically define the DSE in the same context as the MoccEvent referenced, thus defining the starting point of navigation expressions from this DSE;
 * <Path-to-ExecutionFunction> is a navigation path from the context of this DSE to an Execution Function.
 
+[TIP]
+In case of difficulty, make use of the auto-completion feature.
+
 [NOTE]
 The implicit context of a Domain-Specific Event is inferred from the context in which its associated MoccEvent is defined in the MoCC2AS Mapping. Therefore, the DSE will be usable for any instance in the model of the context of the DSE. For instance if a DSE is mapped to a MoccEvent defined in the context of the metaclass _Transition_, and there are 3 Transitions in the model being executed, this DSE will be usable for each of the 3 Transitions of the model.
 

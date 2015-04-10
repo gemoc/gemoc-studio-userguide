@@ -21,7 +21,7 @@ The Execution Functions define how the Execution Data evolve during the executio
 [NOTE]
 For now, Execution Functions are considered as *atomic, instantaneous and blocking*. This means that any long computation will block the rest of the simulation, and concurrent Execution Functions are not executed in concurrence yet.
 
-[NOTE]
+[WARNING]
 For technical reasons, the Domain Model (Ecore metamodel) must specify the signature of the Execution Functions as EOperations.
 
 ==== Testing the Domain-Specific Actions
