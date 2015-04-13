@@ -26,7 +26,7 @@ The overview allows to access to the different parts of the <<gemoc-language-wor
 * Make your language executable
 * Define your runtime environment
 
-When you click on a step in the overview automatically the related actions are presented in the sections part.
+When you click on a step in the overview the related actions are automatically presented in the sections part.
 
 == Sections
 This part provides sections which depends on the selected overview. The sections contain links that can be used to activate the different actions : create the domain model project, edit the DSA project, define a concrete syntax...
@@ -37,7 +37,7 @@ image::images/workbench/language/dashboard/dashboard_create_language_sections.pn
 
 === Description
 
-Each section provides a help button which shows the description associated to the section and explains the process step and so which actions are available.
+Each section provides a help button which shows the description associated to the section and explains the process step and which actions are available.
 
 image::images/workbench/language/dashboard/section_description.png[Section description]
 
@@ -56,7 +56,7 @@ image::images/workbench/language/dashboard/projects_viewer.png[Projects viewer]
 
 === Synchronize
 
-The section toolbat provides a `synchronize` action. This action filters the content of the tree viewer to keep only the projects relevant according to the current process step represented by the section.
+The section toolbar provides a `synchronize` action. This action filters the content of the tree viewer to keep only projects relevant according to the current process step represented by the section.
 
 image::images/workbench/language/dashboard/synchronize.png[Synchronize projects]
 
