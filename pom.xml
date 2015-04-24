@@ -6,7 +6,8 @@
     <groupId>org.gemoc.documentation</groupId>
     <artifactId>gemoc-studio-guide</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jdocbook</packaging> 
+    <!-- <packaging>jdocbook</packaging>--> 
+    <packaging>jar</packaging>
    
     <name>GEMOC Studio Guide</name>
     <description>The documentation for generating a book using the GitHub wiki.</description>
@@ -54,7 +55,7 @@
         <plugins>
         
             <!-- Generate a docbook xml file from the asciidoc files -->
-            <plugin>
+             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>1.5.2</version>
@@ -67,15 +68,13 @@
                         </goals>
                         <configuration>
 		                    <sourceDirectory>${basedir}</sourceDirectory>
-		                    <imagesDir>.</imagesDir> <!-- AsciiDoc 1.5.0 presuppose that images are in a subfolder "images", but the files already have this info in the source files  -->
-		                    <outputDirectory>${basedir}/target/docbook/en-US</outputDirectory>
+		                    <imagesDir>.</imagesDir>  <!-- AsciiDoc 1.5.0 presuppose that images are in a subfolder "images", but the files already have this info in the source files  -->
+		                     <outputDirectory>${basedir}/target/docbook/en-US</outputDirectory>
 		                    <backend>docbook</backend>
-		                    <!-- doctype not honored until plugin version 0.1.2 -->
-		                    <!-- until then, set the doctype in the document -->
 		                    <doctype>book</doctype>
 		                </configuration>
                     </execution>
-                    <execution>
+                 <!--    <execution>
 			            <id>output-html</id>
 			            <phase>generate-resources</phase>
 			            <goals>
@@ -84,14 +83,11 @@
 			            <configuration>
 			                <backend>html</backend>
 			                <sourceDirectory>${basedir}</sourceDirectory>
-		                    <imagesDir>.</imagesDir> <!-- AsciiDoc 1.5.0 presuppose that images are in a subfolder "images", but the files already have this info in the source files  -->
+		                    <imagesDir>.</imagesDir> 
 		                    <outputDirectory>${basedir}/target/docbook/en-US-html</outputDirectory>
-		                   
-		                    <!-- doctype not honored until plugin version 0.1.2 -->
-		                    <!-- until then, set the doctype in the document -->
 		                    <doctype>book</doctype>
 			            </configuration>
-			        </execution>
+			        </execution> -->
 			       <!--  a tester  <execution>
 			            <id>output-pdf</id>
 			            <phase>generate-resources</phase>
@@ -109,7 +105,7 @@
 		           <!--          <doctype>book</doctype>
 			            </configuration>
 			        </execution> -->
-                </executions>
+                 </executions>
             </plugin>
             <!-- generate the images from plantUMl -->
             <!-- <plugin>
@@ -144,46 +140,188 @@
 		    </plugin>  -->
 
 
-			<!-- workaround  maven-jdocbook-plugin which doesn't allows to copy the community images at the right place-->
+			<!-- docbook generation part -->
 			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.7</version>
+			<!-- exemple : http://www.springsurf.org/sites/1.0.0-RC2/spring-surf-devtools/spring-surf-doc-plugin/examples/springsurf.html -->
+				<groupId>com.agilejava.docbkx</groupId>
+				<artifactId>docbkx-maven-plugin</artifactId>
+				<version>2.0.15</version>
 				<executions>
 					<execution>
-						<id>copy-resources</id>
-						<phase>generate-resources</phase>
+						<id>manual-single-page-html</id>
 						<goals>
-							<goal>copy-resources</goal>
+							<goal>generate-html</goal>
 						</goals>
+						<phase>generate-resources</phase>
 						<configuration>
-							<outputDirectory>${basedir}/target/prestaging/images</outputDirectory>
-							<resources>
-								<resource>
-									<directory>style/images</directory>
-									<filtering>false</filtering>
-								</resource>
-								<resource>
-									<directory>images</directory>
-									<filtering>false</filtering>
-								</resource>
-							</resources>
+							<chunkedOutput>false</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_single/</targetDirectory>
+							<includes>Guide.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+							<postProcess>
+<!-- 								<move 	file="target/docbkx/html/Kermeta-Manual.docb.html"  -->
+<!-- 										tofile="target/docbkx/html/Kermeta-Manual.docb/Kermeta-Manual.docb.single.html"/> -->
+							</postProcess>
 						</configuration>
 					</execution>
+					<execution>
+						<id>manual-multi-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<configuration>
+							<chunkedOutput>true</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html/</targetDirectory>
+							<includes>Guide.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/en-US/html//">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+						<phase>generate-resources</phase>
+					</execution>
+					<execution>
+						<id>multi-page-eclipse</id>
+						<goals>
+							<goal>generate-eclipse</goal>
+						</goals>
+						<configuration>
+							<chunkedOutput>true</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<xincludeSupported>true</xincludeSupported>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_eclipse/</targetDirectory>
+							<includes>Guide.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_eclipse/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/en-US/html_eclipse/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+						<phase>generate-resources</phase>
+					</execution>
 				</executions>
+				<configuration> <!-- global configuration for all executions -->
+          			<highlightSource>1</highlightSource>
+          			<xincludeSupported>true</xincludeSupported>
+	          		<entities>
+			            <entity>
+			            	<name>version</name> <!-- replace occurence of &version; -->
+			            	<value>${version}</value>
+			        	</entity>
+			        	<entity>
+			            	<name>buildNumber</name> <!-- replace occurence of &build_time; -->
+			            	<value>${buildNumber}</value>
+			        	</entity>
+			    	</entities>
+       			</configuration>
+				<dependencies>
+					<dependency>
+					  <groupId>net.sf.docbook</groupId>
+					  <artifactId>docbook-xml</artifactId>
+					  <version>5.0-all</version>
+					  <type>zip</type>
+					  <classifier>resources</classifier>
+					</dependency>
+					<dependency>
+						<groupId>org.docbook</groupId>
+						<artifactId>docbook-xml</artifactId>
+						<version>4.4</version>
+						<scope>runtime</scope>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.xmlgraphics</groupId>
+						<artifactId>fop</artifactId>
+						<version>1.0</version>
+					</dependency>
+					<dependency>
+						<groupId>net.sf.saxon</groupId>
+						<artifactId>saxon</artifactId>
+						<version>8.7</version>
+					</dependency>
+					<dependency>
+					  <groupId>net.sf.docbook</groupId>
+					  <artifactId>docbook-xsl</artifactId>
+					  <version>1.75.2</version>
+					  <type>zip</type>
+					  <classifier>ns-resources</classifier>
+					</dependency>
+					<dependency>
+			           <groupId>net.sf.xslthl</groupId>
+			           <artifactId>xslthl</artifactId>
+			           <version>2.0.1</version>
+			           <scope>runtime</scope>
+			        </dependency>
+				</dependencies>
 			</plugin>
+
+			<!-- workaround  maven-jdocbook-plugin which doesn't allows to copy the community images at the right place-->
+<!-- 			<plugin> -->
+<!-- 				<artifactId>maven-resources-plugin</artifactId> -->
+<!-- 				<version>2.7</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>copy-resources</id> -->
+<!-- 						<phase>generate-resources</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>copy-resources</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<outputDirectory>${basedir}/target/prestaging/images</outputDirectory> -->
+<!-- 							<resources> -->
+<!-- 								<resource> -->
+<!-- 									<directory>style/images</directory> -->
+<!-- 									<filtering>false</filtering> -->
+<!-- 								</resource> -->
+<!-- 								<resource> -->
+<!-- 									<directory>images</directory> -->
+<!-- 									<filtering>false</filtering> -->
+<!-- 								</resource> -->
+<!-- 							</resources> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 		    
             <!-- Process the docbook files to produce the html, the eclipse help and the pdf -->
-             <plugin>
-                <groupId>org.jboss.maven.plugins</groupId>
-                <artifactId>maven-jdocbook-plugin</artifactId>
-                <version>2.3.8</version>
-                <extensions>true</extensions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jboss.pressgang</groupId>
-                        <artifactId>pressgang-xslt-ns</artifactId>
-                        <version>3.0.0</version>
-                    </dependency>  
+<!--              <plugin> -->
+<!--                 <groupId>org.jboss.maven.plugins</groupId> -->
+<!--                 <artifactId>maven-jdocbook-plugin</artifactId> -->
+<!--                 <version>2.3.8</version> -->
+<!--                 <extensions>true</extensions> -->
+<!--                 <dependencies> -->
+<!--                     <dependency> -->
+<!--                         <groupId>org.jboss.pressgang</groupId> -->
+<!--                         <artifactId>pressgang-xslt-ns</artifactId> -->
+<!--                         <version>3.0.0</version> -->
+<!--                     </dependency>   -->
 <!-- Do NOT use this dependency because style sheets have been forked and adapted. -->
 <!--                     <dependency> -->
 <!--                         <groupId>org.jboss.pressgang</groupId> -->
@@ -191,64 +329,64 @@
 <!--                         <type>jdocbook-style</type> -->
 <!--                         <version>3.0.0</version> -->
 <!--                     </dependency> -->
-                 </dependencies>
-                <configuration>
-                    <sourceDirectory>${basedir}/target/docbook</sourceDirectory>
-                    <sourceDocumentName>Guide.xml</sourceDocumentName>
+<!--                  </dependencies> -->
+<!--                 <configuration> -->
+<!--                     <sourceDirectory>${basedir}/target/docbook</sourceDirectory> -->
+<!--                     <sourceDocumentName>Guide.xml</sourceDocumentName> -->
  
                     <!-- All necessary image resources for documentation content -->
-                     <imageResource>
+<!--                      <imageResource> -->
                       
-                        <directory>${basedir}/target/prestaging</directory>
+<!--                         <directory>${basedir}/target/prestaging</directory> -->
 <!--                         <includes> -->
 <!--                             <include>images/**</include> -->
 <!--                             <include>style/images/community/**</include> doesn't work, copy at the wrong place -->
 <!--                         </includes> -->
-                    </imageResource>
+<!--                     </imageResource> -->
  
 					<!-- All necessary resources for styling -->
-                     <cssResource>
-                        <directory>${basedir}/style</directory>
-                        <includes>
-                            <include>css/*</include>
-                            <include>images/**</include>
-                        </includes>
-                    </cssResource>
+<!--                      <cssResource> -->
+<!--                         <directory>${basedir}/style</directory> -->
+<!--                         <includes> -->
+<!--                             <include>css/*</include> -->
+<!--                             <include>images/**</include> -->
+<!--                         </includes> -->
+<!--                     </cssResource> -->
                     
-                    <formats>
-                        <format>
-                            <formatName>html</formatName>
-                            <stylesheetResource>file:xslt/xhtml.xsl</stylesheetResource>
-                            <finalName>index.html</finalName>
-                        </format>
-                        <format>
-                            <formatName>html_single</formatName>
-                            <stylesheetResource>file:xslt/xhtml-single.xsl</stylesheetResource>
-                            <finalName>index.html</finalName>
-                        </format>
-                        <format>
+<!--                     <formats> -->
+<!--                         <format> -->
+<!--                             <formatName>html</formatName> -->
+<!--                             <stylesheetResource>file:xslt/xhtml.xsl</stylesheetResource> -->
+<!--                             <finalName>index.html</finalName> -->
+<!--                         </format> -->
+<!--                         <format> -->
+<!--                             <formatName>html_single</formatName> -->
+<!--                             <stylesheetResource>file:xslt/xhtml-single.xsl</stylesheetResource> -->
+<!--                             <finalName>index.html</finalName> -->
+<!--                         </format> -->
+                   <!--      <format>
                             <formatName>pdf</formatName>
                             <stylesheetResource>file:xslt/pdf.xsl</stylesheetResource>
                             <finalName>${project.artifactId}.pdf</finalName>
-                        </format>
-                        <format>
-                            <formatName>eclipse</formatName>
+                        </format> -->
+<!--                         <format> -->
+<!--                             <formatName>eclipse</formatName> -->
                              <!-- classpath:/xslt/org/jboss/seam/eclipse.xsl -->
-                             <stylesheetResource>file:xslt/eclipse.xsl</stylesheetResource>
-                            <finalName>index.html</finalName>
-                        </format>
-                    </formats>
-                    <options>
-                        <autoDetectFonts>true</autoDetectFonts>
-                        <xincludeSupported>true</xincludeSupported>
-                        <xmlTransformerType>saxon</xmlTransformerType>
-                        <transformerParameters>
+<!--                              <stylesheetResource>file:xslt/eclipse.xsl</stylesheetResource> -->
+<!--                             <finalName>index.html</finalName> -->
+<!--                         </format> -->
+<!--                     </formats> -->
+<!--                     <options> -->
+<!--                         <autoDetectFonts>true</autoDetectFonts> -->
+<!--                         <xincludeSupported>true</xincludeSupported> -->
+<!--                         <xmlTransformerType>saxon</xmlTransformerType> -->
+<!--                         <transformerParameters> -->
                              <!-- AsciiDoc processing instructions not processed until version 3.0.1 of pressgang-tools -->
-                            <asciidoc.mode>1</asciidoc.mode>
-                        </transformerParameters>
-                    </options>
-                </configuration>
-            </plugin> 
+<!--                             <asciidoc.mode>1</asciidoc.mode> -->
+<!--                         </transformerParameters> -->
+<!--                     </options> -->
+<!--                 </configuration> -->
+<!--             </plugin>  -->
         </plugins>
     </build>
 

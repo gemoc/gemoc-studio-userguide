@@ -1,5 +1,5 @@
 = GEMOC Studio Guide
-Francois Tanguy <francois.tanguy@inria.fr>, Didier Vojtisek <didier.vojtisek@inria.fr>
+Collective work __ENSEEIHT, ENSTA, I3S, Inria, IRIT, Obeo, Thales, ...__
 :doctype: book
 :toc:
 :numbered:
@@ -33,18 +33,10 @@ The GEMOC Studio offers 2 main usages:
 
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
-////////////////////////////////////////////////////////////////
-image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={max-width}]
 
-image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={half-width}]
-
-image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", scaledwidth="25%"]
-
-image:images/intro/GemocWorkbenchesGlobalPicture.png[bla, scale="1"]
-////////////////////////////////////////////////////////////////
-
-[[GemocWorkbenchesGlobalPicture]]
-image::images/intro/GemocWorkbenchesGlobalPicture.png[GemocWorkbenchesGlobalPicture, scaledwidth="25%", width={quarter-width}]
+[[img-GemocWorkbenchesGlobalPicture]]
+.Gemoc Workbenches Global Picture
+image::images/intro/GemocWorkbenchesGlobalPicture.png[Sunset, 500,  link="http://www.gemoc.org"]
 
 
 In this document:
