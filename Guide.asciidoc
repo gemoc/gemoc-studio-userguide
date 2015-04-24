@@ -70,9 +70,9 @@ This first dashboard groups the activities as follow:
 Create a language::
     This activity can be decomposed in activities in two groups :
         Domain model (abstract syntax):::
-            * Create the abstract syntax with EMF (incl., the ecore model and the genmodel)
-        Model editors (concrete syntax):::
-            * Create a graphical editor with Sirius Designer
+            * Create the abstract syntax with EMF (incl., the ecore model and the genmodel) 
+        <<defining-a-concrete-syntax-section, Model editors (concrete syntax)>>::: 
+            * <<defining-a-concrete-syntax-with-sirius-section, Create a graphical editor with Sirius Designer>>
             * Create a textual editor with Xtext
 Make your language executable::
     This activity is decomposed in 2 main parts:
