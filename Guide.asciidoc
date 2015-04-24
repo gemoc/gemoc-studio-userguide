@@ -36,7 +36,7 @@ Each of these usage has it own set of tools that are referenced as *Gemoc Langua
 
 [[img-GemocWorkbenchesGlobalPicture]]
 .Gemoc Workbenches Global Picture
-image::images/intro/GemocWorkbenchesGlobalPicture.png[Sunset, 500,  link="http://www.gemoc.org"]
+image::images/intro/GemocWorkbenchesGlobalPicture.png[Sunset, 800,  link="http://www.gemoc.org"]
 
 
 In this document:
