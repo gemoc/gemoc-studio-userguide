@@ -7,7 +7,7 @@ The *((GEMOC Language Workbench))* is intended to be used by the ((Language Desi
 
 [[figure-glw-screenshot-of-language_workbench]]
 .Screenshot of the GEMOC Language Workbench showing the design of a Timed Finite State Machine (TFSM) example.
-image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench]
+image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench, 800]
 (((TFSM,Language Workbench)))
 
 '''
