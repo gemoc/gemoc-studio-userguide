@@ -46,9 +46,5 @@ include::GuideLanguageWorkbenchDefiningFeedbackSpecificationSection.asciidoc[]
 
 include::GuideLanguageWorkbenchDefiningDebugSection.asciidoc[]
 
+include::GuideLanguageWorkbenchDashboardSection.asciidoc[]
 
-
-[[section-process-support-view]]
-=== Process support view
-
-TODO present process view
