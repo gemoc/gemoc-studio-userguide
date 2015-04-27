@@ -214,13 +214,13 @@
 							<xincludeSupported>true</xincludeSupported>
 							<base.dir></base.dir>
 							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_eclipse/</targetDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/eclipse/</targetDirectory>
 							<includes>Guide.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_eclipse/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/eclipse/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/html_eclipse/">
+								<copy todir="${project.build.directory}/docbook/publish/en-US/eclipse/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
