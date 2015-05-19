@@ -5,10 +5,14 @@
 The Gemoc launch configuration offers both a Run and a Debug mode.
 
 ===== General options
+Run and debug are configured using the launch configuration. An example of configuration:
+
+image:images/workbench/modeling/launch_configuration.png[Launch configuration]
+
 - Model to execute : this is the model that will be run
 - xDSML : this field allows to select among the valid variants of the executable language that are available for the model (Ie. the combinaison of DSA, DSE and MoCC that can be used on the given domain model)
-- ((Decider)) : this field allows to select the solver strategy used by the engine when several ((Logical Step))s can be triggered. Possible choice are : 
-** Solver proposition : the solver internal stategy will be used to selecton Logical Step
+- ((Decider)) : this field allows to select the solver strategy used by the engine when several ((Logical Step))s can be triggered. Possible choices are : 
+** Solver proposition : the solver internal stategy will be used to select a Logical Step
 ** Random : will randomly select one of the available Logical Step (warning: execution cannot be reproduced when using this Decider)
 ** Ask user : (available only in Debug mode), this option will use the <<modeling-workbench-executing-model-logical-step-view-section,Logical Step View>> or the <<modeling-workbench-executing-model-timeline-view-section,Timeline View>> to present the available Logical Steps and pause if there are more than one Logical Step. The user will then need to click on one of the Logical Step to continue.
 ** Ask user (Step by step) : (available only in Debug mode), this option is similar to the previous one. However, it will pause on every Logical Step, even if there is only one Logical Step that can be triggered. This is more or less equivalent as putting a breakpoint on every MSE of the language.
@@ -23,11 +27,11 @@ It offers a limited set of views :
 - the <<modeling-workbench-executing-model-engine-view-section,((Engine)) View>> allows to stop a running model.
 - the <<modeling-workbench-executing-model-timeline-view-section,((Timeline)) View>> is displayed at the end of the execution in order to control the resulting execution trace.
 
-If more feed back are required, please use one of the front end or back end available for the xDSML. 
+If more feedback are required, please use one of the frontend or backend available for the xDSML, see <<modeling-workbench-backends-frontends-section,Backends and frontends>>. 
 
 ===== Debug mode
 In debug mode, the engine offers more control on the execution.
-It allows to pause, add break point, and run in a step by step mode.
+It allows to pause, add breakpoint, and run in a step by step mode.
 
 It reuses the Eclipse Debug perspective and some of its views and add some Gemoc specific views.
 
@@ -40,8 +44,9 @@ It reuses the Eclipse Debug perspective and some of its views and add some Gemoc
 
 When running a simulation in Debug mode, it is configured to activate automatically the Debug layer and the Animation layer in the Animation view.
 
+[[modeling-workbench-backends-frontends-section]]
 ===== Backends and frontends
-Back ends and front ends offer additionnal view that can respectivly display informations from the running model or provide event input to the running model.
+Backends and frontends offer additionnal view that can respectively display informations from the running model or provide event input to the running model.
 
 These backends and front ends usually open dedicated views. These views are always opened in all modes (Run or Debug).
 
@@ -59,7 +64,7 @@ image:images/workbench/modeling/engine_view.png[Engine View]
 [[modeling-workbench-executing-model-logical-step-view-section]]
 
 ==== Logical Steps View
-The logical steps view displays the list of possible future execution. This list is provided by the solver. This view is organized around a tree. For each logical step, its underlying events can be seen and possibly for each event the associated operation is visible. 
+The logical steps view displays the list of possible future executions. This list is provided by the solver. This view is organized around a tree. For each logical step, its underlying events can be seen and possibly for each event the associated operation is visible. 
 
 [NOTE]
 ====
@@ -85,10 +90,19 @@ The possible future logical steps are shown under the condition that the model i
 
 image:images/workbench/modeling/timeline.png[Timeline]
 
-In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the blue logical steps. It does two things:
+In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the blue logical steps. It does three things:
 
 . it resets the solver's state to the selected execution step,
-. and it resets the model's state to the selected execution step.
+. and it resets the model's state to the selected execution step,
+. it also forks the current timeline and create a new branch of execution.
+
+image:images/workbench/modeling/timeline/timeline_branch.png[Timeline branch]
+
+It is also possible to select a logical step and use the contextual menu to show its caller in the Sirius editor:
+
+image:images/workbench/modeling/timeline/show_caller_timeline.png[Show caller]
+
+image:images/workbench/modeling/timeline/show_caller_editor.png[Show caller]
 
 [[modeling-workbench-executing-model-event-manager-view-section]]
 ==== Event Manager View
@@ -96,8 +110,26 @@ In addition to displaying information, it also provides interaction with the use
 [[modeling-workbench-executing-model-animation-view-section]]
 ==== Animation View
 
-- Debug Layer
-- Animation Layer
+If you have defined a debug representation using <<defining-a-debug-representation-section>>. You can use the following actions to start a debug session and toggle breakpoints.
+
+image::images/workbench/modeling/debug_actions.png[Debug actions]
+
+A decorator is shown on all element holding a breakpoint.
+The decorator also reflects the state of the breakpoint:
+
+- enabled
+
+image:images/workbench/modeling/breakpoint_enabled.png[breakpoint enabled]
+
+- disabled
+
+image:images/workbench/modeling/breakpoint_disabled.png[breakpoint deisabled]
+
+While executing you can visualize execution data. This setting must be defined by hand since the data are language dependant (see <<defining-a-debug-representation-section>> for more details). Here the current state is decorated with a green arrow.
+
+image:images/workbench/modeling/execution_data_highlight.png[Execution data highlight]
+
+The default definition highlights the current instruction in yellow.
 
 [[modeling-workbench-executing-model-debug-view-section]]
 ==== Debug View
@@ -106,6 +138,8 @@ It presents an interface for Step by Step execution at the Logical Step level or
 When an execution is paused, this view presents the current Logical Step.
 
 When paused on a ((Logical Step)), the Step over command allows to go to the next Logical Step. The Step Into command allows to run separatly each of the internal DSA calls associated to the Logical Step.
+
+image:images/workbench/modeling/debug_view.png[Debug view]
 
 [[modeling-workbench-executing-model-variable-view-section]]
 ==== Variable View
