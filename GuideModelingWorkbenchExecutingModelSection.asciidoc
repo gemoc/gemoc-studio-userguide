@@ -85,10 +85,19 @@ The possible future logical steps are shown under the condition that the model i
 
 image:images/workbench/modeling/timeline.png[Timeline]
 
-In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the blue logical steps. It does two things:
+In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the blue logical steps. It does three things:
 
 . it resets the solver's state to the selected execution step,
-. and it resets the model's state to the selected execution step.
+. and it resets the model's state to the selected execution step,
+. it will also fork the current timeline and create a new branch of execution.
+
+image:images/workbench/modeling/timeline/timeline_branch.png[Show caller]
+
+It is also possible to select a logical step and use the contextual menu to show its caller in the Sirius editor:
+
+image:images/workbench/modeling/timeline/show_caller_timeline.png[Show caller]
+
+image:images/workbench/modeling/timeline/show_caller_editor.png[Show caller]
 
 [[modeling-workbench-executing-model-event-manager-view-section]]
 ==== Event Manager View
@@ -96,8 +105,26 @@ In addition to displaying information, it also provides interaction with the use
 [[modeling-workbench-executing-model-animation-view-section]]
 ==== Animation View
 
-- Debug Layer
-- Animation Layer
+If you have defined a debug representation using <<defining-a-debug-representation-section>>. You can use the following actions to start a debug session and toggle breakpoints.
+
+image::images/workbench/modeling/debug_actions.png[Debug actions]
+
+A decorator is show on all element holding a breakpoint.
+The decorator also reflect the state of the breakpoint:
+
+- enabled
+
+image:images/workbench/modeling/breakpoint_enabled.png[Show caller]
+
+- disabled
+
+image:images/workbench/modeling/breakpoint_disabled.png[Show caller]
+
+While executing you can visualize execution data. This setting must be defined by hand since the data are language dependant (see <<defining-a-debug-representation-section>> for more details). Here the current state is decorated with a green arrow.
+
+image:images/workbench/modeling/execution_data_highlight.png[Show caller]
+
+The default definition highlights the current instruction in yellow.
 
 [[modeling-workbench-executing-model-debug-view-section]]
 ==== Debug View
