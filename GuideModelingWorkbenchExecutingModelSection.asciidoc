@@ -125,6 +125,8 @@ image:images/workbench/modeling/breakpoint_enabled.png[breakpoint enabled]
 
 image:images/workbench/modeling/breakpoint_disabled.png[breakpoint deisabled]
 
+When you hit a breakpoint on an element and are debugging with the decider "Step by step user decider", in order to restart the execution you must clic the resume button from the debug perspective. Then don't forget to select the next logical step to execute. Do the same when debugging in step by step with the decider "Step by step user decider".
+
 While executing you can visualize execution data. This setting must be defined by hand since the data are language dependant (see <<defining-a-debug-representation-section>> for more details). Here the current state is decorated with a green arrow.
 
 image:images/workbench/modeling/execution_data_highlight.png[Execution data highlight]
