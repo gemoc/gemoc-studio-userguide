@@ -7,7 +7,10 @@ endif::[]
 
 
 
-= GEMOC xDSML definition tutorial with MarkedGraph
+= Animate Marked Graph Models with the GEMOC Studio
+
+TODO: Other title: Make Marked Graph models executable with the GEMOC
+Studio
 
 TODO: Provide .as, .as.edit, .as.editor.
 
@@ -50,17 +53,23 @@ transition and a token count.
 - A transition has several __input__ places and several __output__
   places.
 
-[[MarkedGraph-AS]]
-.Abstract Syntax (Metamodel) of MarkedGraph
+// [[MarkedGraph-AS]]
+// .Abstract Syntax (Metamodel) of MarkedGraph
 image::MarkedGraph/images/MarkedGraph-AS.png[MarkedGraph Domain Model (Metamodel)]
 
 === Concrete Syntax and Sample Model
 
-TODO: Take a capture form Wikipedia.
+The graphical concrete syntax draws places as
+circles and transitions as squares.  Inputs and outputs of places and
+transitions are designated by arrows.  The following picture shows the
+graphical representation of the
+link:http://en.wikipedia.org/wiki/Marked_graph[Marked Graph model of wikipedia].
 
-The one of Wikipedia?
-Another one ?
+// TODO: http://en.wikipedia.org/wiki/Marked_graph
+Here the graphical syntax of the wikipedia example using the view
+defined with Sirius.
 
+image::MarkedGraph/images/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
 
 == Set up an xDSML project
 
@@ -70,11 +79,17 @@ Syntax (CS).
 
 === Create an xDSML Project
 
-Create a new xDSML project (__New > Project > GEMOC
-Project / new xDSML Project__), with the desired name (for instance
+Select an xDSML project (__New > Project > GEMOC
+Project / new xDSML Project__).
+
+image::MarkedGraph/images/MG-SelectGemocLanguageProject.png[Create an xDSML Project]
+
+Define its name (for instance
 __org.gemoc.example.markedgraph__).
 
-TODO: Add a screenshot
+
+TODO: Add a screen shot!
+
 
 === Open xDSML View 
 
@@ -84,19 +99,19 @@ project (which are part of and managed by other projects).  This view
 is a kind of dashboard or control center to have quick access to any
 important resource of the project.
 
-TODO: Add a screenshot
+image::MarkedGraph/images/MG-XDSML-start.png[xDSML Editor]
 
 === Select the AS
 
 In the "Domain Model" section, click on the "Browse" button to select
 the project defining the AS: org.gemoc.markedgraph.as.
 
-TODO: Required?
+image::MarkedGraph/images/MG-XDSML-EMF-browse.png[Browse to select AS]
+
 Then, initialize the "Genmodel URI" and the "Root container model
-element".
+element" thanks to the "Browse" and "Select" buttons.
 
-TODO: Add a screenshot.
-
+image::MarkedGraph/images/MG-XDSML-EMF-done.png[xDSML Editor]
 
 
 === Select the Graphical Editor
@@ -108,7 +123,7 @@ In the "Concrete syntax definition / Graphical editor" of the
 project.xdsml editor, click on "Browse" to select the
 "org.gemoc.markedgraph.design" project.
 
-TODO : Add a screncast.
+image::MarkedGraph/images/MG-XDSML-EMF-done.png[xDSML sirius]
 
 
 
@@ -136,9 +151,9 @@ the MarkedGraph element.
 === Define DSA
 
 When executing a Marked Graph model, we want to know the number of
-token of each place (it is an ED).  When transition are fired (EF),
-one token is removed from each input places and one token is added to
-each output places.
+token of each place (it is an ED).  When a transition is fired (EF),
+one token is removed from each of its input places and one token is
+added to each of irs output places.
 
 The DSA of Marked Graph is composed of :
 
@@ -304,7 +319,7 @@ Modeling Workbench.
 
 === Import the project with a sample model
 
-Import the modeling project org.gemoc.markedgraph.sample in the
+Import the modeling project markedgraph.sample in the
 Modeling Workbench (Import / General / Existing project into
 Workspace).
 
@@ -397,6 +412,10 @@ Tips and tricks :
 used to regenerate the projects), the ECL editor keep signaling errors
 concerning the unresolved operations.  The solution consists in
 closing the editor and opening again the ECL file.
+* xDSML Editor: It is sometimes required to save the file (for example
+when the AS has been selected in order to create the k3dsa project).
+* ECL Editor: If Precedes is not found, quit Eclipse and launch it
+again.  It should solve the problem!
 
 
 
