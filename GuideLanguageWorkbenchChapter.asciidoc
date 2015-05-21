@@ -19,8 +19,8 @@ include::GuideLanguageWorkbenchDomainModelProjectSection.asciidoc[]
 include::GuideLanguageWorkbenchDomainSpecificActionsProjectSection.asciidoc[]
 
 
-=== Defining Domain-Specific Constraints
-TODO
+// === Defining Domain-Specific Constraints
+// TODO
 
 [[defining-a-concrete-syntax-section]]
 === Defining a Concrete Syntax

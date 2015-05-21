@@ -36,8 +36,8 @@ The implicit context of a Domain-Specific Event is inferred from the context in 
 ===== Semantics of Atomic Domain-Specific Events
 Upon an occurrence of the associated MoccEvent, an occurrence of the Domain-Specific Event is created and consumed by the GEMOC Execution Engine. Its consumption triggers the execution of the designated Execution Function.
 
-===== Defining a Composite Domain-Specific Events
-TODO
+// ===== Defining a Composite Domain-Specific Events
+// TODO
 
-===== Semantics of Composite Domain-Specific Events
-TODO
+// ===== Semantics of Composite Domain-Specific Events
+// TODO
