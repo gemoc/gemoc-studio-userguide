@@ -7,12 +7,11 @@ endif::[]
 
 
 
-= Animate Marked Graph Models with the GEMOC Studio
+= Make Marked Graph models executable with the GEMOC Studio
 
-TODO: Other title: Make Marked Graph models executable with the GEMOC
-Studio
+// old title: Animate Marked Graph Models with the GEMOC Studio
 
-TODO: Provide .as, .as.edit, .as.editor.
+TODO: Provide .model, .model.edit, .model.editor.
 
 
 == Overview / What is expected at the end of this tutorial
@@ -69,6 +68,7 @@ link:http://en.wikipedia.org/wiki/Marked_graph[Marked Graph model of wikipedia].
 Here the graphical syntax of the wikipedia example using the view
 defined with Sirius.
 
+.Example of ...
 image::MarkedGraph/images/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
 
 == Set up an xDSML project
