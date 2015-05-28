@@ -11,24 +11,27 @@ endif::[]
 
 // old title: Animate Marked Graph Models with the GEMOC Studio
 
-TODO: Provide .model, .model.edit, .model.editor.
 
-
-== Overview / What is expected at the end of this tutorial
+== What is expected at the end of this tutorial
 
 This tutorial aims at demonstrating the power of the GEMOC studio to
 define an executable semantics and provide graphical animation for a
 DSML.   It relies of the
 http://en.wikipedia.org/wiki/Marked_graph[marked graph] language.
 
+////
 TODO: Show an animated GIF or a video.
 
 NOTE: A screencast of this tutorial can be found here (give URL when
 it will be available)...
+////
 
+
+////
 Please, read the link:GuideQuickTutorial.html[introduction of tutorials] to
 understand the GEMOC approach to define executable DSML or to have a
 better understanding of the abbreviations used in this tutorial.
+////
 
 
 == Install the projects defining the Marked Graph AS and CS
@@ -49,14 +52,20 @@ Marked Graph DSML Definition).
 
 === Import the Marked Graph AS and CS
 
+Download the
+link:MarkedGraph/MarkedGraph/MarkedGraph/org.gemoc.sample.markedgraph.zip[provided
+archive] containing the projects and unzip it.  Then, with the GEMOC
+Studio, select __import... / General / Existing Projects into
+Workspace__ and import all the projects from the archive file.
+
+
+=== Abstract Syntax
+
 Marked Graph is a kind of
 http://en.wikipedia.org/wiki/Petri_net[Petri net]
 in which every place has exactly one incoming arc and exactly one
 outgoing arc.  As a consequence, it a concurrent language (several
 transitions may be fired) and has no conflict.
-
-
-=== Abstract Syntax
 
 The Domain Model, also called Abstract Syntax or Metamodel, defines :
 
@@ -455,76 +464,9 @@ From the timeline view, select the step to execute.
 TODO: To complete...
 
 
+////
 === What else?
 
 Any idea?
 
-
-== Questions/Remarks...
-
-Questions on the MoCC from summerSchool :
-
-- why delayedBy p.initialMarking and not delayedBy 1?
-	=> Because we can make as much read as there is initialMarking
-	token in the place.  Any write in that place, means that a new
-	read can be done.
-
-- is it still right if the initial marking is P2 = 1 (all other places
-is 0) ?
-	=> No. But in any case, this initialMarking will result in a
-	deadlock.
-
-- what if there is several places which are initially marked?
-	=> See read/write semantics
-
-
-Questions on the implementation :
-
-- A transition has no more that one input or output place.  Should be
-any number !
-
-Questions:
-
-- use execute for the EF on transition instead of fire and use fire
-(or trigger) for the DSE instead of fireCall.
-
-
-Questions on the form :
-
-- Use of abbreviations like MoCC, DSA, EF, ED, AS, CS, etc.? Yes
-because using the full name will make the tutorial hard to read.
-=> Explanations of acronyms must be provided somewhere.
-- Avoid to split files in several parts?  For example ED and EF are
-defined in the same files.  It is thus useless to try to have two
-steps, one to define the ED and the other to define EF.
-- How to name the project defining the abstract syntax? model or as?
-=> If 'as' or 'metamodel' is used, then the wizard should be changed
-in order to avoid to have the language named 'as' or 'metamodel'.
-
-
-TODO :
-
-- Remove "example" in the name of the project?
-- DONE: Domain model and then MetaModel (Abstract Syntax)
-- Give insight on the debugging, tricks to resolve problms, etC. => A
-kind of FAQ must be provided.
-- Look at the Mélanie's Dashboard so that the steps in the tutorial
-corresponds to activities in the dashboard.
-- Look at the tools guide written by Didier, Florent et Issa.
-
-
-Tips and tricks :
-
-* When the Ecore is changed to add new operations (and the genmodel is
-used to regenerate the projects), the ECL editor keep signaling errors
-concerning the unresolved operations.  The solution consists in
-closing the editor and opening again the ECL file.
-* xDSML Editor: It is sometimes required to save the file (for example
-when the AS has been selected in order to create the k3dsa project).
-* ECL Editor: If Precedes is not found, quit Eclipse and launch it
-again.  It should solve the problem!
-
-
-
-// vim: set syntax=asciidoc tw=70 ts=4 sw=4:
-// vim: spell spelllang=en:
+////
