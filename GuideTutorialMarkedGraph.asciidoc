@@ -7,7 +7,7 @@ endif::[]
 
 
 
-= Make Marked Graph models executable with the GEMOC Studio
+= Tutorial: Make Marked Graph models executable with the GEMOC Studio
 
 // old title: Animate Marked Graph Models with the GEMOC Studio
 
