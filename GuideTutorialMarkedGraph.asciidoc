@@ -467,8 +467,7 @@ TODO: explain its contents.
 To be able to complete the definition of the odesign file, we first need to
 load the existing markedgraph.odesign as a resource :
 
-* Right click in the markedgraph.odesign editor.
-* select __Load Resource...__.
+* Right click in the markedgraph.odesign editor to select __Load Resource...__.
 * Select __Browse workspace...__
 * Select __markedgraph.odesign__ in the
 __org.gemoc.sample.markedgraph.design__ project
@@ -517,21 +516,62 @@ newly created project (__org.gemoc.sample.markedgraph.animation__)
 After the debug presentation has been defined, we can complete it to add an
 animation layer.
 
+===== Create the Animation Layer
+
+* Right click on "Diagram extension MarkedGraph" to __select New Diagram
+  Element / Additional Layer__.
+* Set its "id" to "Animation".
 
 
+===== Display the firable transition with a green background color
+
+* Right click on "Animation" to select "New Customization / Style
+Customizations".
+* Right click on "Style Customizations" to select "New Customization /
+Style Customization".
+* On "Style Customization", set the "Predicate Expression" to
+"[self.eGet('inputs')->forAll(p | p.eGet('runtimeTokenCount').toString().toInteger() > 0) /]"
+* Right click on "Style Customization" to select "New Customization /
+Property Customization (by selection)"
+* For "Applied On" property, select "Square white".
+* For "Property Name", set "color" (completion is available with CTRL-SPACE)
+* For "Value Selction", set "light_green"
+
+===== Set the background color of a place to light_yellow
+
+Perform the same action as above to set the background color of place to
+yellow.
+
+// FIXEM : how to select thr right (ellipse white)?
+
+===== Display the runtime token count in a place
 
 
-TODO: Explain...
+* Right click on "Style Customization" to select "New Customization /
+Property Customization (by expression)"
+* For "Applied On" property, select "Ellipse white".
+* For "Property Name", set "labelExpression" (completion is available with CTRL-SPACE)
+* For "Value Selction", set "feature:runtimeTokenCount"
 
-XXX: In Which eclipse?
 
-TODO: The aird has to be provided!
+====== Add the Animation service !
 
-Add a link to a tutorial for Sirius Animator.
+* Right click on "MarkedGraphViewpoint" to select "New Extension / Java
+Extension".
+* Set "Qualified Class Name" to
+"org.gemoc.sample.markedgraph.animation.services.MarkedgraphAnimationServices".
 
-////
+In the project, __org.gemoc.sample.markedgraph.animation__ project, in
+src/org.gemoc.sample.markedgraph.animation.services, copy the
+MarkedgraphDebugServices.java class to
+MarkedgraphAnimationServices.java.  Then, change
+AbstractGemocDebuggerServices to AbstractGemocAnimatorServices in its
+source code (two times: import and extends).  Finally, change "Debug" to
+"Animation".
 
-////
+//T ODO: The aird has to be provided!
+
+// XXX: Add a link to a tutorial for Sirius Animator.
 
 
 == Animate a Model
