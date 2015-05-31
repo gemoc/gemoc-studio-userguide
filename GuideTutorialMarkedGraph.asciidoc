@@ -19,9 +19,14 @@ define an executable semantics and provide graphical animation for a
 DSML.   It relies of the
 http://en.wikipedia.org/wiki/Marked_graph[marked graph] language.
 
-////
-TODO: Show an animated GIF or a video.
+The folowing animation shows the expecting results of this tutorial:
+according to the fired transitions, tokens move from place to place.
 
+.Expected animation for Marked Graph models
+image::images/MarkedGraph/MarkedGraph-wikipedia-anim-all.gif[Expected animation for Marked Graph models] 
+
+
+////
 NOTE: A screencast of this tutorial can be found here (give URL when
 it will be available)...
 ////
@@ -77,7 +82,7 @@ transition and a token count.
 
 // [[MarkedGraph-AS]]
 .Abstract Syntax (Metamodel) of MarkedGraph
-image::MarkedGraph/images/MarkedGraph-AS.png[MarkedGraph Domain Model (Metamodel)]
+image::images/MarkedGraph/MarkedGraph-AS.png[MarkedGraph Domain Model (Metamodel)]
 
 === Concrete Syntax and Sample Model
 
@@ -92,7 +97,7 @@ Here the graphical syntax of the wikipedia example using the view
 defined with Sirius.
 
 .Example of a Marked Graph model (from link:http://en.wikipedia.org/wiki/Marked_graph[wikipedia])
-image::MarkedGraph/images/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
+image::images/MarkedGraph/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
 
 == Set up an xDSML project
 
@@ -106,19 +111,19 @@ Select an xDSML project (__New > Project > GEMOC
 Project / new xDSML Project__).
 
 .Create an xDSML Project
-image::MarkedGraph/images/MG-SelectGemocLanguageProject.png[Create an xDSML Project]
+image::images/MarkedGraph/MG-SelectGemocLanguageProject.png[Create an xDSML Project]
 
 The first dialog of the wizard asks for the name of the project. Define
 it as __org.gemoc.sample.markedgraph.xdsml__.
 
 
 .Define the name of the project
-image::MarkedGraph/images/MG-SelectGemocLanguageProject-ProjectName.png[Define the name of the project]
+image::images/MarkedGraph/MG-SelectGemocLanguageProject-ProjectName.png[Define the name of the project]
 
 Click on __Next__  and define the name of the language (__markedgraph__).
 
 .Define the name of the language
-image::MarkedGraph/images/MG-SelectGemocLanguageProject-LanguageName.png[Define the name of the language] 
+image::images/MarkedGraph/MG-SelectGemocLanguageProject-LanguageName.png[Define the name of the language] 
 
 === Open xDSML View 
 
@@ -126,7 +131,7 @@ A file __project.xml__ has been created in the
 __org.gemoc.sample.markedgraph.xdsml__ project.
 
 .Content of the xDSML Project
-image::MarkedGraph/images/MG-XDSML-content.png[Content of the xDSML Project]
+image::images/MarkedGraph/MG-XDSML-content.png[Content of the xDSML Project]
 
 When opened, it provides the xDSML view which summarizes all the
 important resources used in an xDSML project (which are part of and
@@ -134,7 +139,7 @@ managed by other projects).  This view is a kind of control center to
 have quick access to the main resources of the project.
 
 .The xDSML Editor
-image::MarkedGraph/images/MG-XDSML-start.png[The xDSML Editor]
+image::images/MarkedGraph/MG-XDSML-start.png[The xDSML Editor]
 
 
 === Select the AS
@@ -143,23 +148,23 @@ In the "Domain Model" section, click on the "Browse" button to select
 the project defining the AS: org.gemoc.sample.markedgraph.model.
 
 .Browse to select the AS project
-image::MarkedGraph/images/MG-XDSML-EMF-browse.png[Browse to select the AS project]
+image::images/MarkedGraph/MG-XDSML-EMF-browse.png[Browse to select the AS project]
 
 Then, select the "Genmodel URI".
 
 .Browse to select the genmodel resource
-image::MarkedGraph/images/MG-XDSML-EMF-genmodel-browse.png[Browse to select the genmodel resource]
+image::images/MarkedGraph/MG-XDSML-EMF-genmodel-browse.png[Browse to select the genmodel resource]
 
 Finally, select the "Root container model
 element" thanks to the "Select" buttons.
 
 .Browse to select the root container
-image::MarkedGraph/images/MG-XDSML-EMF-root-browse.png[Browse to select the root container]
+image::images/MarkedGraph/MG-XDSML-EMF-root-browse.png[Browse to select the root container]
 
 ////
 
 .The xDSML Editor with AS related fields initialized
-image::MarkedGraph/images/MG-XDSML-EMF-done.png[The xDSML Editor with AS related fields initialized]
+image::images/MarkedGraph/MG-XDSML-EMF-done.png[The xDSML Editor with AS related fields initialized]
 
 ////
 
@@ -173,7 +178,7 @@ project.xdsml editor, click on "Browse" to select the
 "org.gemoc.markedgraph.design" project.
 
 .Select Sirius graphical editor
-image::MarkedGraph/images/MG-XDSML-CS-select.png[Select Sirius graphical editor]
+image::images/MarkedGraph/MG-XDSML-CS-select.png[Select Sirius graphical editor]
 
 
 
@@ -242,7 +247,7 @@ Add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition and
 'initialize()' on MarkedGraph.
 
 .Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
-image::MarkedGraph/images/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
+image::images/MarkedGraph/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
 
 ==== Create the DSA Project
 
@@ -252,7 +257,7 @@ launched with the name of the project initialized (k3dsa is the last
 name). Click "Finish".  The project has been created.
 
 .Create a K3 Project
-image::MarkedGraph/images/MG-K3-Create.png[Create a K3 Project]
+image::images/MarkedGraph/MG-K3-Create.png[Create a K3 Project]
 
 ==== Implement the DSA
 
@@ -267,7 +272,7 @@ include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 
 
 .Definition of the DSA (ED and EF)
-image::MarkedGraph/images/MG-K3-Defined.png[Definition of the DSA (ED and EF)]
+image::images/MarkedGraph/MG-K3-Defined.png[Definition of the DSA (ED and EF)]
 
 ////
 ==== Create the Extented Model with Melange
@@ -298,7 +303,7 @@ __project.xdsml__ editor ("Behavior definition / DSE definition").
 Check that the name is __org.gemoc.sample.markedgraph.dse__.
 
 .Create a DSE Project
-image::MarkedGraph/images/MG-DSE-Create.png[Create a DSE Project]
+image::images/MarkedGraph/MG-DSE-Create.png[Create a DSE Project]
 
 Click "finish" and the project is created.
 
@@ -306,7 +311,7 @@ Click on "ECL Project" to edit the "markedgraph.ecl" file and replace
 its content with the following:
 
 .Template of the ECL file
-image::MarkedGraph/images/MG-DSE-Template.png[Template of the ECL file]
+image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file]
 
 
 ==== Define DSE
@@ -342,7 +347,7 @@ include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
 
 
 .Definition of the DSE (events and constraints)
-image::MarkedGraph/images/MG-DSE-Defined.png[Definition of the DSE (events and constraints)]
+image::images/MarkedGraph/MG-DSE-Defined.png[Definition of the DSE (events and constraints)]
 
 
 ////
