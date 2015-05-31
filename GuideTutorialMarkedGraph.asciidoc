@@ -19,7 +19,7 @@ define an executable semantics and provide graphical animation for a
 DSML.   It relies of the
 http://en.wikipedia.org/wiki/Marked_graph[marked graph] language.
 
-The folowing animation shows the expecting results of this tutorial:
+The link:images/MarkedGraph/MarkedGraph-wikipedia-anim-all.gif[following animation] shows the expecting results of this tutorial:
 according to the fired transitions, tokens move from place to place.
 
 .Expected animation for Marked Graph models
@@ -399,22 +399,127 @@ expression.
 ////
 
 
-////
 
 === Define Animation Viewpoint
 
-One wants to know the number of tokens in any place during the
-execution.  For example, it can be shown as a number inside the circle
-representing a place and the size of the circle can be proportional to
-the number of tokens it contains.
 
-% XXX: Fireable transitions may be drawn in green.  
+During the execution of a Marked Graph model, we want to visualize :
 
+* the number of tokens in any place: the runtime token count will be printed in the circle of one place.
+* the firable transitions: they will be drawn in green.
+
+// and the size of the circle can be proportional to the number of tokens it
+// contains.
 
 As the animation view is close to the graphical concrete syntax, we
 extend the existing diagram description.
 
-==== Extend the existing diagram description
+First, we will define a graphical representation based on the graphical
+Marked Graph syntax to the wizard called "Create GEMOC debug
+representation", then we will add a layer to describe the graphical
+animation of a Marked Graph model.
+
+==== Create a debug representation (as an extension of the graphical editor viewpoint)
+
+===== Run the wizard
+
+Do __New > Other / Create GEMOC debug representation__ to run the wizard.
+
+.Create GEMOC debug representation wizard
+image::images/MarkedGraph/XXX.png[Create GEMOC debug representation wizard]
+
+On the first screen of the wizad, select "Extends an existing diagram
+description".
+
+.Select "Extends an existing diagram description"
+image::images/MarkedGraph/XXX.png[Select "Extends an existing diagram description"]
+
+
+Select the viewpoint to extend "MarkedGraph diagram".
+
+.Select the viewpoint to extend
+image::images/MarkedGraph/XXX.png[Select the viewpoint to extend]
+
+Finally, we can fill in the Project Name in which the newly creating
+viewpoint file will take place (org.gemoc.sample.markedgraph.animation),
+the name of the viewpoint file (markedgraph-animation.odesign), the
+viewpoint name (MarkedGraphViewpoint) and the diagram name (MarkedGraph).
+
+.Information of the animation viewpoint
+image::images/MarkedGraph/XXX.png[Information of the animation viewpoint]
+
+The last screen allows to choose the name of the layer to be created. Debug
+is a good name.
+
+Once the __Finish__ button is pressed, the project is created.
+
+===== Open the markedgraph-animation.odesign
+
+Open the markedgraph-animation.odesign file and develop its content.
+
+TODO: explain its contents.
+
+
+===== Load markedgraph.odesign as a resource.
+
+// TODO: shold be fixed?
+
+To be able to complete the definition of the odesign file, we first need to
+load the existing markedgraph.odesign as a resource :
+
+* Right click in the markedgraph.odesign editor.
+* select __Load Resource...__.
+* Select __Browse workspace...__
+* Select __markedgraph.odesign__ in the
+__org.gemoc.sample.markedgraph.design__ project
+* Click OK
+* Click OK
+
+
+===== Add markedgraph.ecore to the metamodels
+
+* Select "Diagram Extension MarkedGraph" element.
+* In the properties view, select __metamodels__.
+* Click on "Add from workspace".
+* Select "markedgraph.ecore" (unfold the project structure)
+* Click OK
+
+
+===== Complete the debug representation
+
+On the "Mapping Based Decoration Enabled breakpoint" and "Mapping Based
+Decoration Disabled breakpoint", select the "Place" and "Transition"
+element.
+
+The debug view will show a symbol on the Place and Transition to show
+whether the corresponding breakpoint is enabled or disabled.
+
+
+===== Complete the dependencies of the project
+
+// TODO: To be fixed.
+
+* Open the plugin.xml file of the project.
+* Select the __dependencies__ tab.
+* Click "Add..." in the "Required Plug-ins" area.
+* Select "org.gemoc.gemoc_language_workbench.extensions.sirius"
+* Click OK
+* Save the plugin.xml resource.
+
+===== Set the animation viewpoint in project.xml
+
+In the xDSML editor, we can select the animation viewpoint by selecting the
+newly created project (__org.gemoc.sample.markedgraph.animation__)
+
+
+==== Create an animation representation
+
+After the debug presentation has been defined, we can complete it to add an
+animation layer.
+
+
+
+
 
 TODO: Explain...
 
@@ -423,6 +528,8 @@ XXX: In Which eclipse?
 TODO: The aird has to be provided!
 
 Add a link to a tutorial for Sirius Animator.
+
+////
 
 ////
 
