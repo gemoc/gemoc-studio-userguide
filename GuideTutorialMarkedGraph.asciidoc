@@ -554,7 +554,7 @@ Property Customization (by expression)"
 * For "Value Selction", set "feature:runtimeTokenCount"
 
 
-===== Add the Animation service !
+==== Add the Animation service
 
 * Right click on "MarkedGraphViewpoint" to select "New Extension / Java
 Extension".
