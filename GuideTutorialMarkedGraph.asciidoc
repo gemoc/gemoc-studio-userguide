@@ -629,10 +629,12 @@ TODO: Give some explanations.
 
 === Select a logical step
 
-From the timeline view, select the step to execute.
+The Logical Steps view, presents the possible steps, and for each step,
+the MSE that will occur if it is selected.
 
-TODO: To complete...
-
+Double-click on a Logical Step to choose it.  The corresponding MSE
+occur, they are visible on the VCD, and they trigger the associated
+execution functions which make the state of the model evolve.
 
 
 === Stop the execution
