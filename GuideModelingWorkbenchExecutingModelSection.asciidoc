@@ -85,6 +85,11 @@ This view represents the line of the model's execution. It displays:
 
 [NOTE]
 ====
+This view can be enabled/disable in the launch configuration by checking "Execution tracing" in the Engine Addons tab.
+====
+
+[NOTE]
+====
 The possible future logical steps are shown under the condition that the model is executing.
 ====
 
