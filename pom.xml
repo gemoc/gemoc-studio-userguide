@@ -240,13 +240,13 @@
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
 							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_single/</targetDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/tutorials/</targetDirectory>
 							<includes>TutorialMain.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/">
+								<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
@@ -269,13 +269,13 @@
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
 							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_single/</targetDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/tutorials/</targetDirectory>
 							<includes>GuideTutorialMarkedGraph.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/">
+								<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
