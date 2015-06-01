@@ -339,6 +339,67 @@
 			        </dependency>
 				</dependencies>
 			</plugin>
+			<plugin>
+           <groupId>com.google.code.maven-replacer-plugin</groupId>
+           <artifactId>replacer</artifactId>
+           <version>1.5.3</version>
+           <executions>
+               <execution>
+                   <phase>prepare-package</phase>
+						 <id>ID1</id>
+                   <goals>
+                       <goal>replace</goal>
+                   </goals>   
+           <configuration>
+               <file>target/docbook/publish/en-US/html_single/Guide.html</file>
+               <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
+					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
+
+<map name="map">
+<area shape="rect" coords="17,99,204,142" href="Guide.html#section-define-AS-project" />
+<area shape="rect" coords="22,160,196,226" href="Guide.html#section-define-dsa-project" />
+<area shape="rect" coords="28,248,196,310" href="Guide.html#defining-a-concrete-syntax-section" />
+<area shape="rect" coords="729,142,946,177" href="Guide.html#_defining_the_domain_specific_events_dse" />
+<area shape="rect" coords="27,499,196,541" href="Guide.html#section-editing-model" />
+<area shape="rect" coords="34,567,192,626" href="Guide.html#modeling-workbench-executing-model-section" />
+<area shape="rect" coords="21,652,199,685" href="animateModels" />
+<area shape="rect" coords="311,92,603,255" href="Guide.html#gemoc-language-workbench" />
+<area shape="rect" coords="311,482,603,646" href="Guide.html#chapter-gemoc-modeling-workbench" />
+</map>]]></value>
+					<regex>no</regex>
+           </configuration>                
+               </execution>
+
+               <execution>
+                   <phase>prepare-package</phase>
+						 <id>ID2</id>
+                   <goals>
+                       <goal>replace</goal>
+                   </goals>   
+           <configuration>
+               <file>target/docbook/publish/en-US/html/pr01.html</file>
+               <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
+					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
+
+<map name="map">
+<area shape="rect" coords="17,99,204,142" href="ch01s03.html#_purpose_2" />
+<area shape="rect" coords="22,160,196,226" href="ch01s04.html" />
+<area shape="rect" coords="28,248,196,310" href="ch01s05.html" />
+<area shape="rect" coords="729,142,946,177" href="ch01s07.html" />
+<area shape="rect" coords="27,499,196,541" href="ch02s02.html" />
+<area shape="rect" coords="34,567,192,626" href="ch02s03.html" />
+<area shape="rect" coords="21,652,199,685" href="animateModels" />
+<area shape="rect" coords="311,92,603,255" href="ch01.html" />
+<area shape="rect" coords="311,482,603,646" href="ch02.html" />
+</map>]]></value>
+					<regex>no</regex>
+           </configuration>                
+               </execution>
+           </executions>
+
+       </plugin>
+
+
 
 			<!-- workaround  maven-jdocbook-plugin which doesn't allows to copy the community images at the right place-->
 <!-- 			<plugin> -->
