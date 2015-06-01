@@ -289,9 +289,9 @@ XXX: What is the status of Melange.  How it works?
 
 The purpose of the DSE project is to define events (called DSE) on AS
 elements that will trigger EF calls when they occurs.  Furthermore,
-constraints can be defined on these events to ensure they occur in the
-right order.
+constraints can be defined on these events to define when they may occur.
 // XXX: wording must be improved?
+
 
 
 
@@ -316,28 +316,8 @@ image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file]
 
 ==== Define DSE
 
-This step has three main purposes:
-
-* First, it specifies DSE in the context of metaclasses of the AS.
-* Then, it links them to EF form DSA --- when a DSE will occurs the
-associated EF will be executed.
-* Finally, it defines constraints on the DSE to rule the possible
-scheduling.  Constraints generally rely on relations which are defined
-in the MoCC.
-
-////
-TODO: To be added as a next tutorial.
-WARNING: Errors are present because the used Relations are not yet
-defined...  They will be solved during the next step of this tutorial.
-////
-
-
-NOTE: Please notice that, as often, DSE are defined at the language
-level, but at runtime they are instantiated as MSE on each object
-instance of the metaclasse they are defined on.  In the same way,
-constraints apply to the MSE.
-
-Replace the content of the ECL file with the following code:
+Replace the content of the ECL file with the following code (explanations
+are given bellow):
 
 [source]
 .The file markedgraph.ecl
@@ -350,6 +330,58 @@ include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
 image::images/MarkedGraph/MG-DSE-Defined.png[Definition of the DSE (events and constraints)]
 
 
+
+This step has three main purposes:
+
+1. First, it specifies DSE in the context of metaclasses of the AS.
+For Marked Graph xDSML, we identify 2 DSE:
+
+    - fireIt: defined in the context of a Transition
+    - initIt: defined in the context of a MarkedGraph
+
+2. Then, it links them to EF form DSA --- when a DSE will occurs the
+associated EF will be executed.
+
+    - fireIt is linked to the EF 'fire' of Transition
+    - initIt is linked to the EF 'initialize' of MarkedGraph
+
+3. Finally, it defines constraints on the DSE to rule the possible
+scheduling.  Constraints generally rely on relations which are defined
+in MoCC libraries. Here constraints are expressed in CCSL and only relies
+on relations and expression from the CCSL core library.
+
+    - A first constraint applies on the fireIt events.  It is depends on
+the number of token in a place.  Indeed, if there is no tokens, then
+the fireIt of the output transition can only occur after the fireIt
+event of the input transition has occured. It is expressed by the first
+invariant defined in the context of a Place.
+//
+If there is some tokens in a place, then the fireIt event of the output
+transition may occur as many times as there is tokens in this place.
+After, it will only occur when the fireIt on the input transition of the
+place has occured.  It is expressed using the DelayFor expression in the
+second envariant of Place.
+
+    - Two other constraints are defined in the context of the MarkedGraph
+element.  The first one expresses that the first initIt event must occur
+before any fireIt event.  The second one expresses that the initIt event
+can occur only one time.
+
+////
+TODO: To be added as a next tutorial.
+WARNING: Errors are present because the used Relations are not yet
+defined...  They will be solved during the next step of this tutorial.
+////
+
+
+NOTE: Please notice that, as often, DSE are defined at the language
+level, but at runtime they are instantiated as MSE on each object
+instance of the metaclasse they are defined on.  For example, there will be
+one fireIt MSE for each Transition element of MarkedGraph model.  For the
+wikipedia example, there will a fireIt event for transitions t1, t2, t3 and
+t4. In the same way, constraints apply to the MSE.
+
+
 ////
 TODO: Separate the MoCC part.  We could define several relations :
 onlyOnce, beforeAll, and delayedPrecede.
@@ -358,16 +390,6 @@ TODO: Say that the Precede relation is defined in kernel.ccslLib or
 CCSL.ccslLib.
 ////
 
-
-TODO: Give some rationals on the relation and their instancitions. In
-particular the delay.
-
-What should be explained?
-
-- The main principles (we can fire as much transition has the initial
-token count of a place, thus a delayed is introduce)
-- We want to ensure that one init is done before any fire (and only
-once)
 
 
 ////
