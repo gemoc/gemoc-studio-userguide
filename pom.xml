@@ -356,15 +356,15 @@
 					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
 <map name="map">
-<area shape="rect" coords="17,99,204,142" href="Guide.html#section-define-AS-project" />
-<area shape="rect" coords="22,160,196,226" href="Guide.html#section-define-dsa-project" />
-<area shape="rect" coords="28,248,196,310" href="Guide.html#defining-a-concrete-syntax-section" />
-<area shape="rect" coords="729,142,946,177" href="Guide.html#_defining_the_domain_specific_events_dse" />
-<area shape="rect" coords="27,499,196,541" href="Guide.html#section-editing-model" />
-<area shape="rect" coords="34,567,192,626" href="Guide.html#modeling-workbench-executing-model-section" />
-<area shape="rect" coords="21,652,199,685" href="animateModels" />
-<area shape="rect" coords="311,92,603,255" href="Guide.html#gemoc-language-workbench" />
-<area shape="rect" coords="311,482,603,646" href="Guide.html#chapter-gemoc-modeling-workbench" />
+<area shape="rect" coords="142,145,337,182" href="Guide.html#section-define-AS-project" />
+<area shape="rect" coords="149,208,335,270" href="Guide.html#section-define-dsa-project" />
+<area shape="rect" coords="187,287,299,353" href="Guide.html#defining-a-concrete-syntax-section" />
+<area shape="rect" coords="662,160,774,227" href="Guide.html#_defining_the_domain_specific_events_dse" />
+<area shape="rect" coords="175,481,331,519" href="Guide.html#section-editing-model" />
+<area shape="rect" coords="177,548,332,608" href="Guide.html#modeling-workbench-executing-model-section" />
+<area shape="rect" coords="168,629,336,666" href="Guide.html#modeling-workbench-executing-model-animation-view-section" />
+<area shape="rect" coords="438,141,567,290" href="Guide.html#gemoc-language-workbench" />
+<area shape="rect" coords="440,466,567,638" href="Guide.html#chapter-gemoc-modeling-workbench" />
 </map>]]></value>
 					<regex>no</regex>
            </configuration>                
@@ -382,15 +382,15 @@
 					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
 <map name="map">
-<area shape="rect" coords="17,99,204,142" href="ch01s03.html#_purpose_2" />
-<area shape="rect" coords="22,160,196,226" href="ch01s04.html" />
-<area shape="rect" coords="28,248,196,310" href="ch01s05.html" />
-<area shape="rect" coords="729,142,946,177" href="ch01s07.html" />
-<area shape="rect" coords="27,499,196,541" href="ch02s02.html" />
-<area shape="rect" coords="34,567,192,626" href="ch02s03.html" />
-<area shape="rect" coords="21,652,199,685" href="animateModels" />
-<area shape="rect" coords="311,92,603,255" href="ch01.html" />
-<area shape="rect" coords="311,482,603,646" href="ch02.html" />
+<area shape="rect" coords="142,145,337,182" href="ch01s03.html#_purpose_2" />
+<area shape="rect" coords="149,208,335,270" href="ch01s04.html" />
+<area shape="rect" coords="187,287,299,353" href="ch01s05.html" />
+<area shape="rect" coords="662,160,774,227" href="ch01s07.html" />
+<area shape="rect" coords="175,481,331,519" href="ch02s02.html" />
+<area shape="rect" coords="177,548,332,608" href="ch02s03.html" />
+<area shape="rect" coords="168,629,336,666" href="ch02s03.html#modeling-workbench-executing-model-animation-view-section" />
+<area shape="rect" coords="438,141,567,290" href="ch01.html" />
+<area shape="rect" coords="440,466,567,638" href="ch02.html" />
 </map>]]></value>
 					<regex>no</regex>
            </configuration>                
