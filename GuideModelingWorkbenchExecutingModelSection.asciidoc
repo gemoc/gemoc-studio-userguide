@@ -112,19 +112,24 @@ image:images/workbench/modeling/timeline/show_caller_editor.png[Show caller]
 [[modeling-workbench-executing-model-event-manager-view-section]]
 ==== Stimuli Manager View
 
-The Stimuli Manager view display the list of MSE has strong interactions with the Logical Steps view.
+The Stimuli Manager view display the list of MSE and has interactions with the Logical Steps view.
 
 image:images/workbench/modeling/stimuliManager_view.png[Stimuli manager view]
 
-When selecting an MSE you can choose its behavior by clicking on :
+When selecting an MSE you can constrain it by clicking on :
 
-* Green down arrow : free tick for this MSE in the next LogicalStep
-* Orange down arrow : forbid a tick for this MSE in the next LogicalStep
-* Orange up : force a tick for this MSE in the next LogicalStep
+* Green down arrow : no user constraint for this MSE in the next LogicalStep
+* Orange down arrow : forbid tick of this MSE in the next LogicalStep. The solver will propose only solutions where this MSE doesn't tick.
+* Orange up : force tick of this MSE in the next LogicalSteps. The solver will propose only solutions where this MSE ticks.
 
 Depending of your choice, the list of proposals will be changed in the Logical Steps view.
 
 Moreover selecting an element in the Logical Steps view will enlight the MSE involed in the Stimuli Manager view.
+
+[NOTE]
+====
+This Stimuli Manager view can be used to manually simulate external events.
+====
 
 [[modeling-workbench-executing-model-animation-view-section]]
 ==== Animation View
