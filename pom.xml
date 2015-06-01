@@ -240,7 +240,7 @@
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
 							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/tutorials/html_single/</targetDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_single/</targetDirectory>
 							<includes>TutorialMain.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
@@ -269,7 +269,7 @@
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
 							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/tutorials/html_single/</targetDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_single/</targetDirectory>
 							<includes>GuideTutorialMarkedGraph.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
