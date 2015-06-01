@@ -581,25 +581,43 @@ GEMOC Modeling Workbench to execute MarkedGraph models.
 
 === Launch the Modelling WorkBench
 
-Launch the Modeling Workbench by running a new Eclipse:  right
-click, select "run as / Eclipse Application".  The new eclipse is the
-Modeling Workbench.
+First, we will create a run configuration.  Select "run / run Configurations"
+Double click on "Eclipse Application" and change the name "New
+Configuration" into "Marked Graph Modeling Workbench".  We can now click
+"Run" to start the new runtime Eclipse which indeed corresponds to the
+Modeling Workbench for Marked Graph.
+
+.Define the Marked Graph Modeling Workbench configuration
+image::images/MarkedGraph/MG-run-EclipseApplicationConfig.png[Define the Marked Graph Modeling Workbench configuration]
+
 
 === Import the project with a sample model
 
-Import the modeling project markedgraph.sample in the
-Modeling Workbench (Import / General / Existing project into
+Import the modeling project
+link:MarkedGraph/MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
+in the Modeling Workbench (Import / General / Existing project into
 Workspace).
+
+=== Select the Modeling perspective
+
+* Select "Window / Open Perspective / Others..."
+* Select "Modeling" in the list.
 
 === Create a Launch Configuration
 
-Create a Run Configuration: right click on the model and select "Run
-As... > Run Configurations". Create a new "Gemoc eXecutable Model"
-configuration.  We can call it "gemoc" and fill in the fields:
-Model to execute: "first.automata", xDSML: "markedgraph".
+* Select __Debug / Debug Configurations__
+* Double click on "Gemoc eXecutable Model"
+* Change the name of the new configuration to "run wikipedia example"
+* Browse to select the model to run (wikipedia.markedgraph)
+* Select its language (xDSML field): markedgraph
+* Browse to select the animator
+* Check that the "Decider" is set to "Step by step user decider" (the user
+  will decide which well be the next step to execute).
+* Click on Run
 
-Change the "Decider" to "Step by step user decider" (the user will
-decide which is the next step to execute).
+.Define the configuration to run the wikipedia example
+image::images/MarkedGraph/MG-run-WikipediaConfig.png[Define the configuration to run the wikipedia example]
+
 
 === Start the model
 
@@ -614,6 +632,10 @@ TODO: Give some explanations.
 From the timeline view, select the step to execute.
 
 TODO: To complete...
+
+
+
+=== Stop the engine
 
 
 ////

@@ -227,6 +227,64 @@
 						</configuration>
 						<phase>generate-resources</phase>
 					</execution>
+					<execution>
+						<id>tutorials-single-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<chunkedOutput>false</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorials/html_single/</targetDirectory>
+							<includes>TutorialMain.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+							<postProcess>
+<!-- 								<move 	file="target/docbkx/html/Kermeta-Manual.docb.html"  -->
+<!-- 										tofile="target/docbkx/html/Kermeta-Manual.docb/Kermeta-Manual.docb.single.html"/> -->
+							</postProcess>
+						</configuration>
+					</execution>
+					<execution>
+						<id>tutorial-markedgraph-single-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<chunkedOutput>false</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorials/html_single/</targetDirectory>
+							<includes>GuideTutorialMarkedGraph.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+							<postProcess>
+<!-- 								<move 	file="target/docbkx/html/Kermeta-Manual.docb.html"  -->
+<!-- 										tofile="target/docbkx/html/Kermeta-Manual.docb/Kermeta-Manual.docb.single.html"/> -->
+							</postProcess>
+						</configuration>
+					</execution>
 				</executions>
 				<configuration> <!-- global configuration for all executions -->
           			<highlightSource>1</highlightSource>
