@@ -400,7 +400,7 @@ expression.
 
 
 
-=== Define Animation Viewpoint
+== Define Animation Viewpoint
 
 
 During the execution of a Marked Graph model, we want to visualize :
@@ -419,9 +419,9 @@ Marked Graph syntax to the wizard called "Create GEMOC debug
 representation", then we will add a layer to describe the graphical
 animation of a Marked Graph model.
 
-==== Create a debug representation (as an extension of the graphical editor viewpoint)
+=== Create a debug representation (as an extension of the graphical editor viewpoint)
 
-===== Run the wizard
+==== Run the wizard
 
 Do __New > Other / Create GEMOC debug representation__ to run the wizard.
 
@@ -453,14 +453,14 @@ is a good name.
 
 Once the __Finish__ button is pressed, the project is created.
 
-===== Open the markedgraph-animation.odesign
+==== Open the markedgraph-animation.odesign
 
 Open the markedgraph-animation.odesign file and develop its content.
 
 TODO: explain its contents.
 
 
-===== Load markedgraph.odesign as a resource.
+==== Load markedgraph.odesign as a resource.
 
 // TODO: shold be fixed?
 
@@ -475,7 +475,7 @@ __org.gemoc.sample.markedgraph.design__ project
 * Click OK
 
 
-===== Add markedgraph.ecore to the metamodels
+==== Add markedgraph.ecore to the metamodels
 
 * Select "Diagram Extension MarkedGraph" element.
 * In the properties view, select __metamodels__.
@@ -484,7 +484,7 @@ __org.gemoc.sample.markedgraph.design__ project
 * Click OK
 
 
-===== Complete the debug representation
+==== Complete the debug representation
 
 On the "Mapping Based Decoration Enabled breakpoint" and "Mapping Based
 Decoration Disabled breakpoint", select the "Place" and "Transition"
@@ -494,7 +494,7 @@ The debug view will show a symbol on the Place and Transition to show
 whether the corresponding breakpoint is enabled or disabled.
 
 
-===== Complete the dependencies of the project
+==== Complete the dependencies of the project
 
 // TODO: To be fixed.
 
@@ -505,25 +505,25 @@ whether the corresponding breakpoint is enabled or disabled.
 * Click OK
 * Save the plugin.xml resource.
 
-===== Set the animation viewpoint in project.xml
+==== Set the animation viewpoint in project.xml
 
 In the xDSML editor, we can select the animation viewpoint by selecting the
 newly created project (__org.gemoc.sample.markedgraph.animation__)
 
 
-==== Create an animation representation
+=== Create an animation representation
 
 After the debug presentation has been defined, we can complete it to add an
 animation layer.
 
-===== Create the Animation Layer
+==== Create the Animation Layer
 
 * Right click on "Diagram extension MarkedGraph" to __select New Diagram
   Element / Additional Layer__.
 * Set its "id" to "Animation".
 
 
-===== Display the firable transition with a green background color
+==== Display the firable transition with a green background color
 
 * Right click on "Animation" to select "New Customization / Style
 Customizations".
@@ -537,14 +537,14 @@ Property Customization (by selection)"
 * For "Property Name", set "color" (completion is available with CTRL-SPACE)
 * For "Value Selction", set "light_green"
 
-===== Set the background color of a place to light_yellow
+==== Set the background color of a place to light_yellow
 
 Perform the same action as above to set the background color of place to
 yellow.
 
 // FIXEM : how to select thr right (ellipse white)?
 
-===== Display the runtime token count in a place
+==== Display the runtime token count in a place
 
 
 * Right click on "Style Customization" to select "New Customization /
@@ -554,7 +554,7 @@ Property Customization (by expression)"
 * For "Value Selction", set "feature:runtimeTokenCount"
 
 
-====== Add the Animation service !
+===== Add the Animation service !
 
 * Right click on "MarkedGraphViewpoint" to select "New Extension / Java
 Extension".
@@ -596,7 +596,8 @@ image::images/MarkedGraph/MG-run-EclipseApplicationConfig.png[Define the Marked 
 Import the modeling project
 link:MarkedGraph/MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
 in the Modeling Workbench (Import / General / Existing project into
-Workspace).
+Workspace).  It contains the wikipedia.markedgraph file which corresponds
+to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
 
 === Select the Modeling perspective
 
