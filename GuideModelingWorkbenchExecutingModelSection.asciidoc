@@ -105,7 +105,21 @@ image:images/workbench/modeling/timeline/show_caller_timeline.png[Show caller]
 image:images/workbench/modeling/timeline/show_caller_editor.png[Show caller]
 
 [[modeling-workbench-executing-model-event-manager-view-section]]
-==== Event Manager View
+==== Stimuli Manager View
+
+The Stimuli Manager view display the list of MSE has strong interactions with the Logical Steps view.
+
+image:images/workbench/modeling/stimuliManager_view.png[Stimuli manager view]
+
+When selecting an MSE you can choose its behavior by clicking on :
+
+* Green down arrow : free tick for this MSE in the next LogicalStep
+* Orange down arrow : forbid a tick for this MSE in the next LogicalStep
+* Orange up : force a tick for this MSE in the next LogicalStep
+
+Depending of your choice, the list of proposals will be changed in the Logical Steps view.
+
+Moreover selecting an element in the Logical Steps view will enlight the MSE involed in the Stimuli Manager view.
 
 [[modeling-workbench-executing-model-animation-view-section]]
 ==== Animation View
