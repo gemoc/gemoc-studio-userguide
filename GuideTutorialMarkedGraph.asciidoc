@@ -635,7 +635,14 @@ TODO: To complete...
 
 
 
-=== Stop the engine
+=== Stop the execution
+
+To stop the execution:
+
+* Select the "Engine view"
+* Select the engine to stop
+* Click on the red button to actually stop the engine (the left icon
+becomes red)
 
 
 ////
