@@ -670,6 +670,14 @@ To stop the execution:
 becomes red)
 
 
+== To go gurther...
+
+* The DSE part may be defined using a MoCCML library.  It favors reuse of
+MoCC and clarity of ECL file.
+* Rather than using CCSL syntax, it is possible to user constraint automata
+(defined using MoCCML).
+
+
 ////
 === What else?
 
