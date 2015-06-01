@@ -126,7 +126,7 @@ Depending of your choice, the list of proposals will be changed in the Logical S
 
 Moreover selecting an element in the Logical Steps view will enlight the MSE involed in the Stimuli Manager view.
 
-[NOTE]
+[TIP]
 ====
 This Stimuli Manager view can be used to manually simulate external events.
 ====
