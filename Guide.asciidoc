@@ -44,6 +44,10 @@ In this document:
  * items or roles relative to the Language Workbench are identified with the following icon : image:images/icons/IconeGemocLanguage_32.png[width=48, height=48]
  * items or roles relative to the Modeling Workbench are identified with the following icon : image:images/icons/IconeGemocModel_32.png[width=48, height=48]
 
+[NOTE]
+====
+The latest version of this document is available online from http://gemoc.github.io/gemoc-studio/
+====
 
 === Language Workbench overview image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
 
