@@ -130,7 +130,7 @@ The use of constraints is shown in the next section.
 
 [[figure-glw-screenshot-of-moccmlLevelSecond]]
 .Screenshot of the Second graphical level of Edition in MoCCML (Constraint Implementation).
-image::images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Level of Edition]
+image::images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Level of Edition, 800]
 
 ====== Using the constraints on the ECL 
 
