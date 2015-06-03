@@ -129,7 +129,7 @@ The described examples are based on the xref:sec-MarkedGraph[Marked Graph] DSML 
 //View of the xDSML
 [[xDSML-View]]
 .xDSML view of a Gemoc Language workbench 
-image:images/quickTutorial/SigPMLxDSMLView.png[xDSML View]
+image:images/quickTutorial/SigPMLxDSMLView.png[xDSML View, 800]
 
 ////
 
