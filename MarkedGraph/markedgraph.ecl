@@ -1,9 +1,9 @@
-import 'platform:/resource/org.gemoc.example.markedgraph.as.markedgraphdsa/model/MarkedGraphDSA.ecore'
+import 'platform:/resource/org.gemoc.sample.markedgraph.model/model/markedgraph.ecore'
 
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
 
-package markedgraphdsa
+package markedgraph
 
 	context MarkedGraph
 		def: initIt: Event = self.initialize()
@@ -17,7 +17,7 @@ package markedgraphdsa
 				(Relation Precedes(self.input.fireIt, self.output.fireIt))
 		inv tokenCountIsNotNullDelayRequired:
 			(self.tokenCount > 0) implies
-				let delay: Integer = self.tokenCount in	-- required? Yes :( XXX
+				let delay: Integer = self.tokenCount in
 				let outputDelayed: Event =
 					Expression DelayFor(self.output.fireIt, self.output.fireIt, delay) in
 						Relation Precedes(self.input.fireIt, outputDelayed)
@@ -25,7 +25,7 @@ package markedgraphdsa
 	context MarkedGraph
         inv initFirst:
                 let firstInit : Event = Expression OneTickAndNoMore(self.initIt) in
-                let allFire : Event = Expression Union(self.transition.fireIt) in
+                let allFire : Event = Expression Union(self.transitions.fireIt) in
                 let firstOfAllFire : Event = Expression OneTickAndNoMore(allFire) in
                 Relation Precedes(firstInit, firstOfAllFire)
 
@@ -34,3 +34,4 @@ package markedgraphdsa
                 Relation Coincides(self.initIt, firstInit2)
 
 endpackage
+

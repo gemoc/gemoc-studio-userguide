@@ -7,97 +7,178 @@ endif::[]
 
 
 
-= GEMOC xDSML definition tutorial with MarkedGraph
+= Tutorial: Make Marked Graph models executable with the GEMOC Studio
+
+// old title: Animate Marked Graph Models with the GEMOC Studio
 
 
-
-
-
-== Overview / What is expected at the end of this tutorial
+== What is expected at the end of this tutorial
 
 This tutorial aims at demonstrating the power of the GEMOC studio to
 define an executable semantics and provide graphical animation for a
 DSML.   It relies of the
 http://en.wikipedia.org/wiki/Marked_graph[marked graph] language.
 
+The link:images/MarkedGraph/MarkedGraph-wikipedia-anim-all.gif[following animation] shows the expecting results of this tutorial:
+according to the fired transitions, tokens move from place to place.
 
-Show an animated GIF or a video.
+.Expected animation for Marked Graph models
+image::images/MarkedGraph/MarkedGraph-wikipedia-anim-all.gif[Expected animation for Marked Graph models] 
 
-NOTE: A screencast of this tutorial can be found here (five URL when
+
+////
+NOTE: A screencast of this tutorial can be found here (give URL when
 it will be available)...
+////
+
+
+////
+Please, read the link:GuideQuickTutorial.html[introduction of tutorials] to
+understand the GEMOC approach to define executable DSML or to have a
+better understanding of the abbreviations used in this tutorial.
+////
 
 
 == Install the projects defining the Marked Graph AS and CS
 
+// TODO: It is here that the description of the AS should be given.
+// See sirius tutorial.
+
+The domain model is implemented with several EMF projects that you
+need to import into your workspace.
+A graphical editor defined with Sirius is also available to visualize
+and edit Marked Graph models.
+
+////
+TODO: If you are using the GEMOC Studio, you can find these projects
+from the provided examples (menu File > New > Example... : select
+Marked Graph DSML Definition). 
+////
 
 === Import the Marked Graph AS and CS
 
-Marked Graph is a http://en.wikipedia.org/wiki/Petri_net[Petri net]
-in which every place has exactly one incoming arc and exactly one
-outgoing arc.  As a consequence, it a concurrent language (several
-transitions may be fired) and has no conflict.
-
-In this section, we first initialize the xDSML project for MarkedGraph
-with the provided Abstract Syntax (AS) and Concrete Syntax (CS).  The
-next subsections explains MarkedGraph and can be skipped by the
-reader who already know that language.
+Download the
+link:MarkedGraph/MarkedGraph/MarkedGraph/org.gemoc.sample.markedgraph.zip[provided
+archive] containing the projects and unzip it.  Then, with the GEMOC
+Studio, select __import... / General / Existing Projects into
+Workspace__ and import all the projects from the archive file.
 
 
 === Abstract Syntax
 
-The Domain Model defines :
+Marked Graph is a kind of
+http://en.wikipedia.org/wiki/Petri_net[Petri net]
+in which every place has exactly one incoming arc and exactly one
+outgoing arc.  As a consequence, it a concurrent language (several
+transitions may be fired) and has no conflict.
 
-- a __marked graph__ as a set of __places__ and __transitions__.
+The Domain Model, also called Abstract Syntax or Metamodel, defines :
+
+- A __marked graph__ as a set of __places__ and __transitions__.
 - Each __Place__ has exactly one __input__ transition and one __output__
 transition and a token count.
 - A transition has several __input__ places and several __output__
   places.
 
-[[MarkedGraph-AS]]
-.Abstract Syntax of MarkedGraph
-image::MarkedGraph/images/MarkedGraph-AS.png[Abstract Syntax of MarkedGraph]
-(((MarkedGraph Abstract Syntax)))
+// [[MarkedGraph-AS]]
+.Abstract Syntax (Metamodel) of MarkedGraph
+image::images/MarkedGraph/MarkedGraph-AS.png[MarkedGraph Domain Model (Metamodel)]
 
 === Concrete Syntax and Sample Model
 
-The one of Wikipedia?
-Another one ?
+The graphical concrete syntax draws places as
+circles and transitions as squares.  Inputs and outputs of places and
+transitions are designated by arrows.  The following picture shows the
+graphical representation of the
+link:http://en.wikipedia.org/wiki/Marked_graph[Marked Graph model of wikipedia].
 
+// TODO: http://en.wikipedia.org/wiki/Marked_graph
+Here the graphical syntax of the wikipedia example using the view
+defined with Sirius.
+
+.Example of a Marked Graph model (from link:http://en.wikipedia.org/wiki/Marked_graph[wikipedia])
+image::images/MarkedGraph/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
 
 == Set up an xDSML project
 
+In this section, we first create an xDSML project for MarkedGraph
+and initialize it with the provided Abstract Syntax (AS) and Concrete
+Syntax (CS).
+
 === Create an xDSML Project
 
-Create a new xDSML project (__New > Project > GEMOC
-Project / new xDSML Project__), with the desired name (for instance
-__org.gemoc.example.markedgraph__).
+Select an xDSML project (__New > Project > GEMOC
+Project / new xDSML Project__).
 
-TODO: Add a screenshot
+.Create an xDSML Project
+image::images/MarkedGraph/MG-SelectGemocLanguageProject.png[Create an xDSML Project]
+
+The first dialog of the wizard asks for the name of the project. Define
+it as __org.gemoc.sample.markedgraph.xdsml__.
+
+
+.Define the name of the project
+image::images/MarkedGraph/MG-SelectGemocLanguageProject-ProjectName.png[Define the name of the project]
+
+Click on __Next__  and define the name of the language (__markedgraph__).
+
+.Define the name of the language
+image::images/MarkedGraph/MG-SelectGemocLanguageProject-LanguageName.png[Define the name of the language] 
 
 === Open xDSML View 
 
-A file __project.xml__ has been created.  When opened, it provides the xDSML
-view which summarizes all the important resources used in an xDSML
-project (which are part of and managed by other projects).  This view
-is a kind of dashboard or control center to have quick access to any
-important resource of the project.
+A file __project.xml__ has been created in the
+__org.gemoc.sample.markedgraph.xdsml__ project.
 
-TODO: Add a screenshot
+.Content of the xDSML Project
+image::images/MarkedGraph/MG-XDSML-content.png[Content of the xDSML Project]
+
+When opened, it provides the xDSML view which summarizes all the
+important resources used in an xDSML project (which are part of and
+managed by other projects).  This view is a kind of control center to
+have quick access to the main resources of the project.
+
+.The xDSML Editor
+image::images/MarkedGraph/MG-XDSML-start.png[The xDSML Editor]
+
 
 === Select the AS
 
-TODO: Click on ... and select the ecore...
+In the "Domain Model" section, click on the "Browse" button to select
+the project defining the AS: org.gemoc.sample.markedgraph.model.
 
-TODO: Click on xxx to open the resource...
+.Browse to select the AS project
+image::images/MarkedGraph/MG-XDSML-EMF-browse.png[Browse to select the AS project]
 
-TODO: Click on the genmodel and select __generate all__
+Then, select the "Genmodel URI".
 
-TODO: Add a screenshot
+.Browse to select the genmodel resource
+image::images/MarkedGraph/MG-XDSML-EMF-genmodel-browse.png[Browse to select the genmodel resource]
 
-=== Select the Graphical Editor XXX...
+Finally, select the "Root container model
+element" thanks to the "Select" buttons.
 
-TODO : Select desgin project.
+.Browse to select the root container
+image::images/MarkedGraph/MG-XDSML-EMF-root-browse.png[Browse to select the root container]
 
+////
+
+.The xDSML Editor with AS related fields initialized
+image::images/MarkedGraph/MG-XDSML-EMF-done.png[The xDSML Editor with AS related fields initialized]
+
+////
+
+=== Select the Graphical Editor
+
+The Graphical Editor defines a graphical concrete syntax which is
+user-friendly to view and edit a model.
+
+In the "Concrete syntax definition / Graphical editor" of the
+project.xdsml editor, click on "Browse" to select the
+"org.gemoc.markedgraph.design" project.
+
+.Select Sirius graphical editor
+image::images/MarkedGraph/MG-XDSML-CS-select.png[Select Sirius graphical editor]
 
 
 
@@ -105,27 +186,42 @@ TODO : Select desgin project.
 
 // === Execution Semantics Overview
 
-TODO: Provide the execution semantics overview.
+// XXX: à déplacer dans MoCC ou DSE ?
 
 A transition can be fired if there is at least one token in every of
-each entry place.  When fired, one token is removed from each entry
-place and one token is added to each output place.
+each input place.  When fired, one token is removed from each of its
+input places and one token is added to each of its output places.
+Several transitions can be fired as the same time.
 
-Only one transition is fired at a time.
+Defining the execution semantics consists in implementing the previous
+behavior.  In the GEMOC approach, it is split in different concerns:
 
-One want to know the number of token in any place during the
-execution.  For example, it can be shown as a number inside the circle
-representing a place and the size of the circle can be XXX
-proportionel at the number of it contains.
+* The definition of Execution Data (ED) like the runtime count of
+tokens in a place and Execution Functions (EF) like fire a transition.
+ED and EF constitute **the DSA**.
 
-% XXX: Fireable transitions may be drawn in green.  
+* The definition of the model of concurrency as a set of events and
+constraints on these events.  It is **the MoCC** concern that is
+defined in a DSE project (using ECL, Event Constraint Language)
+possibly completed with MoCCML projects  to define libraries of
+constraints.
+
+* The **mapping** between the DSA and the MoCC.
+
+In the current version of the GEMOC studio, the MoCC and the mapping
+are tightly coupled and described in ECL (Event Constraint Language).
+
+
 
 === Define DSA
 
-When executing a Marked Graph model, we want to know the number of
-token of each place (it is an ED).  When transition are fired (EF),
-tokens are moved from input places to outout places (XXX not really
-moved).
+During execution of a MarkedGraph, the number of tokens of a place has
+to be recorded and changed according to the fired transitions.  Thus,
+we have to manage an execution data (ED) called runtimeTokenCount and
+an execution function (EF) on Transition called fire().  Furthermore,
+the runtimeTokenCount of each place must be initialized at the start
+of the execution. It is the purpose of the EF called initialize() on
+the MarkedGraph element.
 
 The DSA of Marked Graph is composed of :
 
@@ -140,166 +236,451 @@ __Transition__. It to remove one token from each of its input places
 and add one token to all its output places.
 
 
+==== Extend the AS with ED and EF
+
+At the moment, we need to complete the AS (markedgraph.ecore) with the
+ED and EF.  In the next release of the GEMOC Studio this steps will
+disappear and extended the AS will be done automatically thanks to
+link:http://melange-lang.org/[Melange]
+
+Add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition and
+'initialize()' on MarkedGraph.
+
+.Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
+image::images/MarkedGraph/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
+
 ==== Create the DSA Project
 
-Click on __K3 project__ in the xDSML view (Behavioral definition / DSA
+Click on __K3 project__ in the project.xdml editor (Behavioral definition / DSA
 definition).  The wizard to create of new Kermeta 3 project is
 launched with the name of the project initialized (k3dsa is the last
-name).
+name). Click "Finish".  The project has been created.
 
-Clicking again on _K3 project_ will now allow to choose and open
-markedgraph.xtend.  It has been initialized with a template that can
-be discarded.
+.Create a K3 Project
+image::images/MarkedGraph/MG-K3-Create.png[Create a K3 Project]
 
 ==== Implement the DSA
 
-
-Fill in the following code in the markedgraph.xtend resource:
+Click again on _K3 project_ to open __markedgraph.xtend__.  It
+has been initialized with a template that can be discarded and
+replaced with the following text.
 
 [source]
 ----
 include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 ----
 
+
+.Definition of the DSA (ED and EF)
+image::images/MarkedGraph/MG-K3-Defined.png[Definition of the DSA (ED and EF)]
+
+////
 ==== Create the Extented Model with Melange
 
 Note: This step should become transparent in a next version of the
 GEMOC Stutio.
 
+XXX: What is the status of Melange.  How it works?
+
+////
 
 
 === Define DSE
 
+The purpose of the DSE project is to define events (called DSE) on AS
+elements that will trigger EF calls when they occurs.  Furthermore,
+constraints can be defined on these events to define when they may occur.
+// XXX: wording must be improved?
+
+
+
 
 ==== Create the DSE Project
 
-Right click on the __ECL project__ in the DSE definition part. Select
-the Ecore file __markedgraph.ecore__ and the root container model
-element: __markedgraph::MarkedGraph__.  The file __markedgraph.ecl__
-is created in the org.gemoc.example.markedgraph.dse.
+To create the DSE Project, click on the "ECL Project" in the
+__project.xdsml__ editor ("Behavior definition / DSE definition").
+// TODO: on the next screen, the Ecore resource must be initialized.
+Check that the name is __org.gemoc.sample.markedgraph.dse__.
+
+.Create a DSE Project
+image::images/MarkedGraph/MG-DSE-Create.png[Create a DSE Project]
+
+Click "finish" and the project is created.
+
+Click on "ECL Project" to edit the "markedgraph.ecl" file and replace
+its content with the following:
+
+.Template of the ECL file
+image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file]
 
 
-==== Define the ECL part
+==== Define DSE
 
-Here is the definition of the ECL.
-
-The first part...
-
-WARNING: Errors are present because the used Relations are not yet
-defined...
-
+Replace the content of the ECL file with the following code (explanations
+are given bellow):
 
 [source]
+.The file markedgraph.ecl
 ----
 include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
 ----
 
 
-What should be explained?
-
-- The main principles (we can fire as much transition has the initial
-token count of a place, thus a delayed is introduce)
-- We want to ensure that one init is done before any fire (and only
-once)
+.Definition of the DSE (events and constraints)
+image::images/MarkedGraph/MG-DSE-Defined.png[Definition of the DSE (events and constraints)]
 
 
-Provide a pointer to another tutorial (or a new part of this one)
-which explains how to capitalize pieces of MoCC in a library.
 
+This step has three main purposes:
+
+1. First, it specifies DSE in the context of metaclasses of the AS.
+For Marked Graph xDSML, we identify 2 DSE:
+
+    - fireIt: defined in the context of a Transition
+    - initIt: defined in the context of a MarkedGraph
+
+2. Then, it links them to EF form DSA --- when a DSE will occurs the
+associated EF will be executed.
+
+    - fireIt is linked to the EF 'fire' of Transition
+    - initIt is linked to the EF 'initialize' of MarkedGraph
+
+3. Finally, it defines constraints on the DSE to rule the possible
+scheduling.  Constraints generally rely on relations which are defined
+in MoCC libraries. Here constraints are expressed in CCSL and only relies
+on relations and expression from the CCSL core library.
+
+    - A first constraint applies on the fireIt events.  It is depends on
+the number of token in a place.  Indeed, if there is no tokens, then
+the fireIt of the output transition can only occur after the fireIt
+event of the input transition has occured. It is expressed by the first
+invariant defined in the context of a Place.
+//
+If there is some tokens in a place, then the fireIt event of the output
+transition may occur as many times as there is tokens in this place.
+After, it will only occur when the fireIt on the input transition of the
+place has occured.  It is expressed using the DelayFor expression in the
+second envariant of Place.
+
+    - Two other constraints are defined in the context of the MarkedGraph
+element.  The first one expresses that the first initIt event must occur
+before any fireIt event.  The second one expresses that the initIt event
+can occur only one time.
+
+////
+TODO: To be added as a next tutorial.
+WARNING: Errors are present because the used Relations are not yet
+defined...  They will be solved during the next step of this tutorial.
+////
+
+
+NOTE: Please notice that, as often, DSE are defined at the language
+level, but at runtime they are instantiated as MSE on each object
+instance of the metaclasse they are defined on.  For example, there will be
+one fireIt MSE for each Transition element of MarkedGraph model.  For the
+wikipedia example, there will a fireIt event for transitions t1, t2, t3 and
+t4. In the same way, constraints apply to the MSE.
+
+
+////
+TODO: Separate the MoCC part.  We could define several relations :
+onlyOnce, beforeAll, and delayedPrecede.
+
+TODO: Say that the Precede relation is defined in kernel.ccslLib or
+CCSL.ccslLib.
+////
+
+
+
+////
+TODO:
 Provide a pointer to a MoCCML version which uses constraint automata
 to define the MoCC.
+////
 
 
+////
 === Define MoCC
 
-Give the implemntation of the Relation used in the DSE.
+The 
+
+
+
+Give the implementation of the relations used in the DSE.
 
 MoCCLib... To be done...
 
 TODO: How to explain the defined relation?
 
+TODO: Add a link to another tutorial which uses an automata to define
+the MoCC.
+
+Tricks: Limitation of ECL for Integer type : use of a local
+expression.
+
+////
 
 
-=== Define Animation Viewpoint
 
-The purpose of the animation is to show the number of token in each
-places as well as the executable transitions. 
+== Define Animation Viewpoint
 
-As the animation is close to the graphical concrete syntax, we extend
-the existing diagram description.
 
-==== Extend the existing diagram description
+During the execution of a Marked Graph model, we want to visualize :
 
-TODO: Explain...
+* the number of tokens in any place: the runtime token count will be printed in the circle of one place.
+* the firable transitions: they will be drawn in green.
 
-XXX: In Which eclipse?
+// and the size of the circle can be proportional to the number of tokens it
+// contains.
 
-TODO: The aird has to be provided!
+As the animation view is close to the graphical concrete syntax, we
+extend the existing diagram description.
 
-Add a link to a tutorial for Sirius Animator.
+First, we will define a graphical representation based on the graphical
+Marked Graph syntax to the wizard called "Create GEMOC debug
+representation", then we will add a layer to describe the graphical
+animation of a Marked Graph model.
+
+=== Create a debug representation (as an extension of the graphical editor viewpoint)
+
+==== Run the wizard
+
+Do __New > Other / Create GEMOC debug representation__ to run the wizard.
+
+.Create GEMOC debug representation wizard
+image::images/MarkedGraph/XXX.png[Create GEMOC debug representation wizard]
+
+On the first screen of the wizad, select "Extends an existing diagram
+description".
+
+.Select "Extends an existing diagram description"
+image::images/MarkedGraph/XXX.png[Select "Extends an existing diagram description"]
+
+
+Select the viewpoint to extend "MarkedGraph diagram".
+
+.Select the viewpoint to extend
+image::images/MarkedGraph/XXX.png[Select the viewpoint to extend]
+
+Finally, we can fill in the Project Name in which the newly creating
+viewpoint file will take place (org.gemoc.sample.markedgraph.animation),
+the name of the viewpoint file (markedgraph-animation.odesign), the
+viewpoint name (MarkedGraphViewpoint) and the diagram name (MarkedGraph).
+
+.Information of the animation viewpoint
+image::images/MarkedGraph/XXX.png[Information of the animation viewpoint]
+
+The last screen allows to choose the name of the layer to be created. Debug
+is a good name.
+
+Once the __Finish__ button is pressed, the project is created.
+
+==== Open the markedgraph-animation.odesign
+
+Open the markedgraph-animation.odesign file and develop its content.
+
+TODO: explain its contents.
+
+
+==== Load markedgraph.odesign as a resource.
+
+// TODO: shold be fixed?
+
+To be able to complete the definition of the odesign file, we first need to
+load the existing markedgraph.odesign as a resource :
+
+* Right click in the markedgraph.odesign editor to select __Load Resource...__.
+* Select __Browse workspace...__
+* Select __markedgraph.odesign__ in the
+__org.gemoc.sample.markedgraph.design__ project
+* Click OK
+* Click OK
+
+
+==== Add markedgraph.ecore to the metamodels
+
+* Select "Diagram Extension MarkedGraph" element.
+* In the properties view, select __metamodels__.
+* Click on "Add from workspace".
+* Select "markedgraph.ecore" (unfold the project structure)
+* Click OK
+
+
+==== Complete the debug representation
+
+On the "Mapping Based Decoration Enabled breakpoint" and "Mapping Based
+Decoration Disabled breakpoint", select the "Place" and "Transition"
+element.
+
+The debug view will show a symbol on the Place and Transition to show
+whether the corresponding breakpoint is enabled or disabled.
+
+
+==== Complete the dependencies of the project
+
+// TODO: To be fixed.
+
+* Open the plugin.xml file of the project.
+* Select the __dependencies__ tab.
+* Click "Add..." in the "Required Plug-ins" area.
+* Select "org.gemoc.gemoc_language_workbench.extensions.sirius"
+* Click OK
+* Save the plugin.xml resource.
+
+==== Set the animation viewpoint in project.xml
+
+In the xDSML editor, we can select the animation viewpoint by selecting the
+newly created project (__org.gemoc.sample.markedgraph.animation__)
+
+
+=== Create an animation representation
+
+After the debug presentation has been defined, we can complete it to add an
+animation layer.
+
+==== Create the Animation Layer
+
+* Right click on "Diagram extension MarkedGraph" to __select New Diagram
+  Element / Additional Layer__.
+* Set its "id" to "Animation".
+
+
+==== Display the firable transition with a green background color
+
+* Right click on "Animation" to select "New Customization / Style
+Customizations".
+* Right click on "Style Customizations" to select "New Customization /
+Style Customization".
+* On "Style Customization", set the "Predicate Expression" to
+"[self.eGet('inputs')->forAll(p | p.eGet('runtimeTokenCount').toString().toInteger() > 0) /]"
+* Right click on "Style Customization" to select "New Customization /
+Property Customization (by selection)"
+* For "Applied On" property, select "Square white".
+* For "Property Name", set "color" (completion is available with CTRL-SPACE)
+* For "Value Selction", set "light_green"
+
+==== Set the background color of a place to light_yellow
+
+Perform the same action as above to set the background color of place to
+yellow.
+
+// FIXEM : how to select thr right (ellipse white)?
+
+==== Display the runtime token count in a place
+
+
+* Right click on "Style Customization" to select "New Customization /
+Property Customization (by expression)"
+* For "Applied On" property, select "Ellipse white".
+* For "Property Name", set "labelExpression" (completion is available with CTRL-SPACE)
+* For "Value Selction", set "feature:runtimeTokenCount"
+
+
+==== Add the Animation service
+
+* Right click on "MarkedGraphViewpoint" to select "New Extension / Java
+Extension".
+* Set "Qualified Class Name" to
+"org.gemoc.sample.markedgraph.animation.services.MarkedgraphAnimationServices".
+
+In the project, __org.gemoc.sample.markedgraph.animation__ project, in
+src/org.gemoc.sample.markedgraph.animation.services, copy the
+MarkedgraphDebugServices.java class to
+MarkedgraphAnimationServices.java.  Then, change
+AbstractGemocDebuggerServices to AbstractGemocAnimatorServices in its
+source code (two times: import and extends).  Finally, change "Debug" to
+"Animation".
+
+//T ODO: The aird has to be provided!
+
+// XXX: Add a link to a tutorial for Sirius Animator.
 
 
 == Animate a Model
 
-=== Start a runtime Eclipse
+The executable MarkedGraph Language is now defined.  We can use the
+GEMOC Modeling Workbench to execute MarkedGraph models.
+
+=== Launch the Modelling WorkBench
+
+First, we will create a run configuration.  Select "run / run Configurations"
+Double click on "Eclipse Application" and change the name "New
+Configuration" into "Marked Graph Modeling Workbench".  We can now click
+"Run" to start the new runtime Eclipse which indeed corresponds to the
+Modeling Workbench for Marked Graph.
+
+.Define the Marked Graph Modeling Workbench configuration
+image::images/MarkedGraph/MG-run-EclipseApplicationConfig.png[Define the Marked Graph Modeling Workbench configuration]
+
 
 === Import the project with a sample model
 
+Import the modeling project
+link:MarkedGraph/MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
+in the Modeling Workbench (Import / General / Existing project into
+Workspace).  It contains the wikipedia.markedgraph file which corresponds
+to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
+
+=== Select the Modeling perspective
+
+* Select "Window / Open Perspective / Others..."
+* Select "Modeling" in the list.
+
 === Create a Launch Configuration
+
+* Select __Debug / Debug Configurations__
+* Double click on "Gemoc eXecutable Model"
+* Change the name of the new configuration to "run wikipedia example"
+* Browse to select the model to run (wikipedia.markedgraph)
+* Select its language (xDSML field): markedgraph
+* Browse to select the animator
+* Check that the "Decider" is set to "Step by step user decider" (the user
+  will decide which well be the next step to execute).
+* Click on Run
+
+.Define the configuration to run the wikipedia example
+image::images/MarkedGraph/MG-run-WikipediaConfig.png[Define the configuration to run the wikipedia example]
+
 
 === Start the model
 
+We can now run the "gemoc" configuration.  The graphical
+representation is opened, the VCD is created, etc.
+
+TODO: Give some explanations.
+
+
 === Select a logical step
 
+The Logical Steps view, presents the possible steps, and for each step,
+the MSE that will occur if it is selected.
+
+Double-click on a Logical Step to choose it.  The corresponding MSE
+occur, they are visible on the VCD, and they trigger the associated
+execution functions which make the state of the model evolve.
+
+
+=== Stop the execution
+
+To stop the execution:
+
+* Select the "Engine view"
+* Select the engine to stop
+* Click on the red button to actually stop the engine (the left icon
+becomes red)
+
+
+== To go gurther...
+
+* The DSE part may be defined using a MoCCML library.  It favors reuse of
+MoCC and clarity of ECL file.
+* Rather than using CCSL syntax, it is possible to user constraint automata
+(defined using MoCCML).
+
+
+////
 === What else?
 
+Any idea?
 
-
-== Questions/Remarks...
-
-Questions on the MoCC from summerSchool :
-
-- why delayedBy p.initialMarking and not delayedBy 1?
-	==> Because we can make as much read as there is initialMarking
-	token in the place.  Any write in that place, means that a new
-	read can be done.
-
-- is it still right if the initial marking is P2 = 1 (all other places
-is 0) ?
-	==> No. But in any case, this initialMarking will result in a
-	deadlock.
-
-- what if there is several places which are initially marked?
-	==> See read/write semantics
-
-- typo in the DelayFor expression on slide 93: two times
-outputTransition.fireCall
-
-
-Questions on the implementation :
-
-- A transition has no more that one input or output place.  Should be
-any number !
-
-Questions:
-
-- use execute for the EF on transition instead of fire and use fire
-(or trigger) for the DSE instead of fireCall.
-
-
-Questions de forme :
-
-- Utilisation des abbréviations (MoCC, DSA, EF, ED, AS, CS, etc.) :
-Prévoir un lexique sur le site ?
-- Éviter d'avoir trop de sections : par exemple, supprimer ED, EF.
-
-
-TODO :
-
-- Donner des éléments pour la mise au point : FAQ ?
-- regarder le dash board de Mélanie
-- regarder les outils rédigés par Didier, Florent et Issa.
-
-
-// vim: set syntax=asciidoc tw=70 ts=4 sw=4:
-// vim: spell spelllang=en:
+////

@@ -1,14 +1,17 @@
-package markedgraph.dsa
+package markedgraph
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-import markedgraph.*
-import static extension markedgraph.dsa.PlaceAspect.*
+import markedgraph.MarkedGraph
+import markedgraph.Place
+import markedgraph.Transition
 
+import static extension markedgraph.PlaceAspect.*
 
 @Aspect(className=MarkedGraph)
 class MarkedGraphAspect {
 	def public void initialize() {
-		_self.place.forEach [ pl | pl.initialize ]
+		println("Graph " + _self.name + " initialized.")
+		_self.places.forEach [ pl | pl.initialize ]
 	}
 }
 
@@ -16,7 +19,9 @@ class MarkedGraphAspect {
 class PlaceAspect {
 	public int runtimeTokenCount
 	
+	// @Helper
 	def public void initialize() {
+		println("Place " + _self.name + ": initialized.")
 		_self.runtimeTokenCount = _self.tokenCount
 	}
 }
@@ -24,8 +29,8 @@ class PlaceAspect {
 @Aspect(className=Transition)
 class TransitionAspect {
 	def public void fire() {
-		_self.input.forEach[ runtimeTokenCount = runtimeTokenCount - 1 ]
-		_self.output.forEach[ runtimeTokenCount = runtimeTokenCount + 1 ]
+		println("Transition " + _self.name + ": fired.")
+		_self.inputs.forEach[ runtimeTokenCount = runtimeTokenCount - 1 ]
+		_self.outputs.forEach[ runtimeTokenCount = runtimeTokenCount + 1 ]
 	}
 }
-

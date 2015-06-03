@@ -1,5 +1,4 @@
 = GEMOC Studio Guide
-Francois Tanguy <francois.tanguy@inria.fr>, Didier Vojtisek <didier.vojtisek@inria.fr>
 :doctype: book
 :toc:
 :numbered:
@@ -24,27 +23,18 @@ TBD
 
 [preface]
 == Introduction
-
 The GEMOC Studio offers 2 main usages:
 
-* Building and composing new executable DSML. This mode is intended to be used by language designers and language integragtors (aka domain experts).
+* Building and composing new executable DSML. This mode is intended to be used by language designers and language integrators (aka domain experts).
 
 * Creating and executing models conformant to executable DSMLs. This mode is intended to be used by domain designers.
 
 Each of these usage has it own set of tools that are referenced as *Gemoc Language workbench* for the tools for _language designers_ and *Gemoc Modeling Workbench* for the tools for _domain designers_.
 
-////////////////////////////////////////////////////////////////
-image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={max-width}]
 
-image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", width={half-width}]
-
-image:images/intro/GemocWorkbenchesGlobalPicture.png["Main activities offered by the GEMOC workbenches", scaledwidth="25%"]
-
-image:images/intro/GemocWorkbenchesGlobalPicture.png[bla, scale="1"]
-////////////////////////////////////////////////////////////////
-
-[[GemocWorkbenchesGlobalPicture]]
-image::images/intro/GemocWorkbenchesGlobalPicture.png[GemocWorkbenchesGlobalPicture, scaledwidth="25%", width={quarter-width}]
+[[img-GemocWorkbenchesGlobalPicture]]
+.Gemoc Workbenches Global Picture
+image::images/intro/GemocWorkbenchesGlobalPicture.png[Sunset, 800,  link="http://www.gemoc.org"]
 
 
 In this document:
@@ -52,6 +42,10 @@ In this document:
  * items or roles relative to the Language Workbench are identified with the following icon : image:images/icons/IconeGemocLanguage_32.png[width=48, height=48]
  * items or roles relative to the Modeling Workbench are identified with the following icon : image:images/icons/IconeGemocModel_32.png[width=48, height=48]
 
+[NOTE]
+====
+The latest version of this document is available online from http://gemoc.github.io/gemoc-studio/
+====
 
 === Language Workbench overview image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
 
@@ -70,9 +64,9 @@ This first dashboard groups the activities as follow:
 Create a language::
     This activity can be decomposed in activities in two groups :
         Domain model (abstract syntax):::
-            * Create the abstract syntax with EMF (incl., the ecore model and the genmodel)
-        Model editors (concrete syntax):::
-            * Create a graphical editor with Sirius Designer
+            * Create the abstract syntax with EMF (incl., the ecore model and the genmodel) 
+        <<defining-a-concrete-syntax-section, Model editors (concrete syntax)>>::: 
+            * <<defining-a-concrete-syntax-with-sirius-section, Create a graphical editor with Sirius Designer>>
             * Create a textual editor with Xtext
 Make your language executable::
     This activity is decomposed in 2 main parts:
@@ -144,7 +138,7 @@ include::GuideModelingWorkbenchChapter.asciidoc[]
 // Push titles down one level.
 :leveloffset: 1
 
-include::GuideTutorialAutomata.asciidoc[]
+include::GuideTutorialMarkedGraph.asciidoc[]
 
 // Return to normal title levels.
 :leveloffset: 0

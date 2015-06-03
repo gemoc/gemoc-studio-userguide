@@ -7,7 +7,7 @@ The GEMOC Modeling Workbench, intended to be used by domain designers: it allows
 
 [[figure-glw-screenshot-of-modeling_workbench]]
 .Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation).
-image::images/gemoc_modeling_workbench_TFSM_animation_screenshot.png[Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation)]
+image::images/gemoc_modeling_workbench_TFSM_animation_screenshot.png["Screenshot of GEMOC Studio Modeling Workbench on the TFSM example (execution and animation)", 800]
 (((TFSM)))
 (((TFSM,Modeling workbench)))
 
@@ -15,7 +15,7 @@ image::images/gemoc_modeling_workbench_TFSM_animation_screenshot.png[Screenshot 
 
 [[section-editing-model]]
 === Editing model
-As seen in Section <<section-defining-concrete-syntax>>, an xDSML can provide different concrete syntaxes. 
+As seen in Section <<defining-a-concrete-syntax-section>>, an xDSML can provide different concrete syntaxes. 
 
 include::GuideModelingWorkbenchEditingModelWithSiriusSection.asciidoc[]
 include::GuideModelingWorkbenchEditingModelEMFTreeEditorSection.asciidoc[]

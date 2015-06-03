@@ -20,6 +20,7 @@ GuideTutorialAutomata-generated.asciidoc: GuideTutorialAutomata.asciidoc
 
 GuideTutorialAutomata-generated.html: images/tutorial images/icons asciidoc.conf tools/plantuml.jar
 
+
 %.html: %.asciidoc
 	(cd images/tutorial && make)
 	asciidoctor -a data-uri -a icons --attribute tabsize=4 $<
@@ -28,4 +29,6 @@ GuideTutorialAutomata-generated.html: images/tutorial images/icons asciidoc.conf
 clean:
 	(cd images/tutorial && make clean)
 	rm GuideTutorialAutomata.html
+
+include ${HOME}/usr/make/pandoc.make
 

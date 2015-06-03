@@ -7,7 +7,7 @@ The *((GEMOC Language Workbench))* is intended to be used by the ((Language Desi
 
 [[figure-glw-screenshot-of-language_workbench]]
 .Screenshot of the GEMOC Language Workbench showing the design of a Timed Finite State Machine (TFSM) example.
-image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench]
+image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench, 800]
 (((TFSM,Language Workbench)))
 
 '''
@@ -19,8 +19,8 @@ include::GuideLanguageWorkbenchDomainModelProjectSection.asciidoc[]
 include::GuideLanguageWorkbenchDomainSpecificActionsProjectSection.asciidoc[]
 
 
-=== Defining Domain-Specific Constraints
-TODO
+// === Defining Domain-Specific Constraints
+// TODO
 
 [[defining-a-concrete-syntax-section]]
 === Defining a Concrete Syntax
@@ -38,9 +38,6 @@ See http://www.eclipse.org/Xtext/[the Xtext website].
 If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
 
-=== Defining a Model of Concurrency and Communication (MoCC)
-TODO: MoccML + ECL
-
 include::GuideECLMoCCML.asciidoc[]
 
 include::GuideLanguageWorkbenchDomainSpecificEventsSection.asciidoc[]
@@ -49,7 +46,5 @@ include::GuideLanguageWorkbenchDefiningFeedbackSpecificationSection.asciidoc[]
 
 include::GuideLanguageWorkbenchDefiningDebugSection.asciidoc[]
 
-[[section-process-support-view]]
-=== Process support view
+include::GuideLanguageWorkbenchDashboardSection.asciidoc[]
 
-TODO present process view
