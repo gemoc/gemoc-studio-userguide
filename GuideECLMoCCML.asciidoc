@@ -15,10 +15,13 @@ To describe and integrate the model of concurrency, we must 1) have a descriptio
 * 1) is realized using the *((ECL))* language whose description and use is provided below
 * 2) Is achieved through the *((MoCCML))* language whose description and use is described below
 
-==== The ECL approach to Identify DSE and constraints 
+==== The ECL approach to identify DSE and constraints 
 ===== Overview of ECL 
 
-TODO
+To enable the automatic generation of the execution model of a given DSML model, the MoCC is weaved into the context of specific concepts from the abstract syntax of the DSML. This contextualization is defined by a mapping between the elements of the abstract syntax and the constraints of the MoCC (defined using MoCCML). Examples of mapping are shown below. 
+
+The mapping defined in MoCCML is based on the notion of event, inspired by ECL https://hal.inria.fr/hal-00721169/[ECL Description], an extension of the Object Constraint Language OCL.
+The separation of the mapping from the MoCC makes the MoCC independent of the DSML so that it can be reused. 
 
 ===== Creation of an ECL model GEMOC Studio 
 
