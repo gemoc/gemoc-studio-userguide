@@ -157,7 +157,7 @@
 							<chunkedOutput>true</chunkedOutput>
 							<highlightSource>true</highlightSource>
 							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
-							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.chunked.xsl</htmlCustomization>
 							<base.dir></base.dir>
 							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
 							<targetDirectory>${project.build.directory}/docbook/publish/guide/html/</targetDirectory>
