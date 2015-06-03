@@ -136,7 +136,7 @@ image:images/quickTutorial/SigPMLxDSMLView.png[xDSML View]
 
 == Tutorials
 
-- link:GuideTutorialMarkedGraph.html[Marked Graph tutorial]: quick example to
+- link:../../tutorial_markedgraph/html_single/GuideTutorialMarkedGraph.html[Marked Graph tutorial] (or link:../../tutorial_markedgraph/html/GuideTutorialMarkedGraph.html[chunked version]): quick example to
   demonstrate how to define an
   execution semantics and graphical animation for a highly concurrent language,
   Marked Graph.

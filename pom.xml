@@ -69,42 +69,11 @@
                         <configuration>
 		                    <sourceDirectory>${basedir}</sourceDirectory>
 		                    <imagesDir>.</imagesDir>  <!-- AsciiDoc 1.5.0 presuppose that images are in a subfolder "images", but the files already have this info in the source files  -->
-		                     <outputDirectory>${basedir}/target/docbook/en-US</outputDirectory>
+		                     <outputDirectory>${basedir}/target/docbook/all_documents</outputDirectory>
 		                    <backend>docbook</backend>
 		                    <doctype>book</doctype>
 		                </configuration>
                     </execution>
-                 <!--    <execution>
-			            <id>output-html</id>
-			            <phase>generate-resources</phase>
-			            <goals>
-			                <goal>process-asciidoc</goal>
-			            </goals>
-			            <configuration>
-			                <backend>html</backend>
-			                <sourceDirectory>${basedir}</sourceDirectory>
-		                    <imagesDir>.</imagesDir> 
-		                    <outputDirectory>${basedir}/target/docbook/en-US-html</outputDirectory>
-		                    <doctype>book</doctype>
-			            </configuration>
-			        </execution> -->
-			       <!--  a tester  <execution>
-			            <id>output-pdf</id>
-			            <phase>generate-resources</phase>
-			            <goals>
-			                <goal>process-asciidoc</goal>
-			            </goals>
-			            <configuration>
-			                <backend>pdf</backend>
-			                <sourceDirectory>${basedir}</sourceDirectory>
-		                    <imagesDir>.</imagesDir>--> <!-- AsciiDoc 1.5.0 presuppose that images are in a subfolder "images", but the files already have this info in the source files  -->
-		                <!--     <outputDirectory>${basedir}/target/docbook/en-US-pdf</outputDirectory>-->
-		                   
-		                    <!-- doctype not honored until plugin version 0.1.2 -->
-		                    <!-- until then, set the doctype in the document -->
-		           <!--          <doctype>book</doctype>
-			            </configuration>
-			        </execution> -->
                  </executions>
             </plugin>
             <!-- generate the images from plantUMl -->
@@ -142,11 +111,14 @@
 
 			<!-- docbook generation part -->
 			<plugin>
-			<!-- exemple : http://www.springsurf.org/sites/1.0.0-RC2/spring-surf-devtools/spring-surf-doc-plugin/examples/springsurf.html -->
+			<!-- exemple : http://www.springsurf.org/sites/1.0.0-RC2/spring-surf-devtools/spring-surf-doc-plugin/examples/springsurf.html -->				
 				<groupId>com.agilejava.docbkx</groupId>
 				<artifactId>docbkx-maven-plugin</artifactId>
 				<version>2.0.15</version>
 				<executions>
+					<!-- *********************** -->
+			    	<!-- GENERATION OF THE GUIDE -->
+			    	<!-- *********************** -->
 					<execution>
 						<id>manual-single-page-html</id>
 						<goals>
@@ -159,14 +131,14 @@
 							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
-							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html_single/</targetDirectory>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/guide/html_single/</targetDirectory>
 							<includes>Guide.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/guide/html_single/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/html_single/">
+								<copy todir="${project.build.directory}/docbook/publish/guide/html_single/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
@@ -187,14 +159,14 @@
 							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
-							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/html/</targetDirectory>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/guide/html/</targetDirectory>
 							<includes>Guide.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/html/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/guide/html/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/html//">
+								<copy todir="${project.build.directory}/docbook/publish/guide/html//">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
@@ -213,20 +185,24 @@
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<xincludeSupported>true</xincludeSupported>
 							<base.dir></base.dir>
-							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/eclipse/</targetDirectory>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/guide/eclipse/</targetDirectory>
 							<includes>Guide.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/eclipse/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/eclipse/">
+								<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
 						<phase>generate-resources</phase>
 					</execution>
+					
+					<!-- *************************** -->
+				    <!-- GENERATION OF THE TUTORIALS -->
+				    <!-- *************************** -->
 					<execution>
 						<id>tutorials-single-page-html</id>
 						<goals>
@@ -239,21 +215,17 @@
 							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
-							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/tutorials/</targetDirectory>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorials/html_single/</targetDirectory>
 							<includes>TutorialMain.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorials/html_single/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/">
+								<copy todir="${project.build.directory}/docbook/publish/tutorials/html_single/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
-							<postProcess>
-<!-- 								<move 	file="target/docbkx/html/Kermeta-Manual.docb.html"  -->
-<!-- 										tofile="target/docbkx/html/Kermeta-Manual.docb/Kermeta-Manual.docb.single.html"/> -->
-							</postProcess>
 						</configuration>
 					</execution>
 					<execution>
@@ -268,21 +240,42 @@
 							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
 							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
 							<base.dir></base.dir>
-							<sourceDirectory>${project.build.directory}/docbook/en-US/</sourceDirectory>
-							<targetDirectory>${project.build.directory}/docbook/publish/en-US/tutorials/</targetDirectory>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/</targetDirectory>
 							<includes>GuideTutorialMarkedGraph.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/images">
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/en-US/tutorials/">
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
-							<postProcess>
-<!-- 								<move 	file="target/docbkx/html/Kermeta-Manual.docb.html"  -->
-<!-- 										tofile="target/docbkx/html/Kermeta-Manual.docb/Kermeta-Manual.docb.single.html"/> -->
-							</postProcess>
+						</configuration>
+					</execution>
+					<execution>
+						<id>tutorial-markedgraph-multi-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<chunkedOutput>true</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_markedgraph/html/</targetDirectory>
+							<includes>GuideTutorialMarkedGraph.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
 						</configuration>
 					</execution>
 				</executions>
@@ -351,7 +344,7 @@
                        <goal>replace</goal>
                    </goals>   
            <configuration>
-               <file>target/docbook/publish/en-US/html_single/Guide.html</file>
+               <file>target/docbook/publish/guide/html_single/Guide.html</file>
                <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
 					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
@@ -377,7 +370,7 @@
                        <goal>replace</goal>
                    </goals>   
            <configuration>
-               <file>target/docbook/publish/en-US/html/pr01.html</file>
+               <file>target/docbook/publish/guide/html/pr01.html</file>
                <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
 					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
