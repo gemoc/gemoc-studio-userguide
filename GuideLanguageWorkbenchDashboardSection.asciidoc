@@ -4,11 +4,11 @@
 ==== Open the dashboard
 The dashboard is available on .xdsml files from the Project Explorer or the Model Explorer views. See <<section-gemoc-language-project>> to view how to create an xDSML project.
 
-image::images/workbench/language/dashboard/open_dashboard_menu.png[Dashboard menu]
+image::images/workbench/language/dashboard/open_dashboard_menu.png[Dashboard menu, 800]
 
 When the `Gemoc Dashboard` menu is selected a new editor opens.
 
-image::images/workbench/language/dashboard/dashboard_create_language.png[Dashboard]
+image::images/workbench/language/dashboard/dashboard_create_language.png[Dashboard, 800]
 
 This editor is divided in three main parts:
 
@@ -16,7 +16,7 @@ This editor is divided in three main parts:
 . Sections part
 . Projects view
 
-image::images/workbench/language/dashboard/dashboard_parts.png[Dashboard parts]
+image::images/workbench/language/dashboard/dashboard_parts.png[Dashboard parts, 800]
 
 ==== Overview
 
@@ -52,16 +52,16 @@ image::images/workbench/language/dashboard/link_open_wizard.png[Open wizard]
 
 On the right side of the dashboard, a tree viewer shows the projects associated to the current xDSML project.
 
-image::images/workbench/language/dashboard/projects_viewer.png[Projects viewer]
+image::images/workbench/language/dashboard/projects_viewer.png[Projects viewer, 800]
 
 ===== Synchronize
 
 The section toolbar provides a `synchronize` action. This action filters the content of the tree viewer to keep only projects relevant according to the current process step represented by the section.
 
-image::images/workbench/language/dashboard/synchronize.png[Synchronize projects]
+image::images/workbench/language/dashboard/synchronize.png[Synchronize projects, 800]
 
 ===== Open existing projects
 
 By double-clicking on a project in the tree viewer, it is possible to open and update the corresponding file.
 
-image::images/workbench/language/dashboard/edit_project.png[Edit project]
+image::images/workbench/language/dashboard/edit_project.png[Edit project, 800]
