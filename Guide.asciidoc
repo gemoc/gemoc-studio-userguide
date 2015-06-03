@@ -1,5 +1,4 @@
 = GEMOC Studio Guide
-Collective work __ENSEEIHT, ENSTA, I3S, Inria, IRIT, Obeo, Thales, ...__
 :doctype: book
 :toc:
 :numbered:
@@ -24,10 +23,9 @@ TBD
 
 [preface]
 == Introduction
-
 The GEMOC Studio offers 2 main usages:
 
-* Building and composing new executable DSML. This mode is intended to be used by language designers and language integragtors (aka domain experts).
+* Building and composing new executable DSML. This mode is intended to be used by language designers and language integrators (aka domain experts).
 
 * Creating and executing models conformant to executable DSMLs. This mode is intended to be used by domain designers.
 

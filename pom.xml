@@ -285,7 +285,7 @@
 	          		<entities>
 			            <entity>
 			            	<name>version</name> <!-- replace occurence of &version; -->
-			            	<value>${version}</value>
+			            	<value>${project.version}</value>
 			        	</entity>
 			        	<entity>
 			            	<name>buildNumber</name> <!-- replace occurence of &build_time; -->
