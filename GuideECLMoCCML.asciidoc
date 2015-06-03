@@ -1,7 +1,5 @@
 [[section-defining-a-mocc]]
 === Defining a Model of Concurrency and Communication (MoCC)
-TODO: MoccML + ECL
-
 ==== Introduction 
 In the GEMOC approach, the executability characterization for a given language is done through several steps that include: the description of the actions associated with the language concepts (i.e. the Executions Functions); the description of the data / attributes that capture the state of a model or its evolution (the Execution Data); the description of the underlying language model of concurrency (the MoCC constraints).
 
