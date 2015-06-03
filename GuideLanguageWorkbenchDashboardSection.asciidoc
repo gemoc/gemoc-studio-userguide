@@ -4,7 +4,7 @@
 ==== Open the dashboard
 The dashboard is available on .xdsml files from the Project Explorer or the Model Explorer views. See <<section-gemoc-language-project>> to view how to create an xDSML project.
 
-image::images/workbench/language/dashboard/open_dashboard_menu.png[Dashboard menu, 800]
+image::images/workbench/language/dashboard/open_dashboard_menu.png[Dashboard menu, 400]
 
 When the `Gemoc Dashboard` menu is selected a new editor opens.
 
@@ -46,13 +46,13 @@ When a link is selected, the corresponding action is launched: open a wizard, op
 
 image::images/workbench/language/dashboard/link.png[Link]
 
-image::images/workbench/language/dashboard/link_open_wizard.png[Open wizard]
+image::images/workbench/language/dashboard/link_open_wizard.png[Open wizard, 800]
 
 ==== Projects view
 
 On the right side of the dashboard, a tree viewer shows the projects associated to the current xDSML project.
 
-image::images/workbench/language/dashboard/projects_viewer.png[Projects viewer, 800]
+image::images/workbench/language/dashboard/projects_viewer.png[Projects viewer, 400]
 
 ===== Synchronize
 

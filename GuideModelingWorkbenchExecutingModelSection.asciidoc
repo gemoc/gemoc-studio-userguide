@@ -59,9 +59,20 @@ The engine view displays a list of execution engine and their statuses:
 * its current running status,
 * and its logical steps deciding strategy.
 
-image:images/workbench/modeling/engine_view.png[Engine View]
+image:images/workbench/modeling/engine_view.png[Engine View, 400]
 
 [[modeling-workbench-executing-model-logical-step-view-section]]
+
+The buttons available on top right of this views respectivley allows to:
+
+* Stop the selected Engine (red square button)
+* Remove previously stopped engines from the view (crosses button)
+* Change the current logical step decider (shield button).
+
+[TIP]
+====
+When running in debug mode, You can easily "pause" an engine running with a solver or random decider by clicking on the change logical step decider (the shield button will be green when run in debub mode) this will automatically switch to the "Step by step decider". To restart, simply select back an automatic decider (solver or random) and select the next step in the LogicalStep view.
+====
 
 ==== Logical Steps View
 The logical steps view displays the list of possible future executions. This list is provided by the solver. This view is organized around a tree. For each logical step, its underlying events can be seen and possibly for each event the associated operation is visible. 
@@ -101,7 +112,7 @@ In addition to displaying information, it also provides interaction with the use
 . and it resets the model's state to the selected execution step,
 . it also forks the current timeline and create a new branch of execution.
 
-image:images/workbench/modeling/timeline/timeline_branch.png[Timeline branch]
+image:images/workbench/modeling/timeline/timeline_branch.png[Timeline branch, 200]
 
 It is also possible to select a logical step and use the contextual menu to show its caller in the Sirius editor:
 

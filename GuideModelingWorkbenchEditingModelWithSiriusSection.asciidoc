@@ -5,4 +5,4 @@ After defining your editor with ((Sirius)) (see <<defining-a-concrete-syntax-wit
 ===== Debug specific
 If you have defined a debug representation using <<defining-a-debug-representation-section>>. You can use the following actions to start a debug session and toggle breakpoints.
 
-image::images/workbench/modeling/debug_actions.png[Debug actions]
+image::images/workbench/modeling/debug_actions.png[Debug actions, 400]
