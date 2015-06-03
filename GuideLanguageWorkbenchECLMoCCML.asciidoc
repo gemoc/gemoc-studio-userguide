@@ -1,13 +1,11 @@
 [[section-defining-a-mocc]]
 === Defining a Model of Concurrency and Communication (MoCC)
-TODO: MoccML + ECL
-
 ==== Introduction 
 In the GEMOC approach, the executability characterization for a given language is done through several steps that include: the description of the actions associated with the language concepts (i.e. the Executions Functions); the description of the data / attributes that capture the state of a model or its evolution (the Execution Data); the description of the underlying language model of concurrency (the MoCC constraints).
 
 A Model of Concurrency and Communication (MoCC) represents the concurrency, synchronizations and the possibly timed causalities in the behavioral semantics of a language. It must represent the acceptable schedules of the atomic actions of the language, which represent both computation and communication.
 
-In this part of the guide, we assume that achieving the first two points has already been done based on <<RelatedSection>>. In this part, we will mainly focus on the steps for the description and integration fo the model of concurrency in the language, once the _EF_ and _ED_ have been already taken into account and integrated to the language.
+In this part of the guide, we assume that achieving the first two points has already been done based on <<section-define-dsa-project>>. In this part, we will mainly focus on the steps for the description and integration fo the model of concurrency in the language, once the _EF_ and _ED_ have been already taken into account and integrated to the language.
  The execution engine of the _GEMOC Studio_ is based on an event-based semantics, which means that events are used to activate the EF actions that can change the state of a model.
 
 To describe and integrate the model of concurrency, we must 1) have a description of the useful events allowing activation of the _EF_, 2) a mechanism to express the _MoCC_ constraints that apply on these events.
@@ -15,18 +13,21 @@ To describe and integrate the model of concurrency, we must 1) have a descriptio
 * 1) is realized using the *((ECL))* language whose description and use is provided below
 * 2) Is achieved through the *((MoCCML))* language whose description and use is described below
 
-==== The ECL approach to Identify DSE and constraints 
+==== The ECL approach to identify DSE and constraints 
 ===== Overview of ECL 
 
-TODO
+To enable the automatic generation of the execution model of a given DSML model, the MoCC is weaved into the context of specific concepts from the abstract syntax of the DSML. This contextualization is defined by a mapping between the elements of the abstract syntax and the constraints of the MoCC (defined using MoCCML). Examples of mapping are shown below. 
+
+The mapping defined in MoCCML is based on the notion of event, inspired by ECL https://hal.inria.fr/hal-00721169/[ECL Description], an extension of the Object Constraint Language OCL.
+The separation of the mapping from the MoCC makes the MoCC independent of the DSML so that it can be reused. 
 
 ===== Creation of an ECL model GEMOC Studio 
 
-_ECL_ models are created via files with the extension _.ecl. The _xDSML_ environment enables the creation and / or opening of new _ECL_ project that gives access to several functionalities such as (model transformation .qvto generator, etc) link to <<RelatedSection>>
+_ECL_ models are created via files with the extension _.ecl. The _xDSML_ environment enables the creation and / or opening of new _ECL_ project <<section-gemoc-language-project>>.
 
 ===== How to use ECL 
 
-In this section, we show an exemplified way to use ECL. The required steps to go from a given language to the integration of its concurrency model are presented.
+In this section, we show an examplified way to use ECL. The required steps to go from a given language to the integration of its concurrency model are presented.
 
 ====== Import Language 
 
@@ -127,7 +128,7 @@ The use of constraints is shown in the next section.
 
 [[figure-glw-screenshot-of-moccmlLevelSecond]]
 .Screenshot of the Second graphical level of Edition in MoCCML (Constraint Implementation).
-image::images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Level of Edition]
+image::images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Level of Edition, 800]
 
 ====== Using the constraints on the ECL 
 

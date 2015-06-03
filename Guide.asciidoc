@@ -1,5 +1,4 @@
 = GEMOC Studio Guide
-Collective work __ENSEEIHT, ENSTA, I3S, Inria, IRIT, Obeo, Thales, ...__
 :doctype: book
 :toc:
 :numbered:
@@ -24,10 +23,9 @@ TBD
 
 [preface]
 == Introduction
-
 The GEMOC Studio offers 2 main usages:
 
-* Building and composing new executable DSML. This mode is intended to be used by language designers and language integragtors (aka domain experts).
+* Building and composing new executable DSML. This mode is intended to be used by language designers and language integrators (aka domain experts).
 
 * Creating and executing models conformant to executable DSMLs. This mode is intended to be used by domain designers.
 
@@ -44,6 +42,10 @@ In this document:
  * items or roles relative to the Language Workbench are identified with the following icon : image:images/icons/IconeGemocLanguage_32.png[width=48, height=48]
  * items or roles relative to the Modeling Workbench are identified with the following icon : image:images/icons/IconeGemocModel_32.png[width=48, height=48]
 
+[NOTE]
+====
+The latest version of this document is available online from http://gemoc.github.io/gemoc-studio/
+====
 
 === Language Workbench overview image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
 
