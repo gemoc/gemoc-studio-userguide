@@ -4,7 +4,7 @@ all: html
 init:
 	(cd MarkedGraph; make generes)
 
-html: GuideTutorialAutomata-generated.html GuideTutorialMarkedGraph-generated.html
+html: Tutorial_Automata-generated.html GuideTutorialMarkedGraph-generated.html
 
 GuideTutorialMarkedGraph-generated.asciidoc: GuideTutorialMarkedGraph.asciidoc init
 	cat $<	\
@@ -12,13 +12,13 @@ GuideTutorialMarkedGraph-generated.asciidoc: GuideTutorialMarkedGraph.asciidoc i
 	    | sed -e '/^endif/d'	\
 	    > $@
 
-GuideTutorialAutomata-generated.asciidoc: GuideTutorialAutomata.asciidoc
+Tutorial_Automata-generated.asciidoc: Tutorial_Automata.asciidoc
 	cat $<	\
 	    | sed -e '/^ifeval/d'	\
 	    | sed -e '/^endif/d'	\
 	    > $@
 
-GuideTutorialAutomata-generated.html: images/tutorial images/icons asciidoc.conf tools/plantuml.jar
+Tutorial_Automata-generated.html: images/tutorial images/icons asciidoc.conf tools/plantuml.jar
 
 
 %.html: %.asciidoc
@@ -28,7 +28,7 @@ GuideTutorialAutomata-generated.html: images/tutorial images/icons asciidoc.conf
 
 clean:
 	(cd images/tutorial && make clean)
-	rm GuideTutorialAutomata.html
+	rm Tutorial_Automata.html
 
 include ${HOME}/usr/make/pandoc.make
 
