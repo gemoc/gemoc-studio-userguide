@@ -143,7 +143,7 @@ image:images/quickTutorial/SigPMLxDSMLView.png[xDSML View, 800]
 
 - link:../../tutorial_sigpml/html_single/Tutorial_SigPML.html[SigPML tutorial]
 
-- link:../../tutorial_automata/html_single/Tutorial_Automata.htm[Automata tutorial]: The used DSML is automata
+- link:../../tutorial_automata/html_single/Tutorial_Automata.html[Automata tutorial]: The used DSML is automata
   used to recognize words built on an alphabet.   Its focus is on a possible
   methodology to make a DSML executable.
 
