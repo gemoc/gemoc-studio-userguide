@@ -228,6 +228,9 @@
 							</preProcess>
 						</configuration>
 					</execution>
+					<!-- ************************************** -->
+				    <!-- GENERATION OF THE MARKEDGRAPH TUTORIAL -->
+				    <!-- ************************************** -->
 					<execution>
 						<id>tutorial-markedgraph-single-page-html</id>
 						<goals>
@@ -273,6 +276,112 @@
 									<fileset dir="./images" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+					</execution>
+					<!-- ************************************** -->
+				    <!-- GENERATION OF THE AUTOMATA TUTORIAL -->
+				    <!-- ************************************** -->
+					<execution>
+						<id>tutorial-automata-single-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<chunkedOutput>false</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_automata/html_single/</targetDirectory>
+							<includes>Tutorial_Automata.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html_single/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html_single/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+					</execution>
+					<execution>
+						<id>tutorial-automata-multi-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<chunkedOutput>true</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_automata/html/</targetDirectory>
+							<includes>Tutorial_Automata.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+					</execution>
+					<!-- ************************************** -->
+				    <!-- GENERATION OF THE SIGPML TUTORIAL -->
+				    <!-- ************************************** -->
+					<execution>
+						<id>tutorial-sigpml-single-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<chunkedOutput>false</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/</targetDirectory>
+							<includes>Tutorial_SigPML.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+					</execution>
+					<execution>
+						<id>tutorial-sigpml-multi-page-html</id>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<chunkedOutput>true</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_sigpml/html/</targetDirectory>
+							<includes>Tutorial_SigPML.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
 							</preProcess>
@@ -368,7 +477,7 @@
                        <goal>replace</goal>
                    </goals>   
            <configuration>
-               <file>target/docbook/publish/en-US/html/pr01.html</file>
+               <file>target/docbook/publish/guide/html/pr01.html</file>
                <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
 					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 

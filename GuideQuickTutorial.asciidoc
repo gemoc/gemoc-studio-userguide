@@ -108,7 +108,7 @@ image:images/quickTutorial/SigPMLxDSMLView.png[xDSML View]
 == The SigPML DSML example
 
 
-include::sigpml.asciidoc[]
+include::tutorial_sigpml.asciidoc[]
 
 
 ////
