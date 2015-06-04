@@ -41,9 +41,6 @@ better understanding of the abbreviations used in this tutorial.
 
 == Install the projects defining the Marked Graph AS and CS
 
-// TODO: It is here that the description of the AS should be given.
-// See sirius tutorial.
-
 The domain model is implemented with several EMF projects that you
 need to import into your workspace.
 A graphical editor defined with Sirius is also available to visualize
@@ -90,11 +87,9 @@ The graphical concrete syntax draws places as
 circles and transitions as squares.  Inputs and outputs of places and
 transitions are designated by arrows.  The following picture shows the
 graphical representation of the
-link:http://en.wikipedia.org/wiki/Marked_graph[Marked Graph model of wikipedia].
-
-// TODO: http://en.wikipedia.org/wiki/Marked_graph
-Here the graphical syntax of the wikipedia example using the view
-defined with Sirius.
+link:http://en.wikipedia.org/wiki/Marked_graph[Marked Graph model of wikipedia]
+(using a graphical syntax defined using
+link:http://www.eclipse.org/sirius/[Sirius]).
 
 .Example of a Marked Graph model (from link:http://en.wikipedia.org/wiki/Marked_graph[wikipedia])
 image::images/MarkedGraph/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
@@ -263,7 +258,7 @@ image::images/MarkedGraph/MG-K3-Create.png[Create a K3 Project, 800]
 
 Click again on _K3 project_ to open __markedgraph.xtend__.  It
 has been initialized with a template that can be discarded and
-replaced with the following text.
+replaced with the link:MarkedGraph/markedgraph.xtend[following text].
 
 [source]
 ----
@@ -273,6 +268,12 @@ include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 
 .Definition of the DSA (ED and EF)
 image::images/MarkedGraph/MG-K3-Defined.png[Definition of the DSA (ED and EF), 800]
+
+////
+TODO: Qui des helper (initialize sur Place) : il faudrait indiquer
+explicitiement qu'il ne faut pas la mettre sur le MM. Qu'elle ne peut être
+appelée que depuis une autre EF. La mettre en privée dans xtend ?
+////
 
 ////
 ==== Create the Extented Model with Melange
@@ -297,17 +298,16 @@ constraints can be defined on these events to define when they may occur.
 
 ==== Create the DSE Project
 
-To create the DSE Project, click on the "ECL Project" in the
+* Click on the "ECL Project" in the
 __project.xdsml__ editor ("Behavior definition / DSE definition").
 // TODO: on the next screen, the Ecore resource must be initialized.
-Check that the name is __org.gemoc.sample.markedgraph.dse__.
+* Check that the name is __org.gemoc.sample.markedgraph.dse__.
 
 .Create a DSE Project
 image::images/MarkedGraph/MG-DSE-Create.png[Create a DSE Project, 800]
 
-Click "finish" and the project is created.
-
-Click on "ECL Project" to edit the "markedgraph.ecl" file and replace
+* Click "finish" and the project is created.
+* Click on "ECL Project" to edit the "markedgraph.ecl" file and replace
 its content with the following:
 
 .Template of the ECL file
@@ -316,8 +316,9 @@ image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file, 800]
 
 ==== Define DSE
 
-Replace the content of the ECL file with the following code (explanations
-are given bellow):
+Replace the content of the ECL file with the
+link:MarkedGraph/markedgraph.ecl[following code] (explanations on this code are
+given bellow):
 
 [source]
 .The file markedgraph.ecl
@@ -445,7 +446,7 @@ animation of a Marked Graph model.
 
 ==== Run the wizard
 
-Do __New > Other / Create GEMOC debug representation__ to run the wizard.
+Tun the wizard with __New > Other / Create GEMOC debug representation__.
 
 .Create GEMOC debug representation wizard
 image::images/MarkedGraph/MG-animation-launch-wizard.png[Create GEMOC debug representation wizard]
@@ -515,6 +516,8 @@ element.
 
 The debug view will show a symbol on the Place and Transition to show
 whether the corresponding breakpoint is enabled or disabled.
+
+// TODO: Give a pointer to the file already completed!
 
 
 ==== Complete the dependencies of the project
@@ -592,7 +595,7 @@ AbstractGemocDebuggerServices to AbstractGemocAnimatorServices in its
 source code (two times: import and extends).  Finally, change "Debug" to
 "Animation".
 
-//T ODO: The aird has to be provided!
+// TODO: The aird has to be provided!
 
 // XXX: Add a link to a tutorial for Sirius Animator.
 
@@ -643,15 +646,28 @@ to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
 image::images/MarkedGraph/MG-run-WikipediaConfig.png[Define the configuration to run the wikipedia example]
 
 
-=== Start the model
+=== Launch the execution of the model
 
-We can now run the "gemoc" configuration.  The graphical
-representation is opened, the VCD is created, etc.
+We can now run the "gemoc" configuration.  It opens the different views related to the execution on an xDSML model:
+
+* Logical Steps (top left): the list of the logical steps that may be
+  selected at this execution step.
+* Gemoc Engine Status (middle left): the list on the running GEMOC engines.
+The red button stops the selected engine.
+* Stimuli Manager (bottom left): the list of MSE.
+* VCD (top right): a graphical visualisation of the events manages by the
+MoCC (first ones correspond to the MSE).
+* Graphical visualization (middle right) of the model (with animation
+information)
+* Time Line (bottom middle): the logical steps available at each steps and
+the selected one.
+* Console: several consoles are available.  The dispolayed one is the
+"Default MessaginSystem Console". There is one console the the main
+component of the Modeling Workbench.
+
 
 .The wikipedia model is just started
 image::images/MarkedGraph/MG-run-start.png[The wikipedia model is just started]
-
-TODO: explain the different parts.
 
 
 === Select a logical step
@@ -679,14 +695,14 @@ image::images/MarkedGraph/MG-run-t1-fired.png[Transition t1 fired]
 image::images/MarkedGraph/MG-run-t2-fired.png[Transition t2 fired]
 
 .Some logical steps later
-image::images/MarkedGraph/MG-run-last.png[Some logical steps later
+image::images/MarkedGraph/MG-run-last.png[Some logical steps later]
 
 
 === Stop the execution
 
 To stop the execution:
 
-* Select the "Engine view"
+* Select the "Gemoc Engine Status" view
 * Select the engine to stop
 * Click on the red button to actually stop the engine (the left icon
 becomes red)
