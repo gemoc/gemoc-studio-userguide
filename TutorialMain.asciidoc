@@ -12,8 +12,10 @@ endif::[]
 
 // name="../../../..//home/svn/SVN/gemoc/trunk/deliverables/WP1/D1.2.1/icons/IconeGemocStudio_48x48x32"
 
+////
 WARNING: This part is a work in progress and is not yet finished.
 It still contains TODO and must be polished.
+////
 
 
 == Introduction
