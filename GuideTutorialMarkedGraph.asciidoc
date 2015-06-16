@@ -55,7 +55,7 @@ Marked Graph DSML Definition).
 === Import the Marked Graph AS and CS
 
 Download the
-link:MarkedGraph/MarkedGraph/MarkedGraph/org.gemoc.sample.markedgraph.zip[provided
+link:MarkedGraph/org.gemoc.sample.markedgraph.zip[provided
 archive] containing the projects and unzip it.  Then, with the GEMOC
 Studio, select __import... / General / Existing Projects into
 Workspace__ and import all the projects from the archive file.
@@ -620,7 +620,7 @@ image::images/MarkedGraph/MG-run-EclipseApplicationConfig.png[Define the Marked 
 === Import the project with a sample model
 
 Import the modeling project
-link:MarkedGraph/MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
+link:MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
 in the Modeling Workbench (Import / General / Existing project into
 Workspace).  It contains the wikipedia.markedgraph file which corresponds
 to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
