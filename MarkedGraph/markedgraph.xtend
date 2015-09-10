@@ -1,11 +1,11 @@
-package markedgraph
+package markedgraph.aspects
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import markedgraph.MarkedGraph
 import markedgraph.Place
 import markedgraph.Transition
 
-import static extension markedgraph.PlaceAspect.*
+import static extension markedgraph.aspects.PlaceAspect.*
 
 @Aspect(className=MarkedGraph)
 class MarkedGraphAspect {
