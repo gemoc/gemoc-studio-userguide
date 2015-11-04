@@ -708,11 +708,53 @@ To stop the execution:
 becomes red)
 
 
+== Define a MoCCML library
+
+To avoid the ECL file to become too large and to favor capitalization
+and reuse of MoCC elements, it is possible (and encourage) to define
+libraries.  Those libraries looks like the predefined ones that we
+have already used like kernel.lib and CCSL.lib.
+
+=== Define a MoCCML library using CCSL
+
+
+=== Using it in the ECL file
+
+To use this new library, we only have to import it at the beginning of
+the ECL file and the we can use it as kernel.lib and CCSL.lib
+libraries.
+
+Here is the new corresponding file.
+
+[source]
+.The file markedgraph.ecl using the MoCCML library
+----
+include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]
+----
+
+
+
+
+
+== Use constraint automata to define the MoCC
+
+
+Sometimes, it may be easier to define the MoCC using an automata.  For
+example, we can see a place as something on which we can read a token
+(the output transition reads one token) or we can write a token (the
+input transition writes one token).  A token can only be read if there
+is at least one in the place.  Initially, there is as much token in
+the place as in the initial token count of the place.
+
+
+Here is the textual representation of this constraint automata.
+
+
 == To go gurther...
 
 * The DSE part may be defined using a MoCCML library.  It favors reuse of
 MoCC and clarity of ECL file.
-* Rather than using CCSL syntax, it is possible to user constraint automata
+* Rather than using CCSL syntax, it is possible to use constraint automata
 (defined using MoCCML).
 
 
