@@ -3,29 +3,31 @@
 
 == SigPML overview
 
-// This tutorial is avialable in video
+// This tutorial is available in video
 
-The SigPML is a Domain Specific Modeling Language dedicated to data flow processing to create processing flows. 
-The concrete syntax is based on blocks, ports and connectors which associated ports to create a directed flow. 
-The execution semantics of the DSML must defined that all the blocks of a model run concurrently. 
-Each block executes a local processing after a read operation on the input port. 
-A write operation of the blocks on connectors through an output port is done after the local execution. 
-The input and output ports own an admitted rate of data to transmit through the connectors. 
-The connectors have a defined maximum date number. 
-The input and output rates must respect the maximum data number.
+SigPML is a Domain Specific Modeling Language dedicated to data flow processing. 
+The concrete syntax is based on blocks, ports and connectors which associated ports to create directed flows. 
+The DSML execution semantics defines that all the blocks of a model run concurrently regarding constraints on connector synchronization. 
+The tutorial includes two execution semantics with the first one which defines a synchronization of the block execution with the pop and push actions of the connectors.  
+The second one introduces read and write operations in the block semantics to decouple the connector acces. 
 
-// inclure un le resultat final avec un snapshot.
+The final result of the SigPML model execution is showed on the next picture with a purple processing block which is an executing block and the brown block waits for a connector synchronization after its connector acces.  
+
+image:images/quickTutorial/sigpmlexecution.png[Execution of a SigPML model]
+
 
 == Import and install the projects for the abstract and concrete syntax
 
 
 === SigPML abstract syntax
 
-This language is based on the metamodel presented in the next figure.
+This language is based on the Ecore metamodel presented in the next figure.
 
 image:images/quickTutorial/sigpmldomainEcore.png[SigPML metamodel]
 
-A SigPML Application is a set of Blocks and a set of Connectors 
+A SigPML Application is a set of Blocks and a set of Connectors which in relation with the blocks through input and output ports. 
+The Connector concept owns the capacity attribute which defines the maximum number of access on the connector, and the currentSize attribute provides the current acces number on the connector.
+The Port contains the rate attribute which defines the possible access number input and output ports.
 
 === SigPML concrete syntax and sample model
 
@@ -34,99 +36,201 @@ You can also make your own Sirius project and use the online https://wiki.eclips
 
 With the provided project, the final result of the modeling tool is showed in the next figure.
 
-//image:sigpmlModelingEditor.png[SigPML modeling tool]
+image:sigpmlModelEditor.png[SigPML modeling tool]
 
 
 == Creating an xDSML Project
 
 First, start by creating a new xDSML project (__New > Project > GEMOC
-Project / new xDSML Project__), with your desired name (for instance
-"com.example.automata").  In the created project, we can open the
+Project / new xDSML Project__), with your desired name, for instance
+"org.gemoc.sample.xsigpml".  In the created project, we can open the
 project.xdsml file. The xDSML view summarizes all the important
 resources used in an xDSML project (which are part of and managed by
-other projects).  This view is a kind of dashboard or control center to
-have quick access to any important resource of the project.
+other projects).  This view is the top level definition of a xDSML to
+have an access to any other projects include in the definition of our xDSML.
 
 === Open xDSML view
 
-Description of the xDSML view with a snapshot
+A xDSML project definition includes the Domain model definition of our DSML as a classical ecore model, the concrete syntax definition and the behavior definition. 
+The concrete syntax can be textual (based on xtext project)  or graphical (Sirius project). The graphical animation viewpoint is an extension of the graphical textaul syntax (Sirius project). 
+The behavior definition is based on an aspect definition of the DSML domain model for the Domain Specific Action (DSA) as a Kermeta3 project ; and the MoCC defines the concurent semantics of the DSML as a MoCCML project and finaly the definition of the mapping between the DSA and MoCC definitions as the Domain Specific Event (DSE) with a ECL project.
+
+Each of these definitions are based on existing and dedicated projects.
+
+image:images/quickTutorial/sigpml/xDSMLProjectWindow.jpg[xDSML wizard with all the constituents]
+
+
 
 
 === Select the domain model
 
+You can select an existing domain model to reference the Ecore model as the DSML abstract syntax.
+You must specify the root element of you domain model.
+
+
+image:images/quickTutorial/sigpml/selectDomainModel.jpg[Domain model selection]
+[[img-domainModelSelect]]
+.Domain model selection
+
+
+Or you can create an Ecore project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmldomain.ecore[Ecore file].
+
 === Select the graphical editor
 
+You can select an existing graphical editor model to reference the Sirius project as the graphical  syntax of your DSML.
+
+
+image:images/quickTutorial/sigpml/selectGraphicalEditor.jpg[Sirius Graphical model selection]
+[[]]
+.Sirius Graphical model selection
+
+Or you can create a Sirius project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmlTuto.odesign[The odesign file].
 
 
 == SigPML execution semantics
 
+
 === Execution semantics overview
 
-The execution semantics of the DSML must defined that all the blocks of a model run concurrently. 
-Each block executes a local processing after a read operation on the input port. 
-A write operation of the blocks on connectors through an output port is done after the local execution. 
-The input and output ports own an admitted rate of data to transmit through the connectors. 
-The connectors have a defined maximum date number. 
-The input and output rates must respect the maximum data number.
+The execution semantics of the DSML must define that all the model blocks run concurrently.
+The block execution is constrained by the access on the connectors associated with the the block through input and output ports.
+So an execute function of the blocks is synchronized on the connector functions, pop (from the connector connected through the input port on the block) and push (from the connector connected through the output port on the block).
+A connector has a capacity defining the maximum number of available operations (pop and push). Virtually, pop reads data from the connector and push writes data in the connector.
+The rate to read and write in the connector is defined as an attribute of the ports.
 
 So we must define:
+- the Execution Data (ED) and Execution Function (EF) into the DSA definition
+- the MoCC with a MoCCML model
+- the mapping between the MoCC and the DSA (ED and EF)
 
-// phrases structurées pour préparer la suite 1) DSA 2) MoCC 3) DSE
 
 
 === DSA definition
 
-ED et EF general overview and the definition related to SigPML (ED = Rate ; EF = read and write)
+The DSA definition includes two steps :
+- adding Execution Data and Execution Function in the Ecore model.
+- creating aspects to weave with the Ecore model in Kermeta3
+
+==== Extending the Ecore definition
+
+So first, Execution Data and Execution Function definitions are added to the domain model of SigPMLTuto ecore file. We extend the SigPML metamodel by adding one function _execute()_ in the _Block_ class and the functions _push()_ and _pop()_ in _Connector_ class. These functions are added with the Ecore reflexive editor.
+
+image:images/quickTutorial/sigpml/EF_InEcoreDomainModel.png[Execution Function in the SigPML metamodel]
+
 
 ==== Creating the DSA project
+
+The creation of the DSA project is New->Other->Kermeta3->K3 project->give the name->next->select "Create a plugin using one the templates"->choose "User Ecore Basic Aspects"->fill in allthe requested names and select the Ecore domain model.
+
+The resulted DSA project is a k3dsa project with a sigpmlAspects.xtend file in the package _org.gemoc.sample.xsigpml.k3dsa_.
+This file contains the aspects that we want to add to the necessary classes in our case _Block_ and _Connector_.
+
+image:images/quickTutorial/sigpml/resultedDSAProject.png[DSA project and associated aspect file]
+
 
 
 ==== Implementation of the DSA
 
+In this tutorial, the implementation of the functions is simple. The _execute_ function increments the _currentExecCycle_ of a block until its value is inferior to the _cycles_ value.
+
+The source code is available through 
+link:tutorialfiles/quickTutorial/sigpml/sigpmlAspects.xtend[Kermeta 3 aspects]
+and showed below
 [source]
-----
-the source code with an include or not.
-//include::sigpmlTuto.xtend[]
-----
+---------------------
+include::tutorialfiles/quickTutorial/sigpmlAspects.xtend[source code of the Kermeta 3 aspects]
+---------------------
 
 
 === DSE definition
 
-WARNING: The two next sections DES definition and MoCC definition are tighly coupled. So you can create the two projects and iterate between the two projects in progress.
+The DSE definition is related to declare the Domain Specific Events which define the event interface of our language. 
 
-
-// ECL definition due to tthe presence of this name in the xDSML view
+The two next sections ECL and MoCC definitions are tightly coupled. So you can create the two projects and iterate between the two projects in progress.
 
 ==== Creating the ECL project
+
+From the xDSML project, we select the associated wizard of the DSE definition that helps to create an ECL project (Event Constraint Language). After you give a name on your project->next->(you must have a reference on your Ecore domain file)->finish
+
+image:images/quickTutorial/sigpml/createECLProject.png[ECL project creation]
+.ECL project creation
+
 
 
 ==== Implementation of the ECL
 
 // bien separer les ED, les defs de MoCC event sur EF
 // def des Inv par classe avec l'appel aux library de MoCC
+An ECL program defines the mapping between the domain model, including ED and EF, and the MoCC definition of the next section.
+In this program, you declare the metaclasses that you want to select ED or EF, and associating them with a MoCC definition.   
+
+A metaclass is referenced as _Context_ and in this scope we define an event relative to the EF and also invariants that must be satisfied in the context of the metaclasse.
+
+In this tutorial, two contexts are declared for the metaclasses _Block_ and _Connector_. 
+In the context of _Block_ an event _execute_ is defined relative to the execution function of the same name in the _Block_ metaclasse.
+In the context of _Connector_, an invariant is declared based on the call of a relation declaration. The arguments of this relation are associated to the attributes of the metaclasses _Connector_ and also we can access by navigation expression to the others _Ports_ (for the _rate_ attribute) and _Block_ (for the execute EF).
+
+This relation is defined in the MoCCML program of the next section.
+
+The source code is available through 
+link:tutorialfiles/quickTutorial/sigpml/xSigpml.ecl[the ECL program]
+and showed below
 
 [source]
-----
-the source code with an include or not.
-//include::sigpmlTuto.ecl[]
-----
+---------------------
+include::tutorialfiles/quickTutorial/xSigpml.ecl[source code of the ecl program]
+---------------------
+
 
 
 === MoCCML definition
 
 ==== Creating the MoCCML project
 
+From the xDSML project, we select the associated wizard of the MoCC definition that helps to create the moCCML project. Fill the name of the project->next->fill the name of the file->finish
 
+image:images/quickTutorial/sigpml/MoCCProjectCreation.png[MoCCML project creation]
+.MoCCML project creation
+
+In the resulting project, we have a directory _mocc_ with the _MoCCML_ file.
 
 ==== Implementation of the MoCCML
 
+In the MoCCML program, we define the constraint relation referenced in the ECL program (in our case, the _ConnectorSDF_PAM_ relation). This relation is based on an automaton definition.
+
+This automaton describes how the events and variables are used to define a constraint automaton relative to each instance of the _Connector_ class.
+
+The source code is available through 
+link:tutorialfiles/quickTutorial/sigpml/xSigpml.moccml[the MoCCML program]
+and showed below
+[source]
+---------------------
+include::tutorialfiles/quickTutorial/xSigpml.moccml[source code of the MocCCML program]
+---------------------
+
+At the end of this step the SigPML language is completely in terms of the metamodel, the graphical syntax, the behavior code of the functions, the expression of the concurrent semantics and the mapping them.
+
+The last step is to define the animation view of the models as a debug extension of the graphical syntax.  
 
 === Create an animator
 
 ==== Creating the Animator project as a Sirius viewpoint
 
-// fournir le aird à télécharger pour aller plus vite et plus simple dans le tuto. mais pas le projet pour obliger à la créer
+As the section dedicated to the graphical syntax, the animator is defined as a Sirius viewpoint based on  
+link:tutorialfiles/quickTutorial/sigpml/xSigpmlAnim.odesign[the odesign file]
 
+In this file, we define the viewpoint as an extension of the _odesign_ file of the graphical syntax and modify the graphical shape of the blocks when the _currentExecCycle_ variable is incremented. The expression _[ self.eGet('currentExecCycle') > 0 /]_ is declared to customize the graphical shape of the blocks.
+
+
+We create an animation project through the xDSML definition.
+image:images/quickTutorial/sigpml/AnimationProjectCreation.png[Animation project creation]
+.Animation project creation
+
+We select the _Add a debug layer to an existing diagram description_->next->select the SigPMLAppliDiagram->next->select the name of the Debug layer->finish.
+We can replace the _odesign_ file by the provided one.
+
+
+For now the language is totatly defined and executable, so we can used the SigPML Language !!
 
 
 == SigPML modeling workbench
