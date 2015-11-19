@@ -26,7 +26,7 @@ markedgraph.ecl: markedgraph-modele.ecl
 	${call COPY_command,$@,$<,xcfiltre -MoCCML +ECL_ONLY -MoCCLIB}
 
 markedgraph-library.ecl: markedgraph-modele.ecl
-	${call COPY_command,$@,$<,xcfiltre -MoCCML -ECL_ONLY +MoCCLIB}
+	${call COPY_command,$@,$<,xcfiltre +MoCCML -ECL_ONLY}
 
 #markedgraph.ecl: ${MARKEDGRAPH_PREFIX}.dse/ecl/markedgraph.ecl
 #	cp $< $@

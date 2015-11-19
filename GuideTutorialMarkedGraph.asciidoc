@@ -103,7 +103,8 @@ Syntax (CS).
 === Create an xDSML Project
 
 Select an xDSML project (__New > Project > GEMOC
-Project / new xDSML Project__).
+Project / new GEMOC Concurrent xDSML Project__).
+You can also select __New ... / GEMOC Concurrent xDSML Project__.
 
 .Create an xDSML Project
 image::images/MarkedGraph/MG-SelectGemocLanguageProject.png[Create an xDSML Project, 800]
@@ -143,7 +144,7 @@ In the "Domain Model" section, click on the "Browse" button to select
 the project defining the AS: org.gemoc.sample.markedgraph.model.
 
 .Browse to select the AS project
-image::images/MarkedGraph/MG-XDSML-EMF-browse.png[Browse to select the AS project, 800]
+image::images/MarkedGraph/MG-XDSML-EMF-Browse.png[Browse to select the AS project, 800]
 
 Then, select the "Genmodel URI".
 
@@ -262,7 +263,7 @@ replaced with the link:images/MarkedGraph/files/markedgraph.xtend[following text
 
 [source]
 ----
-include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
+include::images/MarkedGraph/files/markedgraph.xtend[DSA defined using K3]
 ----
 
 
@@ -306,9 +307,9 @@ __project.xdsml__ editor ("Behavior definition / DSE definition").
 .Create a DSE Project
 image::images/MarkedGraph/MG-DSE-Create.png[Create a DSE Project, 800]
 
+* Click "Next".  All fields have been correctly initialized.
 * Click "finish" and the project is created.
-* Click on "ECL Project" to edit the "markedgraph.ecl" file and replace
-its content with the following:
+* Click on "ECL Project" to view the "markedgraph.ecl".
 
 .Template of the ECL file
 image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file, 800]
@@ -317,13 +318,13 @@ image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file, 800]
 ==== Define DSE
 
 Replace the content of the ECL file with the
-link:images/MarkedGraph/files/markedgraph.ecl[following code] (explanations on this code are
-given bellow):
+link:images/MarkedGraph/files/markedgraph.ecl[following code] (explanations on
+this code are given bellow):
 
 [source]
 .The file markedgraph.ecl
 ----
-include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
+include::images/MarkedGraph/files/markedgraph.ecl[Definition of the MoCC]
 ----
 
 
@@ -340,7 +341,7 @@ For Marked Graph xDSML, we identify 2 DSE:
     - fireIt: defined in the context of a Transition
     - initIt: defined in the context of a MarkedGraph
 
-2. Then, it links them to EF form DSA --- when a DSE will occurs the
+2. Then, it links them to EF from DSA --- when a DSE will occur the
 associated EF will be executed.
 
     - fireIt is linked to the EF 'fire' of Transition
@@ -449,7 +450,7 @@ animation of a Marked Graph model.
 Tun the wizard with __New > Other / Create GEMOC debug representation__.
 
 .Create GEMOC debug representation wizard
-image::images/MarkedGraph/MG-animation-launch-wizard.png[Create GEMOC debug representation wizard]
+image::images/MarkedGraph/MG-animation-wizard-launch.png[Create GEMOC debug representation wizard]
 
 On the first screen of the wizad, select "Extends an existing diagram
 description".
@@ -502,7 +503,7 @@ __org.gemoc.sample.markedgraph.design__ project
 ==== Add markedgraph.ecore to the metamodels
 
 * Select "Diagram Extension MarkedGraph" element.
-* In the properties view, select __metamodels__.
+* In the __Properties__ view, select __metamodels__.
 * Click on "Add from workspace".
 * Select "markedgraph.ecore" (unfold the project structure)
 * Click OK
@@ -565,10 +566,10 @@ Property Customization (by selection)"
 
 ==== Set the background color of a place to light_yellow
 
-Perform the same action as above to set the background color of place to
+Perform the same action as above to set the background color of places to
 yellow.
 
-// FIXEM : how to select thr right (ellipse white)?
+// FIXEME: how to select the right (ellipse white)?
 
 ==== Display the runtime token count in a place
 
@@ -589,7 +590,7 @@ Extension".
 
 In the project, __org.gemoc.sample.markedgraph.animation__ project, in
 src/org.gemoc.sample.markedgraph.animation.services, copy the
-MarkedgraphDebugServices.java class to
+MarkedgraphDebugServices.java file to
 MarkedgraphAnimationServices.java.  Then, change
 AbstractGemocDebuggerServices to AbstractGemocAnimatorServices in its
 source code (two times: import and extends).  Finally, change "Debug" to
@@ -633,14 +634,14 @@ to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
 === Create a Launch Configuration
 
 * Select __Debug / Debug Configurations__
-* Double click on "Gemoc eXecutable Model"
+* Double click on "Gemoc Concurrent eXecutable Model"
 * Change the name of the new configuration to "run wikipedia example"
 * Browse to select the model to run (wikipedia.markedgraph)
 * Select its language (xDSML field): markedgraph
 * Browse to select the animator
 * Check that the "Decider" is set to "Step by step user decider" (the user
   will decide which well be the next step to execute).
-* Click on Run
+* Click on "Debug"
 
 .Define the configuration to run the wikipedia example
 image::images/MarkedGraph/MG-run-WikipediaConfig.png[Define the configuration to run the wikipedia example]
@@ -710,12 +711,24 @@ becomes red)
 
 == Define a MoCCML library
 
-To avoid the ECL file to become too large and to favor capitalization
-and reuse of MoCC elements, it is possible (and encourage) to define
-libraries.  Those libraries looks like the predefined ones that we
-have already used like kernel.lib and CCSL.lib.
+To improve readability of the ECL file and also to favor capitalization and
+reuse of MoCC elements, it is possible (and encouraged) to define libraries.
+Those libraries looks like the predefined ones that we have already used like
+kernel.lib and CCSL.lib.
 
 === Define a MoCCML library using CCSL
+
+Using the GEMOC Studio, we start by defining a MoCCML project.  In the xDSML
+view, we select __Behavioral definition / MoCC definition library__ to create
+this new project.
+
+We can then define in this project the following link:images/MarkedGraph/files/markedgraph.ccslLib[markedgraph.ccslLib] file. TODO: To be corrected.
+
+[source]
+.The file markedgraph.ccslLib defining a MoCCML library
+----
+include::images/MarkedGraph/files/markedgraph.ccslLib[Definition of a MoCCML library]
+----
 
 
 === Using it in the ECL file
@@ -724,12 +737,12 @@ To use this new library, we only have to import it at the beginning of
 the ECL file and the we can use it as kernel.lib and CCSL.lib
 libraries.
 
-Here is the new corresponding file.
+Here is the new ECL file.
 
 [source]
 .The file markedgraph.ecl using the MoCCML library
 ----
-include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]
+include::images/MarkedGraph/files/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]
 ----
 
 
@@ -739,23 +752,52 @@ include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCC
 == Use constraint automata to define the MoCC
 
 
-Sometimes, it may be easier to define the MoCC using an automata.  For
+Sometimes, it may be easier to define the MoCC using automata.  For
 example, we can see a place as something on which we can read a token
-(the output transition reads one token) or we can write a token (the
+(ont output transition reads one token) or we can write a token (one
 input transition writes one token).  A token can only be read if there
 is at least one in the place.  Initially, there is as much token in
 the place as in the initial token count of the place.
 
+=== Define the constraint automaton using MoCCML editor
+
+For explanations on how to use the MoCCML editor, please refer to the GEMOC
+manual. TODO: provide the URL to it.
+
+We first define the declaration of a relation (placeReadWriteDef).  Here after
+is its graphical representation.  This relation is parameterized by the r clock (some one how wants to read a token), the w clock (someone how wants to write a token, and n the initial count of token in the place).
+
+.Graphical declaration of the placeReadWriteDef relation
+image::images/MarkedGraph/MoCCML-diagram.png[Graphical definition of a relation]
+
+Then we can define this relation. Here after is the resulting automaton. The
+local variable count represent the number of tokens in this place.  s0 is the
+initial state. The action on the transition from s0 to s initialize count with
+n (the parameter).  The two reflexive transitions on s explain what happens
+when w or r occurs.  The write transition is fired when w occurs and  a token is assed in the place (count is incremented). The read transition is fired when r occurs.  It removes a token and thus decrements count. 
+A guard prevents the read transition to be fired if there is not at liste one token in the place (count >= one).
+
+.Automaton defining the placeReadWriteDef relation.
+image::images/MarkedGraph/MoCCML-automata.png[Automaton defining the placeReadWriteDef relation]
+
+
 
 Here is the textual representation of this constraint automata.
 
+[source]
+.Textual representation of the constraint automata.
+----
+include::images/MarkedGraph/files/markedgraph.moccml[Textual representation of the constraint automata]
+----
 
-== To go gurther...
 
-* The DSE part may be defined using a MoCCML library.  It favors reuse of
-MoCC and clarity of ECL file.
-* Rather than using CCSL syntax, it is possible to use constraint automata
-(defined using MoCCML).
+
+
+////
+== To go further...
+
+////
+
 
 
 ////

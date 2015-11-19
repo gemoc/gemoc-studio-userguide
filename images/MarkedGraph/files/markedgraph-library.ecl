@@ -2,17 +2,20 @@ import 'platform:/resource/org.gemoc.sample.markedgraph.model/model/markedgraph.
 
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
+ECLimport "platform:/resource/org.gemoc.sample.markedgraph.mocc/mocc/markedgraph.moccml"
 
 package markedgraph
 
 	context MarkedGraph
 		def: initIt: Event = self.initialize()
-	
+
 	context Transition
 		def: fireIt: Event = self.fire()
-	
-	context Place	
-	-- TODO !
+
+	context Place
+		inv placeReadAndWrite:
+			let delay: Integer = self.tokenCount in
+				Relation placeReadWrite(self.input.fireIt, self.input.fireIt, delay)
 
 	context MarkedGraph
         inv initFirst:
@@ -26,4 +29,3 @@ package markedgraph
                 Relation Coincides(self.initIt, firstInit2)
 
 endpackage
-

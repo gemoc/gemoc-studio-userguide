@@ -2,9 +2,10 @@ all: html
 	#(cd fig && make) &&
 
 init:
-	(cd MarkedGraph; make generes)
+	# (cd MarkedGraph; make generes)
 
-html: Tutorial_Automata-generated.html GuideTutorialMarkedGraph-generated.html
+# html: Tutorial_Automata-generated.html GuideTutorialMarkedGraph-generated.html
+html: GuideTutorialMarkedGraph-generated.html
 
 GuideTutorialMarkedGraph-generated.asciidoc: GuideTutorialMarkedGraph.asciidoc init
 	cat $<	\

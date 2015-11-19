@@ -7,11 +7,11 @@ package markedgraph
 
 	context MarkedGraph
 		def: initIt: Event = self.initialize()
-	
+
 	context Transition
 		def: fireIt: Event = self.fire()
-	
-	context Place	
+
+	context Place
 		inv tokenCountIsNull:
 			(self.tokenCount = 0) implies
 				(Relation Precedes(self.input.fireIt, self.output.fireIt))
@@ -34,4 +34,3 @@ package markedgraph
                 Relation Coincides(self.initIt, firstInit2)
 
 endpackage
-

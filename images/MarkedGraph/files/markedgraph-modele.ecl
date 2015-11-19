@@ -10,19 +10,16 @@ package markedgraph
 
 	context MarkedGraph
 		def: initIt: Event = self.initialize()
-	
+
 	context Transition
 		def: fireIt: Event = self.fire()
-	
-	context Place	
+
+	context Place
 // MoCCML START DELETE
 		inv placeReadAndWrite:
 			let delay: Integer = self.tokenCount in
-				Relation placeReadWrite(self.input.fireIt, self.output.fireIt, delay)
+				Relation placeReadWrite(self.input.fireIt, self.input.fireIt, delay)
 // MoCCML STOP DELETE
-// MoCCLIB START DELETE
-	-- TODO !
-// MoCCLIB STOP DELETE
 // ECL_ONLY START DELETE
 		inv tokenCountIsNull:
 			(self.tokenCount = 0) implies
@@ -47,4 +44,3 @@ package markedgraph
                 Relation Coincides(self.initIt, firstInit2)
 
 endpackage
-
