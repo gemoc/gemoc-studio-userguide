@@ -55,7 +55,7 @@ Marked Graph DSML Definition).
 === Import the Marked Graph AS and CS
 
 Download the
-link:images/MarkedGraph/files/org.gemoc.sample.markedgraph.zip[provided
+link:MarkedGraph/org.gemoc.sample.markedgraph.zip[provided
 archive] containing the projects and unzip it.  Then, with the GEMOC
 Studio, select __import... / General / Existing Projects into
 Workspace__ and import all the projects from the archive file.
@@ -259,11 +259,11 @@ image::images/MarkedGraph/MG-K3-Create.png[Create a K3 Project, 800]
 
 Click again on _K3 project_ to open __markedgraph.xtend__.  It
 has been initialized with a template that can be discarded and
-replaced with the link:images/MarkedGraph/files/markedgraph.xtend[following text].
+replaced with the link:MarkedGraph/markedgraph.xtend[following text].
 
 [source]
 ----
-include::images/MarkedGraph/files/markedgraph.xtend[DSA defined using K3]
+include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 ----
 
 
@@ -318,13 +318,13 @@ image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file, 800]
 ==== Define DSE
 
 Replace the content of the ECL file with the
-link:images/MarkedGraph/files/markedgraph.ecl[following code] (explanations on
+link:MarkedGraph/markedgraph.ecl[following code] (explanations on
 this code are given bellow):
 
 [source]
 .The file markedgraph.ecl
 ----
-include::images/MarkedGraph/files/markedgraph.ecl[Definition of the MoCC]
+include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
 ----
 
 
@@ -621,7 +621,7 @@ image::images/MarkedGraph/MG-run-EclipseApplicationConfig.png[Define the Marked 
 === Import the project with a sample model
 
 Import the modeling project
-link:images/MarkedGraph/files/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
+link:MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
 in the Modeling Workbench (Import / General / Existing project into
 Workspace).  It contains the wikipedia.markedgraph file which corresponds
 to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
@@ -722,12 +722,12 @@ Using the GEMOC Studio, we start by defining a MoCCML project.  In the xDSML
 view, we select __Behavioral definition / MoCC definition library__ to create
 this new project.
 
-We can then define in this project the following link:images/MarkedGraph/files/markedgraph.ccslLib[markedgraph.ccslLib] file. TODO: To be corrected.
+We can then define in this project the following link:MarkedGraph/markedgraph.ccslLib[markedgraph.ccslLib] file. TODO: To be corrected.
 
 [source]
 .The file markedgraph.ccslLib defining a MoCCML library
 ----
-include::images/MarkedGraph/files/markedgraph.ccslLib[Definition of a MoCCML library]
+include::MarkedGraph/markedgraph.ccslLib[Definition of a MoCCML library]
 ----
 
 
@@ -742,7 +742,7 @@ Here is the new ECL file.
 [source]
 .The file markedgraph.ecl using the MoCCML library
 ----
-include::images/MarkedGraph/files/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]
+include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]
 ----
 
 
@@ -787,7 +787,7 @@ Here is the textual representation of this constraint automata.
 [source]
 .Textual representation of the constraint automata.
 ----
-include::images/MarkedGraph/files/markedgraph.moccml[Textual representation of the constraint automata]
+include::MarkedGraph/markedgraph.moccml[Textual representation of the constraint automata]
 ----
 
 
