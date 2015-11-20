@@ -1,5 +1,5 @@
 [[section-define-AS-project]]
-=== Domain Model Project
+=== Defining a Domain Model Project
 
 ==== Purpose
 The Domain Model Project specifies the concepts of the domain at hand and the structural relations between the concepts.
