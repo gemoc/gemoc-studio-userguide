@@ -5,6 +5,42 @@
 
 The *((GEMOC Language Workbench))* is intended to be used by the ((Language Designer))s and the ((Language Integrator))s. It provides the tools to create and compose eXecutable Domain-Specific Modeling Languages (xDSMLs) using the GEMOC approach.
 
+// Added from TutorialMain by XC
+
+The Gemoc approach aims to add execution semantics on an existing DSML
+definition.  It consists in extending the abstract syntax (metamodel) of a DSML
+with several concerns:
+
+* the **DSA** --Domain Specific Actions-- defines the data dedicated to the
+  runtime updates (Execution Data -- ED) and the functions to handle these
+  datas (Execution Functions -- EF). DSA and DSML abstract syntax define the
+  extended asbstract syntax. 
+
+* the **MoCC** (Model of Concurrency and Communication) which includes the
+  mapping definition on the extended abstract syntax and the schedule
+  constraints of the semantics definition. 
+
+* the **DSE** (Domain Specific Event): a two-way protocole between the DSA and
+  the MoCC.
+
+* the **animator** which provides views to control and monitor the execution of
+  the models conforming to the xDSML.
+
+The next figure gives an overview of the requested definitions to obtain an
+xDSML.
+
+// TODO: à garder mais à aligner sur celle de Benoit
+//[[Focus-Tutorial]]
+
+[[figure-gemoc-bigPicture]]
+.Gemoc overview and tutorial focus.
+image::images/gemoc_bigPicture.jpg[Gemoc overview, 800]
+(((GEMOC Big Picture)))
+
+
+
+
+
 [[figure-glw-screenshot-of-language_workbench]]
 .Screenshot of the GEMOC Language Workbench showing the design of a Timed Finite State Machine (TFSM) example.
 image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench, 800]
