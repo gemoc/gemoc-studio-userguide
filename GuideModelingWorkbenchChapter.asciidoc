@@ -1,5 +1,5 @@
 [[chapter-gemoc-modeling-workbench]]
-== GEMOC Modeling workbench
+== GEMOC Modeling workbench image:images/icons/IconeGemocModel_16.png[width=16, height=16, role=right]
 
 === Modeling workbench overview
 
