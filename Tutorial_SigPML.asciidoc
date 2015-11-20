@@ -13,7 +13,7 @@ The second one introduces read and write operations in the block semantics to de
 
 The final result of the SigPML model execution is showed on the next picture with a purple processing block which is an executing block and the brown block waits for a connector synchronization after its connector acces.  
 
-image:images/quickTutorial/sigpmlexecution.png[Execution of a SigPML model]
+image:images/quickTutorial/sigpml/OverviewExecuteSigpmlModelWithVCD.png[Execution of a SigPML model]
 
 
 == Import and install the projects for the abstract and concrete syntax
@@ -23,7 +23,7 @@ image:images/quickTutorial/sigpmlexecution.png[Execution of a SigPML model]
 
 This language is based on the Ecore metamodel presented in the next figure.
 
-image:images/quickTutorial/sigpmldomainEcore.png[SigPML metamodel]
+image:images/quickTutorial/sigpml/sigpmldomainEcore.png[SigPML metamodel]
 
 A SigPML Application is a set of Blocks and a set of Connectors which in relation with the blocks through input and output ports. 
 The Connector concept owns the capacity attribute which defines the maximum number of access on the connector, and the currentSize attribute provides the current acces number on the connector.
@@ -36,8 +36,8 @@ You can also make your own Sirius project and use the online https://wiki.eclips
 
 With the provided project, the final result of the modeling tool is showed in the next figure.
 
-image:sigpmlModelEditor.png[SigPML modeling tool]
-
+.SigPML final animation modeling tool
+image:images/quickTutorial/sigpml/sigpmlModelEditor.png[SigPML modeling tool]
 
 == Creating an xDSML Project
 
@@ -57,6 +57,7 @@ The behavior definition is based on an aspect definition of the DSML domain mode
 
 Each of these definitions are based on existing and dedicated projects.
 
+.xDSML wizard definition
 image:images/quickTutorial/sigpml/xDSMLProjectWindow.jpg[xDSML wizard with all the constituents]
 
 
@@ -68,9 +69,9 @@ You can select an existing domain model to reference the Ecore model as the DSML
 You must specify the root element of you domain model.
 
 
-image:images/quickTutorial/sigpml/selectDomainModel.jpg[Domain model selection]
 [[img-domainModelSelect]]
 .Domain model selection
+image:images/quickTutorial/sigpml/selectDomainModel.jpg[Domain model selection]
 
 
 Or you can create an Ecore project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmldomain.ecore[Ecore file].
@@ -80,9 +81,9 @@ Or you can create an Ecore project with the provided link:tutorialfiles/quickTut
 You can select an existing graphical editor model to reference the Sirius project as the graphical  syntax of your DSML.
 
 
-image:images/quickTutorial/sigpml/selectGraphicalEditor.jpg[Sirius Graphical model selection]
-[[]]
 .Sirius Graphical model selection
+image:images/quickTutorial/sigpml/selectGraphicalEditor.jpg[Sirius Graphical model selection]
+
 
 Or you can create a Sirius project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmlTuto.odesign[The odesign file].
 
@@ -115,6 +116,7 @@ The DSA definition includes two steps :
 
 So first, Execution Data and Execution Function definitions are added to the domain model of SigPMLTuto ecore file. We extend the SigPML metamodel by adding one function _execute()_ in the _Block_ class and the functions _push()_ and _pop()_ in _Connector_ class. These functions are added with the Ecore reflexive editor.
 
+.Execution Function in the SigPML metamodel
 image:images/quickTutorial/sigpml/EF_InEcoreDomainModel.png[Execution Function in the SigPML metamodel]
 
 
@@ -134,7 +136,7 @@ image:images/quickTutorial/sigpml/resultedDSAProject.png[DSA project and associa
 In this tutorial, the implementation of the functions is simple. The _execute_ function increments the _currentExecCycle_ of a block until its value is inferior to the _cycles_ value.
 
 The source code is available through 
-link:tutorialfiles/quickTutorial/sigpml/sigpmlAspects.xtend[Kermeta 3 aspects]
+link:tutorialfiles/quickTutorial/sigpml/sigpmlAspects.xtend[Kermeta 3 aspects,tabsize=4]
 and showed below
 [source]
 ---------------------
@@ -152,8 +154,8 @@ The two next sections ECL and MoCC definitions are tightly coupled. So you can c
 
 From the xDSML project, we select the associated wizard of the DSE definition that helps to create an ECL project (Event Constraint Language). After you give a name on your project->next->(you must have a reference on your Ecore domain file)->finish
 
-image:images/quickTutorial/sigpml/createECLProject.png[ECL project creation]
 .ECL project creation
+image:images/quickTutorial/sigpml/createECLProject.png[ECL project creation]
 
 
 
@@ -189,8 +191,8 @@ include::tutorialfiles/quickTutorial/xSigpml.ecl[source code of the ecl program]
 
 From the xDSML project, we select the associated wizard of the MoCC definition that helps to create the moCCML project. Fill the name of the project->next->fill the name of the file->finish
 
-image:images/quickTutorial/sigpml/MoCCProjectCreation.png[MoCCML project creation]
 .MoCCML project creation
+image:images/quickTutorial/sigpml/MoCCProjectCreation.png[MoCCML project creation]
 
 In the resulting project, we have a directory _mocc_ with the _MoCCML_ file.
 
@@ -223,8 +225,9 @@ In this file, we define the viewpoint as an extension of the _odesign_ file of t
 
 
 We create an animation project through the xDSML definition.
-image:images/quickTutorial/sigpml/AnimationProjectCreation.png[Animation project creation]
+
 .Animation project creation
+image:images/quickTutorial/sigpml/AnimationProjectCreation.png["Animation project creation",scaledwidth="75%"]
 
 We select the _Add a debug layer to an existing diagram description_->next->select the SigPMLAppliDiagram->next->select the name of the Debug layer->finish.
 We can replace the _odesign_ file by the provided one.
@@ -235,17 +238,93 @@ For now the language is totatly defined and executable, so we can used the SigPM
 
 == SigPML modeling workbench
 
+From the language workbench, the Sigpml modeling workbench can be used to create a model and execute it.
+
 === Launch the Modeling workbench creation (Start a new Eclipse)
+
+To launch the modeling workbench dedicated to the Sigpml language, we create an eclipse apllication configuration to run the gemocstudio associated with the xDSML definition. 
+The current parameters are set conforming to the parameters of the next picture. 
+
+.Modeling Workbench launching
+image:images/quickTutorial/sigpml/CreateModelingWorkbench.png[Modeling Workbench launching,scaledwidth="75%"]
+
+
+To obtain modeling workbench adequate performances, we set the VM parameters in the _Arguments_ tab to    
+[source]
+---------------------
+-Xmx3000m
+-Xms3000m
+---------------------
 
 === Import the project with a sample model
 
-=== Create a launch configuration
+First you create a sigpml model or you can install the given model in an eclipse project  
+link:tutorialfiles/quickTutorial/sigpml/SigpmlModelingTuto.zip[The modeling project].
+
+=== Create a debug launch configuration
+
+To execute a model, we create a debug configuration and set the parameters conforming to the picture <<debugLaunching>>. 
+
+[[debugLaunching]]
+.The debug launching configuration
+image:images/quickTutorial/sigpml/DebugLaunchingConfiguration.png[The debug launching configuration]
+
+
+In this configuration, we select the step by step execution with user selection for the next logical step.  
 
 === Start the model
 
+When the model is executing, the overview of the modeling workbench is presented in the next picture. 
+
+.The executed Sigpml model
+image:images/quickTutorial/sigpml/OverviewExecuteSigpmlModel.png[The executed Sigpml model]
+
+
+The views are extended with the VCD view which presents all the clocks define in the MoccML model with a tick clock during the logical steps. 
+
+.The Sigpml model with a VCD view
+image:images/quickTutorial/sigpml/OverviewExecuteSigpmlModelWithVCD.png[The Sigpml model with a VCD view]
+
+
+
+The sigpml model is edited in the model editor and we can select model elements and change the model element properties. 
+
+.The Sigpml model element properties
+image:images/quickTutorial/sigpml/SigpmlModelProperties.png[The Sigpml model element properties]
+
+
 === Select a logical step
 
-== Remarks
+To start the execution of the model, we select a logical step to execute the model in the _Concurrent Logical Steps Decider_ in the upper right window. The logical step contains the event _MSE\_B1\_execute_ so to select this event the Mocml model activates the _execute_ function of the Block _B1_. So the animation view of the model is updated due to the expression defines in the animation viewpoint. 
+
+.Start the Sigpml model
+image:images/quickTutorial/sigpml/StartExecutionFirstLogicalStep.png[Start the Sigpml model]
+
+
+After, we select again the logical steps to execute and the model progesses and the exection trace is visualized in the timeline view.  
+.The Sigpml model trace timeline
+image:images/quickTutorial/sigpml/ExecutionTraceTimeline.png[The Sigpml model trace timeline]
+
+
+
+=== Select a logical step in the past 
+
+We can select a logical step from the past in the timeline, to retstart the execution from this logical step.
+In this case, a branch appears in the timeline view and we continue the logical step selection. 
+.Timeline branches after backwards
+image:images/quickTutorial/sigpml/TimelineBranches.png[Timeline branches after backwards]
+
+
+=== Stop the animation
+
+To stop the animation, we select the red button in the _Gemoc engines status_ view or in the _Concurrent Logical Steps Decider_.
+
+
+=== This is the end
+
+At this step, we have described all the basic possibilities of the Gemoc studio on this tutorial.
+
+
 
 
 
