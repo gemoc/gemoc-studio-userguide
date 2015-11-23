@@ -1,4 +1,4 @@
-= GEMOC Studio Documentation
+= GEMOC Studio User Guide
 :doctype: book
 :toc:
 :numbered:
