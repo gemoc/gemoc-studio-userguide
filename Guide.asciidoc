@@ -138,7 +138,9 @@ include::GuideModelingWorkbenchChapter.asciidoc[]
 // Push titles down one level.
 :leveloffset: 1
 
+////////////////////////////////////////////////////////////////
 include::GuideTutorialMarkedGraph.asciidoc[]
+////////////////////////////////////////////////////////////////
 
 // Return to normal title levels.
 :leveloffset: 0
