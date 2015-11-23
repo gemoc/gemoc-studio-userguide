@@ -286,6 +286,35 @@
 								</copy>
 							</preProcess>
 						</configuration>
+					</execution>					
+					<execution>
+						<id>tutorial-markedgraph-multi-page-eclipse</id>
+						<goals>
+							<goal>generate-eclipse</goal>
+						</goals>
+						<configuration>
+							<chunkedOutput>true</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<xincludeSupported>true</xincludeSupported>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/</targetDirectory>
+							<includes>GuideTutorialMarkedGraph.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/images">
+									<fileset dir="./images" />
+								</copy>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/MarkedGraph">
+									<fileset dir="./MarkedGraph" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+						<phase>generate-resources</phase>
 					</execution>
 					<!-- ************************************** -->
 				    <!-- GENERATION OF THE AUTOMATA TUTORIAL -->
@@ -392,6 +421,32 @@
 								</copy>
 							</preProcess>
 						</configuration>
+					</execution>
+					<execution>
+						<id>tutorial-sigpml-multi-page-eclipse</id>
+						<goals>
+							<goal>generate-eclipse</goal>
+						</goals>
+						<configuration>
+							<chunkedOutput>true</chunkedOutput>
+							<highlightSource>true</highlightSource>
+							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<xincludeSupported>true</xincludeSupported>
+							<base.dir></base.dir>
+							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
+							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/</targetDirectory>
+							<includes>Tutorial_SigPML.xml</includes>
+							<preProcess>
+			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/images">
+									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/">
+									<fileset dir="src/docbkx/resources" />
+								</copy>
+							</preProcess>
+						</configuration>
+						<phase>generate-resources</phase>
 					</execution>
 				</executions>
 				<configuration> <!-- global configuration for all executions -->
