@@ -14,12 +14,14 @@ ifndef::pdf[]
 :quarter-width: 250
 endif::[]
 
-////////////////////////////////////////////////////////////////
-[dedication]
-== Dedication
 
-TBD
 ////////////////////////////////////////////////////////////////
+	use dedication to place image before the TOC
+////////////////////////////////////////////////////////////////
+
+[dedication]
+== Navigation Overview
+image::images/intro/GemocWorkbenchesGlobalPicture.png[Sunset, 800,  link="http://www.gemoc.org"]
 
 [preface]
 == Introduction

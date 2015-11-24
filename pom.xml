@@ -182,7 +182,7 @@
 							<chunkedOutput>true</chunkedOutput>
 							<highlightSource>true</highlightSource>
 							<highlightXslthlConfig>${basedir}/src/docbkx/custom/highlighters/xslthl-config.xml</highlightXslthlConfig> 
-							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base.xsl</htmlCustomization>
+							<htmlCustomization>${basedir}/src/docbkx/custom/xsl/customized.html-base-eclipse.xsl</htmlCustomization>
 							<xincludeSupported>true</xincludeSupported>
 							<base.dir></base.dir>
 							<sourceDirectory>${project.build.directory}/docbook/all_documents/</sourceDirectory>
