@@ -509,7 +509,7 @@
            <executions>
                <execution>
                    <phase>prepare-package</phase>
-						 <id>ID1</id>
+						 <id>replace_imagemap_gemoc_user_guide_html_single</id>
                    <goals>
                        <goal>replace</goal>
                    </goals>   
@@ -533,12 +533,36 @@
 
                <execution>
                    <phase>prepare-package</phase>
-						 <id>ID2</id>
+						 <id>replace_imagemap_gemoc_user_guide_html_chunked</id>
                    <goals>
                        <goal>replace</goal>
                    </goals>   
            <configuration>
                <file>target/docbook/publish/guide/html/pr01.html</file>
+               <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
+					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
+
+<map name="map">
+<area shape="rect" coords="142,145,337,182" href="ch01s03.html#_purpose_2" />
+<area shape="rect" coords="149,208,335,270" href="ch01s04.html" />
+<area shape="rect" coords="187,287,299,353" href="ch01s05.html" />
+<area shape="rect" coords="175,481,331,519" href="ch02s02.html" />
+<area shape="rect" coords="164,560,340,625" href="ch02s03.html" />
+<area shape="rect" coords="438,141,567,290" href="ch01.html" />
+<area shape="rect" coords="440,466,567,638" href="ch02.html#_modeling_workbench_overview" />
+</map>]]></value>
+					<regex>no</regex>
+           </configuration>                
+               </execution>
+               
+                              <execution>
+                   <phase>prepare-package</phase>
+						 <id>replace_imagemap_gemoc_user_guide_eclipse_help</id>
+                   <goals>
+                       <goal>replace</goal>
+                   </goals>   
+           <configuration>
+               <file>target/docbook/publish/guide/eclipse/pr01.html</file>
                <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
 					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
