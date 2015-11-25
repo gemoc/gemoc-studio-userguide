@@ -20,6 +20,7 @@ include::GuideLW_Dashboard_Section.asciidoc[]
 
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
+[[create-language-chapter]]
 == Create a language
 include::GuideLW_DomainModelProject_Section.asciidoc[]
 
@@ -42,7 +43,7 @@ See http://www.eclipse.org/Xtext/[the Xtext website].
 ==== Defining a Concrete Syntax with ((Sirius))
 If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
-
+[[make-language-executable-chapter]]
 == Make a language executable
 
 The GEMOC Studio currently supports two major ways to make a language executable :
@@ -56,10 +57,12 @@ The underlying executionframework used by the GEMOC Studio can be extended to su
 However, this isn't the scope of this document to explain how to use this framework and build an alternate or dedicated engine.
 ==== 
 
+[[make-sequential-language-executable-section]]
 === Make a sequential executable language
 
 include::GuideLW_Seq_DomainSpecificActionsProject_Section.asciidoc[]
 
+[[make-concurrent-language-executable-section]]
 === Make a concurrent executable language
 
 include::GuideLW_DomainSpecificActionsProject_Section.asciidoc[]
@@ -72,13 +75,14 @@ include::GuideLW_DefiningFeedbackSpecification_Section.asciidoc[]
 
 include::GuideLW_ECLMoCCML_Section.asciidoc[]
 
-
+[[define-animator-chapter]]
 == Define an animator
 
 include::GuideLW_DefiningDebug_Section.asciidoc[]
 
+include::GuideLW_DefiningMultidimensionalTrace_Section.asciidoc[]
 
-
+[[compose-languages-chapter]]
 == Compose languages
 
 include::GuideLW_ComposingLanguages_Section.asciidoc[]
