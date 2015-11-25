@@ -13,11 +13,11 @@ image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEM
 
 '''
 
-include::GuideLanguageWorkbenchXDSMLProjectSection.asciidoc[]
+include::GuideLW_XDSMLProject_Section.asciidoc[]
 
-include::GuideLanguageWorkbenchDomainModelProjectSection.asciidoc[]
+include::GuideLW_DomainModelProject_Section.asciidoc[]
 
-include::GuideLanguageWorkbenchDomainSpecificActionsProjectSection.asciidoc[]
+include::GuideLW_DomainSpecificActionsProject_Section.asciidoc[]
 
 
 // === Defining Domain-Specific Constraints
@@ -39,15 +39,15 @@ See http://www.eclipse.org/Xtext/[the Xtext website].
 If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
 
-include::GuideLanguageWorkbenchECLMoCCMLSection.asciidoc[]
+include::GuideLW_ECLMoCCML_Section.asciidoc[]
 
-include::GuideLanguageWorkbenchDomainSpecificEventsSection.asciidoc[]
+include::GuideLW_DomainSpecificEvents_Section.asciidoc[]
 
-include::GuideLanguageWorkbenchDefiningFeedbackSpecificationSection.asciidoc[]
+include::GuideLW_DefiningFeedbackSpecification_Section.asciidoc[]
 
-include::GuideLanguageWorkbenchDefiningDebugSection.asciidoc[]
+include::GuideLW_DefiningDebug_Section.asciidoc[]
 
-include::GuideLanguageWorkbenchDashboardSection.asciidoc[]
+include::GuideLW_Dashboard_Section.asciidoc[]
 
 
 include::GuideLW_ComposingLanguages_Section.asciidoc[]
