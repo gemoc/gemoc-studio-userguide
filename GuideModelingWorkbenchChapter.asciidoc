@@ -22,3 +22,6 @@ include::GuideModelingWorkbenchEditingModelEMFTreeEditorSection.asciidoc[]
 
 
 include::GuideModelingWorkbenchExecutingModelSection.asciidoc[]
+
+
+include::GuideMW_CoordinatingModelExecution_Section.asciidoc[]
