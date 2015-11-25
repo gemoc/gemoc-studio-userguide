@@ -1,7 +1,7 @@
 [[gemoc-language-workbench]]
-== GEMOC Language Workbench image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
+= GEMOC Language Workbench image:images/icons/IconeGemocLanguage_16.png[width=16, height=16, role=right]
 
-=== Overview
+== Overview
 
 The *((GEMOC Language Workbench))* is intended to be used by the ((Language Designer))s and the ((Language Integrator))s. It provides the tools to create and compose eXecutable Domain-Specific Modeling Languages (xDSMLs) using the GEMOC approach.
 
@@ -15,9 +15,13 @@ image::images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEM
 
 include::GuideLW_XDSMLProject_Section.asciidoc[]
 
-include::GuideLW_DomainModelProject_Section.asciidoc[]
+include::GuideLW_Dashboard_Section.asciidoc[]
 
-include::GuideLW_DomainSpecificActionsProject_Section.asciidoc[]
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+== Create a language
+include::GuideLW_DomainModelProject_Section.asciidoc[]
 
 
 // === Defining Domain-Specific Constraints
@@ -39,15 +43,42 @@ See http://www.eclipse.org/Xtext/[the Xtext website].
 If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
 
+== Make a language executable
+
+The GEMOC Studio currently supports two major ways to make a language executable :
+
+* one will target a sequential engine 
+* the second will target a concurrent engine
+
+[NOTE]
+====
+The underlying executionframework used by the GEMOC Studio can be extended to support other methodologies or engines. 
+However, this isn't the scope of this document to explain how to use this framework and build an alternate or dedicated engine.
+==== 
+
+=== Make a sequential executable language
+
+include::GuideLW_Seq_DomainSpecificActionsProject_Section.asciidoc[]
+
+=== Make a concurrent executable language
+
+include::GuideLW_DomainSpecificActionsProject_Section.asciidoc[]
+
 include::GuideLW_ECLMoCCML_Section.asciidoc[]
 
 include::GuideLW_DomainSpecificEvents_Section.asciidoc[]
 
 include::GuideLW_DefiningFeedbackSpecification_Section.asciidoc[]
 
+include::GuideLW_ECLMoCCML_Section.asciidoc[]
+
+
+== Define an animator
+
 include::GuideLW_DefiningDebug_Section.asciidoc[]
 
-include::GuideLW_Dashboard_Section.asciidoc[]
 
+
+== Compose languages
 
 include::GuideLW_ComposingLanguages_Section.asciidoc[]

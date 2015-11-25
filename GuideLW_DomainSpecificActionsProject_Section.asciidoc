@@ -1,5 +1,5 @@
 [[section-define-dsa-project]]
-=== Defining the Domain-Specific Actions (DSA) Project
+=== Defining the Domain-Specific Actions (DSA) Project for concurrent language
 
 ==== Purpose
 The Domain-Specific Actions define the runtime state (*Execution Data*) of the model and the operations (*Execution Functions*) which modify the runtime state of the model.
@@ -26,3 +26,4 @@ For technical reasons, the Domain Model (Ecore metamodel) must specify the signa
 
 ==== Testing the Domain-Specific Actions
 It is possible to test the DSA (in particular the Execution Functions) by simply writing a simple program with a _main_ function (using Java or Xtend/Kermeta3). Create or load a model conform to your Domain Model and call the Execution Functions in the right order to verify there are no runtime exceptions or domain issues.
+

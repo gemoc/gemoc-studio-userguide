@@ -1,3 +1,3 @@
 [[section-modeling-workbench-editing-model-with-emf-tree-editor]]
-==== Editing model with ((EMF Tree Editor))
+=== Editing model with ((EMF Tree Editor))
 TODO

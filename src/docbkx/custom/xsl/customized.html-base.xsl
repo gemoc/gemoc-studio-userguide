@@ -24,7 +24,7 @@
 <xsl:param name="section.label.includes.component.label" select="1" />         
 <xsl:param name="section.autolabel" select="1" />
 <xsl:param name="generate.toc">book toc,title,figure</xsl:param>   
-<xsl:param name="toc.section.depth">5</xsl:param>      
+<xsl:param name="toc.section.depth">4</xsl:param>      
 <xsl:param name="make.graphic.viewport" select="0"/>
 <xsl:param name="callout.graphics" select="1" />
 <xsl:param name="callout.graphics.path">gfx/callouts/</xsl:param>
