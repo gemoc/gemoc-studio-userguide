@@ -62,9 +62,11 @@ However, this isn't the scope of this document to explain how to use this framew
 
 include::GuideLW_Seq_DomainSpecificActionsProject_Section.asciidoc[]
 
+
 [[make-concurrent-language-executable-section]]
 === Make a concurrent executable language
-
+// Push titles down one level. in order to avoid a big rewriting 
+:leveloffset: 1
 include::GuideLW_DomainSpecificActionsProject_Section.asciidoc[]
 
 include::GuideLW_ECLMoCCML_Section.asciidoc[]
@@ -74,6 +76,8 @@ include::GuideLW_DomainSpecificEvents_Section.asciidoc[]
 include::GuideLW_DefiningFeedbackSpecification_Section.asciidoc[]
 
 include::GuideLW_ECLMoCCML_Section.asciidoc[]
+// Return to normal title levels.
+:leveloffset: 0
 
 [[define-animator-chapter]]
 == Define an animator
