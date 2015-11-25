@@ -133,9 +133,9 @@ In order to run, Eclipse workbench work better with additional memory. Use the f
 Inclusion of the chapters, please open the corresponding files
 ////////////////////////////////////////////////////////////////
 
-include::GuideLanguageWorkbenchChapter.asciidoc[]
+include::GuideLW_Chapter.asciidoc[]
 
-include::GuideModelingWorkbenchChapter.asciidoc[]
+include::GuideMW_Chapter.asciidoc[]
 
 // Push titles down one level.
 :leveloffset: 1
