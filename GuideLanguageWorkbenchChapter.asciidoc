@@ -49,3 +49,5 @@ include::GuideLanguageWorkbenchDefiningDebugSection.asciidoc[]
 
 include::GuideLanguageWorkbenchDashboardSection.asciidoc[]
 
+
+include::GuideLW_ComposingLanguages_Section.asciidoc[]
