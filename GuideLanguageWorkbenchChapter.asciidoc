@@ -39,7 +39,7 @@ See http://www.eclipse.org/Xtext/[the Xtext website].
 If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
 
-include::GuideLanguageWorkbenchECLMoCCML.asciidoc[]
+include::GuideLanguageWorkbenchECLMoCCMLSection.asciidoc[]
 
 include::GuideLanguageWorkbenchDomainSpecificEventsSection.asciidoc[]
 
