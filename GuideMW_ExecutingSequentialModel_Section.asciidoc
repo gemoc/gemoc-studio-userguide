@@ -69,36 +69,21 @@ When running in debug mode, You can easily "pause" an engine running with a solv
 
 This view represents the line of the model's execution. It displays:
 
-* the different logical steps proposed by the solver in the past in blue color,
-* the selected logical steps at each execution step in green color,
-* and the possible future logical steps in yellow color,
-* the model specific events for each logical step.
+* the different steps executed by the engine. Steps that have completely finished (ie. operation has returned) are shown in blue. Unfinished Steps are shown in yellow.
+* the model specific events for each  step.
 
 [NOTE]
 ====
-This view can be enabled/disable in the launch configuration by checking "Execution tracing" in the Engine Addons tab.
+This view is enabled/disable in the launch configuration by checking "Event Scheduling Execution tracing" in the Engine Addons tab.
 ====
 
-[NOTE]
-====
-The possible future logical steps are shown under the condition that the model is executing.
-====
 
-image:images/workbench/modeling/timeline.png[Timeline, 800]
+image:images/workbench/modeling/timeline/sequential_model_event_scheduling_timeline.png[Sequential Execution Event Scheduling Timeline, 800]
 
-In addition to displaying information, it also provides interaction with the user. During execution, it is possible to come back into the past by double-clicking on any of the blue logical steps. It does three things:
+It is  possible to select a logical step and use the contextual menu to show its caller by selecting the corresponding model element in the Sirius editor:
 
-. it resets the solver's state to the selected execution step,
-. and it resets the model's state to the selected execution step,
-. it also forks the current timeline and create a new branch of execution.
+image:images/workbench/modeling/timeline/sequential_model_event_schduling_timeline_show_caller.png[Show caller]
 
-image:images/workbench/modeling/timeline/timeline_branch.png[Timeline branch, 200]
-
-It is also possible to select a logical step and use the contextual menu to show its caller in the Sirius editor:
-
-image:images/workbench/modeling/timeline/show_caller_timeline.png[Show caller]
-
-image:images/workbench/modeling/timeline/show_caller_editor.png[Show caller]
 
 [[mw-executing-sequential-model-multidimensional-timeline-view-section]]
 ==== Multidimentional Timeline View
