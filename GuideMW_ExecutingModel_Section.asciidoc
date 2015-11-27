@@ -11,6 +11,6 @@ The GEMOC Studio currently embed 2 engines:
 Both launch configurations offer a Run and a Debug mode.
 
 
-include::GuideMW_ExecutingSequentialModel_section.asciidoc[]
+include::GuideMW_ExecutingSequentialModel_Section.asciidoc[]
 
-include::GuideMW_ExecutingConcurrentModel_section.asciidoc[]
+include::GuideMW_ExecutingConcurrentModel_Section.asciidoc[]
