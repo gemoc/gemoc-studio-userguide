@@ -14,7 +14,7 @@ image:images/workbench/modeling/launch_configuration.png[Launch configuration, 8
 - ((Decider)) : this field allows to select the solver strategy used by the engine when several ((Logical Step))s can be triggered. Possible choices are : 
 ** Solver proposition : the solver internal stategy will be used to select a Logical Step
 ** Random : will randomly select one of the available Logical Step (warning: execution cannot be reproduced when using this Decider)
-** Ask user : (available only in Debug mode), this option will use the <<modeling-workbench-executing-model-logical-step-view-section,Logical Step View>> or the <<modeling-workbench-executing-model-timeline-view-section,Timeline View>> to present the available Logical Steps and pause if there are more than one Logical Step. The user will then need to click on one of the Logical Step to continue.
+** Ask user : (available only in Debug mode), this option will use the <<modeling-workbench-executing-model-logical-step-view-section,Logical Step View>> or the <<modeling-workbench-executing-model-event-scheduling-timeline-view-section,Event Scheduling Timeline View>> to present the available Logical Steps and pause if there are more than one Logical Step. The user will then need to click on one of the Logical Step to continue.
 ** Ask user (Step by step) : (available only in Debug mode), this option is similar to the previous one. However, it will pause on every Logical Step, even if there is only one Logical Step that can be triggered. This is more or less equivalent as putting a breakpoint on every MSE of the language.
 
 More Deciders will be developped (for example for playing predefined scenario).
@@ -25,7 +25,7 @@ It cannot be paused. However, you can stop it.
 It offers a limited set of views :
 
 - the <<modeling-workbench-executing-model-engine-view-section,((Engine)) View>> allows to stop a running model.
-- the <<modeling-workbench-executing-model-timeline-view-section,((Timeline)) View>> is displayed at the end of the execution in order to control the resulting execution trace.
+- the <<modeling-workbench-executing-model-event-scheduling-timeline-view-section,((Event Scheduling Timeline)) View>> is displayed at the end of the execution in order to control the resulting execution trace.
 
 If more feedback are required, please use one of the frontend or backend available for the xDSML, see <<modeling-workbench-backends-frontends-section,Backends and frontends>>. 
 
@@ -36,9 +36,9 @@ It allows to pause, add breakpoint, and run in a step by step mode.
 It reuses the Eclipse Debug perspective and some of its views and add some Gemoc specific views.
 
 - the <<modeling-workbench-executing-model-engine-view-section,((Engine)) View>> allows to stop a running model.
-- the <<modeling-workbench-executing-model-timeline-view-section,((Timeline)) View>> is displayed during all the simulation.
-- the <<modeling-workbench-executing-model-event-manager-view-section,((Event Manager)) View>> is displayed during all the simulation.
-- the <<modeling-workbench-executing-model-animation-view-section,((Event Manager)) View>> is displayed during all the simulation. It can display both an animation layer and a debug layer.
+- the <<modeling-workbench-executing-model-event-scheduling-timeline-view-section,((Event Scheduling Timeline)) View>> is displayed during all the simulation.
+- the <<modeling-workbench-executing-model-stimuli-manager-view-section,((Stimuli Manager)) View>> is displayed during all the simulation.
+- the <<modeling-workbench-executing-model-animation-view-section,((Animation Manager)) View>> is displayed during all the simulation. It can display both an animation layer and a debug layer.
 - the <<modeling-workbench-executing-model-debug-view-section,Debug View>>. This view presents an interface for Step by Step execution at the Logical Step level or even at the DSA level.
 - the <<modeling-workbench-executing-model-variable-view-section,Variable View>>. This view presents the ((Runtime Data)) as a (EMF based) tree.
 
@@ -84,8 +84,8 @@ This view displays nothing when execution runs in "run mode", per say this view 
 
 image:images/workbench/modeling/logical_steps.png[Logical Steps]
 
-[[modeling-workbench-executing-model-timeline-view-section]]
-=== Timeline View
+[[modeling-workbench-executing-model-event-scheduling-timeline-view-section]]
+=== Event Scheduling Timeline View
 
 This view represents the line of the model's execution. It displays:
 
@@ -120,7 +120,7 @@ image:images/workbench/modeling/timeline/show_caller_timeline.png[Show caller]
 
 image:images/workbench/modeling/timeline/show_caller_editor.png[Show caller]
 
-[[modeling-workbench-executing-model-event-manager-view-section]]
+[[modeling-workbench-executing-model-stimuli-manager-view-section]]
 === Stimuli Manager View
 
 The Stimuli Manager view display the list of MSE and has interactions with the Logical Steps view.
