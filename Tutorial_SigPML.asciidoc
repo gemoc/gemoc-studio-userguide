@@ -136,11 +136,11 @@ image:images/quickTutorial/sigpml/resultedDSAProject.png[DSA project and associa
 In this tutorial, the implementation of the functions is simple. The _execute_ function increments the _currentExecCycle_ of a block until its value is inferior to the _cycles_ value.
 
 The source code is available through 
-link:tutorialfiles/quickTutorial/sigpml/sigpmlAspects.xtend[Kermeta 3 aspects,tabsize=4]
+link:tutorialFiles/quickTutorial/sigpml/sigpmlAspects.xtend[Kermeta 3 aspects,tabsize=4]
 and showed below
 [source]
 ---------------------
-include::tutorialfiles/quickTutorial/sigpmlAspects.xtend[source code of the Kermeta 3 aspects]
+include::tutorialFiles/quickTutorial/sigpmlAspects.xtend[source code of the Kermeta 3 aspects]
 ---------------------
 
 
@@ -180,7 +180,7 @@ and showed below
 
 [source]
 ---------------------
-include::tutorialfiles/quickTutorial/xSigpml.ecl[source code of the ecl program]
+include::tutorialFiles/quickTutorial/xSigpml.ecl[source code of the ecl program]
 ---------------------
 
 
@@ -207,7 +207,7 @@ link:tutorialfiles/quickTutorial/sigpml/xSigpml.moccml[the MoCCML program]
 and showed below
 [source]
 ---------------------
-include::tutorialfiles/quickTutorial/xSigpml.moccml[source code of the MocCCML program]
+include::tutorialFiles/quickTutorial/xSigpml.moccml[source code of the MocCCML program]
 ---------------------
 
 At the end of this step the SigPML language is completely in terms of the metamodel, the graphical syntax, the behavior code of the functions, the expression of the concurrent semantics and the mapping them.

@@ -1,0 +1,142 @@
+
+
+=== Executing model with the ((Sequential Engine))
+
+==== Sequential Launch configuration
+
+===== Sequential general options
+Run and debug are configured using the launch configuration. An example of configuration:
+
+image:images/workbench/modeling/sequential_launch_configuration.png[Sequential Launch configuration, 800]
+
+- Model to execute : this is the model that will be run
+- xDSML : this field allows to select among the valid variants of the sequential executable language that are available for the model.
+- Entry point : the name of the method that can be used to start the engine. The possible value are specified by the language designer in the language definition.
+
+The _break at start_ tells to the debugger to add a virtual breakpoint on the first instruction that will run. 
+
+===== Sequential Run mode
+In run mode, it offers the faster way to run the model.
+It cannot be paused. However, you can stop it.
+It offers a limited set of views :
+
+- the <<mw-executing-sequential-model-engine-view-section,((Engine)) View>> allows to stop a running model.
+- the <<mw-executing-sequential-model-event-scheduling-timeline-view-section,((Event Scheduling Timeline)) View>> is displayed at the end of the execution in order to control the resulting execution trace.
+
+If more feedback are required, please use one of the frontend or backend available for the xDSML, see <<modeling-workbench-backends-frontends-section,Backends and frontends>>. 
+
+===== Sequential Debug mode
+In debug mode, the engine offers more control on the execution.
+It allows to pause, add breakpoint, and run in a step by step mode.
+
+It reuses the Eclipse Debug perspective and some of its views and add some Gemoc specific views.
+
+- the <<mw-executing-sequential-model-engine-view-section,((Engine)) View>> allows to stop a running model.
+- the <<mw-executing-sequential-model-event-scheduling-timeline-view-section,((Event Scheduling Timeline)) View>> can be displayed during all the simulation.
+- the <<mw-executing-sequential-model-multidimensional-timeline-view-section,((Multidimensional Timeline)) View>> can be displayed during all the simulation.
+- the <<mw-executing-sequential-model-animation-view-section,((Animation Manager)) View>> is displayed during all the simulation. It can display both an animation layer and a debug layer.
+- the <<mw-executing-sequential-model-debug-view-section,Debug View>>. This view presents an interface for Step by Step execution at the Logical Step level or even at the DSA level.
+- the <<mw-executing-sequential-model-variable-view-section,Variable View>>. This view presents the ((Runtime Data)) as a (EMF based) tree.
+
+When running a simulation in Debug mode, it is configured to activate automatically the Debug layer and the Animation layer in the Animation view.
+
+
+[[mw-executing-sequential-model-engine-view-section]]
+==== Engine View
+The engine view displays a list of execution engine and their statuses:
+
+* its number of execution steps, 
+* its current running status,
+* and its logical steps deciding strategy.
+
+image:images/workbench/modeling/engine_view.png[Engine View, 400]
+
+[[modeling-workbench-executing-model-logical-step-view-section]]
+
+The buttons available on top right of this views respectivley allows to:
+
+* Stop the selected Engine (red square button)
+* Remove previously stopped engines from the view (crosses button)
+* Change the current logical step decider (shield button).
+
+[TIP]
+====
+When running in debug mode, You can easily "pause" an engine running with a solver or random decider by clicking on the change logical step decider (the shield button will be green when run in debub mode) this will automatically switch to the "Step by step decider". To restart, simply select back an automatic decider (solver or random) and select the next step in the LogicalStep view.
+====
+
+[[mw-executing-sequential-model-event-scheduling-timeline-view-section]]
+==== Event Scheduling Timeline View
+
+This view represents the line of the model's execution. It displays:
+
+* the different steps executed by the engine. Steps that have completely finished (ie. operation has returned) are shown in blue. Unfinished Steps are shown in yellow.
+* the model specific events for each  step.
+
+[NOTE]
+====
+This view is enabled/disable in the launch configuration by checking "Event Scheduling Execution tracing" in the Engine Addons tab.
+====
+
+
+image:images/workbench/modeling/timeline/sequential_model_event_scheduling_timeline.png[Sequential Execution Event Scheduling Timeline, 800]
+
+It is  possible to select a logical step and use the contextual menu to show its caller by selecting the corresponding model element in the Sirius editor:
+
+image:images/workbench/modeling/timeline/sequential_model_event_schduling_timeline_show_caller.png[Show caller]
+
+
+[[mw-executing-sequential-model-multidimensional-timeline-view-section]]
+==== Multidimentional Timeline View
+
+The Multidimensional Timeline view provides an interactive representation of the execution trace being captured. 
+When double-clicking on a previous state represented in the timeline, the model is brought back into this state.
+Moreover, the timeline represents all the different dimensions captured in a trace, each being the sequence of 
+values taken by one specific element of the model. When double-clicking on a value that was reached by an element, 
+the complete model is brought back in the state corresponding to this value.
+
+[NOTE]
+====
+This view currently works only with the Sequential engine. We're working on extending its use on concurrent execution too.
+====
+
+
+[[mw-executing-sequential-model-animation-view-section]]
+==== Animation View
+
+If you have defined a debug representation using <<defining-a-debug-representation-section>>. You can use the following actions to start a debug session and toggle breakpoints.
+
+image::images/workbench/modeling/debug_actions.png[Debug actions]
+
+A decorator is shown on all element holding a breakpoint.
+The decorator also reflects the state of the breakpoint:
+
+- enabled
+
+image:images/workbench/modeling/breakpoint_enabled.png[breakpoint enabled]
+
+- disabled
+
+image:images/workbench/modeling/breakpoint_disabled.png[breakpoint disabled]
+
+When you hit a breakpoint on an element and are debugging with the decider "Step by step user decider", in order to restart the execution you must clic the resume button from the debug perspective. Then don't forget to select the next logical step to execute. Do the same when debugging in step by step with the decider "Step by step user decider".
+
+While executing you can visualize execution data. This setting must be defined by hand since the data are language dependent (see <<defining-a-debug-representation-section>> for more details). Here the current state is decorated with a green arrow.
+
+image:images/workbench/modeling/execution_data_highlight.png[Execution data highlight]
+
+The default definition highlights the current instruction in yellow.
+
+[[mw-executing-sequential-model-debug-view-section]]
+==== Debug View
+This view is part of the Debug perspective.
+It presents an interface for Step by Step execution at the Logical Step level or even at the DSA level.
+When an execution is paused, this view presents the current Logical Step.
+
+When paused on a ((Logical Step)), the Step over command allows to go to the next Logical Step. The Step Into command allows to run separately each of the internal DSA calls associated to the Logical Step.
+
+image:images/workbench/modeling/debug_view.png[Debug view]
+
+[[mw-executing-sequential-model-variable-view-section]]
+==== Variable View
+This view is available on the Debug perspective.
+When an execution is paused, this view presents the current ((Runtime Data)) as an EMF based tree.

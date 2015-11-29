@@ -1,5 +1,5 @@
 [[modeling-workbench-coordinating-model-execution-section]]
-=== Coordinating Model Execution
+== Coordinating Model Execution
 
 A special launch configuration is used to launch several models that will be executed and coordinated. 
 
