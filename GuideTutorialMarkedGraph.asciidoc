@@ -60,6 +60,9 @@ archive] containing the projects and unzip it.  Then, with the GEMOC
 Studio, select __import... / General / Existing Projects into
 Workspace__ and import all the projects from the archive file.
 
+link:MarkedGraph/org.gemoc.sample.markedgraph-final.zip[Here is the archive
+containing all the projects] that will be created during this tutorial.
+
 
 === Abstract Syntax
 
@@ -104,7 +107,9 @@ Syntax (CS).
 
 Select an xDSML project (__New > Project > GEMOC
 Project / new GEMOC Concurrent xDSML Project__).
+////
 You can also select __New ... / GEMOC Concurrent xDSML Project__.
+////
 
 .Create an xDSML Project
 image::images/MarkedGraph/MG-SelectGemocLanguageProject.png[Create an xDSML Project, 800]
@@ -239,7 +244,8 @@ ED and EF.  In the next release of the GEMOC Studio this steps will
 disappear and extended the AS will be done automatically thanks to
 link:http://melange-lang.org/[Melange]
 
-Add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition and
+The ED and and EF are already defined on the provided metamodel.  Thus, there is no need to
+add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition and
 'initialize()' on MarkedGraph.
 
 .Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
@@ -556,8 +562,10 @@ animation layer.
 Customizations".
 * Right click on "Style Customizations" to select "New Customization /
 Style Customization".
-* On "Style Customization", set the "Predicate Expression" to
-"[self.eGet('inputs')->forAll(p | p.eGet('runtimeTokenCount').toString().toInteger() > 0) /]"
+* On "Style Customization", set the "Predicate Expression" to:
+
+    [self.eGet('inputs')->forAll(p | p.eGet('runtimeTokenCount').toString().toInteger() > 0) /]
+
 * Right click on "Style Customization" to select "New Customization /
 Property Customization (by selection)"
 * For "Applied On" property, select "Square white".
@@ -606,7 +614,7 @@ source code (two times: import and extends).  Finally, change "Debug" to
 The executable MarkedGraph Language is now defined.  We can use the
 GEMOC Modeling Workbench to execute MarkedGraph models.
 
-=== Launch the Modelling WorkBench
+=== Launch the Modeling WorkBench
 
 First, we will create a run configuration.  Select "run / run Configurations"
 Double click on "Eclipse Application" and change the name "New
@@ -709,7 +717,7 @@ To stop the execution:
 becomes red)
 
 
-== Define a MoCCML library
+== Going further...
 
 To improve readability of the ECL file and also to favor capitalization and
 reuse of MoCC elements, it is possible (and encouraged) to define libraries.
