@@ -519,9 +519,9 @@
 					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
 <map name="map">
-<area shape="rect" coords="142,145,337,182" href="Guide.html#section-define-AS-project" />
-<area shape="rect" coords="149,208,335,270" href="Guide.html#section-define-dsa-project" />
-<area shape="rect" coords="187,287,299,353" href="Guide.html#defining-a-concrete-syntax-section" />
+<area shape="rect" coords="142,145,337,182" href="Guide.html#create-language-chapter" />
+<area shape="rect" coords="149,208,335,270" href="Guide.html#make-language-executable-chapter" />
+<area shape="rect" coords="187,287,299,353" href="Guide.html#define-animator-chapter" />
 <area shape="rect" coords="175,481,331,519" href="Guide.html#section-editing-model" />
 <area shape="rect" coords="164,560,340,625" href="Guide.html#modeling-workbench-executing-model-section" />
 <area shape="rect" coords="438,141,567,290" href="Guide.html#gemoc-language-workbench" />
