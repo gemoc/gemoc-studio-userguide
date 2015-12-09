@@ -75,7 +75,6 @@ include::GuideLW_DomainSpecificEvents_Section.asciidoc[]
 
 include::GuideLW_DefiningFeedbackSpecification_Section.asciidoc[]
 
-include::GuideLW_ECLMoCCML_Section.asciidoc[]
 // Return to normal title levels.
 :leveloffset: 0
 
