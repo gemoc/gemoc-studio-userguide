@@ -1,5 +1,5 @@
-[[section-exhaustive-exploration]]
-=== Exhaustive Exploration and Verification
+[[section-exhaustive-exploration-mw]]
+=== Exhaustive Exploration and Verification at Model Design Time
 
 One benefit of assigning an execution semantics onto a DSL is to pave the way for exhaustive exploration. Exhaustive exploration is a technique used in complex and safety system design to ensure the correct adequacy between the system requirements and the real behavior of the system. This is made possible by exploring and verifying properties on an exhaustive finite state space of the system representing the whole set of relevant configurations your system may reach. 
 
@@ -9,39 +9,20 @@ Gemoc provides the first step towards exploration and verification by building t
 - Extract a schedule that optimizes specific objectives;
 - Extract system properties by static analysis of an event-graph representation of the execution model.
 
-In the Gemoc approach the steps toward exploration and verification are:
+In the Gemoc approach the steps toward exploration and verification during language design are described in <<section-exhaustive-exploration-lw>>.
 
-- Define an executable model(we assume it has already been defined see <<section-defining-a-mocc>>);
-- Generate a *((ClockSystem))* file from *((ECL))* model through abstraction layers;
+Besides the steps toward exploration and verification during modeling design are:
+
+- Generate a model for an exhaustive exploration tool using the configuration file;
 - Invoke *((ClockSystem))*'s services to generate a finite state space of the system;
 - Formalize a set of properties to verify(in *((CDL))* language for instance);
 - Use a model checking infrastructure to perform the verification of properties on the finite state space(like _OBP_).
 
 The flow toward exhaustive exploration and verification in Gemoc is presented in figure <<figure-exploration-flow>> and described in the following sections.
-
-[[figure-exploration-flow]]
-.The exploration and verification flow in Gemoc
-image::images/exhaustive_exploration/flow.png[The Exploration and Verification Flow in Gemoc, 800]
  
-==== Generating inputs for Exhaustive Exploration tools
+==== Generating inputs for Exhaustive Exploration tools : _T2_ at Modeling Level
 
-ECL specification is the starting point toward exploration. In this specification we define events associated with the actions of the *((DSA))* and also events associated with the *((DSE))* events. On these event bindings we apply the *((MoccML))* relations of the MoC Library to schedule the events. A finite state space of a system uses such scheduling constraints and therefore is generated from it using two transformations:
-
-- (_T1_) Generate a template from the *((ECL))* specification (language level)
-- (_T2_) Generate a model for *((ClockSystem))* from the _T1_ template on a given model(modeling level) .
-
-===== _T1_ at Language Level
-
-This transformation generates a template to later target exhaustive exploration or simulation tools. 
-_T1_ takes as input the *((ECL))* mapping definition between the DSL and the *((MoCCML))* to generate a transformation _T2_ describing transformation rules that will be used to produce the processes for the DSL related functions and data (DSA) and the behavioral processes corresponding to the *((MoCCML))* constraints.
-
-To execute _T1_ right-click on the *((ECL))* file -> Exhaustive Exploration -> Generate ClockSystem transformation from ECL model as illustrated in figure <<figure-t1-t2>>._T2_ is generated in the repository <clocksystem-gen>.
-
-[[figure-t1-t2]]
-.Using T1 Tranformation
-image::images/exhaustive_exploration/t1_t2.png[Using T1 Tranformation, 500]
-
-===== T2 at Modeling Level
+ECL specification is the starting point toward exploration. In this specification we define events associated with the actions of the *((DSA))* and also events associated with the *((DSE))* events. On these event bindings we apply the *((MoccML))* relations of the MoC Library to schedule the events. A finite state space of a system uses such scheduling constraints and therefore is generated from using a transformation:
 
 In the Modeling workbench where the DSL instance model is realized, the transformation _T2_ takes as input the instance system model to generate a _MOCC_ instance model described in *((ClockSystem))* specification format. Notice that currently you have to copy the <clocksystem-gen> repository previously generated in your project. To call this transformation the right-click on your model -> Exhaustive Exploration -> Generate ClockSystem file from DSL model. _T2_  generates the .clocksystem file corresponding to the Mocc-based specification model to take as input in *((ClockSystem))*.
 
