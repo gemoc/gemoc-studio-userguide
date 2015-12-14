@@ -1,7 +1,5 @@
 [[composing-languages-with-bcool-section]]
 === Coordination of Languages with BCOoL
-== What is BCOoL?
+==== What is ((BCOoL))?
 B-COoL is a dedicated language to explicitly specify how models conforming to different DSMLs can be coordinated. This enables the integrator to capture the knowledge of integration of systems by a dedicated language. In BCOoL, the specification relies on Operators. Once defined, the specification can be used to generate a model of coordination when models are know.  BCOoLApproach
 BCOoL is developed on top of the eclipse platform as a set of plugins. More precisely, it is integrated to the GEMOC studio. The GEMOC studio is the integration of various Eclipse Modeling Framework (EMF) based technologies adequate for the specification of executable domain specific modeling languages. BCOoL is itself based on the EMF and its abstract syntax has been developed using Ecore (i.e., the meta-language associated with EMF). The textual concrete syntax has been developed using Xtext, providing advanced edition facilities.
-((BCOoL)) is used to define the composition between languages.
-See http://timesquare.inria.fr/BCOoL/[http://timesquare.inria.fr/BCOoL/].
