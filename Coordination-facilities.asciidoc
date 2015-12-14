@@ -35,3 +35,5 @@ Once launched, the engine provides several options to drive the execution of the
 
 image::http://timesquare.inria.fr/BCOoL/images/coffeemachine3.jpg[Launch]
 
+For further information about BCOoL please visit http://timesquare.inria.fr/BCOoL[BCOoL site] 
+If you are experimenting problems during the compilation of the example, please check the issues section or contact me by mailto:matias.vara_larsen@inria.fr[email].
