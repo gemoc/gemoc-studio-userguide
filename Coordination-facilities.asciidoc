@@ -10,5 +10,6 @@ image::http://timesquare.inria.fr/BCOoL/images/bcoolapr.jpg[nada]
 BCOoL takes advantages of this collaborative environment by adding coordination facilities. In the language workbench, an _integrator_ can develop BCOoL operators to specify coordination patterns between languages, and then a _system_ designer can use these operators in the modeling workbench to coordinate models.
 
 
-=== Running Example: the Coordination of the Coffee Machine Model
+=== Running Example: Coordination of a Coffee Machine Model
 To present BCOoL, we develop a simple operator between the TFSM and Activity language. Then, we use this operator to coordinate the heterogeneous model of a coffee machine.  
+
