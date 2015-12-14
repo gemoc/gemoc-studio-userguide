@@ -5,7 +5,9 @@
 
 image::http://timesquare.inria.fr/BCOoL/images/bcoolapr.jpg[nada]
 
-((BCOoL)) is developed on top of the eclipse platform as a set of plugins. More precisely, it is integrated to the GEMOC studio. The GEMOC studio is the integration of various Eclipse Modeling Framework (EMF) based technologies adequate for the specification of executable domain specific modeling languages. BCOoL is itself based on the EMF and its abstract syntax has been developed using Ecore (i.e., the meta-language associated with EMF). The textual concrete syntax has been developed using Xtext, providing advanced editing facilities. BCOoL takes advantages of this collaborative environment by adding coordination facilities.
+((BCOoL)) is developed on top of the eclipse platform as a set of plugins. More precisely, it is integrated to the GEMOC studio. The GEMOC studio is the integration of various Eclipse Modeling Framework (EMF) based technologies adequate for the specification of executable domain specific modeling languages. BCOoL is itself based on the EMF and its abstract syntax has been developed using Ecore (i.e., the meta-language associated with EMF). The textual concrete syntax has been developed using Xtext, providing advanced editing facilities. BCOoL takes advantages of this collaborative environment by adding coordination facilities.  
+
+The resulting integrated environment enables an _integrator_ to use the language workbench to develop BCOoL operators to specify coordination patterns between languages, and then a system designer can use these operators in the modeling workbench to coordinate models.
 
 
 
