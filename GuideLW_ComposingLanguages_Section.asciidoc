@@ -1,5 +1,5 @@
 [[composing-languages-with-bcool-section]]
-=== Composing languages with BCOoL
+=== Coordination of Languages with BCOoL
 
 ((BCOoL)) is used to define the composition between languages.
 See http://timesquare.inria.fr/BCOoL/[http://timesquare.inria.fr/BCOoL/].
