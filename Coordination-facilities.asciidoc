@@ -11,10 +11,8 @@ BCOoL takes advantages of this collaborative environment by adding coordination 
 
 
 === Running Example: Coordination of a Coffee Machine Model
-To present BCOoL, we develop a simple operator between the TFSM and Activity language. Then, we use this operator to coordinate the heterogeneous model of a coffee machine.  
+To present BCOoL, we develop a simple operator between the TFSM and Activity language. The operator coordinates FSMEvents from the TFSM and Actions from the Activity language by comparing theirs names. 
 
-In this example, we use BCOoL to develop an opertor to coordinate the TFSM and the Activity language. The operator coordinates FSMEvents from the TFSM and Actions from the Activity language by comparing theirs names. 
+image::http://timesquare.inria.fr/BCOoL/images/coffeemachine.png[The Heterogeneous Model of a Coffee Machine ] 
+The picture illustrates the heterogeneous model of a coffee machine. To coordinate the models, we have to synchronize the activity CoffeeAlgorithm and the TFSM CoffeeCoin by coordinating the corresponding Actions and FSMEvent. In the following, we use the GEMOC studio to develop and then apply these operators. To express such a coordination, we develop an operator in BCOoL. 
 
-image::http://timesquare.inria.fr/BCOoL/images/coffeemachine.png[The Heterogeneous Model of a Coffee Machine ]
-
-The picture illustrates the application of the operators in a coffee machine. To coordinate the models, we have to synchronize the activity CoffeeAlgorithm and the TFSM CoffeeCoin by coordinating the corresponding Actions and FSMEvent. In the following, we use the GEMOC studio to develop and then apply these operators. 
