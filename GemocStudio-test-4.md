@@ -1,6 +1,6 @@
 # TEST 4 TFSM Concurrent
 
-## Test 3.1 : Language workbench
+## Test 4.1 : Language workbench
 Main goal: Make sure that the language workbench correctly defines and compiles all required element for TFSM in Concurrent
 [cols="a,a,1*", options="header"]
 |===
@@ -43,7 +43,7 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 
 
 
-## Test 3.2: Modeling Workbench
+## Test 4.2: Modeling Workbench
 Main goal: Make sure that the TFSM sample run correctly using the Concurrent engine
 [cols="a,a,1*", options="header"]
 |===
@@ -75,9 +75,15 @@ Main goal: Make sure that the TFSM sample run correctly using the Concurrent eng
 | :red_circle: toggle breakpoint works but doesn't stop 
 
 |
-- test Event scheduling timeline (backward, forward, branch)
-| 
+- test simple Event scheduling timeline trace
+| should display the logical steps and some details about them
+| :white_check_mark:
+
+
 |
+- test advanced Event scheduling timeline trace (backward, forward, branch 
+| should jump, update sirius view, update debugstack, ...
+| :question: not fully tested
 
 |
 |
