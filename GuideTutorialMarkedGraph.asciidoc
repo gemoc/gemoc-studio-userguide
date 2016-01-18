@@ -190,8 +190,8 @@ image::images/MarkedGraph/MG-XDSML-CS-select.png[Select Sirius graphical editor,
 // XXX: à déplacer dans MoCC ou DSE ?
 
 A transition can be fired if there is at least one token in every of
-each input place.  When fired, one token is removed from each of its
-input places and one token is added to each of its output places.
+each input place.  When a transition is fired, one token is removed from each
+of its input places and one token is added to each of its output places.
 Several transitions can be fired as the same time.
 
 Defining the execution semantics consists in implementing the previous
@@ -240,13 +240,13 @@ and add one token to all its output places.
 ==== Extend the AS with ED and EF
 
 At the moment, we need to complete the AS (markedgraph.ecore) with the
-ED and EF.  In the next release of the GEMOC Studio this steps will
-disappear and extended the AS will be done automatically thanks to
-link:http://melange-lang.org/[Melange]
+ED and EF.  In the next release of the GEMOC Studio this step replaced by the
+use of link:http://melange-lang.org/[Melange] to automatically extend the AS
+with ED and EF.
 
-The ED and and EF are already defined on the provided metamodel.  Thus, there is no need to
-add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition and
-'initialize()' on MarkedGraph.
+The ED and and EF are already defined on the provided metamodel.  Thus, there
+is no need to add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition
+and 'initialize()' on MarkedGraph.
 
 .Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
 image::images/MarkedGraph/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
@@ -488,7 +488,7 @@ Once the __Finish__ button is pressed, the project is created.
 Open the markedgraph-animation.odesign file and develop its content.
 
 
-TODO: explain its contents.
+// TODO: explain its contents.
 
 
 ==== Load markedgraph.odesign as a resource.
@@ -770,9 +770,10 @@ the place as in the initial token count of the place.
 === Define the constraint automaton using MoCCML editor
 
 For explanations on how to use the MoCCML editor, please refer to the GEMOC
-manual. TODO: provide the URL to it.
+manual.
+// TODO: provide the URL to it.
 
-We first define the declaration of a relation (placeReadWriteDef).  Here after
+We first define the declaration of a relation (placeReadWrite).  Here after
 is its graphical representation.  This relation is parameterized by the r clock (some one how wants to read a token), the w clock (someone how wants to write a token, and n the initial count of token in the place).
 
 .Graphical declaration of the placeReadWriteDef relation
