@@ -1,0 +1,46 @@
+## TEST 1: Create Sequential language from scracth
+
+### Test 1.1: Language Workbench
+Main goal: be able to create a new sequential language
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for version: V2.0.1 2016_01_13
+
+|
+- in Sirius Perspective, 
+- File new Gemoc Sequential Project
+|
+|:white_check_mark:
+
+|
+- Open the projet.xdsml file with the Sequential XDML editor
+- click on Domain model / EMF Project link
+- Create a few classes in the sirius editor, save
+|must open the EMF project wizard, then the sirius editor, then new model project and genmodel file must be set in the project.xdml editor
+|:white_check_mark:
+
+|
+- click on Behavior definition / K3 project link
+|must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
+|:white_check_mark:
+
+|
+- click on Graphical editor / Sirius viewpoint design project link
+- connect the odesign to the domain, create a default layer and a few representations
+|-must open the Sirius wizard with default project name based on language project name, 
+-the new project is set in the xdsml file.
+|:large_orange_diamond: name is not based on language project name
+
+|
+- click on Graphical editor / Sirius animator project link
+- add debug layer to existing diagram 
+- select the previous odesign
+|-must open the "Create GEMOC debug representation" wizard
+-the project is set in the xdsml file.
+| :question:  not fully tested
+
+|
+|
+|===
