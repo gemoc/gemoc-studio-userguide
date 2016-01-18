@@ -1,12 +1,14 @@
 This page lists the manual test scenarios that are passed on the GEMOC Studio before each major release.
 
 Many of them requires to checkout some samples from various repositories.
-First column: action
-Second column: verification point needing special attention
+First column: an action or a serie of actions
+Second column: verification point needing special attention 
 Third column: last version verification result (using emoji such as :white_check_mark: :large_orange_diamond: :red_circle: )
 
 ## TEST 1: Create Sequential language from scracth
-
+| Actions to execute | Verification | Last version result |
+|-------------------|--------------|---------------------|
+| | | |
 
 
 ## TEST 2: Create Concurrent language from scratch
