@@ -1,14 +1,15 @@
-.Contents
+.User Guide Content
 - link:Guide[Guide Master]
 - link:GuideLW_Chapter[Language Workbench Chapter]
-- link:GuideModelingWorkbenchChapter[Modeling Workbench Chapter]
-- link:GuideModelingWorkbenchEditingModelSection[Editing Model Section]
-- link:GuideModelingWorkbenchExecutingModelSection[Executing Model Section]
-- link:GuideQuickTutorial.asciidoc[Quick Tutorial]
-- link:GuideTutorialAutomata.asciidoc[Extended Tutorial]
+- link:GuideMW_Chapter[Modeling Workbench Chapter]
 - link:GuideBibliography.asciidoc[Bibliography]
 - link:GuideGlossary.asciidoc[Glossary]
 
 .Related
 - link:GuideREADME[README]
 - link:Home[Home]
+
+.Developement
+- link:GemocStudio tests scenarios[GemocStudio tests scenarios]
+* link:Test 1[GemocStudio_test_1 create sequential language from scratch]
+* link:Test 2[GemocStudio_test_2 create concurrent language from scratch]
