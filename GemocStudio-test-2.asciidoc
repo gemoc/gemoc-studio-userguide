@@ -41,6 +41,16 @@ Main goal: be able to create a new sequential language
 | :question:  not fully tested
 
 |
+- click on MoC definiton library/ MoCCML project link
+|must open the a MocMl wizard with default project name based on language project name
+| :question:  not fully tested
+
+|
+- click on DSE definition / ECL project link
+|must open the a DSE project wizard with default project name based on language project name, the project contains a base .ecl file with an import to the ecore of the domain model
+| :white_check_mark:
+
+|
 |
 |===
 
