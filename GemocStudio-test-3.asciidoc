@@ -60,15 +60,22 @@ Main goal: Make sure that the TFSM sample run correctly using the Sequential eng
 |:white_check_mark:
 
 |
-- right click on the .tfsm file, Debug as , Debug as Sequential
+- right click on the .tfsm file, Debug as , Debug as Gemoc Sequential executable model
 | should launch the shared launchconfiguration or open the launchconf dialog
 |:white_check_mark:
 
 |
+- start execution using the break at start option in the launchconfiguration
+- go forward using step by step, step into, step over
+| check the stack, and element hightlighted in the sirius editor
+| :white_check_mark:
+
+|
+- open sirius editor (using model explorer view )
 - test toggle breakpoints
 | - must show the breakpoint in the sirius editor, in the breakpoint view
 - execution must pause on the breakpoint
-|
+| :red_circle: toggle breakpoint works but doesn't stop 
 
 |
 - test multidimensional timeline (backward, forward)
