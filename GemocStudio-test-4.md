@@ -2,6 +2,7 @@
 
 ## Test 4.1 : Language workbench
 Main goal: Make sure that the language workbench correctly defines and compiles all required element for TFSM in Concurrent
+
 [cols="a,a,1*", options="header"]
 |===
 |Actions to execute
@@ -17,13 +18,13 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 - Open the projet.xdsml file with the Concurrent XDML editor
 - click on Domain model / EMF Project link
 - click on Domain model / genmodel link
-|must open an editor on the ecore/resp genmodel file of the domain, 
-|:white_check_mark:
+| must open an editor on the ecore/resp genmodel file of the domain, 
+| :white_check_mark:
 
 |
 - click on Behavior definition / K3 project link
-|must open an editor on the .k3 file containing aspects
-|:white_check_mark:
+| must open an editor on the .k3 file containing aspects
+| :white_check_mark:
 
 |
 - click on Graphical editor / Sirius viewpoint design project link
@@ -38,7 +39,11 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 
 |
 - ECL file generates a correct .qvto file
+|
 | :large_orange_diamond: no visual error but doesn't work out of the box, eclmoc2as project need to use the project/configure/add DSE builder to fix its configuration.
+
+|
+|
 |===
 
 
