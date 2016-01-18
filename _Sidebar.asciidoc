@@ -11,5 +11,5 @@
 
 .Developement
 - link:GemocStudio tests scenarios[GemocStudio tests scenarios]
-* link:Test 1[GemocStudio_test_1 create sequential language from scratch]
-* link:Test 2[GemocStudio_test_2 create concurrent language from scratch]
+- link:GemocStudio_test_1 create sequential language from scratch[GemocStudio_test_1 create sequential language from scratch]
+- link:GemocStudio_test_2 create concurrent language from scratch[GemocStudio_test_2 create concurrent language from scratch]
