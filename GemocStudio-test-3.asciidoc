@@ -1,5 +1,49 @@
 # TEST 3 TFSM sequential
 
 ## Test 3.1 : Language workbench
+Main goal: Make that th language workbench correctly defines and compiles all required element for TFSM in Sequential 
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for version: V2.0.1 2016_01_13
+
+|
+- File > new > Examples > TFSM sequential
+| all added projects should be error free (may require a "clean all")
+|:white_check_mark:
+
+|
+- Open the projet.xdsml file with the Sequential XDML editor
+- click on Domain model / EMF Project link
+- click on Domain model / genmodel link
+|must open an editor on the ecore/resp genmodel file of the domain, 
+|:white_check_mark:
+
+|
+- click on Behavior definition / K3 project link
+|must open an editor on the .k3 file containing aspects
+|:white_check_mark:
+
+|
+- click on Graphical editor / Sirius viewpoint design project link
+|-must open the .odesign file
+|:white_check_mark:
+
+|
+- click on Graphical editor / Sirius animator project link
+|-must open the .odesign file
+|:white_check_mark:
+
+|
+- right click on project.xdml > generate trace project
+|-must generate a trace addon project for TFSM
+| :question: not fully tested
+
+|
+|
+|===
+
+
 
 ## Test 3.2: Modeling Workbench
