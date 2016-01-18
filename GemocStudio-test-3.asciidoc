@@ -38,7 +38,7 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 |
 - from the project explorer view; right click on project.xdml > generate trace project
 |-must generate a trace addon project for TFSM
-| :question: not fully tested
+| :white_check_mark:
 
 |
 |
