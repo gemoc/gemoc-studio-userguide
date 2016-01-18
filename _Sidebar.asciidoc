@@ -1,6 +1,6 @@
 .Contents
 - link:Guide[Guide Master]
-- link:GuideLanguageWorkbenchChapter[Language Workbench Chapter]
+- link:GuideLW_Chapter[Language Workbench Chapter]
 - link:GuideModelingWorkbenchChapter[Modeling Workbench Chapter]
 - link:GuideModelingWorkbenchEditingModelSection[Editing Model Section]
 - link:GuideModelingWorkbenchExecutingModelSection[Executing Model Section]
