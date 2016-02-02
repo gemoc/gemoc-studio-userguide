@@ -534,7 +534,7 @@ whether the corresponding breakpoint is enabled or disabled.
 * Open the plugin.xml file of the project.
 * Select the __dependencies__ tab.
 * Click "Add..." in the "Required Plug-ins" area.
-* Select "org.gemoc.gemoc_language_workbench.extensions.sirius"
+* Select "org.gemoc.executionframework.extensions.sirius"
 * Click OK
 * Save the plugin.xml resource.
 
