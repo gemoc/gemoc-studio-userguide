@@ -527,17 +527,6 @@ whether the corresponding breakpoint is enabled or disabled.
 // TODO: Give a pointer to the file already completed!
 
 
-==== Complete the dependencies of the project
-
-// TODO: To be fixed.
-
-* Open the plugin.xml file of the project.
-* Select the __dependencies__ tab.
-* Click "Add..." in the "Required Plug-ins" area.
-* Select "org.gemoc.executionframework.extensions.sirius"
-* Click OK
-* Save the plugin.xml resource.
-
 ==== Set the animation viewpoint in project.xml
 
 In the xDSML editor, we can select the animation viewpoint by selecting the
