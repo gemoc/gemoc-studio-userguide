@@ -16,7 +16,7 @@ Main goal: be able to create a new sequential language
 - MANIFEST.MF
 - Sequential Nature & Builder
 - Extension point in plugin.xml
-|:white_check_mark:
+|
 
 |
 - Right click on .melange GEMOC Language > Create Domain Model Project for language
@@ -25,7 +25,7 @@ Main goal: be able to create a new sequential language
 - must update Require-Bundle in MANIFEST.MF
 - must update syntax "platform/resource/project/folder/model.ecore" in the .melange
 - must open the EMF project wizard, then the sirius editor, then new model project and genmodel file must be set in the project.xdml editor
-|:white_check_mark:
+|
 
 |
 - Right click on .melange GEMOC Language > Create DSA Project fro language
@@ -33,7 +33,7 @@ Main goal: be able to create a new sequential language
 - must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
 - must add 'with' operator in the .melange
 - must update Require-Bundle in MANIFEST.MF
-|:white_check_mark:
+|
 
 |
 - click on Graphical editor / Sirius viewpoint design project link
