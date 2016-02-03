@@ -6,24 +6,33 @@ Main goal: be able to create a new sequential language
 |===
 |Actions to execute
 |Verification
-|Result for version: V2.0.1 2016_01_13
+|Result for version: V2.1.0 2016_02_02
 
 |
 - in Sirius Perspective, 
 - File new Gemoc Sequential Project
 |
+- .melange
+- MANIFEST.MF
+- Sequential Nature & Builder
+- Extension point in plugin.xml
 |:white_check_mark:
 
 |
-- Open the projet.xdsml file with the Sequential XDML editor
-- click on Domain model / EMF Project link
+- Right click on .melange GEMOC Language > Create Domain Model Project for language
 - Create a few classes in the sirius editor, save
-|must open the EMF project wizard, then the sirius editor, then new model project and genmodel file must be set in the project.xdml editor
+|
+- must update Require-Bundle in MANIFEST.MF
+- must update syntax "platform/resource/project/folder/model.ecore" in the .melange
+- must open the EMF project wizard, then the sirius editor, then new model project and genmodel file must be set in the project.xdml editor
 |:white_check_mark:
 
 |
-- click on Behavior definition / K3 project link
-|must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
+- Right click on .melange GEMOC Language > Create DSA Project fro language
+|
+- must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
+- must add 'with' operator in the .melange
+- must update Require-Bundle in MANIFEST.MF
 |:white_check_mark:
 
 |
