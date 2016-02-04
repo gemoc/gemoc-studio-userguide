@@ -12,35 +12,38 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 |
 - File > new > Examples > TFSM Language example (Concurrent)
 | all added projects should be error free (may require a "clean all")
-|:white_check_mark:
+|:question:
 
 |
-- Open the projet.xdsml file with the Concurrent XDML editor
-- click on Domain model / EMF Project link
-- click on Domain model / genmodel link
+- Open the Main.melange file
+- Ctrl+Click on 'syntax' URI hyperlink
 | must open an editor on the ecore/resp genmodel file of the domain, 
-| :white_check_mark:
+| :question:
 
 |
-- click on Behavior definition / K3 project link
+- Ctrl+Click on 'with' class hyperlink
 | must open an editor on the .k3 file containing aspects
-| :white_check_mark:
+| :question:
 
 |
 - click on Graphical editor / Sirius viewpoint design project link
 |-must open the .odesign file
-|:white_check_mark:
+|:question: Deprecated
 
 |
 - click on Graphical editor / Sirius animator project link
 |-must open the .odesign file
-|:white_check_mark:
+|:question: Deprecated
 
+|
+- Ctrl+Click on 'ECL' URI hyperlink
+|-must open the .ecl file
+|:question:
 
 |
 - ECL file generates a correct .qvto file
 |
-| :large_orange_diamond: no visual error but doesn't work out of the box, eclmoc2as project need to use the project/configure/add DSE builder to fix its configuration.
+| :question:
 
 |
 |
@@ -57,38 +60,38 @@ Main goal: Make sure that the TFSM sample run correctly using the Concurrent eng
 |Result for version: V2.0.1 2016_01_13
 
 |
-- File > new > Examples > Example for TFSM Language (Concurrent)
+- File > new > Examples > Gemoc TrafficLight model example for TFSM Language (Concurrent)
 | all added projects should be error free (may require a "clean all")
-|:white_check_mark:
+|:question:
 
 |
-- right click on the .tfsm file, Debug as , Debug as Gemoc Concurrent executable model
+- right click on the simple_example.tfsm file, Debug as , Debug as Gemoc Concurrent eXecutable model
 | should launch the shared launchconfiguration or open the launchconf dialog
-|:white_check_mark:
+|:question:
 
 |
 - start execution using the break at start option in the launchconfiguration
 - go forward using step by step, step into, step over
 | check the stack, and element hightlighted in the sirius editor
-| :white_check_mark:
+| :question:
 
 |
 - open sirius editor (using model explorer view )
 - test toggle breakpoints
 | - must show the breakpoint in the sirius editor, in the breakpoint view
 - execution must pause on the breakpoint
-| :red_circle: toggle breakpoint works but doesn't stop 
+| :question:
 
 |
 - test simple Event scheduling timeline trace
 | should display the logical steps and some details about them
-| :white_check_mark:
+| :question:
 
 
 |
 - test advanced Event scheduling timeline trace (backward, forward, branch 
 | should jump, update sirius view, update debugstack, ...
-| :question: not fully tested
+| :question:
 
 |
 |
