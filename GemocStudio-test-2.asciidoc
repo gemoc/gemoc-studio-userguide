@@ -9,28 +9,38 @@ Main goal: be able to create a new sequential language
 
 |
 - in Sirius Perspective, 
-- File new Gemoc Sequential Project
+- File new Gemoc Concurrent Project
 |
-|:white_check_mark:
+- .melange
+- MANIFEST.MF
+- Concurrent Nature & Builder
+- Extension point in plugin.xml
+- CodeExecutor class
+|:question:
 
 |
-- Open the projet.xdsml file with the Sequential XDML editor
-- click on Domain model / EMF Project link
+- Right click on .melange GEMOC Language > Create Domain Model Project for language
 - Create a few classes in the sirius editor, save
-|must open the EMF project wizard, then the sirius editor, then new model project and genmodel file must be set in the project.xdml editor
-|:white_check_mark:
+|
+- must update Require-Bundle in MANIFEST.MF
+- must add syntax "platform/resource/project/folder/model.ecore" in the .melange
+- must open the EMF project wizard, then the sirius editor
+|:question:
 
 |
-- click on Behavior definition / K3 project link
-|must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
-|:white_check_mark:
+- Right click on .melange GEMOC Language > Create DSA Project fro language
+|
+- must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
+- must add 'with' operator in the .melange
+- must update Require-Bundle in MANIFEST.MF
+|:question:
 
 |
 - click on Graphical editor / Sirius viewpoint design project link
 - connect the odesign to the domain, create a default layer and a few representations
 |-must open the Sirius wizard with default project name based on language project name, 
 -the new project is set in the xdsml file.
-|:large_orange_diamond: name is not based on language project name
+|:question:
 
 |
 - click on Graphical editor / Sirius animator project link
@@ -38,17 +48,17 @@ Main goal: be able to create a new sequential language
 - select the previous odesign
 |-must open the "Create GEMOC debug representation" wizard
 -the project is set in the xdsml file.
-| :question:  not fully tested
+| :question:
 
 |
 - click on MoC definiton library/ MoCCML project link
 |must open the a MocMl wizard with default project name based on language project name
-| :question:  not fully tested
+| :question:
 
 |
 - click on DSE definition / ECL project link
 |must open the a DSE project wizard with default project name based on language project name, the project contains a base .ecl file with an import to the ecore of the domain model
-| :white_check_mark:
+| :question:
 
 |
 |
