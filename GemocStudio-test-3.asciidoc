@@ -11,34 +11,33 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 |
 - File > new > Examples > TFSM Language example (sequential)
 | all added projects should be error free (may require a "clean all")
-|:white_check_mark:
+|:question:
 
 |
-- Open the projet.xdsml file with the Sequential XDML editor
-- click on Domain model / EMF Project link
-- click on Domain model / genmodel link
-|must open an editor on the ecore/resp genmodel file of the domain, 
-|:white_check_mark:
+- Open the Main.melange file
+- Ctrl+Click on 'syntax' URI hyperlink
+|must open an editor on the ecore file of the domain, 
+|:question:
 
 |
-- click on Behavior definition / K3 project link
+- Ctrl+Click on 'with' class hyperlink
 |must open an editor on the .k3 file containing aspects
-|:white_check_mark:
+|:question:
 
 |
 - click on Graphical editor / Sirius viewpoint design project link
 |-must open the .odesign file
-|:white_check_mark:
+|:question: Deprecated
 
 |
 - click on Graphical editor / Sirius animator project link
 |-must open the .odesign file
-|:white_check_mark:
+|:question: Deprecated
 
 |
-- from the project explorer view; right click on project.xdml > generate trace project
+- Right click on Main.melange > GEMOC Language > Create Multidimensional Trace Addon project for language
 |-must generate a trace addon project for TFSM
-| :white_check_mark:
+| :question:
 
 |
 |
