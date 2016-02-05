@@ -180,7 +180,7 @@ and showed below
 
 [source]
 ---------------------
-include::tutorialFiles/quickTutorial/xSigpml.ecl[source code of the ecl program]
+include::tutorialFiles/quickTutorial/sigpml/xSigpml.ecl[source code of the ecl program]
 ---------------------
 
 
@@ -290,7 +290,7 @@ image:images/quickTutorial/sigpml/OverviewExecuteSigpmlModelWithVCD.png[The Sigp
 The sigpml model is edited in the model editor and we can select model elements and change the model element properties. 
 
 .The Sigpml model element properties
-image:images/quickTutorial/sigpml/SigpmlModelProperties.png[The Sigpml model element properties]
+image:images/quickTutorial/sigpml/sigpmlModelProperties.png[The Sigpml model element properties]
 
 
 === Select a logical step
