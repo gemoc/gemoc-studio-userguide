@@ -140,7 +140,7 @@ link:tutorialFiles/quickTutorial/sigpml/sigpmlAspects.xtend[Kermeta 3 aspects,ta
 and showed below
 [source]
 ---------------------
-include::tutorialFiles/quickTutorial/sigpmlAspects.xtend[source code of the Kermeta 3 aspects]
+include::tutorialFiles/quickTutorial/sigpml/sigpmlAspects.xtend[source code of the Kermeta 3 aspects]
 ---------------------
 
 
@@ -207,7 +207,7 @@ link:tutorialfiles/quickTutorial/sigpml/xSigpml.moccml[the MoCCML program]
 and showed below
 [source]
 ---------------------
-include::tutorialFiles/quickTutorial/xSigpml.moccml[source code of the MocCCML program]
+include::tutorialFiles/quickTutorial/sigpml/xSigpml.moccml[source code of the MocCCML program]
 ---------------------
 
 At the end of this step the SigPML language is completely in terms of the metamodel, the graphical syntax, the behavior code of the functions, the expression of the concurrent semantics and the mapping them.
