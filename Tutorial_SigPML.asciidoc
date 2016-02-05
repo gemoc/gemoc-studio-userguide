@@ -9,7 +9,7 @@ SigPML is a Domain Specific Modeling Language dedicated to data flow processing.
 The concrete syntax is based on blocks, ports and connectors which associated ports to create directed flows. 
 The DSML execution semantics defines that all the blocks of a model run concurrently regarding constraints on connector synchronization. 
 The tutorial includes two execution semantics with the first one which defines a synchronization of the block execution with the pop and push actions of the connectors.  
-The second one introduces read and write operations in the block semantics to decouple the connector acces. 
+The second one introduces read and write operations in the block semantics to decouple the connector access. 
 
 The final result of the SigPML model execution is showed on the next picture with a purple processing block which is an executing block and the brown block waits for a connector synchronization after its connector acces.  
 
@@ -25,8 +25,8 @@ This language is based on the Ecore metamodel presented in the next figure.
 
 image:images/quickTutorial/sigpml/sigpmldomainEcore.png[SigPML metamodel]
 
-A SigPML Application is a set of Blocks and a set of Connectors which in relation with the blocks through input and output ports. 
-The Connector concept owns the capacity attribute which defines the maximum number of access on the connector, and the currentSize attribute provides the current acces number on the connector.
+A SigPML Application consists of a set of Blocks and a set of Connectors which are in relation with the blocks through input and output ports. 
+The Connector concept owns the capacity attribute which defines the maximum number of access on the connector, and the currentSize attribute provides the current access number on the connector.
 The Port contains the rate attribute which defines the possible access number input and output ports.
 
 === SigPML concrete syntax and sample model
@@ -74,7 +74,7 @@ You must specify the root element of you domain model.
 image:images/quickTutorial/sigpml/selectDomainModel.JPG[Domain model selection]
 
 
-Or you can create an Ecore project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmldomain.ecore[Ecore file].
+Or you can create an Ecore project with the provided link:tutorialFiles/quickTutorial/sigpml/sigpmldomain.ecore[Ecore file].
 
 === Select the graphical editor
 
@@ -85,7 +85,7 @@ You can select an existing graphical editor model to reference the Sirius projec
 image:images/quickTutorial/sigpml/selectGraphicalEditor.JPG[Sirius Graphical model selection]
 
 
-Or you can create a Sirius project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmlTuto.odesign[The odesign file].
+Or you can create a Sirius project with the provided link:tutorialFiles/quickTutorial/sigpml/sigpmlTuto.odesign[The odesign file].
 
 
 == SigPML execution semantics
@@ -233,7 +233,7 @@ We select the _Add a debug layer to an existing diagram description_->next->sele
 We can replace the _odesign_ file by the provided one.
 
 
-For now the language is totatly defined and executable, so we can used the SigPML Language !!
+For now the language is totaly defined and executable, so we can used the SigPML Language !!
 
 
 == SigPML modeling workbench
@@ -259,7 +259,7 @@ To obtain modeling workbench adequate performances, we set the VM parameters in 
 === Import the project with a sample model
 
 First you create a sigpml model or you can install the given model in an eclipse project  
-link:tutorialfiles/quickTutorial/sigpml/SigpmlModelingTuto.zip[The modeling project].
+link:tutorialFiles/quickTutorial/sigpml/SigpmlModelingTuto.zip[The modeling project].
 
 === Create a debug launch configuration
 
