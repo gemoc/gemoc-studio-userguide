@@ -391,7 +391,7 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/tutorialfiles/quickTutorial">
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/tutorialfiles/quickTutorial/sigpml">
 									<fileset dir="./tutorialFiles/quickTutorial" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/">
@@ -419,7 +419,7 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/tutorialfiles/quickTutorial">
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/tutorialfiles/quickTutorial/sigpml">
 									<fileset dir="./tutorialFiles/quickTutorial" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/">
@@ -447,7 +447,7 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/tutorialfiles/quickTutorial">
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/tutorialfiles/quickTutorial/sigpml">
 									<fileset dir="./tutorialFiles/quickTutorial" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/">
