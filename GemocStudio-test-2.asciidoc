@@ -33,7 +33,7 @@ Main goal: be able to create a new sequential language
 - must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
 - must add 'with' operator in the .melange
 - must update Require-Bundle in MANIFEST.MF
-|:question:
+|:question: :red_circle: action of generate plugin.xml neither documented nor enforced by builder (required after any changes in the list of aspect in the melange file)
 
 |
 - Right click on .melange GEMOC Language > Create Sirius Editor Project for language
