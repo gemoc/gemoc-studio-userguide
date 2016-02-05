@@ -391,6 +391,9 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/images">
 									<fileset dir="./images" />
 								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/MarkedGraph">
+									<fileset dir="./tutorialFiles/quickTutorial" />
+								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
@@ -416,6 +419,9 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/images">
 									<fileset dir="./images" />
 								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/MarkedGraph">
+									<fileset dir="./tutorialFiles/quickTutorial" />
+								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
@@ -440,6 +446,9 @@
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/images">
 									<fileset dir="./images" />
+								</copy>
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/MarkedGraph">
+									<fileset dir="./tutorialFiles/quickTutorial" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/">
 									<fileset dir="src/docbkx/resources" />
