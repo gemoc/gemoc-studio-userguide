@@ -58,7 +58,7 @@ The behavior definition is based on an aspect definition of the DSML domain mode
 Each of these definitions are based on existing and dedicated projects.
 
 .xDSML wizard definition
-image:images/quickTutorial/sigpml/xDSMLProjectWindow.jpg[xDSML wizard with all the constituents]
+image:images/quickTutorial/sigpml/xDSMLProjectWindow.JPG[xDSML wizard with all the constituents]
 
 
 
@@ -71,7 +71,7 @@ You must specify the root element of you domain model.
 
 [[img-domainModelSelect]]
 .Domain model selection
-image:images/quickTutorial/sigpml/selectDomainModel.jpg[Domain model selection]
+image:images/quickTutorial/sigpml/selectDomainModel.JPG[Domain model selection]
 
 
 Or you can create an Ecore project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmldomain.ecore[Ecore file].
@@ -82,7 +82,7 @@ You can select an existing graphical editor model to reference the Sirius projec
 
 
 .Sirius Graphical model selection
-image:images/quickTutorial/sigpml/selectGraphicalEditor.jpg[Sirius Graphical model selection]
+image:images/quickTutorial/sigpml/selectGraphicalEditor.JPG[Sirius Graphical model selection]
 
 
 Or you can create a Sirius project with the provided link:tutorialfiles/quickTutorial/sigpml/sigpmlTuto.odesign[The odesign file].
