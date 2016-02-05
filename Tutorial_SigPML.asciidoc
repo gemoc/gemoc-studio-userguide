@@ -203,7 +203,7 @@ In the MoCCML program, we define the constraint relation referenced in the ECL p
 This automaton describes how the events and variables are used to define a constraint automaton relative to each instance of the _Connector_ class.
 
 The source code is available through 
-link:tutorialfiles/quickTutorial/sigpml/xSigpml.moccml[the MoCCML program]
+link:tutorialFiles/quickTutorial/sigpml/xSigpml.moccml[the MoCCML program]
 and showed below
 [source]
 ---------------------
@@ -219,7 +219,7 @@ The last step is to define the animation view of the models as a debug extension
 ==== Creating the Animator project as a Sirius viewpoint
 
 As the section dedicated to the graphical syntax, the animator is defined as a Sirius viewpoint based on  
-link:tutorialfiles/quickTutorial/sigpml/xSigpmlAnim.odesign[the odesign file]
+link:tutorialFiles/quickTutorial/sigpml/xSigpmlAnim.odesign[the odesign file]
 
 In this file, we define the viewpoint as an extension of the _odesign_ file of the graphical syntax and modify the graphical shape of the blocks when the _currentExecCycle_ variable is incremented. The expression _[ self.eGet('currentExecCycle') > 0 /]_ is declared to customize the graphical shape of the blocks.
 
