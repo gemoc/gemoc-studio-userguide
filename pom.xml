@@ -391,8 +391,8 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/tutorialfiles/quickTutorial/sigpml">
-									<fileset dir="./tutorialFiles/quickTutorial" />
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/tutorialfiles/quickTutorial">
+									<fileset dir="./tutorialFiles/quickTutorial/sigpml" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/">
 									<fileset dir="src/docbkx/resources" />
@@ -419,8 +419,8 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/tutorialfiles/quickTutorial/sigpml">
-									<fileset dir="./tutorialFiles/quickTutorial" />
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/tutorialfiles/quickTutorial/">
+									<fileset dir="./tutorialFiles/quickTutorial/sigpml" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/">
 									<fileset dir="src/docbkx/resources" />
@@ -447,8 +447,8 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/tutorialfiles/quickTutorial/sigpml">
-									<fileset dir="./tutorialFiles/quickTutorial" />
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/tutorialfiles/quickTutorial">
+									<fileset dir="./tutorialFiles/quickTutorial/sigpml" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/">
 									<fileset dir="src/docbkx/resources" />
