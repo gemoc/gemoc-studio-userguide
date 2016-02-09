@@ -3,7 +3,10 @@
 ==== What is ((BCOoL))?
 ((BCOoL)) is a dedicated language to explicitly specify coordination patterns, i.e., to specify, at the language level, how some models conforming to different DSMLs can be coordinated. This enables the integrator to capture the knowledge of integration of systems. In BCOoL, the specification relies on _Operators_. Once an operator is defined between different DSMLs, it can be used to generate a coordination model between any  models conforming the DSMLs used in the operator.
 
-image::http://timesquare.inria.fr/BCOoL/images/bcoolapr.jpg[Overview of the BCOoL approach]
+.Overview of the approach.
+image::http://timesquare.inria.fr/BCOoL/images/bcoolapr.jpg[Overview of the BCOoL approach, 800]
+
+'''
 
 ((BCOoL)) is developed on top of the eclipse platform as a set of plugins. More precisely, it is integrated to the GEMOC studio. 
 ////
@@ -13,4 +16,21 @@ BCOoL is based on the EMF and its abstract syntax has been developed using Ecore
 
 BCOoL adds coordination facilities to the GEMOC studio. In the language workbench, an _integrator_ can develop BCOoL operators to specify coordination patterns between languages, and then a _system_ designer can use these operators in the modeling workbench to coordinate (possibly heterogeneous) models.
 
+
+=== Example: a BCOoL Operator between the TFSM and Activity languages. 
+To illustrate the use of BCOoL, we propose to develop a simple operator between the TFSM and Activity languages. This operator specifies a coordination pattern in which *FSMEvents* from the TFSM language and *Actions* from the Activity are coordinated by relying on their names. The goal here is to develop an operator that can be used latter in the modeling workbench to coordinate any pair of TFSM and Activity models. In particular, in the following section, we use this operator to coordinate the heterogeneous models of a coffee machine. We also use this example to show some of the BCOoL syntax. The reader can find a more precise description https://hal.inria.fr/hal-01182773/document[here]. Figure 2 illustrates the specification of BCOoL by using the GEMOC studio, we detail this specification as follows. The full project can be found in https://github.com/gemoc/gemoc-studio/tree/master/official_samples/bcool_TFSMAndActivity/modeling_workbench[here].    
+
+This operator synchronizes FSMEvents and Actions. This is done by coordinating instances of DSE _occurs_ and instances of DSE _executeIt_. To specify this in BCOoL, we first define a specification named _TfsmAndActivities_ and we import the language behavioral interface of each language, named _activity_ and _tfsm_ (Figure 2, line 6 and 7). Then, the operator _SyncFSMEventsAndActions_ is defined, which refers to the DSE _occurs_ and _executeIt_, mapped as _FSMEventOccurs_ and _ActionExecute_ respectively (Figure 2, line 11). 
+
+In BCOoL, operators are used to specify when and how instances of the referred DSE must be coordinated. To do so, each operator contains a _correspondence matching_ and a _coordination rule_. The former is used to select instances of DSE and the latter is used to express how the selected instances must be coordinated. 
+	
+A _correspondence matching_ selects instances of DSE by using a _Condition_ that contains an OCL Boolean expression. To express the boolean expression, the context of the DSE can be queried to get a specific syntactic element, e.g., attribute _name_. The boolean condition is thus used to compare the queried elements. The correspondence matching acts as a precondition for the coordination rule, i.e., it is a predicate that defines when the coordination rule must be applied to the given instances of DSE. For instance, for our example, we query the context of the DSE to get the attribute _name_. Then, the attributes are used as operands for the boolean condition (Figure 2, line 6 and 7). When an instance of DSE _occurs_ and an instance of DSE _executeIt_ have the same name, the pairs are selected and the coordination rule is applied.
+
+The _coordination rule_ specifies how the selected instances of DSE must be coordinated. To do so, it contains an _EventRelation_ and possibly some _EventVariables_. The event relation is used to restrict the relative order of the occurrences of events used as parameters. Its actual parameters can be instances of DSE, some _EventVariables_ and/or constants (e.g., integer constants). For this simple example, we only show the use of Event Relations. The operator must specify a strong synchronization between the events. To express that, we use the event relation _Rendezvous_ between the selected instances of DSE _occurs_ and _executeIt_ (Figure 2, line 14). This relation accepts two events as arguments and forces the occurrences of these events to happen simultaneously.  
+
+.Screenshot of the GEMOC Language Workbench showing the BCOoL specification.
+image::http://timesquare.inria.fr/BCOoL/images/producttfsmandactivitiesbcool.jpg[Overview of the BCOoL approach]
+'''
+
+We want to highlight that, for the moment, the edition of a BCOoL specification is done in the modeling workbench together with its application to coordinate models. The definition and the application should be two tasks done separately. The specification should be done in the _language workbench_ while the application should be done in the _modeling workbench_. We are working to fix that soon. In the section https://github.com/gemoc/gemoc-studio/wiki/GuideMW_CoordinatingModelExecution_Section[Coordinating Model Execution], we continue this example by using the operator previously defined to coordinate the heterogeneous models of a coffee machine.
 
