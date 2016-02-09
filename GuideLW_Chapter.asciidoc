@@ -28,20 +28,9 @@ include::GuideLW_DomainModelProject_Section.asciidoc[]
 // === Defining Domain-Specific Constraints
 // TODO
 
-[[defining-a-concrete-syntax-section]]
-=== Defining a Concrete Syntax
-An xDSML can support different concrete syntaxes. Most EMF-based editors should work with GEMOC, however the GEMOC Studio provides additional support for some specific editors. Thus, we recommend using: an EMF arborescent editor, an Xtext editor, and/or a Sirius editor.
-Don't forget to link the xDSML Project to the concrete syntax project(s) you want to use by editing the _project.xdsml_ file.
+include::GuideLW_DefiningConcreteSyntax_Section.asciidoc[]
 
 
-[[defining-a-concrete-syntax-with-xtext-section]]
-==== Defining a Concrete Syntax with Xtext
-See http://www.eclipse.org/Xtext/[the Xtext website].
-
-
-[[defining-a-concrete-syntax-with-sirius-section]]
-==== Defining a Concrete Syntax with ((Sirius))
-If you want to create a graphical concrete syntax you can use Sirius. The http://www.eclipse.org/sirius/doc/[Sirius documentation] provides information for http://www.eclipse.org/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual].
 
 [[make-language-executable-chapter]]
 == Make a language executable
