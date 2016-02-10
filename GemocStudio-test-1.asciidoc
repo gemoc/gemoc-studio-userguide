@@ -42,18 +42,23 @@ proposition: when no existing ecore and dsa projects are provided it would be be
 |:white_check_mark:
 
 |
-- click on Graphical editor / Sirius viewpoint design project link
+- click on .melange GEMOC Language > Create Sirius Editor project for language
 - connect the odesign to the domain, create a default layer and a few representations
-|-must open the Sirius wizard with default project name based on language project name, 
--the new project is set in the xdsml file.
-|:question:
+|
+- must open the Sirius wizard with default project name based on language project name, 
+- the new project is set in the xdsml file.
+|:large_orange_diamond: Ok but 
+
+project name is not based on language name, 
+
+dependency to domain model project is not set by default
 
 |
-- click on Graphical editor / Sirius animator project link
+- click on .melange GEMOC Language > Create Animator project editor for language
 - add debug layer to existing diagram 
 - select the previous odesign
-|-must open the "Create GEMOC debug representation" wizard
--the project is set in the xdsml file.
+|- must open the "Create GEMOC debug representation" wizard
+- the project is set in the xdsml file.
 | :question:
 
 |
