@@ -68,3 +68,9 @@ Crash if project name contains an uppercase letter
 |
 |
 |===
+
+
+autocompletion support in melange to create domain project
+
+autocompletion on with : filter on aspect classes ? add an @EObject annotation for classes such as context,
+ filter should point to these classes too 
