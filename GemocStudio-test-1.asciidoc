@@ -6,7 +6,7 @@ Main goal: be able to create a new sequential language
 |===
 |Actions to execute
 |Verification
-|Result for version: V2.1.0 2016_02_02
+|Result for version: V2.1.0 2016-02-10 10:24
 
 |
 - in Sirius Perspective, 
@@ -16,24 +16,30 @@ Main goal: be able to create a new sequential language
 - MANIFEST.MF
 - Sequential Nature & Builder
 - Extension point in plugin.xml
-|:question:
+| :large_orange_diamond: ok but 
+template is not enabled and preset by default (like it is done in the k3 template)
+
+language name and melange file name in the template are not inferred from the project name; 
+
+proposition: when no existing ecore and dsa projects are provided it would be better to put a line comment for syntax and with in the melange file rather than having a file with errors ?
 
 |
 - Right click on .melange GEMOC Language > Create Domain Model Project for language
 - Create a few classes in the sirius editor, save
+- generate model code
 |
 - must update Require-Bundle in MANIFEST.MF
 - must add syntax "platform/resource/project/folder/model.ecore" in the .melange
 - must open the EMF project wizard, then the sirius editor
-|:question:
+|:large_orange_diamond: ok but main package name is based on last part of project name (usually "model") instead of the language name 
 
 |
-- Right click on .melange GEMOC Language > Create DSA Project fro language
+- Right click on .melange GEMOC Language > Create DSA Project for language
 |
 - must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
 - must add 'with' operator in the .melange
 - must update Require-Bundle in MANIFEST.MF
-|:question: :red_circle: action of generate plugin.xml not documented (required after any changes in the list of aspect)
+|:white_check_mark:
 
 |
 - click on Graphical editor / Sirius viewpoint design project link
