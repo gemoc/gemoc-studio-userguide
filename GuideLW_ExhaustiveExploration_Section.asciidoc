@@ -27,9 +27,9 @@ ECL specification is the starting point toward exploration. In this specificatio
 
 _T1_ transformation generates a configuration file to later target exhaustive exploration or simulation tools.  _T1_ takes as input the *((ECL))* mapping definition between the DSL and the *((MoCCML))* to generate a transformation _T2_ describing transformation rules that will be used to produce the processes for the DSL related functions and data (DSA) and the behavioral processes corresponding to the *((MoCCML))* constraints.
 
-_T1_ is automatically generated from ecl model and results are stored in mtl-gen folder.
+_T1_ is automatically generated from ecl model and results are stored in *((mtl-gen))* folder.
 
-However to execute _T1_ manually right-click on the *((ECL))* file -> Exhaustive Exploration image:images/exhaustive_exploration/clocksystem_logo_32x32.png[width=16, height=16, role=right] -> Generate ClockSystem transformation from ECL model image:images/exhaustive_exploration/cs_t1_16x16.png[width=16, height=16, role=right] as illustrated in figure <<figure-t1-t2>>._T2_ is generated in the repository <mtl-gen>.
+However to execute _T1_ manually right-click on the *((ECL))* file -> image:images/exhaustive_exploration/clocksystem_logo_32x32.png[width=16, height=16, role=right]Exhaustive Exploration  -> image:images/exhaustive_exploration/cs_t1_16x16.png[width=16, height=16, role=right]Generate ClockSystem transformation from ECL model  as illustrated in figure <<figure-t1-t2>>._T2_ is generated in the repository <mtl-gen>.
 
 [[figure-t1-t2]]
 .Using T1 Tranformation
