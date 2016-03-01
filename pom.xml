@@ -247,9 +247,11 @@
 							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/</targetDirectory>
 							<includes>GuideTutorialMarkedGraph.xml</includes>
 							<preProcess>
+							    <!-- removed by XC.  All MarkedGraph images are in MarkedGraph/images.
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/images">
 									<fileset dir="./images" />
 								</copy>
+							    -->
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/MarkedGraph">
 									<fileset dir="./MarkedGraph" />
 								</copy>
@@ -275,9 +277,11 @@
 							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_markedgraph/html/</targetDirectory>
 							<includes>GuideTutorialMarkedGraph.xml</includes>
 							<preProcess>
+							    <!-- removed by XC.  All MarkedGraph images are in MarkedGraph/images.
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html/images">
 									<fileset dir="./images" />
 								</copy>
+							    -->
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html/MarkedGraph">
 									<fileset dir="./MarkedGraph" />
 								</copy>
