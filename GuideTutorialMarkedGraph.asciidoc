@@ -19,11 +19,11 @@ define an executable semantics and provide graphical animation for a
 DSML.   It relies of the
 http://en.wikipedia.org/wiki/Marked_graph[marked graph] language.
 
-The link:images/MarkedGraph/MarkedGraph-wikipedia-anim-all.gif[following animation] shows the expecting results of this tutorial:
+The link:MarkedGraph/images/MarkedGraph-wikipedia-anim-all.gif[following animation] shows the expecting results of this tutorial:
 according to the fired transitions, tokens move from place to place.
 
 .Expected animation for Marked Graph models
-image::images/MarkedGraph/MarkedGraph-wikipedia-anim-all.gif[Expected animation for Marked Graph models] 
+image::MarkedGraph/images/MarkedGraph-wikipedia-anim-all.gif[Expected animation for Marked Graph models] 
 
 
 ////
@@ -82,7 +82,7 @@ transition and a token count.
 
 // [[MarkedGraph-AS]]
 .Abstract Syntax (Metamodel) of MarkedGraph
-image::images/MarkedGraph/MarkedGraph-AS.png[MarkedGraph Domain Model (Metamodel)]
+image::MarkedGraph/images/MarkedGraph-AS.png[MarkedGraph Domain Model (Metamodel)]
 
 === Concrete Syntax and Sample Model
 
@@ -95,7 +95,7 @@ link:http://en.wikipedia.org/wiki/Marked_graph[Marked Graph model of wikipedia]
 link:http://www.eclipse.org/sirius/[Sirius]).
 
 .Example of a Marked Graph model (from link:http://en.wikipedia.org/wiki/Marked_graph[wikipedia])
-image::images/MarkedGraph/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
+image::MarkedGraph/images/MG-model-wikipedia.png[Example of a Marked Graph model (from wikipedia)]
 
 == Set up an xDSML project
 
@@ -112,19 +112,19 @@ You can also select __New ... / GEMOC Concurrent xDSML Project__.
 ////
 
 .Create an xDSML Project
-image::images/MarkedGraph/MG-SelectGemocLanguageProject.png[Create an xDSML Project, 800]
+image::MarkedGraph/images/MG-SelectGemocLanguageProject.png[Create an xDSML Project, 800]
 
 The first dialog of the wizard asks for the name of the project. Define
 it as __org.gemoc.sample.markedgraph.xdsml__.
 
 
 .Define the name of the project
-image::images/MarkedGraph/MG-SelectGemocLanguageProject-ProjectName.png[Define the name of the project, 800]
+image::MarkedGraph/images/MG-SelectGemocLanguageProject-ProjectName.png[Define the name of the project, 800]
 
 Click on __Next__  and define the name of the language (__markedgraph__).
 
 .Define the name of the language
-image::images/MarkedGraph/MG-SelectGemocLanguageProject-LanguageName.png[Define the name of the language, 800] 
+image::MarkedGraph/images/MG-SelectGemocLanguageProject-LanguageName.png[Define the name of the language, 800] 
 
 === Open xDSML View 
 
@@ -132,7 +132,7 @@ A file __project.xml__ has been created in the
 __org.gemoc.sample.markedgraph.xdsml__ project.
 
 .Content of the xDSML Project
-image::images/MarkedGraph/MG-XDSML-content.png[Content of the xDSML Project, 800]
+image::MarkedGraph/images/MG-XDSML-content.png[Content of the xDSML Project, 800]
 
 When opened, it provides the xDSML view which summarizes all the
 important resources used in an xDSML project (which are part of and
@@ -140,7 +140,7 @@ managed by other projects).  This view is a kind of control center to
 have quick access to the main resources of the project.
 
 .The xDSML Editor
-image::images/MarkedGraph/MG-XDSML-start.png[The xDSML Editor, 800]
+image::MarkedGraph/images/MG-XDSML-start.png[The xDSML Editor, 800]
 
 
 === Select the AS
@@ -149,23 +149,23 @@ In the "Domain Model" section, click on the "Browse" button to select
 the project defining the AS: org.gemoc.sample.markedgraph.model.
 
 .Browse to select the AS project
-image::images/MarkedGraph/MG-XDSML-EMF-Browse.png[Browse to select the AS project, 800]
+image::MarkedGraph/images/MG-XDSML-EMF-Browse.png[Browse to select the AS project, 800]
 
 Then, select the "Genmodel URI".
 
 .Browse to select the genmodel resource
-image::images/MarkedGraph/MG-XDSML-EMF-genmodel-browse.png[Browse to select the genmodel resource, 800]
+image::MarkedGraph/images/MG-XDSML-EMF-genmodel-browse.png[Browse to select the genmodel resource, 800]
 
 Finally, select the "Root container model
 element" thanks to the "Select" buttons.
 
 .Browse to select the root container
-image::images/MarkedGraph/MG-XDSML-EMF-root-browse.png[Browse to select the root container, 800]
+image::MarkedGraph/images/MG-XDSML-EMF-root-browse.png[Browse to select the root container, 800]
 
 ////
 
 .The xDSML Editor with AS related fields initialized
-image::images/MarkedGraph/MG-XDSML-EMF-done.png[The xDSML Editor with AS related fields initialized]
+image::MarkedGraph/images/MG-XDSML-EMF-done.png[The xDSML Editor with AS related fields initialized]
 
 ////
 
@@ -179,7 +179,7 @@ project.xdsml editor, click on "Browse" to select the
 "org.gemoc.markedgraph.design" project.
 
 .Select Sirius graphical editor
-image::images/MarkedGraph/MG-XDSML-CS-select.png[Select Sirius graphical editor, 800]
+image::MarkedGraph/images/MG-XDSML-CS-select.png[Select Sirius graphical editor, 800]
 
 
 
@@ -249,7 +249,7 @@ is no need to add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition
 and 'initialize()' on MarkedGraph.
 
 .Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
-image::images/MarkedGraph/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
+image::MarkedGraph/images/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
 
 ==== Create the DSA Project
 
@@ -259,7 +259,7 @@ launched with the name of the project initialized (k3dsa is the last
 name). Click "Finish".  The project has been created.
 
 .Create a K3 Project
-image::images/MarkedGraph/MG-K3-Create.png[Create a K3 Project, 800]
+image::MarkedGraph/images/MG-K3-Create.png[Create a K3 Project, 800]
 
 ==== Implement the DSA
 
@@ -274,7 +274,7 @@ include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 
 
 .Definition of the DSA (ED and EF)
-image::images/MarkedGraph/MG-K3-Defined.png[Definition of the DSA (ED and EF), 800]
+image::MarkedGraph/images/MG-K3-Defined.png[Definition of the DSA (ED and EF), 800]
 
 ////
 TODO: Qui des helper (initialize sur Place) : il faudrait indiquer
@@ -311,14 +311,14 @@ __project.xdsml__ editor ("Behavior definition / DSE definition").
 * Check that the name is __org.gemoc.sample.markedgraph.dse__.
 
 .Create a DSE Project
-image::images/MarkedGraph/MG-DSE-Create.png[Create a DSE Project, 800]
+image::MarkedGraph/images/MG-DSE-Create.png[Create a DSE Project, 800]
 
 * Click "Next".  All fields have been correctly initialized.
 * Click "finish" and the project is created.
 * Click on "ECL Project" to view the "markedgraph.ecl".
 
 .Template of the ECL file
-image::images/MarkedGraph/MG-DSE-Template.png[Template of the ECL file, 800]
+image::MarkedGraph/images/MG-DSE-Template.png[Template of the ECL file, 800]
 
 
 ==== Define DSE
@@ -335,7 +335,7 @@ include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
 
 
 .Definition of the DSE (events and constraints)
-image::images/MarkedGraph/MG-DSE-Defined.png[Definition of the DSE (events and constraints), 800]
+image::MarkedGraph/images/MG-DSE-Defined.png[Definition of the DSE (events and constraints), 800]
 
 
 
@@ -456,19 +456,19 @@ animation of a Marked Graph model.
 Tun the wizard with __New > Other / Create GEMOC debug representation__.
 
 .Create GEMOC debug representation wizard
-image::images/MarkedGraph/MG-animation-wizard-launch.png[Create GEMOC debug representation wizard]
+image::MarkedGraph/images/MG-animation-wizard-launch.png[Create GEMOC debug representation wizard]
 
 On the first screen of the wizad, select "Extends an existing diagram
 description".
 
 .Select "Extends an existing diagram description"
-image::images/MarkedGraph/MG-animation-wizard-choose.png[Select "Extends an existing diagram description"]
+image::MarkedGraph/images/MG-animation-wizard-choose.png[Select "Extends an existing diagram description"]
 
 
 Select the viewpoint to extend "MarkedGraph diagram".
 
 .Select the viewpoint to extend
-image::images/MarkedGraph/MG-animation-wizard-select-viewpoint.png[Select the viewpoint to extend]
+image::MarkedGraph/images/MG-animation-wizard-select-viewpoint.png[Select the viewpoint to extend]
 
 Finally, we can fill in the Project Name in which the newly creating
 viewpoint file will take place (org.gemoc.sample.markedgraph.animation),
@@ -476,7 +476,7 @@ the name of the viewpoint file (markedgraph-animation.odesign), the
 viewpoint name (MarkedGraphViewpoint) and the diagram name (MarkedGraph).
 
 .Information of the animation viewpoint
-image::images/MarkedGraph/MG-animation-wizard-set-names.png[Information of the animation viewpoint]
+image::MarkedGraph/images/MG-animation-wizard-set-names.png[Information of the animation viewpoint]
 
 The last screen allows to choose the name of the layer to be created. Debug
 is a good name.
@@ -612,7 +612,7 @@ Configuration" into "Marked Graph Modeling Workbench".  We can now click
 Modeling Workbench for Marked Graph.
 
 .Define the Marked Graph Modeling Workbench configuration
-image::images/MarkedGraph/MG-run-EclipseApplicationConfig.png[Define the Marked Graph Modeling Workbench configuration]
+image::MarkedGraph/images/MG-run-EclipseApplicationConfig.png[Define the Marked Graph Modeling Workbench configuration]
 
 
 === Import the project with a sample model
@@ -641,7 +641,7 @@ to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
 * Click on "Debug"
 
 .Define the configuration to run the wikipedia example
-image::images/MarkedGraph/MG-run-WikipediaConfig.png[Define the configuration to run the wikipedia example]
+image::MarkedGraph/images/MG-run-WikipediaConfig.png[Define the configuration to run the wikipedia example]
 
 
 === Launch the execution of the model
@@ -665,7 +665,7 @@ component of the Modeling Workbench.
 
 
 .The wikipedia model is just started
-image::images/MarkedGraph/MG-run-start.png[The wikipedia model is just started]
+image::MarkedGraph/images/MG-run-start.png[The wikipedia model is just started]
 
 
 === Select a logical step
@@ -674,26 +674,26 @@ The Logical Steps view, presents the possible steps, and for each step,
 the MSE that will occur if it is selected.
 
 .One logical step selected
-image::images/MarkedGraph/MG-run-start-select.png[One logical step selected]
+image::MarkedGraph/images/MG-run-start-select.png[One logical step selected]
 
 Double-click on a Logical Step to choose it.  The corresponding MSE
 occur, they are visible on the VCD, and they trigger the associated
 execution functions which make the state of the model evolve.
 
 .Execute a logical step
-image::images/MarkedGraph/MG-run-init.png[Execute a logical step]
+image::MarkedGraph/images/MG-run-init.png[Execute a logical step]
 
 
 Then, we can select a new logical step (here we selected the the logical step which fires the t2 transition).
 
 .Transition t1 fired
-image::images/MarkedGraph/MG-run-t1-fired.png[Transition t1 fired]
+image::MarkedGraph/images/MG-run-t1-fired.png[Transition t1 fired]
 
 .Transition t2 fired
-image::images/MarkedGraph/MG-run-t2-fired.png[Transition t2 fired]
+image::MarkedGraph/images/MG-run-t2-fired.png[Transition t2 fired]
 
 .Some logical steps later
-image::images/MarkedGraph/MG-run-last.png[Some logical steps later]
+image::MarkedGraph/images/MG-run-last.png[Some logical steps later]
 
 
 === Stop the execution
@@ -766,7 +766,7 @@ We first define the declaration of a relation (placeReadWrite).  Here after
 is its graphical representation.  This relation is parameterized by the r clock (some one how wants to read a token), the w clock (someone how wants to write a token, and n the initial count of token in the place).
 
 .Graphical declaration of the placeReadWriteDef relation
-image::images/MarkedGraph/MoCCML-diagram.png[Graphical definition of a relation]
+image::MarkedGraph/images/MoCCML-diagram.png[Graphical definition of a relation]
 
 Then we can define this relation. Here after is the resulting automaton. The
 local variable count represent the number of tokens in this place.  s0 is the
@@ -776,7 +776,7 @@ when w or r occurs.  The write transition is fired when w occurs and  a token is
 A guard prevents the read transition to be fired if there is not at liste one token in the place (count >= one).
 
 .Automaton defining the placeReadWriteDef relation.
-image::images/MarkedGraph/MoCCML-automata.png[Automaton defining the placeReadWriteDef relation]
+image::MarkedGraph/images/MoCCML-automata.png[Automaton defining the placeReadWriteDef relation]
 
 
 
