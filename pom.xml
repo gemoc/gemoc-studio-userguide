@@ -395,8 +395,9 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/tutorialFiles/quickTutorial/sigpml">
-									<fileset dir="./tutorialFiles/quickTutorial/sigpml" />
+								<!-- tutorialFiles/quickTutorial/sigpml -> tutorial_sigpml/SigPML -->
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/SigPML">
+									<fileset dir="./SigPML" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/">
 									<fileset dir="src/docbkx/resources" />
@@ -423,8 +424,9 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/tutorialFiles/quickTutorial/sigpml">
-									<fileset dir="./tutorialFiles/quickTutorial/sigpml" />
+								<!-- tutorialFiles/quickTutorial/sigpml -> tutorial_sigpml/SigPML -->
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/SigPML">
+									<fileset dir="./SigPML" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/">
 									<fileset dir="src/docbkx/resources" />
@@ -451,8 +453,8 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/images">
 									<fileset dir="./images" />
 								</copy>
-								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/tutorialFiles/quickTutorial/sigpml">
-									<fileset dir="./tutorialFiles/quickTutorial/sigpml" />
+								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/SigPML">
+									<fileset dir="./SigPML" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/">
 									<fileset dir="src/docbkx/resources" />
