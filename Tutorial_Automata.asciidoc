@@ -243,7 +243,7 @@ An arrow without input state points to the initial state.
 
 [[automata-aSbaS]]
 .Automata which reads a*ba*
-image::images/tutorial/automate-aSbaS.png[Automata which reads a*ba*]
+image::Automata/images/tutorial/automate-aSbaS.png[Automata which reads a*ba*]
 
 
 === Informal behavior
@@ -300,7 +300,7 @@ state.
 
 [[automata-abcdS]]
 .Automata which reads (ABCD)*
-image::images/tutorial/automate-abcd-star.png[Automata which reads (ABCD)*]
+image::Automata/images/tutorial/automate-abcd-star.png[Automata which reads (ABCD)*]
 
 * Examples of accepted words: (empty word), ABCD,
 ABCDABCD, etc.
@@ -319,7 +319,7 @@ Dictionary Automata:
 
 [[automata-mots]]
 .Automata which reads words
-image::images/tutorial/automate-mots.png[Automata which reads words]
+image::Automata/images/tutorial/automate-mots.png[Automata which reads words]
 
 The only accepted words are: IL, ILE, ILES, ILS, ILOT, ILOTS
 
@@ -334,7 +334,7 @@ TODO: A transition with no associated symbol (automatic transition?)
 
 [[automata-ccomm]]
 .Automata which reads C commentary
-image::images/tutorial/automate-ccomm.png[Automata which C commentary]
+image::Automata/images/tutorial/automate-ccomm.png[Automata which C commentary]
 
 
 Pushdown automata::
@@ -403,7 +403,7 @@ editor or with the tree editor.
 
 [[fig-automata-classDiagram]]
 .Automata Metamodel
-image::images/tutorial/automata-as.png[Automata Abstract Syntax (Metamodel)]
+image::Automata/images/tutorial/automata-as.png[Automata Abstract Syntax (Metamodel)]
 
 An Automaton is a composed of States (at least one), Transitions and
 Symbols.  An automaton has an initial state (reference).  A state can

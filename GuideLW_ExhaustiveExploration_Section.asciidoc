@@ -19,7 +19,7 @@ The flow toward exhaustive exploration and verification in Gemoc is presented in
 
 [[figure-exploration-flow]]
 .The exploration and verification flow in Gemoc
-image::images/exhaustive_exploration/flow.png[The Exploration and Verification Flow in Gemoc, 600]
+image::Guide/images/exhaustive_exploration/flow.png[The Exploration and Verification Flow in Gemoc, 600]
  
 ==== Generating inputs for Exhaustive Exploration tools : _T1_ at Language Level
 
@@ -29,9 +29,9 @@ _T1_ transformation generates a configuration file to later target exhaustive ex
 
 _T1_ is automatically generated from ecl model and results are stored in *((mtl-gen))* folder.
 
-However to execute _T1_ manually right-click on the *((ECL))* file -> image:images/exhaustive_exploration/clocksystem_logo_32x32.png[width=16, height=16, role=right]Exhaustive Exploration  -> image:images/exhaustive_exploration/cs_t1_16x16.png[width=16, height=16, role=right]Generate ClockSystem transformation from ECL model  as illustrated in figure <<figure-t1-t2>>._T2_ is generated in the repository <mtl-gen>.
+However to execute _T1_ manually right-click on the *((ECL))* file -> image:Guide/images/exhaustive_exploration/clocksystem_logo_32x32.png[width=16, height=16, role=right]Exhaustive Exploration  -> image:Guide/images/exhaustive_exploration/cs_t1_16x16.png[width=16, height=16, role=right]Generate ClockSystem transformation from ECL model  as illustrated in figure <<figure-t1-t2>>._T2_ is generated in the repository <mtl-gen>.
 
 [[figure-t1-t2]]
 .Using T1 Tranformation
-image::images/exhaustive_exploration/t1_t2.png[Using T1 Tranformation, 500]
+image::Guide/images/exhaustive_exploration/t1_t2.png[Using T1 Tranformation, 500]
 

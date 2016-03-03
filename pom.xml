@@ -138,6 +138,11 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html_single/images">
 									<fileset dir="./images" />
 								</copy>
+			 					<copy todir="${project.build.directory}/docbook/publish/guide/html_single/Guide">
+									<fileset dir="./Guide" >
+										<exclude name="*.pptx"/>
+									</fileset>
+								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/html_single/">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
@@ -166,6 +171,11 @@
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html/images">
 									<fileset dir="./images" />
 								</copy>
+			 					<copy todir="${project.build.directory}/docbook/publish/guide/html/Guide">
+									<fileset dir="./Guide" >
+										<exclude name="*.pptx"/>
+									</fileset>
+								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/html//">
 									<fileset dir="src/docbkx/resources" />
 								</copy>
@@ -191,6 +201,11 @@
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/images">
 									<fileset dir="./images" />
+								</copy>
+			 					<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/Guide">
+									<fileset dir="./Guide" >
+										<exclude name="**.pptx"/>
+									</fileset>
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/">
 									<fileset dir="src/docbkx/resources" />
@@ -530,8 +545,8 @@
                    </goals>   
            <configuration>
                <file>target/docbook/publish/guide/html_single/Guide.html</file>
-               <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
-					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
+               <token><![CDATA[<img src="./Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
+					<value><![CDATA[<img src="Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
 <map name="map">
 <area shape="rect" coords="142,145,337,182" href="Guide.html#create-language-chapter" />
@@ -557,8 +572,8 @@
                    </goals>   
            <configuration>
                <file>target/docbook/publish/guide/html/Guide.html</file>
-               <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
-					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
+               <token><![CDATA[<img src="./Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
+					<value><![CDATA[<img src="Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
 <map name="map">
 <area shape="rect" coords="142,145,337,182" href="ch02.html" />
@@ -584,8 +599,8 @@
                    </goals>   
            <configuration>
                <file>target/docbook/publish/guide/eclipse/Guide.html</file>
-               <token><![CDATA[<img src="./images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
-					<value><![CDATA[<img src="images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
+               <token><![CDATA[<img src="./Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
+					<value><![CDATA[<img src="Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
 <map name="map">
 <area shape="rect" coords="142,145,337,182" href="ch02.html" />

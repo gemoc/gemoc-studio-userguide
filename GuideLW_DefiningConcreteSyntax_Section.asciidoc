@@ -30,8 +30,8 @@ Table <<customized-non-customized-tree-editor-table>> illustrates the value of a
 .Example of customization of icons on Timed Finite State Machine tree editor.
 [cols=">,<"]
 |===
-| image:images/workbench/language/editors/tfsm_non_customized_tree_editor.png[Same editor without customization]
-| image:images/workbench/language/editors/tfsm_customized_tree_editor.png[Same editor without customization]
+| image:Guide/images/workbench/language/editors/tfsm_non_customized_tree_editor.png[Same editor without customization]
+| image:Guide/images/workbench/language/editors/tfsm_customized_tree_editor.png[Same editor without customization]
 |===
 
 

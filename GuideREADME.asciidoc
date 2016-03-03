@@ -68,7 +68,7 @@ For example:
 ----
 [[figure-gs-screenshot-of-openshift]]
 .Welcome screen of OpenShift.
-image::images/jenkins.png[Screenshot of OpenShift]]
+image::website/images/jenkins.png[Screenshot of OpenShift]]
 ----
 +
 The label +figure-gs-screenshot-of-openshift+ can be used to link to this figure using `<<figure-gs-screenshot-of-openshift>>`.

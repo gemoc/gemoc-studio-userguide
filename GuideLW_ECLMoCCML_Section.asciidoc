@@ -95,7 +95,7 @@ NB: _MoCCML_ has multiple pallets to instantiate a library. The pallets are loca
  
 [[figure-glw-screenshot-of-moccmlLevelFirst]]
 .Screenshot of the First graphical level of Edition in MoCCML.
-image::images/eclmoccml/moccmlLevFirst.png[Screenshot of MoCCML First Level of Edition, 800]
+image::Guide/images/eclmoccml/moccmlLevFirst.png[Screenshot of MoCCML First Level of Edition, 800]
 
 ====== Creating MoCC Libraries 
 As shown in Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>, creating new _MoCC_ libraries can be done by using the first two pallets on the right (Library Edition, New Library & Required Feature). In these pallets, the element (Library New Library + New Relationship and Relationship) can be used for the instantiation of a new _MoCC_ library. The two are distinguished by the fact that the last mentioned will create a new library of _MoCC_, while adding a default Relation Declaration. In Figure <<figure-glw-screenshot-of-moccmlLevelFirst>> we create a new Library called _RendezVous_Relations_.
@@ -128,7 +128,7 @@ The use of constraints is shown in the next section.
 
 [[figure-glw-screenshot-of-moccmlLevelSecond]]
 .Screenshot of the Second graphical level of Edition in MoCCML (Constraint Implementation).
-image::images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Level of Edition, 800]
+image::Guide/images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Level of Edition, 800]
 
 ====== Using the constraints on the ECL 
 
