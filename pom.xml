@@ -140,7 +140,7 @@
 								</copy>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html_single/Guide">
 									<fileset dir="./Guide" >
-										<exclude name="*.pptx"/>
+										<exclude name="**/*.pptx"/>
 									</fileset>
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/html_single/">
@@ -173,7 +173,7 @@
 								</copy>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html/Guide">
 									<fileset dir="./Guide" >
-										<exclude name="*.pptx"/>
+										<exclude name="**/*.pptx"/>
 									</fileset>
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/html//">
@@ -200,11 +200,13 @@
 							<includes>Guide.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/images">
-									<fileset dir="./images" />
+									<fileset dir="./images" >
+										<exclude name="**/*.svg"/>
+									</fileset>
 								</copy>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/Guide">
 									<fileset dir="./Guide" >
-										<exclude name="**.pptx"/>
+										<exclude name="**/*.pptx"/>
 									</fileset>
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/">
@@ -322,9 +324,11 @@
 							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/</targetDirectory>
 							<includes>GuideTutorialMarkedGraph.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/images">
-									<fileset dir="./images" />
-								</copy>
+			 					<!-- <copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/images">
+									<fileset dir="./images" >
+										<exclude name="**/*.svg"/>
+									</fileset>
+								</copy> -->
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/MarkedGraph">
 									<fileset dir="./MarkedGraph" />
 								</copy>
@@ -465,9 +469,11 @@
 							<targetDirectory>${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/</targetDirectory>
 							<includes>Tutorial_SigPML.xml</includes>
 							<preProcess>
-			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/images">
-									<fileset dir="./images" />
-								</copy>
+			 					<!-- <copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/images">
+									<fileset dir="./images" >
+										<exclude name="**/*.svg"/>
+									</fileset>
+								</copy> -->
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/SigPML">
 									<fileset dir="./SigPML" />
 								</copy>
