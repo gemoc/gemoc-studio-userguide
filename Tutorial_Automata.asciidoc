@@ -111,7 +111,7 @@ requirements are fulfilled.
 
 [[GEMOC-process-overview]]
 .Overview of the GEMOC process
-image::images/tutorial/xDSML-definition-process-overview.png[Overview of the GEMOC process]
+image::Automata/images/tutorial/xDSML-definition-process-overview.png[Overview of the GEMOC process]
 (((GEMOC,process,overview)))
 
 NOTE: For clarity, the iteration to choose the next increment is not
@@ -178,7 +178,7 @@ domain (and could be considered as a kind of compound activity).
 
 [[GEMOC-process]]
 .Recommended GEMOC Process
-image::images/tutorial/xDSML-definition-process-general.png[Recommended GEMOC Process]
+image::Automata/images/tutorial/xDSML-definition-process-general.png[Recommended GEMOC Process]
 (((GEMOC,process)))
 
 WARNING: This process is the recommanded one, and the one used in this
