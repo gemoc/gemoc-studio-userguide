@@ -93,13 +93,17 @@ syntax::
   Link your language to your Domain Model. The path to your model follows the Eclipse platform URLs convention:
 "platform:/resource/<name of your EMF project>/<path to the .ecore file>"
 with::
-  Link the DSA project to your language. *with* is followed by the name of a Java class.
+  Link the DSA project to your language. *with* is followed by the name of a Java class. Melange support wildcard character for this operator. Typing in your language 'with some.package.name.*' will import all classes under this namespace.
 ecl::
   Link your language to your ECL project. The intended format for the path to your .ecl file is:
 "<name of your ECL project>/<path to the .ecl file>"
 inherits::
   The keyword *inherits* allows you to define a Language as an extension of another. It means the abstract syntax and the semantics of the inherited Language are copied in your Language.
 
+[NOTE]
+====
+Your xDSML project need a dependency to your DSA project. Check the Require-Bundle section in the MANIFEST.MF if the Melange editor can't see the used Aspect.
+====
 
 .a Language with semantic
 [source,java]
