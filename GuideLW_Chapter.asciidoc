@@ -80,3 +80,8 @@ include::GuideLW_DefiningMultidimensionalTrace_Section.asciidoc[]
 == Compose languages
 
 include::GuideLW_ComposingLanguages_Section.asciidoc[]
+
+[[deploy-languages-chapter]]
+== Deploy languages
+
+include::GuideLW_DeployLanguages_Section.asciidoc[]
