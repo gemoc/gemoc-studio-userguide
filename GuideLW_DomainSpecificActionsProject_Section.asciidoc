@@ -7,7 +7,8 @@ The Domain-Specific Actions define the runtime state (*Execution Data*) of the m
 ==== Creating the DSA Project
 In the GEMOC Studio, the DSA are implemented using https://github.com/diverse-project/k3/wiki[Kermeta 3].
 To create a new DSA Project, in the main menu of the GEMOC Studio, go to: _File > New > Project... > K3 Project_. In the wizard, create it as a Plug-in with EMF using the template of your choice.
-Then, connect the xDSML Project to the DSA Project by referencing the DSA Project in the _project.xdsml_ file.
+Then, connect the xDSML Project to the DSA by referencing them in the _.melange_ file thanks to the keyword *with*.
+See <<section-melange-editor>> for more informations about Melange keywords and the content assist.
 
 ==== Editing the DSA Project
 Kermeta 3 is based on http://www.eclipse.org/xtend/index.html[xTend]. The Execution Data and Execution Functions are defined through aspects weaved onto the metaclasses of the Domain Model.

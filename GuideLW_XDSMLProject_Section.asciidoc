@@ -55,6 +55,7 @@ Generate Plugin.xml::
 
 image::Guide/images/workbench/language/melange_menu.png[Project menu,1000]
 
+[[section-melange-editor]]
 ==== Melange editor
 
 Melange is a Language designing tool. Through a .melange file you can define a Language as an assembly of abstract syntaxes with operational semantics and also as a composition of Languages.
