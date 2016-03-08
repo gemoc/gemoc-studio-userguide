@@ -60,6 +60,10 @@ archive] containing the projects and unzip it.  Then, with the GEMOC
 Studio, select __import... / General / Existing Projects into
 Workspace__ and import all the projects from the archive file.
 
+.Importing existing projects from the archive file
+image::MarkedGraph/images/v2.1/MG-XDSML-04-import-wizard-complete.png[Importing existing projects from the archive file, 800]
+
+
 link:MarkedGraph/org.gemoc.sample.markedgraph-final.zip[Here is the archive
 containing all the projects] that will be created during this tutorial.
 
@@ -103,64 +107,56 @@ In this section, we first create an xDSML project for MarkedGraph
 and initialize it with the provided Abstract Syntax (AS) and Concrete
 Syntax (CS).
 
+First, check that the current perspective is "xDSML" (top right of Eclipse
+frame).  The perspective can be changed thanks to the menu "Window > Open Perspective > Others".
+
 === Create an xDSML Project
 
-Select an xDSML project (__New > Project > GEMOC
+Create a "New  xDSML project (__New > Project > GEMOC
 Project / new GEMOC Concurrent xDSML Project__).
 ////
 You can also select __New ... / GEMOC Concurrent xDSML Project__.
 ////
 
-.Create an xDSML Project
-image::MarkedGraph/images/MG-SelectGemocLanguageProject.png[Create an xDSML Project, 800]
+.Create a GEMOC Concurrent xDSML Project
+image::MarkedGraph/images/v2.1/MG-XDSML-06b-xdsml-GEMOC-concurrent.png[Create a GEMOC Concurrent xDSML Project, 800]
 
 The first dialog of the wizard asks for the name of the project. Define
 it as __org.gemoc.sample.markedgraph.xdsml__.
 
 
 .Define the name of the project
-image::MarkedGraph/images/MG-SelectGemocLanguageProject-ProjectName.png[Define the name of the project, 800]
+image::MarkedGraph/images/v2.1/MG-XDSML-07-xdsml-define-name.png[Define the name of the project, 800]
 
-Click on __Next__  and define the name of the language (__markedgraph__).
+Click on __Next__  and define the properties of the language (__markedgraph__).
+The 'Package' property is already defined (based on the project name).
+The othe properties include the name of melange file (used to link together the
+different parts on an xDSML), the name of the language and the location of the
+Ecore file.  The two other properties 'DSA projects' and 'ECL path' will be
+created latter in this tutorial.
 
-.Define the name of the language
-image::MarkedGraph/images/MG-SelectGemocLanguageProject-LanguageName.png[Define the name of the language, 800] 
-
-=== Open xDSML View 
-
-A file __project.xml__ has been created in the
-__org.gemoc.sample.markedgraph.xdsml__ project.
-
-.Content of the xDSML Project
-image::MarkedGraph/images/MG-XDSML-content.png[Content of the xDSML Project, 800]
-
-When opened, it provides the xDSML view which summarizes all the
-important resources used in an xDSML project (which are part of and
-managed by other projects).  This view is a kind of control center to
-have quick access to the main resources of the project.
-
-.The xDSML Editor
-image::MarkedGraph/images/MG-XDSML-start.png[The xDSML Editor, 800]
+Use 'markedgraph' for the Melange file name, 'MarkedGraphL' for the Language
+name and select the markedgraph.ecore file by Browsing the
+'org.gemoc.sample.markedgraph.model' project (found in 'model' directory).
 
 
-=== Select the AS
+.Define the properties of the xDSML
+image::MarkedGraph/images/v2.1/MG-XDSML-09-xdsml-wizard-complete.png[Define the properties of the xDSML, 800] 
 
-In the "Domain Model" section, click on the "Browse" button to select
-the project defining the AS: org.gemoc.sample.markedgraph.model.
 
-.Browse to select the AS project
-image::MarkedGraph/images/MG-XDSML-EMF-Browse.png[Browse to select the AS project, 800]
 
-Then, select the "Genmodel URI".
 
-.Browse to select the genmodel resource
-image::MarkedGraph/images/MG-XDSML-EMF-genmodel-browse.png[Browse to select the genmodel resource, 800]
+=== Open the Melange file
 
-Finally, select the "Root container model
-element" thanks to the "Select" buttons.
+The Melange file summarizes all the important resources used in an xDSML
+project (which are part of and managed by other projects). Completion
+(CTRL-SPACE) can be used to launch wizard but it will not be used in this
+tutorial.  The Melange file is found in the
+'org.gemoc.sample.markedgraph.xdsml'  project in the 'src' directory.
 
-.Browse to select the root container
-image::MarkedGraph/images/MG-XDSML-EMF-root-browse.png[Browse to select the root container, 800]
+.Content of the Melange file
+image::MarkedGraph/images/v2.1/MG-XDSML-11-xdsml-melange-file.png[Content of the Melange file, 800]
+
 
 ////
 
@@ -169,6 +165,8 @@ image::MarkedGraph/images/MG-XDSML-EMF-done.png[The xDSML Editor with AS related
 
 ////
 
+////
+// TODO where should it be done?
 === Select the Graphical Editor
 
 The Graphical Editor defines a graphical concrete syntax which is
@@ -181,6 +179,7 @@ project.xdsml editor, click on "Browse" to select the
 .Select Sirius graphical editor
 image::MarkedGraph/images/MG-XDSML-CS-select.png[Select Sirius graphical editor, 800]
 
+////
 
 
 == Define the Execution Semantics
@@ -243,28 +242,36 @@ At the moment, we need to complete the AS (markedgraph.ecore) with the
 ED and EF.  In the next release of the GEMOC Studio this step replaced by the
 use of link:http://melange-lang.org/[Melange] to automatically extend the AS
 with ED and EF.
+// XXX : Possible ?
 
-The ED and and EF are already defined on the provided metamodel.  Thus, there
+The ED and EF are already defined on the provided metamodel.  Thus, there
 is no need to add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition
 and 'initialize()' on MarkedGraph.
 
 .Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
 image::MarkedGraph/images/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
 
+
 ==== Create the DSA Project
 
-Click on __K3 project__ in the project.xdml editor (Behavioral definition / DSA
-definition).  The wizard to create of new Kermeta 3 project is
-launched with the name of the project initialized (k3dsa is the last
-name). Click "Finish".  The project has been created.
+In the Project Explorer, right click on any file of the xDSML project and
+choose __GEMOC Languge > Create DSA Project for language__ to start the wizard.
 
-.Create a K3 Project
-image::MarkedGraph/images/MG-K3-Create.png[Create a K3 Project, 800]
+.Create a DSA Project
+image::MarkedGraph/images/v2.1/MG-XDSML-12b-dsa-new.png[Create a DSA Project, 800]
+
+The wizard first add for the language: select 'MarkedGraphL' and click __OK__.
+On the next screen, the project name is already initialized.  Click 'Finish'
+and the 'org.gemoc.sample.markedgraph.k3dsa' is created and the Melange file is completed with references to aspects implemented the ED and EF.
+
+.The Melange file with references to aspects implementing ED and EF
+image::MarkedGraph/images/v2.1/MG-XDSML-15-melange-with-dsa.png[The Melange file with references to aspects implementing ED and EF, 800]
+
 
 ==== Implement the DSA
 
-Click again on _K3 project_ to open __markedgraph.xtend__.  It
-has been initialized with a template that can be discarded and
+Open the __markedgraphAspects.xtend__ file.  It is located in the __org.gemoc.sample.markedgraph.k3dsa__ project in __src/markedgraph.aspects__.
+The file has been initialized with a template that can be discarded and
 replaced with the link:MarkedGraph/markedgraph.xtend[following text].
 
 [source]
@@ -274,7 +281,15 @@ include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 
 
 .Definition of the DSA (ED and EF)
-image::MarkedGraph/images/MG-K3-Defined.png[Definition of the DSA (ED and EF), 800]
+image::MarkedGraph/images/v2.1/MG-XDSML-18-dsa-file-completed.png[Definition of the DSA (ED and EF), 800]
+
+
+There is an error in the Melange file because no aspect has been defined on the NamedElement metaclass.  Just comment out the corresponding line.
+
+.Corrected Melange file
+image::MarkedGraph/images/v2.1/MG-XDSML-19-melange-with-dsa-corrected.png[Corrected Melange file, 800]
+
+
 
 ////
 TODO: Qui des helper (initialize sur Place) : il faudrait indiquer
@@ -305,21 +320,39 @@ constraints can be defined on these events to define when they may occur.
 
 ==== Create the DSE Project
 
-* Click on the "ECL Project" in the
-__project.xdsml__ editor ("Behavior definition / DSE definition").
-// TODO: on the next screen, the Ecore resource must be initialized.
-* Check that the name is __org.gemoc.sample.markedgraph.dse__.
+Like for the DSA Project, right click on any file of the xDSML project and
+choose __GEMOC Languge > Create DSE Project for language__ to start the wizard.
 
 .Create a DSE Project
-image::MarkedGraph/images/MG-DSE-Create.png[Create a DSE Project, 800]
+image::MarkedGraph/images/v2.1/MG-XDSML-19b-dse-new.png[Create a DSE Project, 800]
 
-* Click "Next".  All fields have been correctly initialized.
-* Click "finish" and the project is created.
-* Click on "ECL Project" to view the "markedgraph.ecl".
+
+Then :
+
+1. Select the MarkedGraphL language and click __OK__.
+2. On the next screen of the wizard, click __Next__ (the project name is already initialized __org.gemoc.sample.markedgraph.dse__).
+3. On the last screen, complete the required fields:
+    * The MarkedGraph Ecore file has already been initialized, just click on __Browse__.
+    * Select the root container : MarkedGraph::MarkedGraph
+    * Set the __New ECL file basename__ is already set to 'MarkedGraphL'
+
+
+.Initializing the DSE project
+image::MarkedGraph/images/v2.1/MG-XDSML-24b-dse-wizard-completed.png[Initializing the DSE project, 800]
+
+
+// XXX change the wizard
+
+Once the wizard has been completed, the __org.gemoc.sample.markedgraph.dse__
+project is created with a template for the MarkedGraphL.ecl file (found in the
+ecl directory).
 
 .Template of the ECL file
-image::MarkedGraph/images/MG-DSE-Template.png[Template of the ECL file, 800]
+image::MarkedGraph/images/v2.1/MG-XDSML-25-dse-template.png[Template of the ECL file, 800]
 
+
+
+// XXX To be updated
 
 ==== Define DSE
 
@@ -335,7 +368,7 @@ include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
 
 
 .Definition of the DSE (events and constraints)
-image::MarkedGraph/images/MG-DSE-Defined.png[Definition of the DSE (events and constraints), 800]
+image::MarkedGraph/images/v2.1/MG-XDSML-26-dse-completed.png[Definition of the DSE (events and constraints), 800]
 
 
 

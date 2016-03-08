@@ -6,6 +6,7 @@ init:
 
 # html: Tutorial_Automata-generated.html GuideTutorialMarkedGraph-generated.html
 html: GuideTutorialMarkedGraph-generated.html
+sigpml: Tutorial_SigPML.html
 
 GuideTutorialMarkedGraph-generated.asciidoc: GuideTutorialMarkedGraph.asciidoc init
 	cat $<	\
@@ -23,7 +24,7 @@ Tutorial_Automata-generated.html: images/tutorial images/icons asciidoc.conf too
 
 
 %.html: %.asciidoc
-	(cd images/tutorial && make)
+	# (cd images/tutorial && make)
 	asciidoctor -a data-uri -a icons --attribute tabsize=4 $<
 	# -a max-width=55em
 
