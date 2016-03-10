@@ -19,7 +19,7 @@ BCOoL adds coordination facilities to the GEMOC studio. In the language workbenc
 The GEMOC studio includes example operators that can be automatically deployed by using the wizard. Such examples can be a good starting point with BCOoL. 
 
 
-=== Deploy a BCOoL operator by using the wizard
+=== Deploy a BCOoL project by using the wizard
 The GEMOC studio contains several examples than can be automatically deployed by using the wizard. The deployment of a BCOoL specification should be done in the language workbench. To do so, it is necessary to go to New > Example > GEMOC language workbench examples as is shown in the Figure 2. 
 
 .Wizard of the examples of coordination.
@@ -32,7 +32,7 @@ The language workbench must also contain the languages that are used by the BCOo
 image::http://timesquare.inria.fr/BCOoL/images/imagesgemoc/language_worbench_problems.png[Windows Problems when languages are not correctly deployed]
 '''
 
-After deployed, it is necessary to do Project > Clean in order to make the studio to find all the dependencies. The resulting language workbench should look as in the Figure 4. In this example, the directory operator contains the BCOoL specification. The project has already the BCOoL Nature, which makes compile automatically the BCOoL specification into a QVTo transformation and stores it in the /gemoc-gen directory.  
+Once deployed, it is necessary to do Project > Clean in order to make the studio to find all the dependencies. The resulting language workbench should look as in the Figure 4. In this example, the directory operator contains the BCOoL specification. The project has already the BCOoL Nature, which makes compile automatically the BCOoL specification into a QVTo transformation and stores it in the /gemoc-gen directory.  
 
 .Correct deployment of languages and BCOoL operators in the language workbench.
 image::http://timesquare.inria.fr/BCOoL/images/imagesgemoc/language_workbenchcoordination.png[Wizard of the Examples of Coordination]
