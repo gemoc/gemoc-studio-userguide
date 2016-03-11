@@ -137,6 +137,11 @@ and showed below
 include::SigPML/files/sigpmlAspects.xtend[source code of the Kermeta 3 aspects]
 ---------------------
 
+You must remove the aspects reference in the Melange file.
+
+image:SigPML/images/sigpml/RemovingImportAspectInMelange.png[Updating the Melange file]
+
+
 
 === DSE definition
 
@@ -148,8 +153,11 @@ The two next sections ECL and MoCC definitions are tightly coupled. So you can c
 
 From the xDSML project, we select the associated wizard of the DSE definition that helps to create an ECL project (Event Constraint Language). After you give a name on your project->next->(you must have a reference on your Ecore domain file)->finish
 
-.ECL project creation
+.DSE project creation
 image:SigPML/images/sigpml/createECLProject.png[ECL project creation]
+
+.DSE wizard
+image:SigPML/images/sigpml/DSE-Wizard.png[ECL wizard]
 
 
 
@@ -174,8 +182,13 @@ and showed below
 
 [source]
 ---------------------
-include::SigPML/files/xSigpml.ecl[source code of the ecl program]
+include::SigPML/files/SigpmlTuto.ecl[source code of the ecl program]
 ---------------------
+
+
+.ECL Implemenattion
+image:SigPML/images/sigpml/ECL_Implementation.png[ECL Implemantation]
+
 
 
 
