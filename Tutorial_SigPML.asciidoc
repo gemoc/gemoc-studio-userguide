@@ -57,35 +57,25 @@ The behavior definition is based on an aspect definition of the DSML domain mode
 
 Each of these definitions are based on existing and dedicated projects.
 
+The domain model is selected during the xDSML creation.
+
 .xDSML wizard definition
-image:SigPML/images/sigpml/xDSMLProjectWindow.JPG[xDSML wizard with all the constituents]
+image:SigPML/images/sigpml/xDSMLProjectWindow.png[xDSML wizard with all the constituents]
+
+The result of the xDSML is a project inclunding the Melange file.
+
+[[img-SigpmlMelangeFile]]
+.The Melange file result
+image:SigPML/images/sigpml/SigpmlMelangeFile.png[Domain model selection]
+
+First, you can create an Ecore project with the provided link:SigPML/files/sigpmldomain.ecore[Ecore file].
 
 
+=== The graphical editor
 
+The graphical editor model is give through a Sirius project as the graphical  syntax of your DSML link:SigPML/files/org.gemoc.SigpmlTuto.design.zip[The Sirius project].
 
-=== Select the domain model
-
-You can select an existing domain model to reference the Ecore model as the DSML abstract syntax.
-You must specify the root element of you domain model.
-
-
-[[img-domainModelSelect]]
-.Domain model selection
-image:SigPML/images/sigpml/selectDomainModel.JPG[Domain model selection]
-
-
-Or you can create an Ecore project with the provided link:SigPML/files/sigpmldomain.ecore[Ecore file].
-
-=== Select the graphical editor
-
-You can select an existing graphical editor model to reference the Sirius project as the graphical  syntax of your DSML.
-
-
-.Sirius Graphical model selection
-image:SigPML/images/sigpml/selectGraphicalEditor.JPG[Sirius Graphical model selection]
-
-
-Or you can create a Sirius project with the provided link:SigPML/files/sigpmlTuto.odesign[The odesign file].
+Or you can create a Sirius project with the provided odesign file link:SigPML/files/sigpmlTuto.odesign[The odesign file].
 
 
 == SigPML execution semantics
@@ -122,7 +112,11 @@ image:SigPML/images/sigpml/EF_InEcoreDomainModel.png[Execution Function in the S
 
 ==== Creating the DSA project
 
-The creation of the DSA project is New->Other->Kermeta3->K3 project->give the name->next->select "Create a plugin using one the templates"->choose "User Ecore Basic Aspects"->fill in allthe requested names and select the Ecore domain model.
+// arefaire The creation of the DSA project is New->Other->Kermeta3->K3 project->give the name->next->select "Create a plugin using one the templates"->choose "User Ecore Basic Aspects"->fill in allthe requested names and select the Ecore domain model.
+
+image:SigPML/images/sigpml/CreateDSAProject.png[DSA project creation]
+
+image:SigPML/images/sigpml/DSA-Wizard.png[DSA project wizard]
 
 The resulted DSA project is a k3dsa project with a sigpmlAspects.xtend file in the package _org.gemoc.sample.xsigpml.k3dsa_.
 This file contains the aspects that we want to add to the necessary classes in our case _Block_ and _Connector_.
