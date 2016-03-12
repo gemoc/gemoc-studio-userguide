@@ -12,7 +12,7 @@ image:Guide/images/workbench/modeling/sequential_launch_configuration.png[Sequen
 - Model to execute : this is the model that will be executed 
 - Model initialization method and argument : if the choosen language has a valid method with the `@InitializeModel` annotation in its DSA, the field Model initialization method will be set and this method will be called before launching the animation. 
 - Model initialization arguments : optional string arguments that can be passed to the initialization method. (one string per line)
-- xDSML : this field allows to select among the valid variants of the sequential executable language that are available for the model.
+- Melange languages : this field allows to select among the languages defined in Melange.
 - Main method : the name of the method that can be used to start the engine. The possible value are specified by the language designer in the language definition by adding an `@Main` annotation on methods in the DSA.
 - Main model element path : after having selected a main method, use the browse button to select a model element on wich this method will be called. This field presents its path in the model, the following field _Main model element name_ displays a human readable name for this element.
 

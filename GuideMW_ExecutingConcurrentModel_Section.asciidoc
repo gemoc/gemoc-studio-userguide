@@ -9,7 +9,7 @@ Run and debug are configured using the launch configuration. An example of confi
 image:Guide/images/workbench/modeling/concurrent_launch_configuration.png[Concurrent launch configuration, 800]
 
 - Model to execute : this is the model that will be run
-- xDSML : this field allows to select among the valid variants of the executable language that are available for the model (Ie. the mix of DSA, DSE and MoCC that can be used on the given domain model)
+- Melange languages : this field allows to select among the languages defined in Melange.
 - ((Decider)) : this field allows to select the solver strategy used by the engine when several ((Logical Step))s can be triggered. Possible choices are : 
 ** Solver proposition : the solver internal strategy will be used to select a Logical Step
 ** Random : will randomly select one of the available Logical Step (warning: execution cannot be reproduced when using this Decider)
