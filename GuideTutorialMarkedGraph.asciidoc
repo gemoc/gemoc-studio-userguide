@@ -607,8 +607,16 @@ image::MarkedGraph/images/v2.1/MG-XDSML-62-step-2-t1.png[Execute a logical step 
 image::MarkedGraph/images/v2.1/MG-XDSML-62-step-2-t1.png[Execute a logical step (t2 fired)]
 
 
+=== Stop the execution
 
-It is now time to see how to graphically visualize the evolution on the MarkedGraph model.
+To stop the execution, simply click on the red button in the Logical Steps Decider view (or in the Gemoc Engines view).
+
+
+=== How to visualize the state of the model?
+
+It is now time to see how to graphically visualize the evolution on the
+MarkedGraph model.  We can let the second eclipse running and go back to the
+first one to complete the xDSML definition with the animation part.
 
 
 
@@ -627,50 +635,53 @@ As the animation view is close to the graphical concrete syntax, we
 extend the existing diagram description.
 
 First, we will define a graphical representation based on the graphical
-Marked Graph syntax to the wizard called "Create GEMOC debug
-representation", then we will add a layer to describe the graphical
-animation of a Marked Graph model.
+Marked Graph syntax thanks to the wizard called "Create Animator Project for
+language", then we will add a layer to describe the graphical animation of a
+Marked Graph model.
 
 === Create a debug representation (as an extension of the graphical editor viewpoint)
 
 ==== Run the wizard
 
-Tun the wizard with __New > Other / Create GEMOC debug representation__.
+Rigth-click on any file of the __org.gemoc.sample.markedgraph.xdsml__ project and select __GEMOC Language > Create Animator Project for language__.
 
-.Create GEMOC debug representation wizard
-image::MarkedGraph/images/MG-animation-wizard-launch.png[Create GEMOC debug representation wizard]
+.Launch the Animator wizard
+image::MarkedGraph/images/v2.1/MG-XDSML-70-animation-wizard-launch.png[Launch the Animator wizard]
 
 On the first screen of the wizad, select "Extends an existing diagram
 description".
 
 .Select "Extends an existing diagram description"
-image::MarkedGraph/images/MG-animation-wizard-choose.png[Select "Extends an existing diagram description"]
+image::MarkedGraph/images/v2.1/MG-XDSML-71-animation-wizard-extends.png[Select "Extends an existing diagram description"]
 
 
 Select the viewpoint to extend "MarkedGraph diagram".
 
 .Select the viewpoint to extend
-image::MarkedGraph/images/MG-animation-wizard-select-viewpoint.png[Select the viewpoint to extend]
+image::MarkedGraph/images/v2.1/MG-XDSML-72-animation-wizard-viewpoint.png[Select the viewpoint to extend]
 
 Finally, we can fill in the Project Name in which the newly creating
 viewpoint file will take place (org.gemoc.sample.markedgraph.animation),
 the name of the viewpoint file (markedgraph-animation.odesign), the
-viewpoint name (MarkedGraphViewpoint) and the diagram name (MarkedGraph).
+viewpoint name (MarkedGraphAnimationViewpoint) and the diagram name (MarkedGraphAnimation).
 
 .Information of the animation viewpoint
-image::MarkedGraph/images/MG-animation-wizard-set-names.png[Information of the animation viewpoint]
+image::MarkedGraph/images/v2.1/MG-XDSML-73-animation-wizard-names.png[Information of the animation viewpoint]
 
 The last screen allows to choose the name of the layer to be created. Debug
 is a good name.
 
-Once the __Finish__ button is pressed, the project is created.
+Press __Finish__ to create the project.  The __markedgraph-animation.odesign__ file is opened.
+
 
 ==== Open the markedgraph-animation.odesign
 
-Open the markedgraph-animation.odesign file and develop its content.
+Open the markedgraph-animation.odesign file and unfold its content.
 
 
-// TODO: explain its contents.
+.Initial makedgraph-animation.odesign file
+image::MarkedGraph/images/v2.1/MG-XDSML-75-animator-initial.png[Initial makedgraph-animation.odesign file, 800]
+
 
 
 ==== Load markedgraph.odesign as a resource.
@@ -680,7 +691,7 @@ Open the markedgraph-animation.odesign file and develop its content.
 To be able to complete the definition of the odesign file, we first need to
 load the existing markedgraph.odesign as a resource :
 
-* Right click in the markedgraph.odesign editor to select __Load Resource...__.
+* Right click in the markedgraph-animation.odesign editor to select __Load Resource...__.
 * Select __Browse workspace...__
 * Select __markedgraph.odesign__ in the
 __org.gemoc.sample.markedgraph.design__ project
@@ -709,11 +720,14 @@ whether the corresponding breakpoint is enabled or disabled.
 // TODO: Give a pointer to the file already completed!
 
 
+////
+// Obsolete
 ==== Set the animation viewpoint in project.xml
 
 In the xDSML editor, we can select the animation viewpoint by selecting the
 newly created project (__org.gemoc.sample.markedgraph.animation__)
 
+////
 
 === Create an animation representation
 
@@ -741,7 +755,7 @@ Style Customization".
 Property Customization (by selection)"
 * For "Applied On" property, select "Square white".
 * For "Property Name", set "color" (completion is available with CTRL-SPACE)
-* For "Value Selction", set "light_green"
+* For "Value Selection", set "light_green"
 
 ==== Set the background color of a place to light_yellow
 
@@ -762,7 +776,7 @@ Property Customization (by expression)"
 
 ==== Add the Animation service
 
-* Right click on "MarkedGraphViewpoint" to select "New Extension / Java
+* Right click on "MarkedGraphAnimationViewpoint" to select "New Extension / Java
 Extension".
 * Set "Qualified Class Name" to
 "org.gemoc.sample.markedgraph.animation.services.MarkedgraphAnimationServices".
@@ -782,110 +796,52 @@ source code (two times: import and extends).  Finally, change "Debug" to
 
 == Animate a Model
 
-The executable MarkedGraph Language is now defined.  We can use the
-GEMOC Modeling Workbench to execute MarkedGraph models.
+The executable MarkedGraph Language is now defined with a graphical
+visualization.
 
-=== Launch the Modeling WorkBench
+=== Restart the MarkedGraph Modeling WorkBench
+
+First of all, we need to restart (__File > restart__) the second eclipse so that the new projects are available.
+
+=== Add the MarkedGraphAnimationViewpoint to wikipedia.aird
+
+Right click on wikipedia.aird and select __Viewpoints Selection__.
+
+.Select Viewpoint Selection
+image:MarkedGraph/images/v2.1/MG-XDSML-80-animate-viewpoint-selection.png[Select Viewpoint Selection]
+
+.Select MarkedGraphAnimationViewpoint
+image:MarkedGraph/images/v2.1/MG-XDSML-81-animate-viewpoint-selection-set.png[Select MarkedGraphAnimationViewpoint]
+
+You can now open the wikipedia graphical representation (wikipedia.air /
+Representation per category / markedgraph / MarkedGraph diagram / wikipedia
+MarkedGraph diagram).  On the visualization, all places should be with a yellow
+background.
+
+If it does not work with the "Modeling" perpective, retry with the "Sirius" perspective and then come back to the "Modeling" perspective.
+
+
+=== Update the "run wikipedia example" configuration
+
+Open the "run wikipedia example" configuration" (__Debug > Debug
+Configuration...__).  Complete the "Animator" field with "/org.gemoc.sample.markedgraph.sample/wikipedia.aird" (use Browse to select it).
 
 First, we will create a run configuration.  Select "run / run Configurations"
-Double click on "Eclipse Application" and change the name "New
-Configuration" into "Marked Graph Modeling Workbench".  We can now click
-"Run" to start the new runtime Eclipse which indeed corresponds to the
-Modeling Workbench for Marked Graph.
-
-.Define the Marked Graph Modeling Workbench configuration
-image::MarkedGraph/images/MG-run-EclipseApplicationConfig.png[Define the Marked Graph Modeling Workbench configuration]
-
-
-=== Import the project with a sample model
-
-Import the modeling project
-link:MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
-in the Modeling Workbench (Import / General / Existing project into
-Workspace).  It contains the wikipedia.markedgraph file which corresponds
-to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
-
-=== Select the Modeling perspective
-
-* Select "Window / Open Perspective / Others..."
-* Select "Modeling" in the list.
-
-=== Create a Launch Configuration
-
-* Select __Debug / Debug Configurations__
-* Double click on "Gemoc Concurrent eXecutable Model"
-* Change the name of the new configuration to "run wikipedia example"
-* Browse to select the model to run (wikipedia.markedgraph)
-* Select its language (xDSML field): markedgraph
-* Browse to select the animator
-* Check that the "Decider" is set to "Step by step user decider" (the user
-  will decide which well be the next step to execute).
-* Click on "Debug"
-
-.Define the configuration to run the wikipedia example
-image::MarkedGraph/images/MG-run-WikipediaConfig.png[Define the configuration to run the wikipedia example]
-
 
 === Launch the execution of the model
 
-We can now run the "gemoc" configuration.  It opens the different views related to the execution on an xDSML model:
+We can now run the "gemoc" configuration (using debug).  It opens the different views we have already seen but also the graphical visualization on the model.
 
-* Logical Steps (top left): the list of the logical steps that may be
-  selected at this execution step.
-* Gemoc Engine Status (middle left): the list on the running GEMOC engines.
-The red button stops the selected engine.
-* Stimuli Manager (bottom left): the list of MSE.
-* VCD (top right): a graphical visualisation of the events manages by the
-MoCC (first ones correspond to the MSE).
-* Graphical visualization (middle right) of the model (with animation
-information)
+////
+TODO: What about the timeline ?
 * Time Line (bottom middle): the logical steps available at each steps and
 the selected one.
-* Console: several consoles are available.  The dispolayed one is the
-"Default MessaginSystem Console". There is one console the the main
 component of the Modeling Workbench.
 
-
-.The wikipedia model is just started
-image::MarkedGraph/images/MG-run-start.png[The wikipedia model is just started]
+////
 
 
-=== Select a logical step
 
-The Logical Steps view, presents the possible steps, and for each step,
-the MSE that will occur if it is selected.
-
-.One logical step selected
-image::MarkedGraph/images/MG-run-start-select.png[One logical step selected]
-
-Double-click on a Logical Step to choose it.  The corresponding MSE
-occur, they are visible on the VCD, and they trigger the associated
-execution functions which make the state of the model evolve.
-
-.Execute a logical step
-image::MarkedGraph/images/MG-run-init.png[Execute a logical step]
-
-
-Then, we can select a new logical step (here we selected the the logical step which fires the t2 transition).
-
-.Transition t1 fired
-image::MarkedGraph/images/MG-run-t1-fired.png[Transition t1 fired]
-
-.Transition t2 fired
-image::MarkedGraph/images/MG-run-t2-fired.png[Transition t2 fired]
-
-.Some logical steps later
-image::MarkedGraph/images/MG-run-last.png[Some logical steps later]
-
-
-=== Stop the execution
-
-To stop the execution:
-
-* Select the "Gemoc Engine Status" view
-* Select the engine to stop
-* Click on the red button to actually stop the engine (the left icon
-becomes red)
 
 
 == Going further...
