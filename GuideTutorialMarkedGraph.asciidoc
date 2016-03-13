@@ -112,7 +112,7 @@ frame).  The perspective can be changed thanks to the menu "Window > Open Perspe
 
 === Create an xDSML Project
 
-Create a "New  xDSML project (__New > Project > GEMOC
+Create a "New  xDSML project" (__New > Project > GEMOC
 Project / new GEMOC Concurrent xDSML Project__).
 ////
 You can also select __New ... / GEMOC Concurrent xDSML Project__.
@@ -460,6 +460,155 @@ Tricks: Limitation of ECL for Integer type : use of a local
 expression.
 
 ////
+
+
+
+== Execute a Model
+
+The executable MarkedGraph Language is now defined.  We can use the
+GEMOC Modeling Workbench to execute MarkedGraph models. In the next section, we
+will see how to define a graphical animation a MarkedGraph model.
+
+=== Launch the Modeling WorkBench
+
+First, we will create a run configuration.  Select "run / run Configurations".
+
+.Select "run / run Configurations"
+image::MarkedGraph/images/v2.1/MG-XDSML-50-animate-run-config.png[Select "run / run Configurations"]
+
+Double click on "Eclipse Application" and change the name "New
+Configuration" into "MarkedGraph Modeling Workbench".
+
+.Define the Marked Graph Modeling Workbench configuration
+image::MarkedGraph/images/v2.1/MG-XDSML-51-animate-EclipseApplication-configuration.png[Define the Marked Graph Modeling Workbench configuration]
+
+Then click "Run" to start the new runtime Eclipse which indeed corresponds to
+the Modeling Workbench for MarkedGraph.
+
+
+=== Import the project with a sample model
+
+Import the modeling project
+link:MarkedGraph/org.gemoc.sample.markedgraph.sample.zip[org.gemoc.sample.markedgraph.sample]
+in the Modeling Workbench (Import / General / Existing project into
+Workspace).  It contains the wikipedia.markedgraph file which corresponds
+to the link:http://en.wikipedia.org/wiki/Marked_graph[Wikipedia example].
+
+
+.Importing the existing sample project from the archive file
+image::MarkedGraph/images/v2.1/MG-XDSML-54-animate-import-sample-project-2eclipse.png[Importing the existing sample project from the archive file, 800]
+
+
+=== Select the Modeling perspective
+
+* Select "Window / Open Perspective / Others...".  Alternatively, you can  click on the little icone on the right of "Quick Access" field, on the left on the current perspective (top right of the main frame).
+* Select "Modeling" in the list.
+
+.Select the 'Modeling' perspective
+image::MarkedGraph/images/v2.1/MG-XDSML-53-animate-perspective-select.png[Select the 'Modeling' perspective]
+
+
+=== View the wikipedia example
+
+To open the graphical visualization of the wikipedia MarkedGraph example,
+double-click on wikipedia.aird resource, then open the tree view until
+"wikipedia MarkeGraph diagram" appears. Open it.
+
+.Open the Sirius graphical view of wikipedia example
+image::MarkedGraph/images/v2.1/MG-XDSML-55-animate-wikipedia-model-sirius.png[Open the Sirius graphical view of wikipedia example]
+
+The properties view (bottom right) allow to see the properties on an element.
+We can see that a place object has the "Runtime Token Count" properties (the
+added ED).
+
+
+=== Create a Launch Configuration
+
+* Select __Debug / Debug Configurations__
+
+.Select __Debug / Debug Configurations__
+image::MarkedGraph/images/v2.1/MG-XDSML-56-animate-debug-debug-configuration.png[Select __Debug / Debug Configurations__]
+
+* Double click on "Gemoc Concurrent eXecutable Model"
+* Change the name of the new configuration to "run wikipedia example"
+* Browse to select the model to run (wikipedia.markedgraph)
+* Select its language (xDSML field): org.gemoc.sample.markedgraph.xdsml.MarkedGraphL
+* Check that the "Decider" is set to "Step by step user decider" (the user
+  will decide which well be the next step to execute).
+* Click on "Debug"
+
+.Define the configuration to run the wikipedia example
+image::MarkedGraph/images/v2.1/MG-XDSML-57-animate-debug-config-filled.png[Define the configuration to run the wikipedia example]
+
+
+=== Launch the execution of the model
+
+We can now run the "gemoc" configuration.
+
+
+It selects the different views related to the execution on an xDSML model.
+
+.The wikipedia model is just started
+image::MarkedGraph/images/v2.1/MG-XDSML-58-animate-debug.png[The wikipedia model is just started]
+
+* **Logical Steps Decider** (top left): the list of the logical steps that may be
+  selected at this execution step.  For each step, the trigerred MSE are
+  displayed on the left and the associated EF on the right.  The stimuli
+  manager can be used to stop the GEMOC engine, and thus the execution (red
+  button).
+
+.Logical Steps Decider
+image::MarkedGraph/images/v2.1/MG-XDSML-59-animate-debug-logical-steps-decider.png[Logical Steps Decider]
+
+* **Stimuli Manager** (bottom left): the list of MSE.
+* **Console** (bottom right): several consoles are available.  The displayed
+one is the "Modeling Workbench Console" which reports that the GEMOC Execution
+has benne started.  Change it to the "Default MessagingSystem Console" (click
+on the arrow near the console symbol).  Clear it.
+
+.Change the displayed console
+image::MarkedGraph/images/v2.1/MG-XDSML-60-animate-console-change.png[Change the displayed console]
+
+* **Gemoc Engine Status** (with Stimuli Manager): the list on the running GEMOC
+engines.  The red button stops the selected engine.
+
+.Gemoc Engine Status
+image::MarkedGraph/images/v2.1/MG-XDSML-61-animate-gemoc-engine-status.png[Gemoc Engine Status]
+
+As we have not yet defined any animation for the MarkedGraph Language, there will be no animation and the graphical visualization will not change.
+
+
+=== Select a logical step
+
+The Logical Steps view, presents the possible steps, and for each step,
+the MSE that will occur if it is selected.
+
+.Initial State
+image::MarkedGraph/images/v2.1/MG-XDSML-62-step-0.png[Initial State]
+
+Double-click on a Logical Step to choose it.  The corresponding MSEs occur and
+trigger the associated execution functions (EF) which make the state of the
+model evolve.  Here, we will see traces in the Console are the EF we have
+defined print messages.  The first MSE was __initIt__, which init the Graph and
+all its places (by initializing the runtime token count with the token count).
+The is then only one possible step: fireIt applied on t1 (__MSE_ta_fireIt).
+
+.Execute a logical step (initIt)
+image::MarkedGraph/images/v2.1/MG-XDSML-62-step-1-init.png[Execute a logical step (initIt)]
+
+Then, we can select a new logical step and so one.
+In the following screenshots, we have first selected the t1 transition, and
+then the t2 transition.
+
+.Execute a logical step (t1 fired)
+image::MarkedGraph/images/v2.1/MG-XDSML-62-step-2-t1.png[Execute a logical step (t1 fired)]
+
+.Execute a logical step (t2 fired)
+image::MarkedGraph/images/v2.1/MG-XDSML-62-step-2-t1.png[Execute a logical step (t2 fired)]
+
+
+
+It is now time to see how to graphically visualize the evolution on the MarkedGraph model.
 
 
 
