@@ -57,30 +57,30 @@ Main goal: Make sure that the TFSM sample run correctly using the Concurrent eng
 |===
 |Actions to execute
 |Verification
-|Result for version: V2.0.1 2016_01_13
+|Result for Version: 2.1.0-SNAPSHOT Build id: 2016-03-11 19:04
 
 |
-- File > new > Examples > Gemoc TrafficLight model example for TFSM Language (Concurrent)
+- File > new > Examples > Gemoc model for TFSM Language (Concurrent)
 | all added projects should be error free (may require a "clean all")
-|:question:
+|:white_check_mark:
 
 |
 - right click on the simple_example.tfsm file, Debug as , Debug as Gemoc Concurrent eXecutable model
 | should launch the shared launchconfiguration or open the launchconf dialog
-|:question:
+|:white_check_mark:
 
 |
 - start execution using the break at start option in the launchconfiguration
 - go forward using step by step, step into, step over
 | check the stack, and element hightlighted in the sirius editor
-| :question:
+| :white_check_mark:
 
 |
 - open sirius editor (using model explorer view )
 - test toggle breakpoints
 | - must show the breakpoint in the sirius editor, in the breakpoint view
 - execution must pause on the breakpoint
-| :question:
+| :white_check_mark:
 
 |
 - test simple Event scheduling timeline trace
