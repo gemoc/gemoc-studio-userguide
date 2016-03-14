@@ -7,23 +7,23 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 |===
 |Actions to execute
 |Verification
-|Result for version: V2.0.1 2016_01_13
+|Result for Version: 2.1.0-SNAPSHOT Build id: 2016-03-11 19:04
 
 |
 - File > new > Examples > SigPML Language example (Concurrent)
 | all added projects should be error free (may require a "clean all")
-|:question:
+|:white_check_mark:
 
 |
 - Open the Main.melange file
 - Ctrl+Click on 'syntax' URI hyperlink
 | must open an editor on the ecore/resp genmodel file of the domain, 
-| :question:
+| :white_check_mark:
 
 |
 - Ctrl+Click on 'with' class hyperlink
 | must open an editor on the .k3 file containing aspects
-| :question:
+| :white_check_mark:
 
 |
 - click on Graphical editor / Sirius viewpoint design project link
@@ -38,12 +38,12 @@ Main goal: Make sure that the language workbench correctly defines and compiles 
 |
 - Ctrl+Click on 'ECL' URI hyperlink
 |-must open the .ecl file
-|:question:
+|:white_check_mark:
 
 |
 - ECL file generates a correct .qvto file
 |
-| :question:
+| :white_check_mark:
 
 |
 |
@@ -55,35 +55,35 @@ Main goal: Make sure that the SigPML sample run correctly using the Concurrent e
 |===
 |Actions to execute
 |Verification
-|Result for version: V2.0.1 2016_01_13
+|Result for Version: 2.1.0-SNAPSHOT Build id: 2016-03-11 19:04
 
 |
-- File > new > Examples > Gemoc simple model example for SigPML Language (Concurrent)
+- File > new > Examples > Gemoc model for SigPML Language (Concurrent)
 | all added projects should be error free (may require a "clean all")
-|:question:
+|:white_check_mark:
 
 |
 - right click on the simple.sgpml file, Debug as , Debug as Gemoc Concurrent eXecutable model
 | should launch the shared launchconfiguration or open the launchconf dialog
-|:question:
+|:white_check_mark:
 
 |
 - start execution using the break at start option in the launchconfiguration
 - go forward using step by step, step into, step over
 | check the stack, and element hightlighted in the sirius editor
-| :question:
+| :white_check_mark:
 
 |
 - open sirius editor (using model explorer view )
 - test toggle breakpoints
 | - must show the breakpoint in the sirius editor, in the breakpoint view
 - execution must pause on the breakpoint
-| :question:
+| :white_check_mark:
 
 |
 - test simple Event scheduling timeline trace
 | should display the logical steps and some details about them
-| :question:
+| :white_check_mark:
 
 
 |
