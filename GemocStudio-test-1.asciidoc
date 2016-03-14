@@ -6,7 +6,9 @@ Main goal: be able to create a new sequential language
 |===
 |Actions to execute
 |Verification
-|Result for version: V2.1.0 2016-02-10 10:24
+|Result for version: Version: 2.1.0-SNAPSHOT
+Build id: 2016-03-11 19:04
+
 
 |
 - in Sirius Perspective, 
