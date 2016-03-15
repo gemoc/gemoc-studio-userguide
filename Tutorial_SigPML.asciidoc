@@ -252,16 +252,45 @@ The last step is to define the animation view of the models as a debug extension
 As the section dedicated to the graphical syntax, the animator is defined as a Sirius viewpoint based on  
 link:SigPML/files/xSigpmlAnim.odesign[the odesign file]
 
-In this file, we define the viewpoint as an extension of the _odesign_ file of the graphical syntax and modify the graphical shape of the blocks when the _currentExecCycle_ variable is incremented. The expression _[ self.eGet('currentExecCycle') > 0 /]_ is declared to customize the graphical shape of the blocks.
+To create a debug viewpoint, on the Melange file we select "Create Animator Project for language"->select the language name->Extends an existing diagram description (as the next picture).
+
+.Create a debug representation.
+image:SigPML/images/sigpml/CreateDebugLayer.png["Create a debug representation",scaledwidth="75%"]
+
+Now a Sirius project is created with a file odesign in the description folder. Open the odesign file and on a right click select "Load ressource" and select the odesign file of the the initial graphical syntax as in the next picture.
+
+.Select the odesign ressource.
+image:SigPML/images/sigpml/LoadRessourceSelectOdesign.png["Select the odesign ressource",scaledwidth="75%"]
+
+Now we edit the odesign file and customizing the debug layer. 
+Open the Debug layer and add Style cuistomizations as the next picture.
+
+.Adding Style customization.
+image:SigPML/images/sigpml/AddStyleCustomization.png["Adding Style customization",scaledwidth="75%"]
+
+On this style, we add a property customization to change the label of the Block in our future model.
+
+.Adding Property customization.
+image:SigPML/images/sigpml/AddPropertyCustomizationByExpression.png["Adding Property customization",scaledwidth="75%"]
+
+We fill the properties of this element. First the field AppliedOn to select the graphical element of the Block (Square light_chocolate).
+
+.Select Graphical element.
+image:SigPML/images/sigpml/AppliedOnSquareChocolate.png["Select Graphical element",scaledwidth="75%"]
 
 
-We create an animation project through the xDSML definition.
+Fill the next fileds like the next picture.
+.Property Customization.
+image:SigPML/images/sigpml/CustomizeByExpression.png["Property Customization",scaledwidth="75%"]
 
-.Animation project creation
-image:SigPML/images/sigpml/AnimationProjectCreation.png["Animation project creation",scaledwidth="75%"]
+We add another style customization and fill the predicate expression as the next picture.
+.Second Style Customization
+image:SigPML/images/sigpml/SecondStyleCustomization.png["Second Style Customization",scaledwidth="75%"]
 
-We select the _Add a debug layer to an existing diagram description_->next->select the SigPMLAppliDiagram->next->select the name of the Debug layer->finish.
-We can replace the _odesign_ file by the provided one.
+On this style, we add a property customization (by expression) to change the block color under the previous condition when the _currentExecCycle > 0_
+
+.Adding Property customization.
+image:SigPML/images/sigpml/PropertyCustomizationBySelection.png["Adding Property customization",scaledwidth="75%"]
 
 
 For now the language is totaly defined and executable, so we can used the SigPML Language !!
