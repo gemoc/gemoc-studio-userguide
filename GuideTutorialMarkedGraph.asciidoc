@@ -272,11 +272,11 @@ image::MarkedGraph/images/v2.1/MG-XDSML-15-melange-with-dsa.png[The Melange file
 
 Open the __markedgraphAspects.xtend__ file.  It is located in the __org.gemoc.sample.markedgraph.k3dsa__ project in __src/markedgraph.aspects__.
 The file has been initialized with a template that can be discarded and
-replaced with the link:MarkedGraph/markedgraph.xtend[following text].
+replaced with the link:MarkedGraph/markedgraphAspects.xtend[following text].
 
 [source,k3]
 ----
-include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
+include::MarkedGraph/markedgraphAspects.xtend[DSA defined using K3]
 ----
 
 
