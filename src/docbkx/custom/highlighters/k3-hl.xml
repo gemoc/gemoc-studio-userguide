@@ -65,7 +65,7 @@ Michiel Hendriks <elmuerte at users.sourceforge.net>
 		<ignoreCase />
 	</highlighter>
 	<highlighter type="keywords">
-		<keyword>_self</keyword>
+		<keyword>self</keyword>
 		<keyword>abstract</keyword>
 		<keyword>boolean</keyword>
 		<keyword>break</keyword>

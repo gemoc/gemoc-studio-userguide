@@ -137,7 +137,7 @@ In this tutorial, the implementation of the functions is simple. The _execute_ f
 The source code is available through 
 link:SigPML/files/sigpmlAspects.xtend[Kermeta 3 aspects,tabsize=4]
 and showed below
-[source, xtend]
+[source, k3]
 [[sigpmlAspects.xtendExample]]
 ---------------------
 include::SigPML/files/sigpmlAspects.xtend[source code of the Kermeta 3 aspects]
