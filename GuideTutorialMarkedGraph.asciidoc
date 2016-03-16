@@ -272,11 +272,11 @@ image::MarkedGraph/images/v2.1/MG-XDSML-15-melange-with-dsa.png[The Melange file
 
 Open the __markedgraphAspects.xtend__ file.  It is located in the __org.gemoc.sample.markedgraph.k3dsa__ project in __src/markedgraph.aspects__.
 The file has been initialized with a template that can be discarded and
-replaced with the link:MarkedGraph/markedgraph.xtend[following text].
+replaced with the link:MarkedGraph/markedgraphAspects.xtend[following text].
 
 [source,k3]
 ----
-include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
+include::MarkedGraph/markedgraphAspects.xtend[DSA defined using K3]
 ----
 
 
@@ -357,13 +357,13 @@ image::MarkedGraph/images/v2.1/MG-XDSML-25-dse-template.png[Template of the ECL 
 ==== Define DSE
 
 Replace the content of the ECL file with the
-link:MarkedGraph/markedgraph.ecl[following code] (explanations on
+link:MarkedGraph/MarkedGraphL.ecl[following code] (explanations on
 this code are given bellow):
 
 [source,ecl]
-.The file markedgraph.ecl
+.The file MarkedGraphL.ecl
 ----
-include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
+include::MarkedGraph/MarkedGraphL.ecl[Definition of the MoCC]
 ----
 
 
@@ -875,7 +875,7 @@ libraries.
 Here is the new ECL file.
 
 [source,ecl]
-.The file markedgraph.ecl using the MoCCML library
+.The file MarkedGraphL.ecl using the MoCCML library
 ----
 include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]
 ----
@@ -884,7 +884,7 @@ include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCC
 
 
 
-== Use constraint automata to define the MoCC
+=== Use constraint automata to define Relation
 
 
 Sometimes, it may be easier to define the MoCC using automata.  For
@@ -894,7 +894,7 @@ input transition writes one token).  A token can only be read if there
 is at least one in the place.  Initially, there is as much token in
 the place as in the initial token count of the place.
 
-=== Define the constraint automaton using MoCCML editor
+==== Define the constraint automaton using MoCCML editor
 
 For explanations on how to use the MoCCML editor, please refer to the GEMOC
 manual.
