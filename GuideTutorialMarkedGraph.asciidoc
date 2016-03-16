@@ -357,13 +357,13 @@ image::MarkedGraph/images/v2.1/MG-XDSML-25-dse-template.png[Template of the ECL 
 ==== Define DSE
 
 Replace the content of the ECL file with the
-link:MarkedGraph/markedgraph.ecl[following code] (explanations on
+link:MarkedGraph/MarkedGraphL.ecl[following code] (explanations on
 this code are given bellow):
 
 [source,ecl]
-.The file markedgraph.ecl
+.The file MarkedGraphL.ecl
 ----
-include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
+include::MarkedGraph/MarkedGraphL.ecl[Definition of the MoCC]
 ----
 
 
@@ -875,7 +875,7 @@ libraries.
 Here is the new ECL file.
 
 [source,ecl]
-.The file markedgraph.ecl using the MoCCML library
+.The file MarkedGraphL.ecl using the MoCCML library
 ----
 include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]
 ----
