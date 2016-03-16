@@ -44,6 +44,10 @@ Michiel Hendriks <elmuerte at users.sourceforge.net>
 	<highlighter id="javascript" file="javascript-hl.xml" />
 	<highlighter id="kp" file="kp.xml" />
 	<highlighter id="kermeta" file="kermeta-hl.xml" />
+	<highlighter id="melange" file="melange-hl.xml" />
+	<highlighter id="k3" file="k3-hl.xml" />
+	<highlighter id="xtend" file="xtend-hl.xml" />
+	<highlighter id="ecl" file="ecl-hl.xml" />
 	<highlighter id="ket" file="ket-hl.xml" />
 	<highlighter id="aj" file="java_aj-hl.xml" />
 	<namespace prefix="xslthl" uri="http://xslthl.sf.net" />
