@@ -884,7 +884,7 @@ include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCC
 
 
 
-== Use constraint automata to define the MoCC
+=== Use constraint automata to define Relation
 
 
 Sometimes, it may be easier to define the MoCC using automata.  For
@@ -894,7 +894,7 @@ input transition writes one token).  A token can only be read if there
 is at least one in the place.  Initially, there is as much token in
 the place as in the initial token count of the place.
 
-=== Define the constraint automaton using MoCCML editor
+==== Define the constraint automaton using MoCCML editor
 
 For explanations on how to use the MoCCML editor, please refer to the GEMOC
 manual.
