@@ -67,6 +67,7 @@ Michiel Hendriks <elmuerte at users.sourceforge.net>
 	</highlighter> -->
 	<highlighter type="keywords">
 		<keyword>and</keyword>
+		<keyword>Boolean</keyword>
 		<keyword>context</keyword>
 		<keyword>def</keyword>
 		<keyword>ECLimport</keyword>
@@ -75,9 +76,12 @@ Michiel Hendriks <elmuerte at users.sourceforge.net>
 		<keyword>Expression</keyword>
 		<keyword>implies</keyword>
 		<keyword>import</keyword>
+		<keyword>Integer</keyword>
 		<keyword>inv</keyword>
 		<keyword>let</keyword>
 		<keyword>not</keyword>
+		<keyword>OclAny</keyword>
+		<keyword>OclVoid</keyword>
 		<keyword>or</keyword>
 		<keyword>package</keyword>
 		<keyword>self</keyword>
