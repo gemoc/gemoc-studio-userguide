@@ -274,7 +274,7 @@ Open the __markedgraphAspects.xtend__ file.  It is located in the __org.gemoc.sa
 The file has been initialized with a template that can be discarded and
 replaced with the link:MarkedGraph/markedgraph.xtend[following text].
 
-[source]
+[source,k3]
 ----
 include::MarkedGraph/markedgraph.xtend[DSA defined using K3]
 ----
@@ -360,7 +360,7 @@ Replace the content of the ECL file with the
 link:MarkedGraph/markedgraph.ecl[following code] (explanations on
 this code are given bellow):
 
-[source]
+[source,ecl]
 .The file markedgraph.ecl
 ----
 include::MarkedGraph/markedgraph.ecl[Definition of the MoCC]
@@ -859,7 +859,7 @@ this new project.
 
 We can then define in this project the following link:MarkedGraph/markedgraph.ccslLib[markedgraph.ccslLib] file. TODO: To be corrected.
 
-[source]
+[source,ecl]
 .The file markedgraph.ccslLib defining a MoCCML library
 ----
 include::MarkedGraph/markedgraph.ccslLib[Definition of a MoCCML library]
@@ -874,7 +874,7 @@ libraries.
 
 Here is the new ECL file.
 
-[source]
+[source,ecl]
 .The file markedgraph.ecl using the MoCCML library
 ----
 include::MarkedGraph/markedgraph-library.ecl[Definition of the MoCC using a MoCCML library]

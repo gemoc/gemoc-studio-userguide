@@ -124,7 +124,7 @@ In the listing below three properties are encoded in CDL.
 // Size of connector A to B never exceeds its capacity
 predicate p2 is { {connectorAB}1 : currentsize <= 4 }
 
-// If Output channel is full the Block desnt execute
+// If Output channel is full the Block does not execute
 predicate p3 is { {connectorBA}1 : currentsize + {outport1}1 : rate <= {connectorBA}1 : capacity }
 property o1 is {
 	start -- / p3 // -> s1

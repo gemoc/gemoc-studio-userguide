@@ -6,6 +6,88 @@
 The *((GEMOC Language Workbench))* is intended to be used by the ((Language Designer))s and the ((Language Integrator))s. It provides the tools to create and compose eXecutable Domain-Specific Modeling Languages (xDSMLs) using the GEMOC approach.
 
 
+[source,melange]
+[[MyMelangeExample]]
+----
+package org.gemoc.sample.tfsm.xdsml
+
+language Tfsm {
+	
+	/*
+	 * Declare abstract syntax
+	 */
+	syntax "platform:/resource/org.gemoc.sample.tfsm.plaink3.model/model/tfsm.ecore"
+	
+	/*
+	 * Declare DSA
+	 */
+	with org.gemoc.sample.tfsm.plaink3.dsa.TFSMAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.TFSMVisitorAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.FSMEventAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.FSMClockAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.FSMClockVisitorAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.StateAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.StateVisitorAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.TransitionAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.TransitionVisitorAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.GuardVisitorAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.TemporalGuardVisitorAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.EventGuardVisitorAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.TimedSystemAspect
+	with org.gemoc.sample.tfsm.plaink3.dsa.TimedSystemVisitorAspect
+	
+	/*
+	 * Set name of the ModelType (ie: the type of this language)
+	 */
+	exactType TfsmMT
+}
+----
+
+[source,k3]
+[[myK3Example]]
+----
+package dplextended
+	aspec class foo {
+    def void isTT(){
+        kfjsdlkjgk("kljdflksjdfj")
+    }
+end
+----
+
+[source,xtend]
+[[eclContextEventDeclaration]]
+----
+package dplextended
+	context Philosopher
+		def: think : Event = self.think()
+		def: getrightFork : Event = self
+		def: getleftFork : Event = self
+		def: eat : Event = self.eat()
+		def: putrightFork : Event = self
+		def: putleftFork : Event = self
+		def: thinkcycleMax : Integer = self.thinkCycles
+		def: eatcycleMax : Integer = self.eatCycles
+endpackage
+----
+
+[source,ecl]
+[[eclContextEventDeclaration]]
+----
+package dplextended
+	context Philosopher
+		def: think : Event = self.think()
+		def: getrightFork : Event = self
+		def: getleftFork : Event = self
+		def: eat : Event = self.eat()
+		def: putrightFork : Event = self
+		def: putleftFork : Event = self
+		def: thinkcycleMax : Integer = self.thinkCycles
+		def: eatcycleMax : Integer = self.eatCycles
+endpackage
+----
+
+
+
 [[figure-glw-screenshot-of-language_workbench]]
 .Screenshot of the GEMOC Language Workbench showing the design of a Timed Finite State Machine (TFSM) example.
 image::Guide/images/gemoc_language_workbench_TFSM_screenshot.png[Screenshot of the GEMOC Language Workbench, 800]

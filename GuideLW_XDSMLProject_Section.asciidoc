@@ -64,13 +64,13 @@ To do so, Melange is provided with a textual Languages editor.
 ===== Syntax
 A .melange file start with
 
-[source,java]
+[source,melange]
 package your.language.namespace
 
 and contains a list of Language definitions starting with the keyword *language*.
 
 .a basic Language
-[source,java]
+[source,melange]
 ----
 package org.gemoc.sample.tfsm.xdsml
 
@@ -107,7 +107,7 @@ Your xDSML project need a dependency to your DSA project. Check the Require-Bund
 ====
 
 .a Language with semantic
-[source,java]
+[source,melange]
 ----
 package org.gemoc.sample.tfsm.xdsml
 

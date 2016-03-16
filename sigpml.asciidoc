@@ -109,7 +109,7 @@ et EF general overview and the definition related to SigPML (ED = Rate ; EF = re
 
 ==== Implementation of the DSA
 
-[source]
+[source,k3]
 ----
 the source code with an include or not.
 //include::sigpmlTuto.xtend[]
@@ -131,7 +131,7 @@ WARNING: The two next sections DES definition and MoCC definition are tighly cou
 // bien separer les ED, les defs de MoCC event sur EF
 // def des Inv par classe avec l'appel aux library de MoCC
 
-[source]
+[source,ecl]
 ----
 the source code with an include or not.
 //include::sigpmlTuto.ecl[]

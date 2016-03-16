@@ -34,7 +34,7 @@ In this section, we show an examplified way to use ECL. The required steps to go
 As shown in Listing <<eclimport>>, an _ECL_ file imports the extended language that contains the language metaclasses, the _EF_ and _ED_. The _ECL_ language defines the notion of *((import))* to import the extended metamodel (see import of _dplExtended.ecore_ in Listing <<eclimport>>).
 The import is used to load all the concepts of language that are used to clarify: the _EF_ activation events; static properties numeric or Boolean values, and constraints associated with concepts.
 
-[source,python]
+[source,ecl]
 [[eclimport]]
 ----
 import "platform:/resource/org.gemoc.model.dpl.dplextended/model/dplExtended.ecore"
@@ -52,7 +52,7 @@ _ECL_ syntax for declaring the mapping Event / Action is as follows:
 * Finally, we can define local attributes to capture the value of static properties that can be for instance integers or booleans (e.g. _def: eatcycleMax: Integer = self.eatCycles_)
 The above steps specify the declaration of events and attributes that are used to control the actions for each language concept. We can focus on the description of the model of concurrency defined using _MoCCML_.
 
-[source,python]
+[source,ecl]
 [[eclContextEventDeclaration]]
 ----
 package dplextended
@@ -102,7 +102,7 @@ As shown in Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>, creating new _
 
 ====== Declaring the constrained events 
 In a _MoCC_ library, we define constraints and their declarations. The declarations identify events and parameters to be considered in the implementation of the constraint. In the editor, the declaration is made using the two above mentioned pallets, and using the elements in the pallets i.e.: _New Relationship Declaration_ and _New Relationship Declaration +_. The two differ in that the latter creates a Relation Declaration with a default formal parameter declaration. In the Figure <<figure-glw-screenshot-of-moccmlLevelFirst>>, we create two relation declarations (_ForkConstraintDecl_ and _PhilosopherConstraintDecl_). Listing <<philoDeclarationTextual>> also shows the equivalent textual code generated for the _PhilosopherConstraintDecl_.
-[source,python]
+[source,ecl]
 [[philoDeclarationTextual]]
 ----
 RelationDeclaration PhilosopherConstraintDcl(
@@ -134,7 +134,7 @@ image::Guide/images/eclmoccml/moccmlLevSecond.png[Screenshot of MoCCML Second Le
 
 The _MoCC_ constraints models can be used in the _ECL_ file on concepts which they are attached. To declare the constraint on the events, we re-declare the context of the concept then define an invariant _inv_, see Listing <<eclContextConstraintUse>>. In this listing we also import the _MoCCML_ library that was defined previously (i.e. rendez_vous.moccml)
 For instance, the invariant related to the context Philosopher (_PhilosopherConstraintInv_) uses the _PhilosopherConstraintDef_ via its _PhilosopherConstraintDcl_ declaration? It takes as input the set of control events and static variables used to calculate the causality between events.
-[source,python]
+[source,ecl]
 [[eclContextConstraintUse]]
 ----
 ECLimport "platform:/resource/org.gemoc.dpl.xdsml.mocc.model/mocc/rendez_vous.moccml"
