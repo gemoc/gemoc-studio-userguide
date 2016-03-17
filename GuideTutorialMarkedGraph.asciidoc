@@ -44,7 +44,8 @@ better understanding of the abbreviations used in this tutorial.
 The domain model is implemented with several EMF projects that you
 need to import into your workspace.
 A graphical editor defined with Sirius is also available to visualize
-and edit Marked Graph models.
+// and edit	TODO: to be added?
+Marked Graph models.
 
 ////
 TODO: If you are using the GEMOC Studio, you can find these projects
@@ -831,7 +832,8 @@ First, we will create a run configuration.  Select "run / run Configurations"
 
 === Launch the execution of the model
 
-We can now run the "gemoc" configuration (using debug).  It opens the different views we have already seen but also the graphical visualization on the model.
+We can now run the "gemoc" configuration (using debug).  It opens the different
+views we have already seen but also the graphical visualization on the model.
 
 ////
 TODO: What about the timeline ?
@@ -844,7 +846,7 @@ component of the Modeling Workbench.
 
 == Using breakpoints
 
-TODO: Describe how to corrected the generated org.gemoc.sample.markedgraph.animate project to make toggling breakpoints work.
+TODO: Describe how to correct the generated org.gemoc.sample.markedgraph.animate project to make toggling breakpoints work.
 
 
 == Going further...
