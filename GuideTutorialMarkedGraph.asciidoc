@@ -806,6 +806,7 @@ First of all, we need to restart (__File > restart__) the second eclipse so that
 === Add the MarkedGraphAnimationViewpoint to wikipedia.aird
 
 Right click on wikipedia.aird and select __Viewpoints Selection__.
+If __Viewpoints Selection__ is not in the menu, double-click on the file wikipedia.aird.
 
 .Select Viewpoint Selection
 image:MarkedGraph/images/v2.1/MG-XDSML-80-animate-viewpoint-selection.png[Select Viewpoint Selection]
@@ -818,7 +819,7 @@ Representation per category / markedgraph / MarkedGraph diagram / wikipedia
 MarkedGraph diagram).  On the visualization, all places should be with a yellow
 background.
 
-If it does not work with the "Modeling" perpective, retry with the "Sirius" perspective and then come back to the "Modeling" perspective.
+// If it does not work with the "Modeling" perpective, retry with the "Sirius" perspective and then come back to the "Modeling" perspective.
 
 
 === Update the "run wikipedia example" configuration
@@ -841,7 +842,9 @@ component of the Modeling Workbench.
 ////
 
 
+== Using breakpoints
 
+TODO: Describe how to corrected the generated org.gemoc.sample.markedgraph.animate project to make toggling breakpoints work.
 
 
 == Going further...
