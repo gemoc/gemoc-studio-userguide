@@ -166,22 +166,6 @@ image::MarkedGraph/images/MG-XDSML-EMF-done.png[The xDSML Editor with AS related
 
 ////
 
-////
-// TODO where should it be done?
-=== Select the Graphical Editor
-
-The Graphical Editor defines a graphical concrete syntax which is
-user-friendly to view and edit a model.
-
-In the "Concrete syntax definition / Graphical editor" of the
-project.xdsml editor, click on "Browse" to select the
-"org.gemoc.markedgraph.design" project.
-
-.Select Sirius graphical editor
-image::MarkedGraph/images/MG-XDSML-CS-select.png[Select Sirius graphical editor, 800]
-
-////
-
 
 == Define the Execution Semantics
 
@@ -434,29 +418,12 @@ CCSL.ccslLib.
 
 
 
-////
-TODO:
-Provide a pointer to a MoCCML version which uses constraint automata
-to define the MoCC.
-////
-
 
 ////
-=== Define MoCC
-
-The 
-
-
-
-Give the implementation of the relations used in the DSE.
-
-MoCCLib... To be done...
-
-TODO: How to explain the defined relation?
-
 TODO: Add a link to another tutorial which uses an automata to define
 the MoCC.
 
+TODO:
 Tricks: Limitation of ECL for Integer type : use of a local
 expression.
 
@@ -635,12 +602,18 @@ During the execution of a Marked Graph model, we want to visualize :
 As the animation view is close to the graphical concrete syntax, we
 extend the existing diagram description.
 
-First, we will define a graphical representation based on the graphical
-Marked Graph syntax thanks to the wizard called "Create Animator Project for
-language", then we will add a layer to describe the graphical animation of a
-Marked Graph model.
+First, we will define in the Language Workbench a graphical representation
+based on the graphical Marked Graph syntax thanks to the wizard called "Create
+Animator Project for language", in whichwe will add a layer to describe the
+graphical animation of a Marked Graph model.
+
+Then we will be to able to visualize the states of mobel being executed in the MarkedGraph Modeling Workbench.
+
 
 === Create a debug representation (as an extension of the graphical editor viewpoint)
+
+Keep the MarkedGraph Modeling Workbenchrunning and come back to the Language
+Workbench (first Gemoc Studio).
 
 ==== Run the wizard
 
@@ -700,25 +673,13 @@ __org.gemoc.sample.markedgraph.design__ project
 * Click OK
 
 
-==== Add markedgraph.ecore to the metamodels
+==== Add markedgraph.ecore to metamodels
 
-* Select "Diagram Extension MarkedGraph" element.
+* Select "Diagram Extension MarkedGraphAnimation" element.
 * In the __Properties__ view, select __metamodels__.
 * Click on "Add from workspace".
 * Select "markedgraph.ecore" (unfold the project structure)
 * Click OK
-
-
-==== Complete the debug representation
-
-On the "Mapping Based Decoration Enabled breakpoint" and "Mapping Based
-Decoration Disabled breakpoint", select the "Place" and "Transition"
-element.
-
-The debug view will show a symbol on the Place and Transition to show
-whether the corresponding breakpoint is enabled or disabled.
-
-// TODO: Give a pointer to the file already completed!
 
 
 ////
@@ -763,6 +724,8 @@ Property Customization (by selection)"
 Perform the same action as above to set the background color of places to
 yellow.
 
+You have to select the first element named "ecliple white" (the second one is used to diplay the name).
+
 // FIXEME: how to select the right (ellipse white)?
 
 ==== Display the runtime token count in a place
@@ -770,9 +733,9 @@ yellow.
 
 * Right click on "Style Customization" to select "New Customization /
 Property Customization (by expression)"
-* For "Applied On" property, select "Ellipse white".
+* For "Applied On" property, select the first "Ellipse white".
 * For "Property Name", set "labelExpression" (completion is available with CTRL-SPACE)
-* For "Value Selction", set "feature:runtimeTokenCount"
+* For "Value Selection", set "feature:runtimeTokenCount"
 
 
 ==== Add the Animation service
@@ -781,30 +744,29 @@ Property Customization (by expression)"
 Extension".
 * Set "Qualified Class Name" to
 "org.gemoc.sample.markedgraph.animation.services.MarkedgraphAnimationServices".
-
-In the project, __org.gemoc.sample.markedgraph.animation__ project, in
-src/org.gemoc.sample.markedgraph.animation.services, copy the
-MarkedgraphDebugServices.java file to
-MarkedgraphAnimationServices.java.  Then, change
-AbstractGemocDebuggerServices to AbstractGemocAnimatorServices in its
-source code (two times: import and extends).  Finally, change "Debug" to
-"Animation".
+* In the project, __org.gemoc.sample.markedgraph.animation__ project, in
+"src/org.gemoc.sample.markedgraph.animation.services", copy the MarkedgraphDebugServices.java file to MarkedgraphAnimationServices.java, and edit the file to
+    - replace AbstractGemocDebuggerServices by AbstractGemocAnimatorServices in
+its source code (two times: import and extends)
+    - replace "Debug" by "Animation" (two times).
 
 // TODO: The aird has to be provided!
 
 // XXX: Add a link to a tutorial for Sirius Animator.
 
 
-== Animate a Model
+=== Animate a Model
 
 The executable MarkedGraph Language is now defined with a graphical
-visualization.
+visualization.  We can come back to the MarkedGraph Modeling Workbench to run
+it.
 
-=== Restart the MarkedGraph Modeling WorkBench
+==== Restart the MarkedGraph Modeling WorkBench
 
-First of all, we need to restart (__File > restart__) the second eclipse so that the new projects are available.
+First of all, we need to restart (__File > restart__) the MarkedGraph Modeling
+Workbench to take into account the modifications of the MarkedGraph xDSML.
 
-=== Add the MarkedGraphAnimationViewpoint to wikipedia.aird
+==== Add the MarkedGraphAnimationViewpoint to wikipedia.aird
 
 Right click on wikipedia.aird and select __Viewpoints Selection__.
 If __Viewpoints Selection__ is not in the menu, double-click on the file wikipedia.aird.
@@ -823,14 +785,14 @@ background.
 // If it does not work with the "Modeling" perpective, retry with the "Sirius" perspective and then come back to the "Modeling" perspective.
 
 
-=== Update the "run wikipedia example" configuration
+==== Update the "run wikipedia example" configuration
 
 Open the "run wikipedia example" configuration" (__Debug > Debug
 Configuration...__).  Complete the "Animator" field with "/org.gemoc.sample.markedgraph.sample/wikipedia.aird" (use Browse to select it).
 
 First, we will create a run configuration.  Select "run / run Configurations"
 
-=== Launch the execution of the model
+==== Launch the execution of the model
 
 We can now run the "gemoc" configuration (using debug).  It opens the different
 views we have already seen but also the graphical visualization on the model.
@@ -846,7 +808,51 @@ component of the Modeling Workbench.
 
 == Using breakpoints
 
-TODO: Describe how to correct the generated org.gemoc.sample.markedgraph.animate project to make toggling breakpoints work.
+To be able to debug a model, we need to complete the org.gemoc.sample.markedgraph.animation project.
+
+The "Debug" layer which has been generated has to be completed and corrected.
+Correction will be done automatically in a future version of the GEMOC Studio.
+
+=== Complete the org.gemoc.sample.markedgraph.animation project
+
+==== Define breakable elements
+
+On the "Mapping Based Decoration Enabled breakpoint" and
+"Mapping Based Decoration Disabled breakpoint" of the "Debug" layer, under
+"Decorations" element, select the "Place" and "Transition" element.  Change "Position" to "North East".
+
+It indicates that a breakpoint can be enabled or disabled on Place and Transition elements of a MarkedGraph model.  It will be graphically shown as icon displayed in the corresponding graphical element, at the nort east.
+
+// TODO: Give a pointer to the file already completed!
+
+
+
+=== Complete MarkedgraphanimationDebugServices.java file
+
+* Edit the file "MarkedgraphanimationDebugServices.java" in "src/org/gemoc/sample/markedgraph/xdsml/animation/services" of the "org.gemoc.sample.markedgraph.animation" project to add the folowing method:
+
+[source,java]
+----
+@Override
+public String getModelIdentifier() {
+	return org.gemoc.execution.concurrent.ccsljavaengine.ui.Activator.PLUGIN_ID+".debugModel";
+}
+----
+
+* The file contains an error. To correct it, double-click on "plugin.xml" (or META-INF/MANIFEST.MF), select "dependencies" and add "org.gemoc.execution.concurrent.ccsljavaengine.ui" plug-in.  Save.
+
+=== Debug the model
+
+
+* Restart the MarkedGraph Modeling Workbench (__File > restart__ on the second
+  eclipse).
+* Run the wikipedia example (using __debug > run wikipedia example__).  All places and transition have a little white cirble at top right (north east) to indicate that the corresponding breakpoint is disabled.
+* right click on p3, select __Gemoc > Toogle breakpoint__.  Do the same for t4. Nothing happens (symbols for breakpoints will be updated when running the next step).
+* select a logical step.  The icon has changed to a green circle for the p3 place and t4 transition.
+* select "Resume" to exit step by step mode and run the example
+* execution stops on t4 transition and eclipse asks for switching to the Debug perspective.
+    We can notice that the breakpoint on p3 has no effect because there is no EF associated on a place.  On the contrary, the execution stopped when EF of the t4 transition was about to fire.
+
 
 
 == Going further...
