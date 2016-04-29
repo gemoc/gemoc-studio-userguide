@@ -22,7 +22,7 @@ image:SigPML/images/sigpml/OverviewExecuteSigpmlModelWithVCD.png[Execution of a 
 
 The abstract and the concrete syntax of SigPML language projects are provided as two archive files to download and extract in your file system.
 
-The abstract syntax is give through a Ecore project link:SigPML/files/language.zip[The Ecore project].
+The abstract syntax is given through a Ecore project link:SigPML/files/language.zip[The Ecore project].
 Or, you can create an Ecore project with the provided link:SigPML/files/sigpmldomain.ecore[Ecore file].
 
 
@@ -30,7 +30,7 @@ The graphical concrete syntax is defined with the Sirius component. We provide a
 You can also make your own Sirius project and use the online https://wiki.eclipse.org/Sirius/Tutorials/4MinTutorial#Overview[Sirius tutorial] and the online http://www.eclipse.org/sirius/doc/[Sirius Documentation].
 
 
-The graphical editor model is give through a Sirius project as the graphical  syntax of your DSML link:SigPML/files/org.gemoc.SigpmlTuto.design.zip[The Sirius project].
+The graphical editor model is given through a Sirius project as the graphical  syntax of your DSML link:SigPML/files/org.gemoc.SigpmlTuto.design.zip[The Sirius project].
 
 Or you can create a Sirius project with the provided odesign file link:SigPML/files/sigpmlTuto.odesign[The odesign file].
 
@@ -52,6 +52,7 @@ The Port contains the rate attribute which defines the possible access number in
 With the provided project, the final result of the modeling tool is showed in the next figure.
 
 .SigPML final animation modeling tool
+
 image:SigPML/images/sigpml/sigpmlModelEditor.png[SigPML modeling tool]
 
 == Creating an xDSML Project
@@ -135,7 +136,7 @@ image:SigPML/images/sigpml/resultedDSAProject.png[DSA project and associated asp
 In this tutorial, the implementation of the functions is simple. The _execute_ function increments the _currentExecCycle_ of a block until its value is inferior to the _cycles_ value.
 
 The source code is available through 
-link:SigPML/files/sigpmlAspects.xtend[Kermeta 3 aspects,tabsize=4]
+link:SigPML/files/sigpmlAspects.xtend[Kermeta 3 aspects]
 and showed below
 [source, k3]
 [[sigpmlAspects.xtendExample]]
@@ -167,7 +168,7 @@ In the MoCCML program, we define the constraint relation which will be reference
 This automaton describes how the events and variables are used to define a constraint automaton relative to each instance of the _Connector_ class.
 
 The source code is available through 
-link:SigPML/files/xSigpml.moccml[the MoCCML program]
+link:SigPML/files/Sigpmltuto.moccml[the MoCCML program]
 and showed below
 [source]
 ---------------------
@@ -227,7 +228,7 @@ In the context of _Connector_, an invariant is declared based on the call of the
 
 
 The source code is available through 
-link:SigPML/files/xSigpml.ecl[the ECL program]
+link:SigPML/files/SigpmlTuto.ecl[the ECL program]
 and showed below
 
 [source, ecl]
@@ -250,7 +251,7 @@ The last step is to define the animation view of the models as a debug extension
 ==== Creating the Animator project as a Sirius viewpoint
 
 As the section dedicated to the graphical syntax, the animator is defined as a Sirius viewpoint based on  
-link:SigPML/files/xSigpmlAnim.odesign[the odesign file]
+link:SigPML/files/Sigpmltutodebug.odesign[the odesign file]
 
 To create a debug viewpoint, on the Melange file we select "Create Animator Project for language"->select the language name->Extends an existing diagram description (as the next picture).
 
