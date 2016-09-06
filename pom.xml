@@ -136,15 +136,15 @@
 							<includes>Guide.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html_single/images">
-									<fileset dir="./images" />
+									<fileset dir="${project.basedir}/images" />
 								</copy>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html_single/Guide">
-									<fileset dir="./Guide" >
+									<fileset dir="${project.basedir}/Guide" >
 										<exclude name="**/*.pptx"/>
 									</fileset>
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/html_single/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 							<postProcess>
@@ -169,15 +169,15 @@
 							<includes>Guide.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html/images">
-									<fileset dir="./images" />
+									<fileset dir="${project.basedir}/images" />
 								</copy>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/html/Guide">
-									<fileset dir="./Guide" >
+									<fileset dir="${project.basedir}/Guide" >
 										<exclude name="**/*.pptx"/>
 									</fileset>
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/html//">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -200,17 +200,17 @@
 							<includes>Guide.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/images">
-									<fileset dir="./images" >
+									<fileset dir="${project.basedir}/images" >
 										<exclude name="**/*.svg"/>
 									</fileset>
 								</copy>
 			 					<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/Guide">
-									<fileset dir="./Guide" >
+									<fileset dir="${project.basedir}/Guide" >
 										<exclude name="**/*.pptx"/>
 									</fileset>
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/guide/eclipse/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -237,10 +237,10 @@
 							<includes>TutorialMain.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorials/html_single/images">
-									<fileset dir="./images" />
+									<fileset dir="${project.basedir}/images" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorials/html_single/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -270,10 +270,10 @@
 								</copy>
 							    -->
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/MarkedGraph">
-									<fileset dir="./MarkedGraph" />
+									<fileset dir="${project.basedir}/MarkedGraph" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html_single/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -300,10 +300,10 @@
 								</copy>
 							    -->
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html/MarkedGraph">
-									<fileset dir="./MarkedGraph" />
+									<fileset dir="${project.basedir}/MarkedGraph" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/html/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -330,10 +330,10 @@
 									</fileset>
 								</copy> -->
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/MarkedGraph">
-									<fileset dir="./MarkedGraph" />
+									<fileset dir="${project.basedir}/MarkedGraph" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_markedgraph/eclipse/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -359,10 +359,10 @@
 							<includes>Tutorial_Automata.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html_single/images">
-									<fileset dir="./images" />
+									<fileset dir="${project.basedir}/images" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html_single/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -384,10 +384,10 @@
 							<includes>Tutorial_Automata.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html/images">
-									<fileset dir="./images" />
+									<fileset dir="${project.basedir}/images" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_automata/html/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -416,10 +416,10 @@
 								</copy>
 								<!-- tutorialFiles/quickTutorial/sigpml -> tutorial_sigpml/SigPML -->
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/SigPML">
-									<fileset dir="./SigPML" />
+									<fileset dir="${project.basedir}/SigPML" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html_single/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -441,14 +441,14 @@
 							<includes>Tutorial_SigPML.xml</includes>
 							<preProcess>
 			 					<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/images">
-									<fileset dir="./images" />
+									<fileset dir="${project.basedir}/images" />
 								</copy>
 								<!-- tutorialFiles/quickTutorial/sigpml -> tutorial_sigpml/SigPML -->
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/SigPML">
-									<fileset dir="./SigPML" />
+									<fileset dir="${project.basedir}/SigPML" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/html/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -475,10 +475,10 @@
 									</fileset>
 								</copy> -->
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/SigPML">
-									<fileset dir="./SigPML" />
+									<fileset dir="${project.basedir}/SigPML" />
 								</copy>
 								<copy todir="${project.build.directory}/docbook/publish/tutorial_sigpml/eclipse/">
-									<fileset dir="src/docbkx/resources" />
+									<fileset dir="${project.basedir}/src/docbkx/resources" />
 								</copy>
 							</preProcess>
 						</configuration>
@@ -550,7 +550,7 @@
                        <goal>replace</goal>
                    </goals>   
            <configuration>
-               <file>target/docbook/publish/guide/html_single/Guide.html</file>
+               <file>${project.basedir}/target/docbook/publish/guide/html_single/Guide.html</file>
                <token><![CDATA[<img src="./Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
 					<value><![CDATA[<img src="Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
@@ -577,7 +577,7 @@
                        <goal>replace</goal>
                    </goals>   
            <configuration>
-               <file>target/docbook/publish/guide/html/Guide.html</file>
+               <file>${project.basedir}/target/docbook/publish/guide/html/Guide.html</file>
                <token><![CDATA[<img src="./Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
 					<value><![CDATA[<img src="Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
@@ -604,7 +604,7 @@
                        <goal>replace</goal>
                    </goals>   
            <configuration>
-               <file>target/docbook/publish/guide/eclipse/Guide.html</file>
+               <file>${project.basedir}/target/docbook/publish/guide/eclipse/Guide.html</file>
                <token><![CDATA[<img src="./Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="800" alt="Sunset">]]></token>
 					<value><![CDATA[<img src="Guide/images/intro/GemocWorkbenchesGlobalPicture.png" width="960" height="720" border="0" usemap="#map" />
 
