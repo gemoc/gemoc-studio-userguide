@@ -5,7 +5,7 @@ External features and
 |===
 | Feature
 | Update site providing it
-| Licence, Notes (if unclear, indicates which component requires it)
+| Licence, Notes (if unclear, indicates which component requires it), Prerequisite or Work-With dependency
 
 
 |
