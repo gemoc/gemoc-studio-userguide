@@ -5,7 +5,7 @@ List here the proposed actions in order to help IP review
 
 Note: in addition to the renaming, we will probably also have to adapt the version number
 
-[cols="<1,<1,1*", options="header",width="75%"]
+[cols="<1a,<1a,1*a", options="header",width="75%"]
 |===
 |Plugins
 |Location (repo and folder)
