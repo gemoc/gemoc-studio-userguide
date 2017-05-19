@@ -7,6 +7,15 @@ External features and
 | Update site providing it
 | Licence, Notes (if unclear, indicates which component requires it), Prerequisite or Work-With dependency
 
+
+|
+- AspectJ
+|
+- http://download.eclipse.org/tools/ajdt/46/dev/update
+|
+- ? used by K3 in some situations
+
+
 |
 - org.eclipse.elk.feature
 |
