@@ -1,0 +1,37 @@
+## External Dependencies of the GEMOC Studio
+
+External features and 
+[cols="<1a,<3a,1*", options="header"]
+|===
+| Feature
+| Update site providing it
+| Licence, Notes (if unclear, indicates which component requires it)
+
+
+|
+- k3
+|
+- http://www.kermeta.org/k3/update/
+| 
+- EPL 1.0
+
+|
+- Melange
+|
+- http://melange-lang.org/updatesite/
+| 
+- EPL 1.0
+
+|
+- Diverse commons
+|
+- http://melange-lang.org/updatesite/
+| 
+- EPL 1.0
+- various helpers, mostly PDE
+
+
+|
+|
+|===
+
