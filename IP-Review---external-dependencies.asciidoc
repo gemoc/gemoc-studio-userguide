@@ -75,6 +75,7 @@ External features and
 
 |
 - Groovy
+- org.codehaus.groovy.eclipse.feature
 |
 - http://dist.springsource.org/snapshot/GRECLIPSE/e4.6/
 |
