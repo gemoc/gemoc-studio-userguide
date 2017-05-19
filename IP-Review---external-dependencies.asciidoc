@@ -13,22 +13,50 @@ External features and
 |
 - http://www.kermeta.org/k3/update/
 | 
-- EPL 1.0
+- EPL 1.0, à recontroler dans les features et plugins
 
 |
 - Melange
 |
 - http://melange-lang.org/updatesite/
 | 
-- EPL 1.0
+- EPL 1.0, à recontroler dans les features et plugins
 
 |
 - Diverse commons
 |
 - http://melange-lang.org/updatesite/
 | 
-- EPL 1.0
+- EPL 1.0,  à recontroler dans les features et plugins
 - various helpers, mostly PDE
+
+|
+- Nebula ?
+|
+- http://archive.eclipse.org/nebula/Q22016/incubation
+|
+- EPL 1.0
+
+|
+- sirius
+|
+- http://download.eclipse.org/sirius/updates/releases/4.1.2/neon/
+|
+- EPL 1.0
+
+|
+- Timesquare
+|
+- http://timesquare.inria.fr/update_site/neon</url>
+|
+- EPL ?
+
+|
+- Timesquare ECL
+|
+- http://timesquare.inria.fr/ecl/update_site/neon
+|
+- EPL ?
 
 
 |
