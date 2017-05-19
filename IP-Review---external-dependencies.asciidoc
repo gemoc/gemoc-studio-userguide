@@ -73,6 +73,13 @@ External features and
 |
 - EPL ?
 
+|
+- Groovy
+|
+- http://dist.springsource.org/snapshot/GRECLIPSE/e4.6/
+|
+- EPL ? Work-With (used by some tests examples)
+
 
 |
 |
