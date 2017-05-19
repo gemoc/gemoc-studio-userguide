@@ -5,99 +5,111 @@ List here the proposed actions in order to help IP review
 
 Note: in addition to the renaming, we will probably also have to adapt the version number
 
-[cols="<1a,<1a,1*a", options="header",width="75%"]
+[cols="<1a,1*a", options="header",]
 |===
-|Plugins
-|Location (repo and folder)
+|Plugins + Location (repo and folder)
 |Actions to execute (mark with a :white_check_mark: when done)
 
 |
 fr.inria.aoste.timesquare.antlr311.runtime_3.1.3
-fr.inria.aoste.timesquare. backend.codeexecution_1.2.0
-fr.inria.aoste.timesquare. backend.codeexecution.model_1.0.0
-fr.inria.aoste.timesquare. backend.codeexecution.xtext_1.0.0
-fr.inria.aoste.timesquare. backend.codeexecution.xtext.ui_1.0.0
-fr.inria.aoste.timesquare. backend.manager_1.2.0
-fr.inria.aoste.timesquare. backend.obeoviewpointanimator_1.0.0
-fr.inria.aoste.timesquare. backend.power_1.0.0
-fr.inria.aoste.timesquare. backend.vcdgenerator_1.0.0
-fr.inria.aoste.timesquare. backend.vcdgenerator.gemocAdaptation_2.3.0
-fr.inria.aoste.timesquare. booleanequation_1.0.0
-fr.inria.aoste.timesquare. branding_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.clocktree.generator_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.clocktree.ui_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.compiler_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.compiler.ui_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.library.xtext_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.library.xtext.ui_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.model_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.model.adapter_1.2.0
-fr.inria.aoste.timesquare. ccslkernel.model.edit_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.model.editor_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.modelunfolding_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.parser.xtext_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.parser.xtext.ui_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.runtime_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.extension.alternates_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.extension.filterby_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.extension.statemachine_0.1.1
-fr.inria.aoste.timesquare. ccslkernel.solver.launch_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.priorities.model_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.priorities.model.edit_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.priorities.model.editor_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.priorities.xtext_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.solver.priorities.xtext.ui_1.0.0
-fr.inria.aoste.timesquare. ccslkernel.xtext.util_1.0.0
-fr.inria.aoste.timesquare. duration.model_1.0.0
-fr.inria.aoste.timesquare. duration.model.edit_1.0.0
-fr.inria.aoste.timesquare. duration.model.editor_1.0.0
-fr.inria.aoste.timesquare. duration.xtext_1.0.0
-fr.inria.aoste.timesquare. duration.xtext.ui_1.0.0
-fr.inria.aoste.timesquare. duration.xtext.wizard_1.0.0
-|
-|
+fr.inria.aoste.timesquare.backend.codeexecution_1.2.0
+fr.inria.aoste.timesquare.backend.codeexecution.model_1.0.0
+fr.inria.aoste.timesquare.backend.codeexecution.xtext_1.0.0
+fr.inria.aoste.timesquare.backend.codeexecution.xtext.ui_1.0.0
+fr.inria.aoste.timesquare.backend.manager_1.2.0
+fr.inria.aoste.timesquare.backend.obeoviewpointanimator_1.0.0
+fr.inria.aoste.timesquare.backend.power_1.0.0
+fr.inria.aoste.timesquare.backend.vcdgenerator_1.0.0
+fr.inria.aoste.timesquare.backend.vcdgenerator.gemocAdaptation_2.3.0
+fr.inria.aoste.timesquare.booleanequation_1.0.0
+fr.inria.aoste.timesquare.branding_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.clocktree.generator_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.clocktree.ui_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.compiler_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.compiler.ui_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.library.xtext_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.library.xtext.ui_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.model_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.model.adapter_1.2.0
+fr.inria.aoste.timesquare.ccslkernel.model.edit_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.model.editor_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.modelunfolding_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.parser.xtext_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.parser.xtext.ui_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.runtime_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.extension.alternates_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.extension.filterby_1.0.0
+.2+|
 - nothing, external (prerequisite ?) dependencies
+|
+ timesquare svn
 
 |
-fr.inria.aoste.timesquare. ecl_1.0.0
-fr.inria.aoste.timesquare. ecl.ecltoqvto_1.0.0
-fr.inria.aoste.timesquare. ecl.ecltoqvto.ui_1.0.0
-fr.inria.aoste.timesquare. ecl.feedback.model_1.0.0
-fr.inria.aoste.timesquare. ecl.qvto2ccsl.ui_1.0.0
-fr.inria.aoste.timesquare. ecl.qvto.helper_1.0.0
-fr.inria.aoste.timesquare. ecl.xtext_1.0.0
-fr.inria.aoste.timesquare. ecl.xtext.ui_1.0.0
-fr.inria.aoste.timesquare. explorer.ui_1.0.0
-fr.inria.aoste.timesquare. instantrelation_1.3.0
-fr.inria.aoste.timesquare. instantrelation.ccslkernel_1.0.0
-fr.inria.aoste.timesquare. instantrelation.trace.relation_1.0.0
-fr.inria.aoste.timesquare. javabdd.runtime_1.2.0
-fr.inria.aoste.timesquare. jgrapht_1.0.0
-fr.inria.aoste.timesquare. launcher.core_1.4.1
-fr.inria.aoste.timesquare. launcher.ui_1.1.0
-fr.inria.aoste.timesquare. simulationpolicy_1.1.0
-fr.inria.aoste.timesquare. simulationpolicy.max_1.0.0
-fr.inria.aoste.timesquare. simulationpolicy.maxcard_1.0.0
-fr.inria.aoste.timesquare. simulationpolicy.min_1.0.0
-fr.inria.aoste.timesquare. simulationpolicy.onesat_1.0.0
-fr.inria.aoste.timesquare. trace.util_1.0.0
-fr.inria.aoste.timesquare. utils.categories_1.0.0
-fr.inria.aoste.timesquare. utils.console_1.0.0
-fr.inria.aoste.timesquare. utils.exceptions_1.0.0
-fr.inria.aoste.timesquare. utils.extensionpoint_1.0.0
-fr.inria.aoste.timesquare. utils.pluginhelpers_1.0.0
-fr.inria.aoste.timesquare. utils.timedsystem_1.0.0
-fr.inria.aoste.timesquare. utils.ui_1.0.0.
-fr.inria.aoste.timesquare. utils.umlhelpers_1.0.0
-fr.inria.aoste.timesquare. vcd_1.4.0
-fr.inria.aoste.timesquare. vcd.antlr_1.4.0
-fr.inria.aoste.timesquare. vcd.help_1.0.1
-fr.inria.aoste.timesquare. vcd.instantrelation_1.2.0
-fr.inria.aoste.timesquare. wizard_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.extension.statemachine_0.1.1
+.2+|
+- :warning: rename ...
+| concurrency
+
 |
-|
+fr.inria.aoste.timesquare.ccslkernel.solver.launch_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.priorities.model_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.priorities.model.edit_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.priorities.model.editor_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.priorities.xtext_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver.priorities.xtext.ui_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.xtext.util_1.0.0
+fr.inria.aoste.timesquare.duration.model_1.0.0
+fr.inria.aoste.timesquare.duration.model.edit_1.0.0
+fr.inria.aoste.timesquare.duration.model.editor_1.0.0
+fr.inria.aoste.timesquare.duration.xtext_1.0.0
+fr.inria.aoste.timesquare.duration.xtext.ui_1.0.0
+fr.inria.aoste.timesquare.duration.xtext.wizard_1.0.0
+.2+|
 - nothing, external (prerequisite ?) dependencies
+|
+ timesquare svn
+
+|
+fr.inria.aoste.timesquare.ecl_1.0.0
+fr.inria.aoste.timesquare.ecl.ecltoqvto_1.0.0
+fr.inria.aoste.timesquare.ecl.ecltoqvto.ui_1.0.0
+fr.inria.aoste.timesquare.ecl.feedback.model_1.0.0
+fr.inria.aoste.timesquare.ecl.qvto2ccsl.ui_1.0.0
+fr.inria.aoste.timesquare.ecl.qvto.helper_1.0.0
+fr.inria.aoste.timesquare.ecl.xtext_1.0.0
+fr.inria.aoste.timesquare.ecl.xtext.ui_1.0.0
+fr.inria.aoste.timesquare.explorer.ui_1.0.0
+fr.inria.aoste.timesquare.instantrelation_1.3.0
+fr.inria.aoste.timesquare.instantrelation.ccslkernel_1.0.0
+fr.inria.aoste.timesquare.instantrelation.trace.relation_1.0.0
+fr.inria.aoste.timesquare.javabdd.runtime_1.2.0
+fr.inria.aoste.timesquare.jgrapht_1.0.0
+fr.inria.aoste.timesquare.launcher.core_1.4.1
+fr.inria.aoste.timesquare.launcher.ui_1.1.0
+fr.inria.aoste.timesquare.simulationpolicy_1.1.0
+fr.inria.aoste.timesquare.simulationpolicy.max_1.0.0
+fr.inria.aoste.timesquare.simulationpolicy.maxcard_1.0.0
+fr.inria.aoste.timesquare.simulationpolicy.min_1.0.0
+fr.inria.aoste.timesquare.simulationpolicy.onesat_1.0.0
+fr.inria.aoste.timesquare.trace.util_1.0.0
+fr.inria.aoste.timesquare.utils.categories_1.0.0
+fr.inria.aoste.timesquare.utils.console_1.0.0
+fr.inria.aoste.timesquare.utils.exceptions_1.0.0
+fr.inria.aoste.timesquare.utils.extensionpoint_1.0.0
+fr.inria.aoste.timesquare.utils.pluginhelpers_1.0.0
+fr.inria.aoste.timesquare.utils.timedsystem_1.0.0
+fr.inria.aoste.timesquare.utils.ui_1.0.0.
+fr.inria.aoste.timesquare.utils.umlhelpers_1.0.0
+fr.inria.aoste.timesquare.vcd_1.4.0
+fr.inria.aoste.timesquare.vcd.antlr_1.4.0
+fr.inria.aoste.timesquare.vcd.help_1.0.1
+fr.inria.aoste.timesquare.vcd.instantrelation_1.2.0
+fr.inria.aoste.timesquare.wizard_1.0.0
+.2+|
+- nothing, external (prerequisite ?) dependencies
+|
+ timesquare svn
 
 |
 fr.inria.aoste.trace_1.0.1
@@ -105,16 +117,18 @@ fr.inria.aoste.trace.editor_1.0.1
 fr.inria.aoste.trace.edit.ui_1.0.1
 fr.inria.aoste.trace.help_1.0.0
 fr.inria.aoste.utils.grph_1.0.0
-|
-|
+.2+|
 - :warning:  Check IP of grph !!! ,  external (prerequisite ?) dependencies
+|
+  timequare svn
 
 |
 fr.inria.diverse.commons.aether_1.0.0
 fr.inria.diverse.commons.asm_1.0.0
-|
-|
+.2+|
 - :warning:  Check IP of aether and asm !!! ,  external (prerequisite ?) dependencies
+|
+  diverse commons (tools)
 
 |
 fr.inria.diverse.commons.eclipse_1.0.0
@@ -123,18 +137,20 @@ fr.inria.diverse.commons.eclipse.messagingsystem.api_1.0.0
 fr.inria.diverse.commons.eclipse.messagingsystem.ui_1.0.0
 fr.inria.diverse.commons.eclipse.pde_1.0.2
 fr.inria.diverse.commons.provisionner4eclipse_1.0.0
-|
-|
+.2+|
 - :warning:  embed in gemoc (+ renamming) or  external (prerequisite ?) dependencies
+|
+  diverse commons
 
 |
 fr.inria.diverse.k3.al.annotationprocessor.plugin_3.2.1
 fr.inria.diverse.k3.sample.deployer_3.2.1
 fr.inria.diverse.k3.ui_3.2.1
 fr.inria.diverse.k3.ui.templates_3.2.1
-|
-|
+.2+|
 - Nothing ,  external (prerequisite ?) dependencies
+|
+  K3 github
 
 |
 fr.inria.diverse.melange_0.2.0
@@ -144,17 +160,19 @@ fr.inria.diverse.melange.metamodel_0.2.0
 fr.inria.diverse.melange.resource_0.2.0
 fr.inria.diverse.melange.ui_0.2.0
 fr.inria.diverse.melange.ui.templates_0.2.0
-|
-|
+.2+|
 - nothing ,  external (prerequisite ?) dependencies
+|
+  Melange Github
 
 |
 fr.inria.diverse.opsemanticsview.gen_2.3.0
 fr.inria.diverse.opsemanticsview.gen.k3_2.3.0
 fr.inria.diverse.opsemanticsview.model_2.3.0
-|
-|
+.2+|
 - :warning: Rename ... (prefix, and component ?)
+|
+  ModelDebugging
 
 |
 fr.inria.diverse.trace.annotations_2.3.0
@@ -165,9 +183,10 @@ fr.inria.diverse.trace.gemoc.api_2.3.0
 fr.inria.diverse.trace.gemoc.generator_2.3.0
 fr.inria.diverse.trace.gemoc.ui_2.3.0
 fr.inria.diverse.trace.metamodel.generator_2.3.0
-|
-|
+.2+|
 - :warning: Rename ... (prefix, and component ?)
+|
+  ModelDebugging
 
 |
 fr.obeo.dsl.debug_2.3.0
@@ -176,9 +195,10 @@ fr.obeo.dsl.debug.ide_2.3.0
 fr.obeo.dsl.debug.ide.sirius.ui_2.3.0
 fr.obeo.dsl.debug.ide.ui_2.3.0
 fr.obeo.timeline_2.3.0
-|
-|
+.2+|
 - :warning: Rename ... (prefix, and component ?)
+|
+  ModelDebugging
 
 |
 org.eclipse.emf.ecoretools_3.2.1
@@ -191,9 +211,10 @@ org.eclipse.emf.ecoretools.registration_0.1.3
 org.eclipse.emf.ecoretools.registration.ui_0.1.3
 org.eclipse.emf.ecoretools.tabbedproperties_3.2.1
 org.eclipse.emf.ecoretools.ui_3.2.1
-|
-|
+.2+|
 - :warning: Check version from diverse.commons vs official ecore tools, rename or contribute to ecore tool ?
+| 
+   Ecoretools and diverse commons
 
 |
 org.gemoc.bcool.bcoollib_2.3.0.
@@ -205,16 +226,18 @@ org.gemoc.bcool.transformation.bcool2qvto_2.3.0
 org.gemoc.bcool.transformation.bcool2qvto.ui_2.3.0
 org.gemoc.bcool.transformation.qvto2ccsl.ui_2.3.0
 org.gemoc.bcool.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| 
+ Coordination
 
 |
 org.gemoc.bflow.grammar_2.3.0
 org.gemoc.bflow.grammar.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| 
+  Coordination
 
 |
 org.gemoc.commons_2.3.0
@@ -222,23 +245,27 @@ org.gemoc.commons.eclipse_2.3.0
 org.gemoc.commons.eclipse.jdt_2.3.0
 org.gemoc.commons.eclipse.pde_2.3.0
 org.gemoc.commons.eclipse.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+- :warning: Move to dedicated Commons git repo ? ModelDebugging ?  depends on the CI infrastructure ...
+|
+  Gemoc Studio
 
 |
 org.gemoc.concurrent_addons.eventscheduling.timeline_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| 
+   Concurrent
 
 |
 org.gemoc.concurrent.language_workbench.sample.deployer_2.3.0
 org.gemoc.concurrent.modeling_workbench.sample.deployer_2.3.0
-|
-|
+.2+|
 - :warning: Rename ... 
 - :warning: may be move in concurrent repository ?
+|
+   Gemoc Studio
 
 |
 org.gemoc.execution.concurrent.ccsljavaengine_2.3.0
@@ -250,15 +277,15 @@ org.gemoc.execution.concurrent.ccsljavaengine .ui_2.3.0
 org.gemoc.execution.concurrent.ccsljavaxdsml .api_2.3.0
 org.gemoc.execution.concurrent.ccsljavaxdsml .ui_2.3.0
 org.gemoc.execution.concurrent.ccsljavaxdsml .utils_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| concurrent
 
 |
 org.gemoc.execution.engine.coordinator.commons_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| Coordination
 
 |
 org.gemoc.executionframework.engine_2.3.0
@@ -266,91 +293,91 @@ org.gemoc.executionframework.engine.ui_2.3.0
 org.gemoc.executionframework.extensions.sirius_2.3.0
 org.gemoc.executionframework.reflectivetrace.model_2.3.0
 org.gemoc.executionframework.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| ModelDebugging
 
 |
 org.gemoc.execution.sequential.javaengine_2.3.0
 org.gemoc.execution.sequential.javaengine.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| ModelDebugging
 
 |
 org.gemoc.execution.sequential.javaxdsml.api_2.3.0
 org.gemoc.execution.sequential.javaxdsml.ide.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| ModelDebugging
 
 |
 org.gemoc.gemoc_heterogeneous_modeling_workbench.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| Coordination
 
 |
 org.gemoc.gemoc_language_workbench.documentation_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| gemoc-studio
 
 |
 org.gemoc.gemoc_language_workbench.sample.deployer_2.3.0
 org.gemoc.gemoc_modeling_workbench.sample.deployer_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
 - :warning: may be move in modeldebugging repository ?
+| gemoc-studio
 
 |
 org.gemoc.gemoc_studio.branding_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| gemoc-studio
 
 |
 org.gemoc.gexpressions_2.3.0
 org.gemoc.gexpressions.xtext_2.3.0
 org.gemoc.gexpressions.xtext.ui_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
 - :warning: move in ModelDebugging or commons repository
+| gemoc-studio
 
 |
 org.gemoc.mocc.ccslmocc.model_0.1.1
 org.gemoc.mocc.ccslmocc.model.design_0.1.1
 org.gemoc.mocc.ccslmocc.model.xtext.mocdsl_0.1.1
 org.gemoc.mocc.ccslmocc.model.xtext.mocdsl.ui_0.1.1
-|
-|
+.2+|
 - :warning: Rename ...
+| concurrency
 
 |
 org.gemoc.mocc.fsmkernel.model_0.1.1
 org.gemoc.mocc.fsmkernel.model.design_0.1.1
 org.gemoc.mocc.fsmkernel.model.xtext.fsmdsl_0.1.1
 org.gemoc.mocc.fsmkernel.model.xtext.fsmdsl.ui_0.1.1
-|
-|
+.2+|
 - :warning: Rename ...
+| concurrency
 
 |
 org.gemoc.mocc.transformations.ecl2mtl_0.0.1
 org.gemoc.mocc.transformations.ecl2mtl.ui_0.0.1
-|
-|
+.2+|
 - :warning: Rename ...
+| concurrency
 
 |
 org.gemoc.sequential_addons.diffviewer_2.3.0
 org.gemoc.sequential_addons.multidimensional.timeline_2.3.0
 org.gemoc.sequential_addons.stategraph_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| ModelDebugging
 
 |
 org.gemoc.xdsmlframework.api_2.3.0
@@ -358,9 +385,9 @@ org.gemoc.xdsmlframework.commons_2.3.0
 org.gemoc.xdsmlframework.extensions.sirius_2.3.0
 org.gemoc.xdsmlframework.ide.ui_2.3.0
 org.gemoc.xdsmlframework.ui.utils_2.3.0
-|
-|
+.2+|
 - :warning: Rename ...
+| ModelDebugging
 
 |
 |
