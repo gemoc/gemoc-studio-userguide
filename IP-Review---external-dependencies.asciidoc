@@ -7,6 +7,12 @@ External features and
 | Update site providing it
 | Licence, Notes (if unclear, indicates which component requires it), Prerequisite or Work-With dependency
 
+|
+- org.eclipse.elk.feature
+|
+- http://download.eclipse.org/elk/updates/releases/0.1.0/
+|
+- EPL 1.0 (required by sequential_addon/stategraph)
 
 |
 - k3
