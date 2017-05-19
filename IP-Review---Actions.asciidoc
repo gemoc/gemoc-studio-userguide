@@ -20,7 +20,6 @@ fr.inria.aoste.timesquare.backend.manager_1.2.0
 fr.inria.aoste.timesquare.backend.obeoviewpointanimator_1.0.0
 fr.inria.aoste.timesquare.backend.power_1.0.0
 fr.inria.aoste.timesquare.backend.vcdgenerator_1.0.0
-fr.inria.aoste.timesquare.backend.vcdgenerator.gemocAdaptation_2.3.0
 fr.inria.aoste.timesquare.booleanequation_1.0.0
 fr.inria.aoste.timesquare.branding_1.0.0
 fr.inria.aoste.timesquare.ccslkernel.clocktree.generator_1.0.0
@@ -38,26 +37,14 @@ fr.inria.aoste.timesquare.ccslkernel.parser.xtext_1.0.0
 fr.inria.aoste.timesquare.ccslkernel.parser.xtext.ui_1.0.0
 fr.inria.aoste.timesquare.ccslkernel.runtime_1.0.0
 fr.inria.aoste.timesquare.ccslkernel.solver_1.0.0
-fr.inria.aoste.timesquare.ccslkernel.solver.extension.alternates_1.0.0
-fr.inria.aoste.timesquare.ccslkernel.solver.extension.filterby_1.0.0
-.2+|
-- nothing, external (prerequisite ?) dependencies
-|
- timesquare svn
-
-|
-fr.inria.aoste.timesquare.ccslkernel.solver.extension.statemachine_0.1.1
-.2+|
-- :warning: rename ...
-| concurrency
-
-|
+fr.inria.aoste.timesquare.ccslkernel.solver. extension.alternates_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver. extension.filterby_1.0.0
 fr.inria.aoste.timesquare.ccslkernel.solver.launch_1.0.0
-fr.inria.aoste.timesquare.ccslkernel.solver.priorities.model_1.0.0
-fr.inria.aoste.timesquare.ccslkernel.solver.priorities.model.edit_1.0.0
-fr.inria.aoste.timesquare.ccslkernel.solver.priorities.model.editor_1.0.0
-fr.inria.aoste.timesquare.ccslkernel.solver.priorities.xtext_1.0.0
-fr.inria.aoste.timesquare.ccslkernel.solver.priorities.xtext.ui_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver. priorities.model_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver. priorities.model.edit_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver. priorities.model.editor_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver. priorities.xtext_1.0.0
+fr.inria.aoste.timesquare.ccslkernel.solver. priorities.xtext.ui_1.0.0
 fr.inria.aoste.timesquare.ccslkernel.xtext.util_1.0.0
 fr.inria.aoste.timesquare.duration.model_1.0.0
 fr.inria.aoste.timesquare.duration.model.edit_1.0.0
@@ -69,6 +56,14 @@ fr.inria.aoste.timesquare.duration.xtext.wizard_1.0.0
 - nothing, external (prerequisite ?) dependencies
 |
  timesquare svn
+
+|
+fr.inria.aoste.timesquare.backend.vcdgenerator.gemocAdaptation_2.3.0
+fr.inria.aoste.timesquare.ccslkernel.solver.extension.statemachine_0.1.1
+.2+|
+- :warning: rename ...
+| concurrency github; https://github.com/gemoc/concurrency/tree/master/ccsljava_execution/concurrent_addons/plugins[ccsljava_execution/concurrent_addons] and https://github.com/gemoc/concurrency/tree/master/moccml/plugins/solver/[moccml/plugins/solver]
+
 
 |
 fr.inria.aoste.timesquare.ecl_1.0.0
@@ -259,8 +254,8 @@ org.gemoc.concurrent_addons.eventscheduling.timeline_2.3.0
    Concurrent
 
 |
-org.gemoc.concurrent.language_workbench.sample.deployer_2.3.0
-org.gemoc.concurrent.modeling_workbench.sample.deployer_2.3.0
+org.gemoc.concurrent.language_workbench. sample.deployer_2.3.0
+org.gemoc.concurrent.modeling_workbench. sample.deployer_2.3.0
 .2+|
 - :warning: Rename ... 
 - :warning: may be move in concurrent repository ?
@@ -324,8 +319,8 @@ org.gemoc.gemoc_language_workbench.documentation_2.3.0
 | gemoc-studio
 
 |
-org.gemoc.gemoc_language_workbench.sample.deployer_2.3.0
-org.gemoc.gemoc_modeling_workbench.sample.deployer_2.3.0
+org.gemoc.gemoc_language_workbench. sample.deployer_2.3.0
+org.gemoc.gemoc_modeling_workbench. sample.deployer_2.3.0
 .2+|
 - :warning: Rename ...
 - :warning: may be move in modeldebugging repository ?
