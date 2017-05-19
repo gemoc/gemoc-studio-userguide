@@ -3,7 +3,7 @@ List here the proposed actions in order to help IP review
 
 ## Plugin renamming
 
-[cols="<1,<1,1*", options="header"]
+[cols="<1,<1,1*", options="header",width="75%"]
 |===
 |Plugins
 |Location (repo and folder)
