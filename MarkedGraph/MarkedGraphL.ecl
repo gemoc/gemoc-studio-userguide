@@ -1,4 +1,4 @@
-import 'platform:/resource/org.gemoc.sample.markedgraph.model/model/markedgraph.ecore'
+import 'platform:/resource/org.gemoc.sample.markedgraph.xdsml.markedgraphl/model/MarkedGraphL.ecore' 
 
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
