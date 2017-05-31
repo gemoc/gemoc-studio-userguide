@@ -327,7 +327,6 @@ link:MarkedGraph/MarkedGraphL.ecl[following code] (explanations on
 this code are given bellow):
 
 [source,ecl]
-.The file MarkedGraphL.ecl
 ----
 include::MarkedGraph/MarkedGraphL.ecl[Definition of the MoCC]
 ----
