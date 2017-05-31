@@ -265,8 +265,6 @@ explicitiement qu'il ne faut pas la mettre sur le MM. Qu'elle ne peut être
 appelée que depuis une autre EF. La mettre en privée dans xtend ?
 ////
 
-////
-
 ==== Generating the ecore model with the Execution Data and Execution Functions
 
 This step makes use of link:http://melange-lang.org/[Melange] to automatically extend the AS
