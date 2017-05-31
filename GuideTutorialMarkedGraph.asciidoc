@@ -658,7 +658,7 @@ __org.gemoc.sample.markedgraph.design__ project
 * Select "Diagram Extension MarkedGraphAnimation" element.
 * In the __Properties__ view, select __metamodels__.
 * Click on "Add from workspace".
-* Select "markedgraph.ecore" (unfold the project structure)
+* Select the /org.gemoc.sample.markedgraph.xdsml.markedgraphl/model/MarkedGraphL.ecore (unfold the project structure)
 * Click OK
 
 
