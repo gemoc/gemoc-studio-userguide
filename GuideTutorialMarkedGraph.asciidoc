@@ -295,7 +295,7 @@ image::MarkedGraph/images/v2.1/MG-XDSML-19b-dse-new.png[Create a DSE Project, 80
 
 Then :
 
-1. Select the MarkedGraphL language and click __OK__.
+1. Select the MarkedGraphL language (/org.gemoc.sample.markedgraph.xdsml.markedgraphl/model/MarkedGraphL.ecore) and click __OK__.
 2. On the next screen of the wizard, click __Next__ (the project name is already initialized __org.gemoc.sample.markedgraph.dse__).
 3. On the last screen, complete the required fields:
     * The MarkedGraphL Ecore file has already been initialized, just click on __Browse__.
