@@ -220,23 +220,6 @@ place with the initial token count.
 __Transition__. It to remove one token from each of its input places
 and add one token to all its output places.
 
-
-==== Extend the AS with ED and EF
-
-At the moment, we need to complete the AS (markedgraph.ecore) with the
-ED and EF.  In the next release of the GEMOC Studio this step replaced by the
-use of link:http://melange-lang.org/[Melange] to automatically extend the AS
-with ED and EF.
-// XXX : Possible ?
-
-The ED and EF are already defined on the provided metamodel.  Thus, there
-is no need to add the 'runtimeTokenCount' ED on Place, 'fire()' on Transition
-and 'initialize()' on MarkedGraph.
-
-.Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
-image::MarkedGraph/images/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
-
-
 ==== Create the DSA Project
 
 In the Project Explorer, right click on any file of the xDSML project and
@@ -283,14 +266,14 @@ appelée que depuis une autre EF. La mettre en privée dans xtend ?
 ////
 
 ////
-==== Create the Extented Model with Melange
 
-Note: This step should become transparent in a next version of the
-GEMOC Stutio.
+==== Generating the ecore model with the Execution Data and Execution Functions
 
-XXX: What is the status of Melange.  How it works?
+This step makes use of link:http://melange-lang.org/[Melange] to automatically extend the AS
+with ED and EF. Just select the melange file in the project explorer, right click on it and in the Melange menu, select generate all.
 
-////
+.Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)
+image::MarkedGraph/images/MarkedGraph-AS-DSA.png[Abstract Syntax of MarkedGraph extended with Execution Data (ED) and Execution Functions (EF)]
 
 
 === Define DSE
@@ -317,7 +300,7 @@ Then :
 1. Select the MarkedGraphL language and click __OK__.
 2. On the next screen of the wizard, click __Next__ (the project name is already initialized __org.gemoc.sample.markedgraph.dse__).
 3. On the last screen, complete the required fields:
-    * The MarkedGraph Ecore file has already been initialized, just click on __Browse__.
+    * The MarkedGraphL Ecore file has already been initialized, just click on __Browse__.
     * Select the root container : MarkedGraph::MarkedGraph
     * Set the __New ECL file basename__ is already set to 'MarkedGraphL'
 
