@@ -2,7 +2,16 @@ List here the proposed actions in order to help IP review
 
 ## Dependency IP
 
-Verify use of xerces,jdom and jaxen in org.gemoc.xdsmlframework.ide.ui
+Third party dependencies
+
+- jaxen 1.1.6 - Apache-Like (used in org.gemoc.xdsmlframework.ide.ui) 
+- jdom 2.0.5 - Apache-Like (used in org.gemoc.xdsmlframework.ide.ui) 
+- Xerces 2.11 - Apache 2.0 (used in org.gemoc.xdsmlframework.ide.ui) 
+
+
+- Melange 0.2.0 EPL 1.0
+- K3 v3.2.1 - EPL 1.0
+
 
 ## Plugin renamming
 
