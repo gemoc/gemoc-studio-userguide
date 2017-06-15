@@ -1,5 +1,9 @@
 List here the proposed actions in order to help IP review
 
+##
+Dependency IP
+
+Verify use of xerces,jdom and jaxen in org.gemoc.xdsmlframework.ide.ui
 
 ## Plugin renamming
 
@@ -387,3 +391,4 @@ org.gemoc.xdsmlframework.ui.utils_2.3.0
 |
 |
 |===
+
