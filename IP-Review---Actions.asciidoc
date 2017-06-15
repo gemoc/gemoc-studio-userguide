@@ -1,7 +1,6 @@
 List here the proposed actions in order to help IP review
 
-##
-Dependency IP
+## Dependency IP
 
 Verify use of xerces,jdom and jaxen in org.gemoc.xdsmlframework.ide.ui
 
