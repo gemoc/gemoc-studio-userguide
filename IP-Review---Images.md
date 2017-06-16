@@ -8,6 +8,8 @@ Jump to:
 - [k3](#k3)
 - [melange](#melange)
 
+ajoutez juste    :warning:  en fin de ligne des images douteuses
+
 
 ```
 find gemoc-studio -name '*.png' -o -name '*.jpg' -o -name '*.gif' | sed /target/d | sed 's/^/- /' > gemoc-studio-img.lst
@@ -507,30 +509,30 @@ find melange -name '*.png' -o -name '*.jpg' -o -name '*.gif' | sed /target/d | s
 - gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/IconeGemocStudio-text.png
 - gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/IconeGemocStudio-large.png
 - gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/dot2.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/next.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/home.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/prev.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/note.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/warning.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/important.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/5.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/6.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/1.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/8.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/2.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/7.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/12.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/10.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/11.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/13.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/14.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/9.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/4.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/15.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/3.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/tip.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/up.png
-- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/caution.png
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/next.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/home.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/prev.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/note.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/warning.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/important.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/5.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/6.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/1.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/8.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/2.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/7.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/12.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/10.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/11.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/13.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/14.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/9.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/4.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/15.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/callouts/3.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/tip.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/up.png :warning:
+- gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/docbook/caution.png :warning:
 - gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/bkg_gradient.gif
 - gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/dot.png
 - gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse/images/community/shine.png
