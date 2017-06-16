@@ -2,7 +2,7 @@
 
 Jump to:
 - [gemoc-studio](#gemoc-studio)
-- [ModelDebugging](#ModelDebugging)
+- [ModelDebugging](#modeldebugging)
 - [concurrency](#concurrency)
 - [coordination](#coordination)
 - [k3](#k3)
