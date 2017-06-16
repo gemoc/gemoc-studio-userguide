@@ -9,6 +9,7 @@ Jump to:
 - [melange](#melange)
 
 ajoutez juste    :warning:  en fin de ligne des images douteuses
+> et pour les images dont vous êtes certains ajoutez  un blockquote en début de ligne (avec le > comme premier caratere  )
 
 
 ```
