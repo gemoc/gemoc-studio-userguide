@@ -1,12 +1,12 @@
 # Check of images of the studio and "our" thirdparties
 
-Jump to
-[gemoc-studio](#gemoc-studio)
-[ModelDebugging](#ModelDebugging)
-[concurrency](#concurrency)
-[coordination](#coordination)
-[k3](#k3)
-[melange](#melange)
+Jump to:
+- [gemoc-studio](#gemoc-studio)
+- [ModelDebugging](#ModelDebugging)
+- [concurrency](#concurrency)
+- [coordination](#coordination)
+- [k3](#k3)
+- [melange](#melange)
 
 
 ```
