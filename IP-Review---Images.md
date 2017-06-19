@@ -26,22 +26,22 @@ find melange -name '*.png' -o -name '*.jpg' -o -name '*.gif' | sed /target/d | s
 >- gemoc-studio/commons/plugins/gexpressions/org.eclipse.gemoc.gexpressions.editor/icons/full/obj16/*.gif
 >- gemoc-studio/commons/plugins/gexpressions/org.eclipse.gemoc.gexpressions.edit/icons/full/obj16/*.gif
 >- gemoc-studio/commons/plugins/gexpressions/org.eclipse.gemoc.gexpressions.edit/icons/full/ctool16/.gif
-- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-k3-template-selection.png
-- gemoc-studio/official_samples/MiniFSM/tutorial/figs/User Ecore basic aspect _027.png
-- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-k3-template-wizard.png
-- gemoc-studio/official_samples/MiniFSM/tutorial/figs/22-change-base-package.png
-- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-right-click-create-dsa-project.png
-- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-new-k3-project.png
-- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-ctrl-space-create-dsa-project.png
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/aim.gif
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/spiral.gif
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/greenBall.gif
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/redBall.gif
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/pinkBall.gif
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/arrow.gif
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/blueBall.gif
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/logo.png
-- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/blueDiamond.gif
+>- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-k3-template-selection.png
+>- gemoc-studio/official_samples/MiniFSM/tutorial/figs/User Ecore basic aspect _027.png
+>- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-k3-template-wizard.png
+>- gemoc-studio/official_samples/MiniFSM/tutorial/figs/22-change-base-package.png
+>- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-right-click-create-dsa-project.png
+>- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-new-k3-project.png
+>- gemoc-studio/official_samples/MiniFSM/tutorial/figs/23-ctrl-space-create-dsa-project.png
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/aim.gif :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/spiral.gif :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/greenBall.gif :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/redBall.gif :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/pinkBall.gif :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/arrow.gif :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/blueBall.gif :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/logo.png :warning:
+- gemoc-studio/official_samples/SigPML/language_workbench/fr.cnrs.luchogie.ultimateplotter/res/blueDiamond.gif :warning:
 - gemoc-studio/official_samples/SigPML/language_workbench/org.gemoc.sample.sigpml.xsigpml.design/picts/ram_small.png
 - gemoc-studio/official_samples/SigPML/language_workbench/org.gemoc.sample.sigpml.xsigpml.design/picts/Bus_small.png
 - gemoc-studio/official_samples/SigPML/language_workbench/org.gemoc.sample.sigpml.xsigpml.design/picts/Bus.png
