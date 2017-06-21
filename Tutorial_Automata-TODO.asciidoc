@@ -1,3 +1,0 @@
-TODO:
-    * revoir la définition du MoCC
-	- vérifier que l'on peut avoir un nombre quelconque de symboles entre initialize et terminate
